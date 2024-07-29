@@ -1,0 +1,10 @@
+{
+  "format": "custom",
+  "id": "heroslice",
+  "json": {
+    "Main": {}
+  },
+  "label": "HeroSlice",
+  "repeatable": false,
+  "status": true
+}
