@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "[my-framework] build --output public",
+    "clean": "rimraf dist",
+    "build": "webpack --mode production",
     "start": "next start",
     "lint": "next lint",
     "slicemachine": "start-slicemachine"
