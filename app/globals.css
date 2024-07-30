@@ -105,3 +105,14 @@ a {
     color-scheme: dark;
   }
 }
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-slider {
+  width: 100%;
+  height: 100%;
+}

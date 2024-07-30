@@ -24,7 +24,7 @@ import {
     useDisclosure,
 } from '@chakra-ui/react';
 
-import { FiMenu } from 'react-icons/fi'
+import { FiArrowRight, FiMenu } from 'react-icons/fi'
 
 
 
@@ -36,7 +36,10 @@ const NavBar = () => {
 
     return (
         <Box
-            bg={useColorModeValue('black', 'gray.800')}
+            bg='hsla(0, 0%, 0%, 0.5)'  // Adjusted background for frosted glass effect
+            backgroundBlendMode='soft-light'
+            boxShadow='0 0 20px 0 rgba(0, 0, 0, 0.5)'
+            position='fixed'
             px={3}
             color="white"
             zIndex={100}
@@ -45,7 +48,7 @@ const NavBar = () => {
             width='100%'
         >
             <Container maxW='container.xl'>
-                <Flex padding={7} alignItems={'center'} justifyContent={'space-between'}>
+                <Flex padding={5} alignItems={'center'}  justifyContent={'space-between'}>
                     <Box fontWeight="bold" fontSize="lg" display="flex" alignItems="center">
                         <Image maxW={50} rounded={50} src="/images/logo2.jpg" alt="logo" />
                     </Box>
@@ -64,7 +67,7 @@ const NavBar = () => {
                                     <MenuItem to="/page2" _hover={{ bg: 'gray.700' }}>Page 2</MenuItem>
                                 </MenuList>
                             </Menu>
-                            <Link to="/speakers" _hover={{ textDecoration: 'none', color: '#df42b1' }}>
+                            <Link href="/speakers" _hover={{ textDecoration: 'none', color: '#df42b1' }}>
                                 Speakers
                             </Link>
                             <Link to="/blog" _hover={{ textDecoration: 'none', color: '#df42b1' }}>
@@ -73,19 +76,7 @@ const NavBar = () => {
                             <Link to="/contact" _hover={{ textDecoration: 'none', color: '#df42b1' }}>
                                 Contact
                             </Link>
-                            <Button
-                                to="/tickets"
-                                rounded={'full'}
-                                bgGradient="linear(to-r, purple.500, #df42b1)"
-                                color={'white'}
-                                _hover={{
-                                    bgGradient: 'linear(to-r, purple.500, pink.700)',
-                                    boxShadow: 'xl',
-                                }}
-                                py={25}
-                            >
-                                GET TICKETS &rarr;
-                            </Button>
+                            <Button rounded='full' size="sm" variant='outline' colorScheme="whiteAlpha">Tickets <FiArrowRight/></Button>
                         </Stack>
                     </Flex>
 

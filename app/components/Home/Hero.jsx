@@ -9,6 +9,7 @@ import {
     Button,
     Stack,
     Heading,
+    Container
 } from '@chakra-ui/react';
 
 // Animation
@@ -19,6 +20,7 @@ import 'aos/dist/aos.css';
 import { CustomLeftArrow, CustomRightArrow } from './customArrows';
 
 import { useSinglePrismicDocument } from '@prismicio/react';
+import { FiArrowRight } from 'react-icons/fi';
 
 
 
@@ -26,7 +28,7 @@ import { useSinglePrismicDocument } from '@prismicio/react';
 
 const carouselItems = [
     {
-        image: '/images/clean.jpg',
+        image: '/iamges/catwalk.jpg',
         heading: 'AFRICAN SIMBA EVENTS',
         text: 'SHANGRI-LA HOTEL BANGKOK, BANGKOK, CHINA',
     },
@@ -67,72 +69,53 @@ const HeroSection = () => {
 
     return (
         <>
-            <Carousel responsive={responsive}
-                customLeftArrow={<CustomLeftArrow />}
-                customRightArrow={<CustomRightArrow />}
+            <Container maxW='container.xl'>
+                <Carousel responsive={responsive}
+                    customLeftArrow={<CustomLeftArrow />}
+                    customRightArrow={<CustomRightArrow />}
 
-            >
-                {carouselItems.map((item, index) => (
-                    <Box
-                        key={index}
-                        height="100vh"
-                        backgroundImage={`url(${item.image})`}
-                        backgroundPosition="center"
-                        backgroundAttachment="fixed"
-                        width="100%"
-                        zIndex={-100}
-
-                        display="grid"
-                        margin='auto'
-
-                    >
-                        {/* Overlay */}
+                >
+                    {carouselItems.map((item, index) => (
                         <Box
-                            position="absolute"
-                            top="0"
-                            left="0"
-                            width="100%"
-                            height="100%"
-                            bg="blackAlpha.600"
-                            zIndex="1"
-                        />
-                        <VStack
+                            key={index}
+                            height="50vh"
+                            backgroundImage={`url(${item.image})`}
+                            backgroundPosition="center"
+                           mt={50}
+                           
+                            zIndex={-100}
 
-                            position="relative"
-                            zIndex="2"
-                            height="100%"
-                            spacing={6}
-                            textAlign="center"
-                            color="white"
-                            justifyContent="center"
-                            data-aos='fade-up' data-aos-duration='2000'
+                            display="grid"
+                            margin='auto'
+
                         >
-                            <Heading fontSize={{ base: "5xl", lg: '8xl' }} color="white">
-                                {item.heading}
-                               
-                            </Heading>
-                            <Text fontSize="2xl" maxW="600px" background='rgba(255, 255, 200, 0.1)' p={2}>
-                                {item.text}
-                            </Text>
-                            <Stack direction="row" spacing={4}>
-                                <Button
-                                    to="/tickets"
-                                    rounded={'full'}
-                                    bgGradient="linear(to-r, purple.500, #df42b1)"
-                                    color={'white'}
-                                    _hover={{
-                                        bgGradient: 'linear(to-r, purple.500, pink.700)',
-                                        boxShadow: 'xl',
-                                    }}
-                                    py={25}
-                                >
-                                    MORE INFORMATION &rarr;
-                                </Button>
-                            </Stack>
-                        </VStack>
-                    </Box>
-                ))}
-            </Carousel>
+
+                            <VStack
+
+                                position="relative"
+                                zIndex="2"
+                                height="100%"
+                                spacing={6}
+                                textAlign="center"
+                                color="white"
+                                justifyContent="center"
+                                data-aos='fade-up' data-aos-duration='2000'
+                            >
+                                <Heading fontSize={{ base: "5xl", lg: '8xl' }} color="white">
+                                    {item.heading}
+
+                                </Heading>
+                                <Text fontSize="2xl" maxW="600px" background='rgba(255, 255, 200, 0.1)' p={2}>
+                                    {item.text}
+                                </Text>
+                                <Stack direction="row" spacing={4}>
+                                    <Button rounded='full' size="md" variant='outline' colorScheme="whiteAlpha">Information <FiArrowRight/></Button>
+                                </Stack>
+                            </VStack>
+                        </Box>
+                    ))}
+                </Carousel>
+            </Container>
 
 
 
