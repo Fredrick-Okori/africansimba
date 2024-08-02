@@ -14,7 +14,9 @@ const CustomLeftArrow = ({ onClick }) => {
             transform="translateY(-50%)"
             zIndex={2}
             rounded="full"
-            bgGradient="linear(to-r, purple.500, #df42b1)"
+            bg='hsla(0, 0%, 0%, 0.5)'  // Adjusted background for frosted glass effect
+            backgroundBlendMode='soft-light'
+            boxShadow='0 0 20px 0 rgba(0, 0, 0, 0.5)'
             color="white"
             _hover={{
                 bgGradient: 'linear(to-r, purple.500, pink.700)',
@@ -36,7 +38,9 @@ const CustomRightArrow = ({ onClick }) => {
             transform="translateY(-50%)"
             zIndex={2}
             rounded="full"
-            bgGradient="linear(to-r, purple.500, #df42b1)"
+            bg='hsla(0, 0%, 0%, 0.5)'  // Adjusted background for frosted glass effect
+            backgroundBlendMode='soft-light'
+            boxShadow='0 0 20px 0 rgba(0, 0, 0, 0.5)'
             color="white"
             _hover={{
                 bgGradient: 'linear(to-r, purple.500, pink.700)',

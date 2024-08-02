@@ -28,7 +28,7 @@ import { FiArrowRight } from 'react-icons/fi';
 
 const carouselItems = [
     {
-        image: '/iamges/catwalk.jpg',
+        image: '/miages/catwalk.jpg',
         heading: 'AFRICAN SIMBA EVENTS',
         text: 'SHANGRI-LA HOTEL BANGKOK, BANGKOK, CHINA',
     },

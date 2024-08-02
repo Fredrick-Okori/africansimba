@@ -3,6 +3,7 @@ import { repositoryName } from '@/prismicio'
 import { ChakraProvider } from '@chakra-ui/react'
 
 import NavBar from './components/NavBar'
+import Footer from './components/Footer'
 
 export default function RootLayout({ children }) {
   return (
@@ -11,8 +12,8 @@ export default function RootLayout({ children }) {
         <ChakraProvider>
           <NavBar />
           {children}
-        </ChakraProvider>
-        
+          <Footer/>
+        </ChakraProvider>       
         <PrismicPreview repositoryName={repositoryName} />
       </body>
     </html>

@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import { Box, Container, Text, Button, Flex, IconButton } from "@chakra-ui/react";
+import { Box,  Container, Text, Button, Flex, IconButton } from "@chakra-ui/react";
 import { FiPlay, FiPause, FiX } from 'react-icons/fi';
 
 const FloatingVideoSection = () => {
@@ -34,10 +34,10 @@ const FloatingVideoSection = () => {
                 aria-label="Close"
                 icon={<FiX />}
                 position="absolute"
-                top="2"
-                right="2"
+                top='0'
+                right='0'
                 variant="outline"
-                colorScheme="teal"
+                colorScheme="pink.500"
                 onClick={handleClose}
             />
             <Container maxW="container.sm" textAlign="center">
@@ -47,7 +47,7 @@ const FloatingVideoSection = () => {
                     justify="center"
                     mt="10"  // Add margin top to prevent overlap with close button
                 >
-                 
+                    
                 </Flex>
             </Container>
         </Box>

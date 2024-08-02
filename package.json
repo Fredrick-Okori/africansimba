@@ -23,7 +23,8 @@
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.2.1",
-    "react-multi-carousel": "^2.8.5"
+    "react-multi-carousel": "^2.8.5",
+    "react-router-dom": "^6.25.1"
   },
   "devDependencies": {
     "@slicemachine/adapter-next": "^0.3.43",

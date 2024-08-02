@@ -1,8 +1,11 @@
 "use client";
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Box } from "@chakra-ui/react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 const events = [
     {
@@ -43,6 +46,13 @@ const responsive = {
 };
 
 const BackgroundCarousel = () => {
+    useEffect(() => {
+        Aos.init();
+        Aos.refresh();
+    }, []);
+
+    
+
     return (
         <Box position="fixed" top="0" left="0" width="100vw" height="100vh" zIndex="-1" overflow="hidden">
             <Carousel
@@ -52,7 +62,7 @@ const BackgroundCarousel = () => {
                 autoPlay={true}
                 autoPlaySpeed={5000}
                 swipeable={true}
-                customTransition="opacity 5s ease-in-out"
+                customTransition="fade-in 7s ease-in"                
                 keyBoardControl={true}
                 itemClass="carousel-item-padding-40-px"
                 containerClass="carousel-container"

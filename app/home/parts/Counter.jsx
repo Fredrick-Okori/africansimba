@@ -30,7 +30,7 @@ export default function Counter() {
     return (
         <>
 <Container maxW='container.xl'>
-                <Grid color='white' alignItems='center' templateColumns={['repeat(3, 1fr)', 'repeat(1,1)']} gap={5}>
+                <Grid color='white' alignItems='center' templateColumns={['repeat(2, 1fr)', 'repeat(1,1)']} gap={5}>
                 <Box >
                         <Text color="white" fontSize='14' mb={3}> CONFERENCE DATE</Text>
                     <Text>COUNT EVERY SECOND UNTIL THE EVENT</Text>
