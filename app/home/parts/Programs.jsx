@@ -40,7 +40,7 @@ const ProgramTab = () => {
                     <Text fontSize="lg" color="pink.400">Our Timetable</Text>
                     <Text fontSize="4xl" fontWeight="bold">Schedule Plan</Text>
                 </Box>
-                <Tabs align="center" variant="styled">
+                <Tabs align="center" variant='unstyled'>
                     <TabList>
                         <Tab
                             _selected={{

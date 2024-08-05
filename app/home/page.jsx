@@ -10,6 +10,8 @@ import FloatingVideoSection from '../components/YouTubeLive';
 import VideoBanner from './parts/VideoBanner';
 
 import Link from 'next/link';
+import { StoreBanner } from './parts/StoreBanner';
+import PartnerSection from '../components/sponsors';
 
 const Home = () => {
     return (
@@ -21,6 +23,8 @@ const Home = () => {
                 <UpcomingEvents />
                 <VideoBanner />
                 <ProgramTab />
+                <StoreBanner />
+                <PartnerSection />
                 <FloatingVideoSection />
             </Box>
         </Box>

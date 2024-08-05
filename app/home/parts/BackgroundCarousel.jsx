@@ -78,6 +78,9 @@ const BackgroundCarousel = () => {
                         backgroundRepeat="no-repeat"
                         backgroundSize="cover"
                         position="relative"
+                      
+                        transition='opacity 2s ease-in-out'
+                        // filter='brightness(1.5)'
                         overflow="hidden"
                     >
                         <Box

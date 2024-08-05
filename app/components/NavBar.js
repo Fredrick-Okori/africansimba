@@ -23,6 +23,7 @@ import {
     DrawerCloseButton,
     useDisclosure,
     VStack,
+    textDecoration,
 } from '@chakra-ui/react';
 
 
@@ -31,6 +32,7 @@ import { FiArrowRight, FiMenu, FiShoppingCart } from 'react-icons/fi'
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation';
+import { color } from 'framer-motion';
 
 
 
@@ -79,6 +81,9 @@ const NavBar = () => {
                             <Link href='/store' _hover={{ textDecoration: 'none', color: '#df42b1' }}>
                                 Shop
                             </Link>
+                            <Link href='/bookings' _hover={{textDecoration: 'none', color: '#df42b1'}} >
+                            Bookings
+                            </Link>
                             <Link href="/blog" _hover={{ textDecoration: 'none', color: '#df42b1' }}>
                                 Blog
                             </Link>
@@ -116,29 +121,27 @@ const NavBar = () => {
 };
 
 const MobileNav = () => {
+    const pathname = usePathname();
     return (
         <Stack p={4}>
-            <Link to="/" _hover={{ textDecoration: 'none', color: '#df42b1' }} color="#df42b1">
+            <Link href="/" _hover={{ textDecoration: 'none', color: '#df42b1' }} color="#df42b1">
                 Home
             </Link>
-            <Menu>
-                <MenuButton as={Link} _hover={{ textDecoration: 'none', color: '#df42b1' }}>
-                    Pages
-                </MenuButton>
-                <MenuList bg="black" borderColor="gray.700">
-                    <MenuItem to="/page1" _hover={{ bg: 'gray.700' }}>Page 1</MenuItem>
-                    <MenuItem to="/page2" _hover={{ bg: 'gray.700' }}>Page 2</MenuItem>
-                </MenuList>
-            </Menu>
-            <Link to="/speakers" _hover={{ textDecoration: 'none', color: '#df42b1' }}>
-                Speakers
+            <Link href='/store' _hover={{ textDecoration: 'none', color: '#df42b1' }}>
+                Shop
             </Link>
-            <Link to="/blog" _hover={{ textDecoration: 'none', color: '#df42b1' }}>
+            <Link href='/booking' _hover={{ textDecoration: 'none', color: '#df42b1' }} >
+                Bookings
+            </Link>
+            <Link href="/blog" _hover={{ textDecoration: 'none', color: '#df42b1' }}>
                 Blog
             </Link>
-            <Link to="/contact" _hover={{ textDecoration: 'none', color: '#df42b1' }}>
-                Contact
-            </Link>
+            {pathname === '/store' && (
+                <Link href="/cart" _hover={{ textDecoration: 'none', color: '#df42b1' }} >
+                    Cart
+                </Link>
+            )}
+
             <Button
                 to="/tickets"
                 rounded={'full'}

@@ -1,62 +1,89 @@
-import { Box, Flex, Text, Link, Image, Container, VStack, HStack, Icon } from '@chakra-ui/react';
-import { FaFacebook, FaInstagram, FaYoutube, FaTiktok, FaFileVideo } from 'react-icons/fa';
+import { Box, Flex, Divider, AbsoluteCenter, Text, Link, Image, Container, VStack, SimpleGrid } from '@chakra-ui/react';
 import { FiFacebook, FiInstagram, FiTwitter, FiYoutube } from 'react-icons/fi';
 
 const Footer = () => {
-    return (
-        <Box  color="white" py={10}>
-            <Container maxW='container.xl'>
+    const currentYear = new Date().getFullYear();
 
-            <Flex direction="column" align="center">
-                    <Image src="/images/logo.webp" rounded='full' width='20' alt="logo"/>
-                    
-                <HStack spacing={6} mb={8}>
-                    <Link href="#" isExternal>
-                       <FiYoutube fontWeight='normal' fontSize={30}/>
-                    </Link>
-                  
-                    <Link href="#" isExternal>
-                            <FiFacebook fontWeight='normal' fontSize={30} />
-                    </Link>
-                    <Link href="#" isExternal>
-                            <FiTwitter fontWeight='normal' fontSize={30} />
-                    </Link>
-                    <Link href="#" isExternal>
-                            <FiInstagram fontWeight='normal' fontSize={30} />
-                    </Link>
-                </HStack>
-                <Flex wrap="wrap" justify="space-around" w="full">
-                    <VStack align="start" spacing={2}>
+    return (
+        <Box color="white" py={20}>
+            <Container maxW="container.xl">
+                <Box position='relative' my={25}>
+                    <Divider />
+                    <AbsoluteCenter bg='white' backgroundBlendMode='soft-light' px='2' rounded={10}>
                        
-                        <Link href="#">Festival</Link>
-                        <Link href="#">Practical</Link>
-                        <Link href="#">Tickets</Link>
-                        <Link href="#">My Bracelet</Link>
-                        <Link href="#">Add-On Sale</Link>
-                        <Link href="#">Line-up</Link>
-                    </VStack>
-                   
-                   
-                    <VStack align="start" spacing={2}>
-                        <Text fontWeight="bold">TOMORROWLAND PRESENTS</Text>
-                        <Link href="#">CORE</Link>
-                        <Link href="#">Terra Solis</Link>
-                        <Link href="#">The Great Library of Tomorrow</Link>
-                    </VStack>
-                   
-                    <VStack align="start" spacing={2}>
-                        <Text fontWeight="bold">TOMORROWLAND STORE</Text>
-                        <Link href="#">Store</Link>
-                        <Link href="#">Solo Vida</Link>
-                    </VStack>
-                    <VStack align="start" spacing={2}>
-                        <Text fontWeight="bold">TOMORROWLAND MUSIC</Text>
-                        <Link href="#">About</Link>
-                        <Link href="#">Releases</Link>
-                    </VStack>
-                    
-                </Flex>
-                </Flex>
+                        <Flex p={2} alignItems='center'>
+                            <Image src="/images/logo.webp" mr={3} maxW="18" alt="logo" mb={{ base: 6, lg: 0 }} />
+                            <Divider orientation='horizontal' color='black'/>
+                            <Link href="#" mr={2} isExternal>
+                                <FiYoutube color='black' fontSize={{base: 20, lg: 30}} />
+                            </Link>
+                          
+                            <Link href="#" mr={2} isExternal>
+                                <FiFacebook color='black' fontSize={{base: 20, lg: 30}} />
+                            </Link>
+                            <Link href="#" mr={2} isExternal>
+                                <FiTwitter color='black' fontSize={{base: 20, lg: 30}} />
+                            </Link>
+                            <Link href="#" mr={2} isExternal>
+                                <FiInstagram color='black' fontSize={{base: 20, lg: 30}} />
+                            </Link>
+                        </Flex>
+                    </AbsoluteCenter>
+                </Box>
+               
+               
+                <SimpleGrid minChildWidth='100%' align="center"  display={{base: 'none', lg: 'contents'}} >
+                    <Flex wrap="wrap" justify="space-around" w="full" my={20}>
+                        <Box textAlign='start'  align="start" spacing={3} mb={{ base: 4, lg: 2 }}>
+                            <Text fontWeight="bold">Useful Links</Text>
+                            <Text><Link href="#">Festival</Link></Text> 
+                            <Text> <Link href="#">Practical</Link></Text>
+                            <Text>
+                                <Link href="#">Tickets</Link>
+                            </Text> 
+                            <Link href="#">My Bracelet</Link>
+                        </Box>
+                        <Box textAlign='start' align="start" spacing={3} mb={{ base: 4, lg: 2 }}>
+                            <Text fontWeight="bold">Useful Links</Text>
+                            <Text><Link href="#">Festival</Link></Text>
+                            <Text> <Link href="#">Practical</Link></Text>
+                            <Text>
+                                <Link href="#">Tickets</Link>
+                            </Text>
+                            <Link href="#">My Bracelet</Link>
+                        </Box>
+                        <Box textAlign='start' align="start" spacing={3} mb={{ base: 4, lg: 2 }}>
+                            <Text fontWeight="bold">Useful Links</Text>
+                            <Text><Link href="#">Festival</Link></Text>
+                            <Text> <Link href="#">Practical</Link></Text>
+                            <Text>
+                                <Link href="#">Tickets</Link>
+                            </Text>
+                            <Link href="#">My Bracelet</Link>
+                        </Box>
+                        <Box textAlign='start' align="start" spacing={3} mb={{ base: 4, lg: 2 }}>
+                            <Text fontWeight="bold">Useful Links</Text>
+                            <Text><Link href="#">Festival</Link></Text>
+                            <Text> <Link href="#">Practical</Link></Text>
+                            <Text>
+                                <Link href="#">Tickets</Link>
+                            </Text>
+                            <Link href="#">My Bracelet</Link>
+                        </Box>
+                       
+                    </Flex>
+
+                </SimpleGrid>
+                    <Flex direction={{ base: 'column', lg: 'row' }} justifyContent="space-evenly" mt={{base: '20', lg: 'auto'}} align="center" w="full" gap={5}>
+                        <Box textAlign={{ base: 'center', lg: 'left' }}>
+                            <Text>Copyright &copy; {currentYear} African Simba Events. All rights reserved.</Text>
+                        </Box>
+                        <Box textAlign={{ base: 'center', lg: 'right' }}>
+                            <Text>
+                                <Link href="#" isExternal>Privacy Policy</Link> | <Link href="#" isExternal>Terms of Service</Link>
+                            </Text>
+                        </Box>
+                    </Flex>
             </Container>
         </Box>
     );
