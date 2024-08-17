@@ -7,6 +7,7 @@ import {
     Button,
     Image,
     HStack,
+    Link,
     Container,
 } from "@chakra-ui/react";
 import { FiExternalLink, FiMapPin } from 'react-icons/fi';
@@ -18,21 +19,21 @@ import 'aos/dist/aos.css';
 
 const events = [
     {
-        title: "Dimitri Vegas & Like Mike",
+        title: " Wahallah Wednesdays",
         date: "Wednesdays Summer 2024",
-        location: "Ibiza, Spain",
+        location: "Thrones Lounge",
         image: "/images/wahallawednesday.jpg",
     },
     {
-        title: "Dimitri Vegas & Like Mike",
-        date: "Wednesdays Summer 2024",
-        location: "Ibiza, Spain",
+        title: "Simba Fiesta Sundays",
+        date: "Sundays Summer 2024",
+        location: "The Villa, Kampala",
         image: "/images/fiesta_sunday.jpg",
     },
     {
-        title: "Dimitri Vegas & Like Mike",
+        title: "Afro Vibez Friday",
         date: "Wednesdays Summer 2024",
-        location: "Ibiza, Spain",
+        location: "The CatWalk Lounge",
         image: "/images/afrovibes.jpg",
     },
     {
@@ -153,7 +154,7 @@ const UpcomingEvents = () => {
                                 </Flex>
                                 <Flex justify="space-between">
                                     <Button rounded='full' size="sm" variant='outline' colorScheme="whiteAlpha">More Info</Button>
-                                    <Button rounded='full' size="sm" variant='outline' colorScheme="whiteAlpha">Tickets</Button>
+                                    <Button rounded='full' size="sm" variant='outline' as={Link} href='/bookings' colorScheme="whiteAlpha">Tickets</Button>
                                 </Flex>
                             </Box>
                         </Box>

@@ -21,6 +21,7 @@ import 'aos/dist/aos.css';
 
 import { useSinglePrismicDocument } from '@prismicio/react';
 import { FiArrowRight } from 'react-icons/fi';
+import { FaLocationArrow } from 'react-icons/fa';
 
 
 
@@ -93,11 +94,13 @@ const BookingHero = () => {
                             justifyContent="center"
                             data-aos='fade-up' data-aos-duration='2000'
                         >
-                            <Heading fontSize={{ base: "5xl", lg: '8xl' }} border='2px solid white' p={5} color="white">
+                            <Heading fontSize={{ base: "5xl", lg: '8xl' }} bg='hsla(0, 0%, 0%, 0.7)'  // Adjusted background for frosted glass effect
+                                backgroundBlendMode='soft-light'
+                                boxShadow='0 0 20px 0 rgba(0, 0, 0, 0.5)' py={20} border='5px solid grey' p={5} color="white">
                                 {item.heading}
 
                             </Heading>
-                            <Text fontSize="2xl" maxW="600px" background='rgba(255, 255, 200, 0.1)' p={2}>
+                            <Text fontSize="2xl" maxW="600px"  p={2}>
                                 {item.text}
                             </Text>
                            

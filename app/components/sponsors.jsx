@@ -6,7 +6,7 @@ import Aos from 'aos';
 import 'aos/dist/aos.css'
 
 const partners = [
-    { src: '/partners/p-1.png.webp' },
+    { src: '/partners/p-5.png.webp' },
     { src: '/partners/p-2.png.webp' },
     { src: '/partners/p-3.png.webp' },
     { src: '/partners/p-4.png.webp' },

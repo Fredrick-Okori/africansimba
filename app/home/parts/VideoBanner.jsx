@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container,Button, Grid, Flex, Text, Image, Box, ButtonGroup } from '@chakra-ui/react';
+import { Container,Button, Grid, Link, Text, Image, Box, ButtonGroup } from '@chakra-ui/react';
 
 export default function VideoBanner() {
     return (
@@ -47,10 +47,10 @@ export default function VideoBanner() {
                     <Text textAlign='center' fontSize={20} p={5} fontWeight='bold'>Stay up-to-date with our latest African Vibes</Text>
                     <Grid justifyContent='center'>
                         <ButtonGroup spacing={8}>
-                            <Button colorScheme="Alpha" rounded='full' variant="outline">
+                            <Button as={Link} href='http://www.youtube.com' target='_blank' colorScheme="Alpha" rounded='full' variant="outline">
                                 Watch Video
                             </Button>
-                            <Button colorScheme="Alpha" rounded='full' variant="outline">
+                            <Button as={Link} href='http://www.youtube.com' colorScheme="Alpha" rounded='full' variant="outline">
                                 Download Music
                             </Button>
                         </ButtonGroup>
