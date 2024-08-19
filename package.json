@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "clean": "rimraf dist",
-    "build": "webpack --mode production",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "slicemachine": "start-slicemachine"
