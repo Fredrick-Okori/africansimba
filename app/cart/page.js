@@ -7,7 +7,7 @@ export default function Cart() {
 
             <Box style={{display: 'grid', margin: 'auto'}}>
         <Text >
-            You don't have anything in your cart.
+            You dont have anything in your cart.
         </Text>
 
             </Box>
