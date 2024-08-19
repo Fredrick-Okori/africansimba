@@ -7,7 +7,7 @@ export default function Cart() {
 
             <Box style={{display: 'grid', margin: 'auto'}}>
         <Text >
-          Nothing to show here
+       
         </Text>
 
             </Box>
