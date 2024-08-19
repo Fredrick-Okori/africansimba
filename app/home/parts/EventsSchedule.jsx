@@ -49,7 +49,7 @@ export default function EventSchedule() {
 
 
                     {/* Counter area */}
-                    <Counter />
+                    {/* <Counter /> */}
                 </Container>
 
 
