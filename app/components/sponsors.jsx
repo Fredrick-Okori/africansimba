@@ -26,11 +26,9 @@ const PartnerSection = () => {
             <Container maxW='container.xl' data-aos='fade-in-up' data-aos-duration='300ms'>
 
                 <VStack spacing={4} textAlign="center">
-                    <Text color="pink.400" fontSize="lg" fontWeight="bold">
-                        PARTNERS & SPONSORS
-                    </Text>
-                    <Heading color="white" size="lg">
-                        OFFICIAL SPONSOR
+                 
+                    <Heading color="white" size="2xl">
+                        Official Sponsors
                     </Heading>
                 </VStack>
                 <SimpleGrid columns={[1, 2, 3, 4]} spacing={10} mt={10} p={5}>

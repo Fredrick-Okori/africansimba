@@ -78,15 +78,16 @@ const NavBar = () => {
                                     <MenuItem to="/page2" _hover={{ bg: 'gray.700' }}>Page 2</MenuItem>
                                 </MenuList>
                             </Menu> */}
+                            <Link href='/stream' _hover={{ textDecoration: 'none', color: '#df42b1' }}>
+                            Live 
+                            </Link>
                             <Link href='/store' _hover={{ textDecoration: 'none', color: '#df42b1' }}>
                                 Shop
                             </Link>
                             <Link href='/bookings' _hover={{textDecoration: 'none', color: '#df42b1'}} >
                             Bookings
                             </Link>
-                            <Link href="/blog" _hover={{ textDecoration: 'none', color: '#df42b1' }}>
-                                Blog
-                            </Link>
+                          
                             {pathname === '/store' && (
                                 <Link href="/cart" _hover={{ textDecoration: 'none', color: '#df42b1' }} >                           
                                     Cart                                                                   

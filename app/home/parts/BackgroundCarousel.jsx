@@ -1,7 +1,6 @@
 "use client";
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box } from "@chakra-ui/react";
-import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 import Aos from 'aos';
@@ -26,75 +25,52 @@ const events = [
     },
 ];
 
-const responsive = {
-    superLargeDesktop: {
-        breakpoint: { max: 4000, min: 3000 },
-        items: 1
-    },
-    desktop: {
-        breakpoint: { max: 3000, min: 1024 },
-        items: 1
-    },
-    tablet: {
-        breakpoint: { max: 1024, min: 464 },
-        items: 1
-    },
-    mobile: {
-        breakpoint: { max: 464, min: 0 },
-        items: 1
-    }
-};
-
 const BackgroundCarousel = () => {
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [prevIndex, setPrevIndex] = useState(events.length - 1);
+
     useEffect(() => {
         Aos.init();
         Aos.refresh();
     }, []);
 
-    
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setPrevIndex(activeIndex);
+            setActiveIndex((prevIndex) => (prevIndex + 1) % events.length);
+        }, 7000); // change image every 7 seconds
+        return () => clearInterval(interval);
+    }, [activeIndex]);
 
     return (
         <Box position="fixed" top="0" left="0" width="100vw" height="100vh" zIndex="-1" overflow="hidden">
-            <Carousel
-                responsive={responsive}
-                infinite={true}
-                arrows={false}
-                autoPlay={true}
-                autoPlaySpeed={5000}
-                swipeable={true}
-                customTransition="fade-in 7s ease-in"                
-                keyBoardControl={true}
-                itemClass="carousel-item-padding-40-px"
-                containerClass="carousel-container"
-                sliderClass="carousel-slider"
-            >
-                {events.map((event, index) => (
+            {events.map((event, index) => (
+                <Box
+                    key={index}
+                    width="100vw"
+                    height="100vh"
+                    backgroundImage={`url(${event.image})`}
+                    backgroundPosition="center"
+                    backgroundRepeat="no-repeat"
+                    backgroundSize="cover"
+                    position="absolute"
+                    top="0"
+                    left="0"
+                    opacity={index === activeIndex ? 1 : index === prevIndex ? 0 : 0}
+                    zIndex={index === activeIndex ? 2 : index === prevIndex ? 1 : 0}
+                    transition="opacity 4s ease-in-out"
+                >
                     <Box
-                        key={index}
-                        width="100vw"
-                        height="100vh"
-                        backgroundImage={`url(${event.image})`}
-                        backgroundPosition="center"
-                        backgroundRepeat="no-repeat"
-                        backgroundSize="cover"
-                        position="relative"
-                      
-                        transition='opacity 2s ease-in-out'
-                        // filter='brightness(1.5)'
-                        overflow="hidden"
-                    >
-                        <Box
-                            position="absolute"
-                            top="0"
-                            left="0"
-                            width="100%"
-                            height="100%"
-                            bg="rgba(0, 0, 0, 0.4)"  // Adjust the rgba value to control opacity
-                            zIndex="1"
-                        />
-                    </Box>
-                ))}
-            </Carousel>
+                        position="absolute"
+                        top="0"
+                        left="0"
+                       
+                        height="100%"
+                        bg="rgba(0, 0, 0, 0.5)"  // Adjust the rgba value to control opacity
+                        zIndex="3"
+                    />
+                </Box>
+            ))}
         </Box>
     );
 };

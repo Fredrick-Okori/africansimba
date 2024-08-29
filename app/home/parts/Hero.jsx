@@ -78,11 +78,11 @@ const HeroSection = () => {
                     {carouselItems.map((item, index) => (
                         <Box
                             key={index}
-                            height="50vh"
+                            height="55vh"
                             backgroundImage={`url(${item.image})`}
                             backgroundPosition="center"
-                           mt={50}
                            
+
                             zIndex={-100}
 
                             display="grid"
@@ -99,17 +99,18 @@ const HeroSection = () => {
                                 textAlign="center"
                                 color="white"
                                 justifyContent="center"
+                                mt={{ base: 16, lg: 20 }}
                                 data-aos='fade-up' data-aos-duration='2000'
                             >
-                                <Heading fontSize={{ base: "5xl", lg: '8xl' }} color="white">
+                                <Heading lineHeight={{ base: '1', lg: '1.5' }} fontSize={{ base: "50px", lg: '8xl' }} color="white">
                                     {item.heading}
 
                                 </Heading>
-                                <Text fontSize="2xl" maxW="600px" background='rgba(255, 255, 200, 0.1)' p={2}>
+                                <Text fontSize={{ base: '12px', lg: '2xl' }} maxW="600px" background='rgba(255, 255, 200, 0.1)' p={2}>
                                     {item.text}
                                 </Text>
                                 <Stack direction="row" spacing={4}>
-                                    <Button rounded='full' size="md" variant='outline' colorScheme="whiteAlpha">Information <FiArrowRight/></Button>
+                                    <Button rounded='full' size="md" variant='outline' colorScheme="whiteAlpha">Information <FiArrowRight /></Button>
                                 </Stack>
                             </VStack>
                         </Box>
