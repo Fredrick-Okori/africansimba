@@ -11,8 +11,8 @@ const Live = ({ currentVideo }) => {
                 </Heading>
                 {currentVideo ? (
                     <Box>
-                        <Heading as="h5" fontWeight="normal" size="lg" mb={4} color="white">
-                            {currentVideo.title}
+                        <Heading as="h5" fontWeight="normal" fontSize="lg" mb={4} color="white">
+                          Playing Now:   {currentVideo.title}
                         </Heading>
                         <AspectRatio ratio={16 / 9}>
                             {currentVideo.videoUrl.includes('youtube.com') ? (
