@@ -29,7 +29,7 @@ import {
 
 
 
-import { FiArrowRight, FiMenu, FiShoppingCart, FiHome, FiVideo, FiShoppingBag, FiCalendar, FiTicket } from 'react-icons/fi'
+import { FiArrowRight, FiMenu, FiShoppingCart, FiHome, FiVideo, FiShoppingBag, FiCalendar } from 'react-icons/fi'
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation';
@@ -148,7 +148,7 @@ const MobileNav = () => {
 
             <Link href="/tickets">
                 <Icon 
-                    as={FiTicket} 
+                  
                     boxSize={6}
                     color={'white'}
                     bgGradient="linear(to-r, purple.500, #df42b1)"
