@@ -85,6 +85,7 @@ const ShopsItems = () => {
     const itemHeight = useBreakpointValue({ base: "350px", sm: "400px", md: "400px", lg: "400px" });
     const fontSize = useBreakpointValue({ base: "lg", md: "xl", lg: "2xl" });
     const buttonSize = useBreakpointValue({ base: "xs", md: "sm" });
+    const smallFontSize = useBreakpointValue({ base: "sm", md: "md" });
 
     return (
         <Box color="white" py={10} px={5}>
@@ -148,11 +149,11 @@ const ShopsItems = () => {
                             >
                                 <Text fontSize={fontSize} fontWeight="bold" mb={2}>{event.title}</Text>
                                 <Flex align="center" mb={1}>
-                                    <Text ml={2} whiteSpace="pre-line" fontSize={useBreakpointValue({ base: "sm", md: "md" })}>{event.date}</Text>
+                                    <Text ml={2} whiteSpace="pre-line" fontSize={smallFontSize}>{event.date}</Text>
                                 </Flex>
                                 <Flex align="center" mb={4}>
                                     <FiMapPin />
-                                    <Text ml={2} fontSize={useBreakpointValue({ base: "sm", md: "md" })}>{event.location}</Text>
+                                    <Text ml={2} fontSize={smallFontSize}>{event.location}</Text>
                                 </Flex>
                                 <Flex justify="space-between">
                                     <Button _hover={{ bg: 'white', color: 'black' }} rounded='full' size={buttonSize} variant='outline' colorScheme="whiteAlpha">More Info</Button>
