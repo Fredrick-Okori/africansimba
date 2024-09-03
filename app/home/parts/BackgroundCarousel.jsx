@@ -28,6 +28,7 @@ const events = [
 const BackgroundCarousel = () => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [prevIndex, setPrevIndex] = useState(events.length - 1);
+    const [isTransitioning, setIsTransitioning] = useState(false);
 
     useEffect(() => {
         Aos.init();
@@ -36,9 +37,11 @@ const BackgroundCarousel = () => {
 
     useEffect(() => {
         const interval = setInterval(() => {
+            setIsTransitioning(true);
             setPrevIndex(activeIndex);
             setActiveIndex((prevIndex) => (prevIndex + 1) % events.length);
-        }, 10000); // change image every 7 seconds
+            setTimeout(() => setIsTransitioning(false), 2000); // Match transition duration
+        }, 20000); // change image every 20 seconds
         return () => clearInterval(interval);
     }, [activeIndex]);
 
@@ -56,19 +59,18 @@ const BackgroundCarousel = () => {
                     position="absolute"
                     top="0"
                     left="0"
-                    opacity={index === activeIndex ? 1 : 0}
+                    opacity={index === activeIndex ? 1 : index === prevIndex ? 0 : 0}
                     transition="opacity 2s ease-in-out"
-                   
-                    zIndex={-100}
-                   
+                    zIndex={index === activeIndex ? -99 : -100}
                 >
                     <Box
                         position="absolute"
                         top="0"
                         left="0"
-                       
+                        width="100%"
                         height="100%"
-                        bg="rgba(0, 0, 0, 0.5)"  // Adjust the rgba value to control opacity
+                        bg={isTransitioning ? "rgba(0, 0, 0, 0.3)" : "rgba(0, 0, 0, 0.4)"}  // Reduce opacity during transition
+                        transition="background-color 2s ease-in-out"
                         zIndex="3"
                     />
                 </Box>

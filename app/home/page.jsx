@@ -4,7 +4,8 @@ import NavBar from '../components/NavBar';
 import HeroSection from './parts/Hero';
 import EventSchedule from './parts/EventsSchedule';
 import UpcomingEvents from './parts/UpcomingEvents';
-import ProgramTab from './parts/Programs';
+
+import ProductCarousel from './parts/Programs';
 import BackgroundCarousel from './parts/BackgroundCarousel';
 import FloatingVideoSection from '../components/YouTubeLive';
 import VideoBanner from './parts/VideoBanner';
@@ -22,7 +23,8 @@ const Home = () => {
                 <EventSchedule />
                 <UpcomingEvents />
                 <VideoBanner />
-                <ProgramTab />
+              
+                <ProductCarousel />
                 <StoreBanner />
                 <PartnerSection />
                 <FloatingVideoSection />

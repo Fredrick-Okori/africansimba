@@ -1,18 +1,13 @@
-
 "use client"
 import React, { useEffect } from 'react'
 
-import { Box, Container, Grid, Text, Image, Button } from '@chakra-ui/react'
+import { Box, Container, Grid, Text, Image, Button, useBreakpointValue } from '@chakra-ui/react'
 import Counter from './Counter'
-
 
 //importing animation
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { FaChevronRight } from 'react-icons/fa';
-
-
-
 
 export default function EventSchedule() {
     useEffect(() => {
@@ -20,45 +15,171 @@ export default function EventSchedule() {
         Aos.refresh();
     }, []);
 
+    const imageHeight = useBreakpointValue({ base: "250px", md: "400px" });
+    const fontSize = useBreakpointValue({ base: "xl", md: "3xl" });
+    const subFontSize = useBreakpointValue({ base: "sm", md: "lg" });
+
     return (
         <>
             <Box>
-                <Container  maxW="container.xl" data-aos='zoom-in-up' data-aos-duration='1000'>
-                    <Grid templateColumns={['repeat(1, 1fr)', 'repeat(2, 1fr)']} py={{ base: 5, lg: 20 }} gap={3}>
-                        <Box>
-                            <Text fontSize='14' color="white" textUnderlineOffset={7} textDecor='underline' textDecorationColor='grey' p={5}>ABOUT EVENTS SCHEDULE</Text>
-
-                            <Text color='white' fontWeight='bold' p={3} lineHeight={1.2} fontSize={{base: 20, lg: 40}} letterSpacing={1.1}>WELCOME TO THE AFRICAN SIMBA MANAGEMENT</Text>
-                            <Text color='white' p={3} fontSize={16} lineHeight={1.8} fontWeight={"400"}>
-                                The Project Management is a platform
-                                to learn expert techniques for building successful
-                                project teams, creating efficient plans and implementing
-                                effective tracking measures to ensure your projects come in
-                                on deadline and on budget. In one fast-paced, well-designed day,
-                                well cover all the essential elements of project management.
-                            </Text>
-                            <Box pt={7} pl={3}>
-                                <Button rounded='full' _hover={{ textDecoration: 'none', bg: 'white', color: 'black' }} textDecoration='none' size="md" variant='outline' colorScheme="whiteAlpha">Tickets</Button>
-                            </Box>
-
-                        </Box>
-                        <Box >
-                          
-                            <Image
-                                rounded={10} mt={{ base: 5, lg: 0 }}
-                                src='/images/ddane.jpg'
+                <Container maxW="container.xl" data-aos='zoom-in-up' data-aos-duration='1000'>
+                    <Grid templateColumns={['repeat(1, 1fr)', null, '1fr 0.5fr 0.5fr']} py={{ base: 10, lg: 30 }} gap={6}>
+                        <Box position="relative" borderRadius="xl" height={imageHeight} _hover={{ transform: 'scale(1.02)' }} transition="all 0.3s">
+                            <Box
+                                position="absolute"
+                                top="0"
+                                left="0"
+                                right="0"
+                                bottom="0"
+                                bgGradient="linear(to-t, rgba(0,0,0,0.8), rgba(0,0,0,0.2))"
+                                borderRadius="lg"
                                 transition="all 0.3s"
                                 _hover={{ transform: 'scale(1.05)' }}
-                                alt='Wahalla' />
+                                zIndex="1"
+                            />
+                            <Image
+                                rounded="lg"
+                                src='/images/events_mc.jpg' 
+                                alt='African Simba Management Event'
+                                transition="all 0.3s"
+                                _hover={{ transform: 'scale(1.05)' }}
+                                position="relative"
+                                zIndex="0"
+                                objectFit="cover"
+                                w="100%"
+                                h="100%"
+                            />
+                            <Box
+                                position="absolute"
+                                top="0"
+                                left="0"
+                                right="0"
+                                bottom="0"
+                                bgGradient="linear(to-r, rgba(0,0,0,0.3), rgba(0,0,0,0.2))"
+                                borderRadius="lg"
+                                zIndex="1"
+                            />
+                            <Box
+                                position="absolute"
+                                bottom="20px"
+                                left="30px"
+                                right="30px"
+                                color="white"
+                                zIndex="2"
+                            >
+                                <Text fontSize={fontSize} textAlign='center' fontWeight="normal" >
+                                   Africa Simba Events
+                                </Text>
+                                <Text fontSize={subFontSize} textAlign='center' >
+                                    Bringing you unforgettable experiences
+                                </Text>
+                            </Box>
+                        </Box>
+                        <Box position="relative" borderRadius="xl" height={imageHeight} _hover={{ transform: 'scale(1.02)' }} transition="all 0.3s">
+                            <Box
+                                position="absolute"
+                                top="0"
+                                left="0"
+                                right="0"
+                                bottom="0"
+                                bgGradient="linear(to-t, rgba(0,0,0,0.8), rgba(0,0,0,0.2))"
+                                borderRadius="lg"
+                                transition="all 0.3s"
+                                _hover={{ transform: 'scale(1.05)' }}
+                                zIndex="1"
+                            />
+                            <Image
+                                rounded="lg"
+                                src='/images/guitarist.jpg'
+                                alt='Middle Event'
+                                transition="all 0.3s"
+                                _hover={{ transform: 'scale(1.05)' }}
+                                position="relative"
+                                zIndex="0"
+                                objectFit="cover"
+                                w="100%"
+                                h="100%"
+                            />
+                            <Box
+                                position="absolute"
+                                top="0"
+                                left="0"
+                                right="0"
+                                bottom="0"
+                                bgGradient="linear(to-r, rgba(0,0,0,0.3), rgba(0,0,0,0.2))"
+                                borderRadius="lg"
+                                zIndex="1"
+                            />
+                            <Box
+                                position="absolute"
+                                bottom="20px"
+                                left="30px"
+                                right="30px"
+                                color="white"
+                                zIndex="2"
+                            >
+                                <Text fontSize={fontSize} textAlign='center' fontWeight="normal" >
+                                    Muleba Festival
+                                </Text>
+                                <Text fontSize={subFontSize} textAlign='center' >
+                                    Don't miss out 
+                                </Text>
+                            </Box>
+                        </Box>
+                        <Box position="relative" borderRadius="xl" height={imageHeight} _hover={{ transform: 'scale(1.02)' }} transition="all 0.3s">
+                            <Box
+                                position="absolute"
+                                top="0"
+                                left="0"
+                                right="0"
+                                bottom="0"
+                                bgGradient="linear(to-t, rgba(0,0,0,0.9), rgba(0,0,0,0.2))"
+                                borderRadius="lg"
+                                transition="all 0.3s"
+                                _hover={{ transform: 'scale(1.05)' }}
+                                zIndex="1"
+                            />
+                            <Image
+                                rounded="lg"
+                                src='/images/ddane.jpg'         
+                                alt='Wahalla'
+                                position="relative"
+                                zIndex="0"
+                                objectFit="cover"
+                                w="100%"
+                                h="100%"
+                            />
+                            <Box
+                                position="absolute"
+                                top="0"
+                                left="0"
+                                right="0"
+                                bottom="0"
+                                bgGradient="linear(to-r, rgba(0,0,0,0.3), rgba(0,0,0,0.2))"
+                                borderRadius="lg"
+                                zIndex="1"
+                            />
+                            <Box
+                                position="absolute"
+                                bottom="20px"
+                                left="30px"
+                                right="30px"
+                                color="white"
+                                zIndex="2"
+                            >
+                                <Text fontSize={fontSize} textAlign='center' fontWeight="normal">
+                                 Best Djs
+                                </Text>
+                                <Text fontSize={subFontSize} textAlign='center'>
+                                    Join us for the experience
+                                </Text>
+                            </Box>
                         </Box>
                     </Grid>
 
-
                     {/* Counter area */}
-                <Counter /> 
+                    <Counter /> 
                 </Container>
-
-
             </Box>
         </>
     )

@@ -1,66 +1,181 @@
-import React from 'react'
+"use client"
+import React, { useEffect } from 'react'
 
-import { Box, Container, Flex, Text, GridItem, SimpleGrid } from '@chakra-ui/react'
+import { Box, Container, Grid, Text, Image, useBreakpointValue } from '@chakra-ui/react'
 
+//importing animation
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
-const count = [
-    {
-        count: "01",
-        label: "Months",
+export default function Count() {
+    useEffect(() => {
+        Aos.init();
+        Aos.refresh();
+    }, []);
 
-    },
-    {
-        count: "23",
-        label: "Days",
-    },
-    {
-        count: "12",
-        label: "Hours",
-    },
-    {
-        count: "05",
-        label: "Minutes",
-    },
-    {
-        count: "01",
-        label: "Seconds",
-    }
-]
-export default function Counter() {
+    const imageHeight = useBreakpointValue({ base: "250px", md: "400px" });
+    const fontSize = useBreakpointValue({ base: "xl", md: "3xl" });
+    const subFontSize = useBreakpointValue({ base: "sm", md: "lg" });
+
     return (
         <>
-            <Container maxW='container.xl'>
-                <Flex justify='space-between' color='white' align='center' direction='row'>
-
-
-                    <Box >
-                        <Text color="white" fontSize='14' mb={3}> CONFERENCE DATE</Text>
-                        <Text>COUNT EVERY SECOND UNTIL THE EVENT</Text>
-                    </Box>
-                    <Box>
-                        <SimpleGrid columns={[5,2]}  gap={{ base: 3, lg: 5 }} alignContent='center' mb={10}>
-                            {count.map((item, index) => (
-                                <GridItem key={index}
-                                    border={{
-                                        base: '1px solid grey', lg: "2px solid grey"
-                                    }}
-                                    p={5}
-                                 
-                                    textAlign='center'
-                                    lineHeight='1'
-                                    rounded={{ base: 5, lg: 10 }}
-                                >
-                                    <Text fontSize={{ base: 20, lg: 62 }} fontWeight='bolder'>
-                                        {item.count}
-                                    </Text>
-                                    <Text textColor='#6c757d' p={1} fontWeight='bold'>{item.label}</Text>
-                                </GridItem>
-                            ))}
-                        </SimpleGrid>
-
-                    </Box>
-                </Flex>
-            </Container>
+            <Box>
+                <Container maxW="container.xl" >
+                    <Grid templateColumns={['repeat(1, 1fr)', null, '0.5fr 1fr 0.5fr']} py={{ base: 10, lg: 30 }} gap={6}>
+                        <Box position="relative" borderRadius="xl" height={imageHeight} _hover={{ transform: 'scale(1.02)' }} transition="all 0.3s">
+                            <Box
+                                position="absolute"
+                                top="0"
+                                left="0"
+                                right="0"
+                                bottom="0"
+                                bgGradient="linear(to-t, rgba(0,0,0,0.7), rgba(0,0,0,0.1))"
+                                borderRadius="xl"
+                                transition="all 0.3s"
+                                _hover={{ transform: 'scale(1.05)' }}
+                                zIndex="1"
+                            />
+                            <Image
+                                rounded="lg"
+                                src='/images/muleba_festival.jpg'
+                                alt='Muleba Festival'
+                                transition="all 0.3s"
+                                _hover={{ transform: 'scale(1.05)' }}
+                                position="relative"
+                                zIndex="0"
+                                objectFit="cover"
+                                w="100%"
+                                h="100%"
+                            />
+                            <Box
+                                position="absolute"
+                                top="0"
+                                left="0"
+                                right="0"
+                                bottom="0"
+                                bgGradient="linear(to-r, rgba(0,0,0,0.2), rgba(0,0,0,0.1))"
+                                borderRadius="xl"
+                                zIndex="1"
+                            />
+                            <Box
+                                position="absolute"
+                                bottom="20px"
+                                left="30px"
+                                right="30px"
+                                color="white"
+                                zIndex="2"
+                            >
+                                <Text fontSize={fontSize} textAlign='center' fontWeight="normal" >
+                                    Muleba Festival
+                                </Text>
+                                <Text fontSize={subFontSize} textAlign='center' >
+                                    Don't miss out 
+                                </Text>
+                            </Box>
+                        </Box>
+                        <Box position="relative" borderRadius="xl" height={imageHeight} _hover={{ transform: 'scale(1.02)' }} transition="all 0.3s">
+                            <Box
+                                position="absolute"
+                                top="0"
+                                left="0"
+                                right="0"
+                                bottom="0"
+                                bgGradient="linear(to-t, rgba(0,0,0,0.7), rgba(0,0,0,0.1))"
+                                borderRadius="xl"
+                                transition="all 0.3s"
+                                _hover={{ transform: 'scale(1.05)' }}
+                                zIndex="1"
+                            />
+                            <Image
+                                rounded="lg"
+                                src='/images/videoposter.jpg'
+                                alt='African Simba Management Event'
+                                transition="all 0.3s"
+                                _hover={{ transform: 'scale(1.05)' }}
+                                position="relative"
+                                zIndex="0"
+                                objectFit="cover"
+                                w="100%"
+                                h="100%"
+                            />
+                            <Box
+                                position="absolute"
+                                top="0"
+                                left="0"
+                                right="0"
+                                bottom="0"
+                                bgGradient="linear(to-r, rgba(0,0,0,0.2), rgba(0,0,0,0.1))"
+                                borderRadius="xl"
+                                zIndex="1"
+                            />
+                            <Box
+                                position="absolute"
+                                bottom="20px"
+                                left="30px"
+                                right="30px"
+                                color="white"
+                                zIndex="2"
+                            >
+                                <Text fontSize={fontSize} textAlign='center' fontWeight="normal" >
+                                    We go hard althrough the nights
+                                </Text>
+                                <Text fontSize={subFontSize} textAlign='center' >
+                                    Bringing you unforgettable experiences
+                                </Text>
+                            </Box>
+                        </Box>
+                        <Box position="relative" borderRadius="xl" height={imageHeight} _hover={{ transform: 'scale(1.02)' }} transition="all 0.3s">
+                            <Box
+                                position="absolute"
+                                top="0"
+                                left="0"
+                                right="0"
+                                bottom="0"
+                                bgGradient="linear(to-t, rgba(0,0,0,255), rgba(0,0,0,0.1))"
+                                borderRadius="lg"
+                                transition="all 0.3s"
+                                _hover={{ transform: 'scale(1.05)' }}
+                                zIndex="1"
+                            />
+                            <Image
+                                rounded="lg"
+                                src='/images/main_main.jpg'
+                                alt='Best DJs'
+                                position="relative"
+                                zIndex="0"
+                                objectFit="cover"
+                                w="100%"
+                                h="100%"
+                            />
+                            <Box
+                                position="absolute"
+                                top="0"
+                                left="0"
+                                right="0"
+                                bottom="0"
+                                bgGradient="linear(to-r, rgba(0,0,0,0.2), rgba(0,0,0,0.1))"
+                                borderRadius="lg"
+                                zIndex="1"
+                            />
+                            <Box
+                                position="absolute"
+                                bottom="20px"
+                                left="30px"
+                                right="30px"
+                                color="white"
+                                zIndex="2"
+                            >
+                                <Text fontSize={fontSize} textAlign='center' fontWeight="normal">
+                                    Best DJs
+                                </Text>
+                                <Text fontSize={subFontSize} textAlign='center'>
+                                    Join us for the experience
+                                </Text>
+                            </Box>
+                        </Box>
+                    </Grid>
+                </Container>
+            </Box>
         </>
     )
 }

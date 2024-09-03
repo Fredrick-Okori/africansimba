@@ -1,5 +1,3 @@
-
-
 "use client";
 import React, { useEffect } from 'react';
 import {
@@ -10,6 +8,7 @@ import {
     Image,
     HStack,
     Container,
+    useBreakpointValue,
 } from "@chakra-ui/react";
 import { FiExternalLink, FiMapPin } from 'react-icons/fi';
 import Carousel from "react-multi-carousel";
@@ -64,7 +63,7 @@ const responsive = {
     },
     desktop: {
         breakpoint: { max: 3000, min: 1024 },
-        items: 5
+        items: 4
     },
     tablet: {
         breakpoint: { max: 1024, min: 464 },
@@ -72,7 +71,7 @@ const responsive = {
     },
     mobile: {
         breakpoint: { max: 464, min: 0 },
-        items: 2
+        items: 1
     }
 };
 
@@ -82,13 +81,18 @@ const ShopsItems = () => {
         Aos.refresh();
     }, []);
 
+    const itemWidth = useBreakpointValue({ base: "90%", sm: "280px", md: "280px", lg: "280px" });
+    const itemHeight = useBreakpointValue({ base: "350px", sm: "400px", md: "400px", lg: "400px" });
+    const fontSize = useBreakpointValue({ base: "lg", md: "xl", lg: "2xl" });
+    const buttonSize = useBreakpointValue({ base: "xs", md: "sm" });
+
     return (
         <Box color="white" py={10} px={5}>
             <Container maxW='container.2xl' data-aos='fade-in-up' data-aos-duration='300'>
-                <Flex justify="space-between" align="center" mb={5}>
-                    <Text fontSize="4xl" fontWeight="bold">New Arrivals</Text>
+                <Flex justify="space-between" align="center" mb={5} flexDirection={{ base: "column", md: "row" }}>
+                    <Text fontSize={fontSize} fontWeight="bold" mb={{ base: 4, md: 0 }}>New Arrivals</Text>
                     <HStack spacing={3}>
-                        <Button  _hover={{ bg: 'white', color: 'black' }} rightIcon={<FiExternalLink />} rounded="full" colorScheme="whiteAlpha" variant="outline">
+                        <Button _hover={{ bg: 'white', color: 'black' }} rightIcon={<FiExternalLink />} rounded="full" colorScheme="whiteAlpha" variant="outline" size={buttonSize}>
                             Calendar
                         </Button>
                     </HStack>
@@ -98,44 +102,40 @@ const ShopsItems = () => {
                     responsive={responsive}                 
                     infinite={true}
                     arrows={true}
-                    ssr={true}  // Enable server-side rendering for smooth scrolling
+                    ssr={true}
                     itemClass=""
-                  
                 >
                     {events.map((event, index) => (
                         <Box
                             key={index}
-                            position="relative"  // Ensure proper positioning of gradient overlay
-                            bg='hsla(0, 0%, 0%, 0.5)'  // Adjusted background for frosted glass effect
+                            position="relative"
+                            bg='hsla(0, 0%, 0%, 0.5)'
                             backgroundBlendMode='soft-light'
                             boxShadow='0 0 20px 0 rgba(0, 0, 0, 0.5)'
                             borderRadius="md"
                             overflow="hidden"
                             mb={5}
-                            
                             mx={2}
                             rounded={20}
-                            width="280px"  // Fixed width
-                            height="400px" // Fixed height
+                            width={itemWidth}
+                            height={itemHeight}
                         >
                             <Image
-                                width="100%"  // Ensure image covers the container width
-                                height="100%" // Ensure image covers the container height
+                                width="100%"
+                                height="100%"
                                 objectFit='cover'
                                 src={event.image}
                                 alt={event.title}
                             />
-                            {/* Gradient Overlay */}
                             <Box
                                 position="absolute"
                                 bottom="0"
                                 left="0"
                                 width="100%"
-                                height="100%"  // Adjust this value to control gradient height
-                                bgGradient="linear(to-t, rgba(0, 0, 0, 0.9), transparent)"  // Gradient from bottom to top
+                                height="100%"
+                                bgGradient="linear(to-t, rgba(0, 0, 0, 0.9), transparent)"
                                 zIndex="1"
                             />
-                            {/* Text Overlay */}
                             <Box
                                 position="absolute"
                                 bottom="0"
@@ -144,20 +144,19 @@ const ShopsItems = () => {
                                 p={4}
                                 zIndex="2"
                                 color="white"
-                                 // Optional background to ensure readability
                                 borderRadius="md"
                             >
-                                <Text fontSize="xl" fontWeight="bold" mb={2}>{event.title}</Text>
+                                <Text fontSize={fontSize} fontWeight="bold" mb={2}>{event.title}</Text>
                                 <Flex align="center" mb={1}>
-                                    <Text ml={2} whiteSpace="pre-line">{event.date}</Text>
+                                    <Text ml={2} whiteSpace="pre-line" fontSize={useBreakpointValue({ base: "sm", md: "md" })}>{event.date}</Text>
                                 </Flex>
                                 <Flex align="center" mb={4}>
                                     <FiMapPin />
-                                    <Text ml={2}>{event.location}</Text>
+                                    <Text ml={2} fontSize={useBreakpointValue({ base: "sm", md: "md" })}>{event.location}</Text>
                                 </Flex>
                                 <Flex justify="space-between">
-                                    <Button  _hover={{ bg: 'white', color: 'black' }} rounded='full' size="sm" variant='outline' colorScheme="whiteAlpha">More Info</Button>
-                                    <Button  _hover={{ bg: 'white', color: 'black' }} rounded='full' size="sm" variant='outline' colorScheme="whiteAlpha">Add to Cart</Button>
+                                    <Button _hover={{ bg: 'white', color: 'black' }} rounded='full' size={buttonSize} variant='outline' colorScheme="whiteAlpha">More Info</Button>
+                                    <Button _hover={{ bg: 'white', color: 'black' }} rounded='full' size={buttonSize} variant='outline' colorScheme="whiteAlpha">Add to Cart</Button>
                                 </Flex>
                             </Box>
                         </Box>
