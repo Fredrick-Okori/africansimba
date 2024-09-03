@@ -88,7 +88,7 @@ const ShopsItems = () => {
                 <Flex justify="space-between" align="center" mb={5}>
                     <Text fontSize="4xl" fontWeight="bold">New Arrivals</Text>
                     <HStack spacing={3}>
-                        <Button rightIcon={<FiExternalLink />} rounded="full" colorScheme="whiteAlpha" variant="outline">
+                        <Button  _hover={{ bg: 'white', color: 'black' }} rightIcon={<FiExternalLink />} rounded="full" colorScheme="whiteAlpha" variant="outline">
                             Calendar
                         </Button>
                     </HStack>
@@ -156,8 +156,8 @@ const ShopsItems = () => {
                                     <Text ml={2}>{event.location}</Text>
                                 </Flex>
                                 <Flex justify="space-between">
-                                    <Button rounded='full' size="sm" variant='outline' colorScheme="whiteAlpha">More Info</Button>
-                                    <Button rounded='full' size="sm" variant='outline' colorScheme="whiteAlpha">Add to Cart</Button>
+                                    <Button  _hover={{ bg: 'white', color: 'black' }} rounded='full' size="sm" variant='outline' colorScheme="whiteAlpha">More Info</Button>
+                                    <Button  _hover={{ bg: 'white', color: 'black' }} rounded='full' size="sm" variant='outline' colorScheme="whiteAlpha">Add to Cart</Button>
                                 </Flex>
                             </Box>
                         </Box>

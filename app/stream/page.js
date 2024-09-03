@@ -20,7 +20,7 @@ export default function Stream(props) {
             <Live currentVideo={currentVideo} />
             <PreviousVideos onVideoSelect={handleVideoSelect} />
 
-            {/* <Podcast /> */}
+            <Podcast /> 
             <PartnerSection />
         </>
     );

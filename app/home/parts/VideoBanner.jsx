@@ -17,8 +17,8 @@ export default function VideoBanner() {
                     rounded={10}
                     src="/images/videoBanner.webp"
                     alt='night club'
-                    _hover={{ transform: 'scale(1.1)' }}
-                    transition="transform 300ms cubic-bezier(0, 0, 0.2, 1)"
+                    transition="all 0.3s"
+                    _hover={{ transform: 'scale(1.05)' }}
                 />
                 {/* Gradient Overlay */}
                 <Box
@@ -39,7 +39,6 @@ export default function VideoBanner() {
                     p={4}
                     zIndex="2"
                     color="white"
-                    // Optional background to ensure readability
                     borderRadius="md"
                 >
                    
@@ -47,10 +46,12 @@ export default function VideoBanner() {
                     <Text textAlign='center' fontSize={20} p={5} fontWeight='bold'>Stay up-to-date with our latest African Vibes</Text>
                     <Grid justifyContent='center'>
                         <ButtonGroup spacing={8}>
-                            <Button as={Link} href='http://www.youtube.com' target='_blank' colorScheme="Alpha" rounded='full' variant="outline">
+                            <Button as={Link} href='/stream'
+                                _hover={{ textDecoration: 'none', bg: 'white', color: 'black' }}
+                                textDecoration='none' target='_blank' colorScheme="Alpha" rounded='full' variant="outline">
                                 Watch Video
                             </Button>
-                            <Button as={Link} href='http://www.youtube.com' colorScheme="Alpha" rounded='full' variant="outline">
+                            <Button as={Link} href='/stream' _hover={{ textDecoration: 'none', bg: 'white', color: 'black' }}  textDecoration='none' colorScheme="Alpha" rounded='full' variant="outline">
                                 Download Music
                             </Button>
                         </ButtonGroup>

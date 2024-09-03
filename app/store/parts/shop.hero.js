@@ -43,39 +43,32 @@ const StoreHeroSection = () => {
 
             <Box
 
-                height="50vh"
-                backgroundImage={`url('/images/catwalk.jpg')`}
+                height="60vh"
+                backgroundImage={`url('/images/capa-shotgun_kytf4f.png')`}
                 backgroundPosition="center"
-                mt={50}
-
+             
+                backgroundAttachment="fixed"
                 zIndex={-100}
-
-                display="grid"
+                backgroundRepeat='no-repeat'
+                backgroundSize='cover'
+              
                 margin='auto'
 
             >
-                <Box
-                    position="absolute"
-                    bottom="0"
-                    left="0"
-                    width="100%"
-                    height="100%"  // Adjust this value to control gradient height
-                    bgGradient="linear(to-t, rgba(0, 0, 0, 0.4), transparent)"  // Gradient from bottom to top
-                    zIndex="1"
-                />
+               
 
                 <VStack
-
+                    mt={{ base: 16, lg: 20 }}
                     position="relative"
                     zIndex="2"
-                    height="100%"
+                  
                     spacing={6}
                     textAlign="center"
                     color="white"
                     justifyContent="center"
                     data-aos='fade-up' data-aos-duration='2000'
                 >
-                    <Heading fontSize={{ base: "3xl", lg: '5xl' }} color="white">
+                    <Heading lineHeight={{ base: '1', lg: '1.5' }} fontSize={{ base: "6xl", lg: '8xl' }} color="white">
                         AFRICAN SIMBA SHOP
 
                     </Heading>
@@ -83,7 +76,7 @@ const StoreHeroSection = () => {
                         Get access to our luxurious African Simba shop and experience the best in artisanal crafts and handmade goods.
                     </Text>
                     <Stack direction="row" spacing={4}>
-                        <Button rounded='full' size="md" variant='outline' colorScheme="whiteAlpha">Information <FiArrowRight /></Button>
+                        <Button  _hover={{ bg: 'white', color: 'black' }} rounded='full' size="md" variant='outline' colorScheme="whiteAlpha">Information <FiArrowRight /></Button>
                     </Stack>
                 </VStack>
             </Box>

@@ -125,9 +125,7 @@ const ProgramTab = () => {
                         </TabPanel>
                     </TabPanels>
                 </Tabs>
-                <Flex justify="center" mt={10}>
-                    <Button colorScheme="pink">Download Schedule (PDF)</Button>
-                </Flex>
+               
             </Container>
         </Box>
     );
@@ -171,7 +169,7 @@ const ProgramItem = ({ title, speaker, date, location }) => {
                     </Flex>
                 </Box>
             </Flex>
-            <Button rounded='full' size="md" variant='outline' colorScheme="whiteAlpha"> Get Tickets</Button>
+            <Button rounded='full' size="md" _hover={{ textDecoration: 'none', bg: 'white', color: 'black' }} textDecoration='none' variant='outline' colorScheme="whiteAlpha"> Get Tickets</Button>
         </Flex>
     );
 };

@@ -78,11 +78,10 @@ const HeroSection = () => {
                     {carouselItems.map((item, index) => (
                         <Box
                             key={index}
-                            height="55vh"
+                            height="60vh"
                             backgroundImage={`url(${item.image})`}
-                            backgroundPosition="center"
+                            backgroundPosition="fixed"
                            
-
                             zIndex={-100}
 
                             display="grid"
@@ -110,7 +109,7 @@ const HeroSection = () => {
                                     {item.text}
                                 </Text>
                                 <Stack direction="row" spacing={4}>
-                                    <Button rounded='full' size="md" variant='outline' colorScheme="whiteAlpha">Information <FiArrowRight /></Button>
+                                    <Button _hover={{ textDecoration: 'none', bg: 'white', color: 'black' }} textDecoration='none' rounded='full' size="md" variant='outline' colorScheme="whiteAlpha">Information <FiArrowRight /></Button>
                                 </Stack>
                             </VStack>
                         </Box>

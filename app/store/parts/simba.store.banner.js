@@ -46,10 +46,10 @@ export default function StoreBanner() {
                     <Text textAlign='center' fontSize={20} p={5} fontWeight='bold'>Stay up-to-date with our latest African cultured items</Text>
                     <Grid justifyContent='center'>
                         <ButtonGroup spacing={8}>
-                            <Button colorScheme="Alpha" rounded='full' variant="outline">
+                            <Button  _hover={{ bg: 'white', color: 'black' }} colorScheme="Alpha" rounded='full' variant="outline">
                                 Shop Now
                             </Button>
-                            <Button colorScheme="Alpha" rounded='full' variant="outline">
+                            <Button  _hover={{ bg: 'white', color: 'black' }} colorScheme="Alpha" rounded='full' variant="outline">
                                 Order Now
                             </Button>
                         </ButtonGroup>

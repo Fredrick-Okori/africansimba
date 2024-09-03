@@ -38,7 +38,7 @@ const BackgroundCarousel = () => {
         const interval = setInterval(() => {
             setPrevIndex(activeIndex);
             setActiveIndex((prevIndex) => (prevIndex + 1) % events.length);
-        }, 7000); // change image every 7 seconds
+        }, 10000); // change image every 7 seconds
         return () => clearInterval(interval);
     }, [activeIndex]);
 
@@ -56,9 +56,11 @@ const BackgroundCarousel = () => {
                     position="absolute"
                     top="0"
                     left="0"
-                    opacity={index === activeIndex ? 1 : index === prevIndex ? 0 : 0}
-                    zIndex={index === activeIndex ? 2 : index === prevIndex ? 1 : 0}
-                    transition="opacity 4s ease-in-out"
+                    opacity={index === activeIndex ? 1 : 0}
+                    transition="opacity 2s ease-in-out"
+                   
+                    zIndex={-100}
+                   
                 >
                     <Box
                         position="absolute"

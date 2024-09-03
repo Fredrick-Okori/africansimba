@@ -22,13 +22,14 @@ import {
     DrawerContent,
     DrawerCloseButton,
     useDisclosure,
+    Icon,
     VStack,
     textDecoration,
 } from '@chakra-ui/react';
 
 
 
-import { FiArrowRight, FiMenu, FiShoppingCart } from 'react-icons/fi'
+import { FiArrowRight, FiMenu, FiShoppingCart, FiHome, FiVideo, FiShoppingBag, FiCalendar, FiTicket } from 'react-icons/fi'
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation';
@@ -93,7 +94,7 @@ const NavBar = () => {
                                     Cart                                                                   
                                 </Link>
                             )}
-                            <Button rounded='full' size="sm" variant='outline' colorScheme="whiteAlpha">Tickets <FiArrowRight /></Button>
+                            <Button rounded='full' size="sm"  _hover={{ textDecoration: 'none', bg: 'white', color: 'black' }} textDecoration='none' variant='outline' colorScheme="whiteAlpha">Tickets <FiArrowRight /></Button>
                         </Stack>
                     </Flex>
 
@@ -106,9 +107,10 @@ const NavBar = () => {
                 </Flex>
             </Container>
 
-            <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
+            <Drawer isOpen={isOpen} placement="bottom" onClose={onClose}>
                 <DrawerOverlay>
-                    <DrawerContent bg={useColorModeValue('black', 'gray.800')} color="white">
+                    <DrawerContent bg='hsla(0, 0%, 0%, 0.7)'  // Adjusted background for frosted glass effect
+                        backgroundBlendMode='soft-light' color="white">
                         <DrawerCloseButton />
 
                         <DrawerBody>
@@ -124,40 +126,43 @@ const NavBar = () => {
 const MobileNav = () => {
     const pathname = usePathname();
     return (
-        <Stack p={4}>
-            <Link href="/" _hover={{ textDecoration: 'none', color: '#df42b1' }} color="#df42b1">
-                Home
+        <Flex p={4} justifyContent="space-around" alignItems="center">
+            <Link href="/" _hover={{ color: '#df42b1' }} color="#df42b1">
+                <Icon as={FiHome} boxSize={6} />
             </Link>
-            <Link href='/store' _hover={{ textDecoration: 'none', color: '#df42b1' }}>
-                Shop
+            <Link href='/stream' _hover={{ color: '#df42b1' }}>
+                <Icon as={FiVideo} boxSize={6} />
             </Link>
-            <Link href='/booking' _hover={{ textDecoration: 'none', color: '#df42b1' }} >
-                Bookings
+            <Link href='/store' _hover={{ color: '#df42b1' }}>
+                <Icon as={FiShoppingBag} boxSize={6} />
             </Link>
-            <Link href="/blog" _hover={{ textDecoration: 'none', color: '#df42b1' }}>
-                Blog
+            <Link href='/bookings' _hover={{ color: '#df42b1' }}>
+                <Icon as={FiCalendar} boxSize={6} />
             </Link>
+
             {pathname === '/store' && (
-                <Link href="/cart" _hover={{ textDecoration: 'none', color: '#df42b1' }} >
-                    Cart
+                <Link href="/cart" _hover={{ color: '#df42b1' }}>
+                    <Icon as={FiShoppingCart} boxSize={6} />
                 </Link>
             )}
 
-            <Button
-                to="/tickets"
-                rounded={'full'}
-                bgGradient="linear(to-r, purple.500, #df42b1)"
-                color={'white'}
-                _hover={{
-                    bgGradient: 'linear(to-r, purple.500, pink.700)',
-                    boxShadow: 'xl',
-                }}
-                py={25}
-            >
-                GET TICKETS &rarr;
-            </Button>
-        </Stack>
+            <Link href="/tickets">
+                <Icon 
+                    as={FiTicket} 
+                    boxSize={6}
+                    color={'white'}
+                    bgGradient="linear(to-r, purple.500, #df42b1)"
+                    p={2}
+                    borderRadius="full"
+                    _hover={{
+                        bgGradient: 'linear(to-r, purple.500, pink.700)',
+                        boxShadow: 'xl',
+                    }}
+                />
+            </Link>
+        </Flex>
     );
+    
 };
 
 export default NavBar;

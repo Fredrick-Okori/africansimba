@@ -38,18 +38,24 @@ export default function EventSchedule() {
                                 well cover all the essential elements of project management.
                             </Text>
                             <Box pt={7} pl={3}>
-                                <Button rounded='full' size="sm" variant='outline' colorScheme="whiteAlpha">Tickets</Button>
+                                <Button rounded='full' _hover={{ textDecoration: 'none', bg: 'white', color: 'black' }} textDecoration='none' size="md" variant='outline' colorScheme="whiteAlpha">Tickets</Button>
                             </Box>
 
                         </Box>
                         <Box >
-                            <Image rounded={10} mt={{base: 5, lg: 0}} src='/images/ddane.jpg' alt='Wahalla' />
+                          
+                            <Image
+                                rounded={10} mt={{ base: 5, lg: 0 }}
+                                src='/images/ddane.jpg'
+                                transition="all 0.3s"
+                                _hover={{ transform: 'scale(1.05)' }}
+                                alt='Wahalla' />
                         </Box>
                     </Grid>
 
 
                     {/* Counter area */}
-                    {/* <Counter /> */}
+                <Counter /> 
                 </Container>
 
 

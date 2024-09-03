@@ -33,7 +33,7 @@ export const StoreBanner = () => (
                         </Heading>
                     </Stack>
                     <HStack spacing="3">
-                        <Button as={Link} href='/store' rightIcon={<FiExternalLink />} rounded="full" colorScheme="whiteAlpha" variant="outline">
+                        <Button as={Link} href='/store' _hover={{ textDecoration: 'none', bg: 'white', color: 'black' }} textDecoration='none' rightIcon={<FiExternalLink />} rounded="full" colorScheme="whiteAlpha" variant="outline">
                             Calendar
                         </Button>
 
@@ -49,7 +49,9 @@ export const StoreBanner = () => (
                     maxH="450px"
                     minW="300px"
                     objectFit="cover"
+                    transition="all 0.3s"
                     flex="1"
+                    _hover={{ transform: 'scale(1.05)', boxShadow: 'xl', border: '1px solid grey' }}
                 />
                 <Image
                     display={{ base: 'none', sm: 'initial' }}
@@ -59,6 +61,8 @@ export const StoreBanner = () => (
                     rounded={5}
                     maxH="450px"
                     objectFit="cover"
+                    _hover={{ transform: 'scale(1.05)', boxShadow: 'xl', border: '1px solid grey' }}
+                    transition="all 0.3s"
                 />
             </Flex>
         </Stack>

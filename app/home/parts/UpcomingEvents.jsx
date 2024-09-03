@@ -6,6 +6,7 @@ import {
     Text,
     Button,
     Image,
+    VStack,
     HStack,
     Link,
     Container,
@@ -84,10 +85,12 @@ const UpcomingEvents = () => {
     return (
         <Box color="white" py={10} px={5}>
             <Container maxW='container.xl' data-aos='fade-in-up' data-aos-duration='300'>
-                <Flex justify="space-between" align="center" mb={5}>
+                <Flex justify="space-between" align="center" mb={6}>
                     <Text fontSize="4xl" fontWeight="bold">Upcoming Festivals & Events</Text>
                     <HStack spacing={3}>
-                        <Button rightIcon={<FiExternalLink />} rounded="full" colorScheme="whiteAlpha" variant="outline">
+                        <Button rightIcon={<FiExternalLink />}
+                            _hover={{ textDecoration: 'none', bg: 'white', color: 'black' }} textDecoration='none'
+                            rounded="full" colorScheme="whiteAlpha" variant="outline">
                             Calendar
                         </Button>
                     </HStack>
@@ -101,24 +104,41 @@ const UpcomingEvents = () => {
                     itemClass="carousel-item-padding-40-px"
                 >
                     {events.map((event, index) => (
-                        <Box
+                        <VStack
                             key={index}
-                            position="relative"  // Ensure proper positioning of gradient overlay
-                            bg='hsla(0, 0%, 0%, 0.5)'  // Adjusted background for frosted glass effect
-                            backgroundBlendMode='soft-light'
-                            boxShadow='0 0 20px 0 rgba(0, 0, 0, 0.5)'
-                            borderRadius="md"
+                            spacing={3}
+                            align="start"
+                          
+                            cursor="pointer"
+                            borderRadius="xl"
                             overflow="hidden"
-                            mb={5}
-                            mx={2}
-                            rounded={20}
+                        
+                            border='1px solid transparent'
+                            position="relative"
+                         
                             width="300px"  // Fixed width
                             height="400px" // Fixed height
+                        >
+                        <Box
+                            // key={index}
+                            // position="relative"  // Ensure proper positioning of gradient overlay
+                            // bg='hsla(0, 0%, 0%, 0.5)'  // Adjusted background for frosted glass effect
+                            // backgroundBlendMode='soft-light'
+                            // boxShadow='0 0 20px 0 rgba(0, 0, 0, 0.5)'
+                       
+                            // borderRadius="md"
+                            // overflow="hidden"
+                            // mb={5}
+                            // mx={2}
+                            // rounded={20}
+                          
                         >
                             <Image
                                 width="100%"  // Ensure image covers the container width
                                 height="100%" // Ensure image covers the container height
-                                objectFit='cover'
+                                    objectFit='cover'
+                                    transition="all 0.3s"
+                                    _hover={{ transform: 'scale(1.05)' }}
                                 src={event.image}
                                 alt={event.title}
                             />
@@ -153,11 +173,12 @@ const UpcomingEvents = () => {
                                     <Text ml={2}>{event.location}</Text>
                                 </Flex>
                                 <Flex justify="space-between">
-                                    <Button rounded='full' size="sm" variant='outline' colorScheme="whiteAlpha">More Info</Button>
-                                    <Button rounded='full' size="sm" variant='outline' as={Link} href='/bookings' colorScheme="whiteAlpha">Tickets</Button>
+                                    <Button rounded='full' size="sm" _hover={{ textDecoration: 'none', bg: 'white', color: 'black' }} textDecoration='none' variant='outline' colorScheme="whiteAlpha">More Info</Button>
+                                    <Button rounded='full' size="sm" _hover={{ textDecoration: 'none', bg: 'white', color: 'black' }} textDecoration='none' variant='outline' as={Link} href='/bookings' colorScheme="whiteAlpha">Tickets</Button>
                                 </Flex>
                             </Box>
-                        </Box>
+                            </Box>
+                            </VStack>
                     ))}
                 </Carousel>
             </Container>

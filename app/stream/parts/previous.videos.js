@@ -66,7 +66,7 @@ const PreviousVideos = ({ videos = defaultVideos, onVideoSelect }) => {
     return (
         <Box as="section" py={10} mt={10}>
             <Container maxW="container.xl">
-                <Heading as="h2" size="xl" mb={6} color="white">
+                <Heading as="h2" size="xl" fontWeight='normal' mb={6} color="white">
                     Previous Videos
                 </Heading>
                 <SimpleGrid columns={[1, 2, 3, 4]} spacing={6}>
