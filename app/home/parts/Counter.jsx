@@ -69,7 +69,7 @@ export default function Count() {
                                     Muleba Festival
                                 </Text>
                                 <Text fontSize={subFontSize} textAlign='center' >
-                                    Don't miss out 
+                                    Do not miss out 
                                 </Text>
                             </Box>
                         </Box>
