@@ -86,7 +86,7 @@ const UpcomingEvents = () => {
         <Box color="white" py={10} px={5}>
             <Container maxW='container.xl' data-aos='fade-in-up' data-aos-duration='300'>
                 <Flex justify="space-between" align="center" mb={6}>
-                    <Text fontSize="4xl" fontWeight="bold">Upcoming Festivals & Events</Text>
+                    <Text fontSize="4xl" lineHeight={1.2} fontWeight="bold">Upcoming Festivals & Events</Text>
                     <HStack spacing={3}>
                         <Button rightIcon={<FiExternalLink />}
                             _hover={{ textDecoration: 'none', bg: 'white', color: 'black' }} textDecoration='none'

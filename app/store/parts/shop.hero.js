@@ -40,20 +40,20 @@ const StoreHeroSection = () => {
     return (
         <>
 
+            <Container maxW="container.xl" py={16} px={6}>
+                
 
             <Box
 
-                height="60vh"
-                backgroundImage={`url('/images/capa-shotgun_kytf4f.png')`}
-                backgroundPosition="center"
-             
-                backgroundAttachment="fixed"
-                zIndex={-100}
-                backgroundRepeat='no-repeat'
-                backgroundSize='cover'
               
-                margin='auto'
-
+                    width={'100%'}
+                    
+                    height={{ base: '100%', md: '100%', lg: '100%', xl: '100%' }}
+                    backgroundImage={`url('/images/3.jpg.webp')`}
+                backgroundSize="cover"
+                backgroundPosition="center"
+                backgroundRepeat="no-repeat"
+                position="relative"
             >
                
 
@@ -79,7 +79,8 @@ const StoreHeroSection = () => {
                         <Button  _hover={{ bg: 'white', color: 'black' }} rounded='full' size="md" variant='outline' colorScheme="whiteAlpha">Information <FiArrowRight /></Button>
                     </Stack>
                 </VStack>
-            </Box>
+                </Box>
+            </Container>
         </>
     );
 };

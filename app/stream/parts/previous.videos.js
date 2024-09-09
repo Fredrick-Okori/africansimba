@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, Heading, SimpleGrid, VStack, Image, Text, Container, Icon, Badge, IconButton } from '@chakra-ui/react';
 import { FaMapMarkerAlt, FaHeart } from 'react-icons/fa';
 
@@ -63,6 +63,16 @@ const defaultVideos = [
 ];
 
 const PreviousVideos = ({ videos = defaultVideos, onVideoSelect }) => {
+    useEffect(() => {
+        if (videos.length > 0) {
+            onVideoSelect(videos[0]);
+        }
+    }, []);
+
+    const handleVideoSelect = (video) => {
+        onVideoSelect(video);
+    };
+
     return (
         <Box as="section" py={10} mt={10}>
             <Container maxW="container.xl">
@@ -71,7 +81,7 @@ const PreviousVideos = ({ videos = defaultVideos, onVideoSelect }) => {
                 </Heading>
                 <SimpleGrid columns={[1, 2, 3, 4]} spacing={6}>
                     {videos.map((video, index) => (
-                        <VideoCard key={video.id} video={video} onSelect={onVideoSelect} isNew={index === 0} />
+                        <VideoCard key={video.id} video={video} onSelect={handleVideoSelect} isNew={index === 0} />
                     ))}
                 </SimpleGrid>
             </Container>

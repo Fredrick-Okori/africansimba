@@ -7,6 +7,7 @@ import ShopHeroSection from './parts/shop.hero'
 import ShopItems from './parts/shop.items.carousel'
 import StoreBanner from './parts/simba.store.banner'
 import PartnerSection from '../components/sponsors'
+import FullStore from './parts/shop.products.all'
 
 export default function Shop() {
     return (
@@ -14,9 +15,9 @@ export default function Shop() {
             <Box position='relative' w='100vw'>
                 <BackgroundCarousel />
                 <Box position="relative" zIndex="1">
-                    <ShopHeroSection />
-                    <ShopItems />
                     <StoreBanner />
+                    <ShopItems />
+                    <FullStore/>
                     <PartnerSection />
                 </Box>
             </Box>

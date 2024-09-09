@@ -1,17 +1,20 @@
 import React from 'react';
-import { Container, Button, Grid, Flex, Text, Image, Box, ButtonGroup } from '@chakra-ui/react';
+import { Container, Button, Grid, Heading, Text, Image, Box, ButtonGroup } from '@chakra-ui/react';
 
 export default function StoreBanner() {
     return (
-        <Container maxW='container.xl' position="relative">
-            <Text fontWeight='bold' fontSize='4xl' color='white' textAlign='center'>Get the latest from our store</Text>
+        <Container maxW='container.xl' position="relative" py={20} px={6}>
+            <Heading color="white" textAlign='center' size="2xl" pt={10} pb={5}>
+              Official Simba Store
+            </Heading>
+            {/* <Heading fontWeight='bold' fontSize='2xl' color='white' textAlign='center' pt={10}>Get the latest from our store</Heading> */}
             <Text color='white' textAlign='center'>
                African simba culture and touch of African vibes wears
             </Text>
             <Box mt={10} position="relative">
                 <Image
-                    w='99%'
-                    height={450}
+                    w='100%'
+                    height={500}
                     objectFit='cover'
                     rounded={10}
                     src="/images/videoBanner.webp"

@@ -40,7 +40,7 @@ const PartnerSection = () => {
                             border='0.5px solid grey' 
                             _hover={{ bg:'hsla(0, 0%, 0%, 0.5)' }}  
                             alignItems='center'
-                            w={{ base: "145%", sm: "145%", md: "100%" }}
+                            w={{ base: "120%", sm: "120%", md: "100%" }}
                            borderRadius='md'
                         >
                             <Image 
@@ -48,7 +48,7 @@ const PartnerSection = () => {
                                 transition="all 0.3s"                             
                                 _hover={{ transform: 'scale(1.05)'}}
                                 alt='partner' 
-                                boxSize={{ base: "60px", sm: "90px", md: "120px" }} 
+                                boxSize={{ base: "50px", sm: "90px", md: "120px" }} 
                                 objectFit="contain" 
                             />
                         </VStack>

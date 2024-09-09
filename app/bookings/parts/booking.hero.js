@@ -94,8 +94,9 @@ const BookingHero = () => {
                             justifyContent="center"
                             data-aos='fade-up' data-aos-duration='2000'
                         >
-                            <Heading fontSize={{ base: "5xl", lg: '8xl' }} bg='hsla(0, 0%, 0%, 0.7)'  // Adjusted background for frosted glass effect
+                            <Heading fontSize={{ base: "5xl", lg: '7xl' }} bg='hsla(0, 0%, 0%, 0.7)'  // Adjusted background for frosted glass effect
                                 backgroundBlendMode='soft-light'
+                                lineHeight={1.1}
                                 boxShadow='0 0 20px 0 rgba(0, 0, 0, 0.5)' py={20} border='5px solid grey' p={5} color="white">
                                 {item.heading}
 
