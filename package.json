@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev & npx next-video sync -w",
+    "dev": "next dev",
     "clean": "rimraf dist",
-    "build": "next build public",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "slicemachine": "start-slicemachine"
