@@ -114,7 +114,7 @@ const NavBar = () => {
                         <DrawerCloseButton />
 
                         <DrawerBody>
-                            <MobileNav />
+                            <MobileNav onClose={onClose} />
                         </DrawerBody>
                     </DrawerContent>
                 </DrawerOverlay>
@@ -123,30 +123,30 @@ const NavBar = () => {
     );
 };
 
-const MobileNav = () => {
+const MobileNav = ({ onClose }) => {
     const pathname = usePathname();
     return (
         <Flex p={4} justifyContent="space-around" alignItems="center">
-            <Link href="/" _hover={{ color: '#df42b1' }} color="#df42b1">
+            <Link href="/" _hover={{ color: '#df42b1' }} color="#df42b1" onClick={onClose}>
                 <Icon as={FiHome} boxSize={6} />
             </Link>
-            <Link href='/stream' _hover={{ color: '#df42b1' }}>
+            <Link href='/stream' _hover={{ color: '#df42b1' }} onClick={onClose}>
                 <Icon as={FiVideo} boxSize={6} />
             </Link>
-            <Link href='/store' _hover={{ color: '#df42b1' }}>
+            <Link href='/store' _hover={{ color: '#df42b1' }} onClick={onClose}>
                 <Icon as={FiShoppingBag} boxSize={6} />
             </Link>
-            <Link href='/bookings' _hover={{ color: '#df42b1' }}>
+            <Link href='/bookings' _hover={{ color: '#df42b1' }} onClick={onClose}>
                 <Icon as={FiCalendar} boxSize={6} />
             </Link>
 
             {pathname === '/store' && (
-                <Link href="/cart" _hover={{ color: '#df42b1' }}>
+                <Link href="/cart" _hover={{ color: '#df42b1' }} onClick={onClose}>
                     <Icon as={FiShoppingCart} boxSize={6} />
                 </Link>
             )}
 
-            <Link href="/tickets">
+            <Link href="/tickets" onClick={onClose}>
                 <Icon 
                   
                     boxSize={6}
