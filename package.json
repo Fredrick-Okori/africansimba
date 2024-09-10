@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev & npx next-video sync -w",
     "clean": "rimraf dist",
-    "build": "next build",
+    "build": "[my-framework] build --output public"
     "start": "next start",
     "lint": "next lint",
     "slicemachine": "start-slicemachine"
