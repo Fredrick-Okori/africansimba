@@ -1,6 +1,8 @@
 "use client";
 import React from 'react';
 import { Box, Container, Text, Image, Button, VStack, Flex, HStack, useBreakpointValue } from '@chakra-ui/react';
+import Link from 'next/link';
+
 import Carousel from 'react-multi-carousel';
 import "react-multi-carousel/lib/styles.css";
 import { FiExternalLink } from 'react-icons/fi';
@@ -73,14 +75,14 @@ const UpcomingEvents = () => {
 
     return (
         <Container maxW="container.xl" py={10}>
-            <Text fontSize="4xl" fontWeight="bold" color='white' mb={10}>Exiting Events All Through</Text>
+            <Text fontSize={{base: '3xl', lg: '4xl'}} fontWeight="bold" color='white' mb={10}>Exciting events all through</Text>
             <Carousel
                 swipeable={true}
                 draggable={false}
                 responsive={responsive}
                 ssr={true}
                 infinite={true}
-                
+    
                 allowSwipe={true}
                 autoPlaySpeed={5000}
                 keyBoardControl={true}
@@ -115,6 +117,8 @@ const UpcomingEvents = () => {
                                 <Text color="white" fontSize={["sm", "md", "lg"]} fontWeight="bold">{event.title}</Text>
                                 <Text color="gray.300" fontSize={["xs", "sm", "md"]}>{event.date} at {event.location}</Text>
                                 <Button 
+                                    as={Link}
+                                    href='/bookings'
                                     rounded='full' 
                                     textDecoration='none' 
                                     variant='outline' 
@@ -124,7 +128,7 @@ const UpcomingEvents = () => {
                                     fontSize={["xs", "sm"]}
                                     alignSelf={{ base: "center", sm: "flex-end" }}
                                 >
-                                    Learn More
+                                 Buy Ticket
                                 </Button>
                             </VStack>
                         </Box>

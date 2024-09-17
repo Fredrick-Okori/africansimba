@@ -31,7 +31,7 @@ export default function EventSchedule() {
                                 left="0"
                                 right="0"
                                 bottom="0"
-                                bgGradient="linear(to-t, rgba(0,0,0,0.8), rgba(0,0,0,0.2))"
+                                bgGradient="linear(to-r, rgba(0,0,0,0.3), rgba(0,0,0,0.2))"
                                 borderRadius="lg"
                                 transition="all 0.3s"
                                 _hover={{ transform: 'scale(1.05)' }}
@@ -82,7 +82,7 @@ export default function EventSchedule() {
                                 left="0"
                                 right="0"
                                 bottom="0"
-                                bgGradient="linear(to-t, rgba(0,0,0,0.8), rgba(0,0,0,0.2))"
+                                bgGradient="linear(to-r, rgba(0,0,0,0.3), rgba(0,0,0,0.2))"
                                 borderRadius="lg"
                                 transition="all 0.3s"
                                 _hover={{ transform: 'scale(1.05)' }}
@@ -133,7 +133,7 @@ export default function EventSchedule() {
                                 left="0"
                                 right="0"
                                 bottom="0"
-                                bgGradient="linear(to-t, rgba(0,0,0,0.9), rgba(0,0,0,0.2))"
+                                bgGradient="linear(to-r, rgba(0,0,0,0.3), rgba(0,0,0,0.2))"
                                 borderRadius="lg"
                                 transition="all 0.3s"
                                 _hover={{ transform: 'scale(1.05)' }}

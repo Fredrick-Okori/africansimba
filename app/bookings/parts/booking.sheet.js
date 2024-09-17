@@ -1,11 +1,50 @@
 "use client"
-import React, {useEffect} from 'react';
-import { Box, SimpleGrid, Container, Heading, Button, Text, Image, Divider } from '@chakra-ui/react';
+import React, { useEffect } from 'react';
+import { Box, SimpleGrid, Container, Heading, Button, Text, Image, Divider, Slide, Slider, Input } from '@chakra-ui/react';
 
 
 import Aos from 'aos';
 import 'aos/dist/aos.css'
 // BookingCard Component
+
+
+const ticket = [
+    {
+        id: 1,
+        title: 'Ordinary ticket',
+        description: 'New Ticket for everyone',
+        number: '5',
+        image: '/images/image_event.jpg'
+
+    },
+    {
+        id: 2,
+        title: 'Platinum ticket',
+        description: 'New Ticket for everyone',
+        number: '5',
+        image: '/images/eventposter.jpg'
+
+    },
+    {
+        id: 3,
+        title: 'Gold ticket',
+        description: 'New Ticket for everyone',
+        number: '5',
+        image: '/images/wahallawednesday.jpg',
+
+
+    },
+    {
+        id: 4,
+        title: 'Table for five',
+        description: 'New Ticket for everyone',
+        number: '5',
+        image: '/images/afrovibes.jpg'
+
+    },
+
+]
+
 export default function BookingCard() {
     useEffect(() => {
         Aos.init({ duration: 1000 });
@@ -14,68 +53,46 @@ export default function BookingCard() {
     return (
         <>
             <Container maxW="container.xl">
-                <Box mt={20}>
-                    <SimpleGrid columns={{base: 1, lg: 2}} spacing={10} alignItems='center' data-aos='fade-up' data-aos-duration='2000'
+                <Box mt={20} alignContent='center'>
+                    <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={10} alignItems='center' data-aos='fade-up' data-aos-duration='2000'
                     >
-                        
-                        <Box color='white'>
-                            <Heading mb={5}>Ordinary  Tickets</Heading>
-                            <Text></Text>
-                            <Text>
-                                A 28 room boutique hotel with three tiers of suites each adding an extra layer of comfort. Being a Boutique Hotel, Le Petit Village provides an unprecedented intimate and personalized attention to customers comfort like no other.
-                                A 28 room boutique hotel with three tiers of suites each adding an extra layer of comfort. Being a Boutique Hotel, Le Petit Village provides an unprecedented intimate and personalized attention to customers comfort like no other.
-                                A 28 room boutique hotel with three tiers of suites each adding an extra layer of comfort. Being a Boutique Hotel, Le Petit Village provides an unprecedented intimate and personalized attention to customers comfort like no other.
-                                A 28 room boutique hotel with three tiers of suites each adding an extra layer of comfort. Being a Boutique Hotel, Le Petit Village provides an unprecedented intimate and personalized attention to customers comfort like no other.
-                            </Text>
-                            <Heading>
+                        {ticket.map((item, index) => (
+                            <>
+                                <Box color='white' borderLeft={{base: 'none', lg: '4px solid #0077B6'}} p={5} boxShadow='lg'
+                                    flexBasis={2}
+                                >
+                                    <SimpleGrid columns={{ base: 1, lg: 1 }} spacing={2}>
+                                        <Image src={item.image} maxW={{ base: "100%", lg: "50%" }} alt={item.title} rounded={10} />
+                                        <Heading mb={5} textDecoration='underline'
+                                            textAlign='center'
+                                            textDecorationThickness={1}
+                                            textUnderlineOffset={10}
+                                            textDecorationColor='grey'>
+                                            {item.title}
+                                        </Heading>
+                                        <Text textAlign='center'>{item.description}</Text>
 
-                                <Button variant='outline' colorScheme='whiteAlpha'>Book Now</Button>
-                            </Heading>
+                                        <Text>{item.number}</Text>
 
-                        </Box>
-                        <Box>
-                            <Image rounded={20}  src='/images/main_main.jpg' alt='events' />
-                        </Box>
-                    
-                        <Box>
-                            <Image rounded={20}  src='/images/ddane.jpg' alt='events' />
-                        </Box>
-                        <Box color='white'>
-                            <Heading mb={5}>VIP Tickets</Heading>
-                            <Text>
-                                A 28 room boutique hotel with three tiers of suites each adding an extra layer of comfort. Being a Boutique Hotel, Le Petit Village provides an unprecedented intimate and personalized attention to customers comfort like no other.
-                                A 28 room boutique hotel with three tiers of suites each adding an extra layer of comfort. Being a Boutique Hotel, Le Petit Village provides an unprecedented intimate and personalized attention to customers comfort like no other.
-                                A 28 room boutique hotel with three tiers of suites each adding an extra layer of comfort. Being a Boutique Hotel, Le Petit Village provides an unprecedented intimate and personalized attention to customers comfort like no other.
-                                A 28 room boutique hotel with three tiers of suites each adding an extra layer of comfort. Being a Boutique Hotel, Le Petit Village provides an unprecedented intimate and personalized attention to customers comfort like no other.
-                            </Text>
-                            <Heading>
+                                        <SimpleGrid columns={{ base: 1, lg: 2 }}>
+                                            <Text> Buying ticket for (5) at for {item.title} 50,000/=</Text>
+                                            <Button
+                                                maxW='50%'
+                                                _hover={{ textDecoration: 'none', bg: 'white', color: 'black' }}
+                                                color='white' textDecor='none'
+                                                rounded='full' size='md'
+                                                variant='outline'>
+                                                Buy ticket</Button>
+                                        </SimpleGrid>
 
-                                <Button variant='outline' colorScheme='whiteAlpha'>Book Now</Button>
-                            </Heading>
+                                    </SimpleGrid>
+                                    
+                                </Box>
 
-                        </Box>
-                        <Box color='white'>
-                            <Heading mb={5}> Table of five.</Heading>
-                            <Text>
-                                A 28 room boutique hotel with three tiers of suites each adding an extra layer of comfort. Being a Boutique Hotel, Le Petit Village provides an unprecedented intimate and personalized attention to customers comfort like no other.
-                                A 28 room boutique hotel with three tiers of suites each adding an extra layer of comfort. Being a Boutique Hotel, Le Petit Village provides an unprecedented intimate and personalized attention to customers comfort like no other.
-                                A 28 room boutique hotel with three tiers of suites each adding an extra layer of comfort. Being a Boutique Hotel, Le Petit Village provides an unprecedented intimate and personalized attention to customers comfort like no other.
-                                A 28 room boutique hotel with three tiers of suites each adding an extra layer of comfort. Being a Boutique Hotel, Le Petit Village provides an unprecedented intimate and personalized attention to customers comfort like no other.
-                               
-                                
-                               
-                            </Text>
-                            <Heading>
+                            </>
+                        ))}
 
-                            <Button variant='outline' colorScheme='whiteAlpha'>Book Now</Button>
-                            </Heading>
 
-                        </Box>
-                        <Box>
-                            <Image rounded={20} src='/images/main_main.jpg' alt='events' />
-                        </Box>
-
-                      
                     </SimpleGrid>
                 </Box>
 

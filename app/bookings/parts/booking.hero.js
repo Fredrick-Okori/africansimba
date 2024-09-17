@@ -30,11 +30,11 @@ import { FaLocationArrow } from 'react-icons/fa';
 const carouselItems = [
     {
         image: '/images/videoposter.jpg',
-        heading: 'BOOK YOUR TICKET',
-        text: 'NEXT SHOW AROUND THE CORNER AT CATWALK',
+        heading: 'Buy your Ticket',
+        text: 'Next Show around the corner at Catwalk',
     }
 
-    
+
 ];
 
 const responsive = {
@@ -67,48 +67,46 @@ const BookingHero = () => {
     return (
         <>
 
-           
-                {carouselItems.map((item, index) => (
-                    <Box
-                        key={index}
-                        height="50vh"
-                        backgroundImage={`url(${item.image})`}
-                        backgroundPosition="center"
-                        mt={50}
 
-                        zIndex={-100}
+            {carouselItems.map((item, index) => (
+                <Box
+                    key={index}
+                    height="50vh"
+                    backgroundImage={`url(${item.image})`}
+                    backgroundPosition="center"
+                    mt={50}
 
-                        display="grid"
-                        margin='auto'
+                    zIndex={-100}
+               
+                   
+                >
 
+                    <VStack
+
+                        position="relative"
+                        zIndex="2"
+                        height="100%"
+                        spacing={4}
+                        textAlign="center"
+                        color="white"
+                        justifyContent="center"
+                        data-aos='fade-up' data-aos-duration='2000'
                     >
+                        <Heading fontSize={{ base: "5xl", lg: '7xl' }} bg='hsla(0, 0%, 0%, 0.7)'  // Adjusted background for frosted glass effect
+                            backgroundBlendMode='soft-light'
+                            lineHeight={1}
+                            boxShadow='0 0 20px 0 rgba(0, 0, 0, 0.5)' py={20} borderLeft='5px dotted grey' p={5} color="white">
+                            {item.heading}
 
-                        <VStack
+                        </Heading>
+                        <Text fontSize="xl" maxW="600px" p={2}>
+                            {item.text}
+                        </Text>
 
-                            position="relative"
-                            zIndex="2"
-                            height="100%"
-                            spacing={6}
-                            textAlign="center"
-                            color="white"
-                            justifyContent="center"
-                            data-aos='fade-up' data-aos-duration='2000'
-                        >
-                            <Heading fontSize={{ base: "5xl", lg: '7xl' }} bg='hsla(0, 0%, 0%, 0.7)'  // Adjusted background for frosted glass effect
-                                backgroundBlendMode='soft-light'
-                                lineHeight={1.1}
-                                boxShadow='0 0 20px 0 rgba(0, 0, 0, 0.5)' py={20} border='5px solid grey' p={5} color="white">
-                                {item.heading}
+                    </VStack>
+                </Box>
+            ))}
 
-                            </Heading>
-                            <Text fontSize="2xl" maxW="600px"  p={2}>
-                                {item.text}
-                            </Text>
-                           
-                        </VStack>
-                    </Box>
-                ))}
-         
 
 
 

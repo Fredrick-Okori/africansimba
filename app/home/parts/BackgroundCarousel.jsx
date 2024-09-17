@@ -51,6 +51,7 @@ const BackgroundCarousel = () => {
                 <Box
                     key={index}
                     width="100vw"
+                    // data-aos='zoom-up' data-aos-duration='2000'
                     height="100vh"
                     backgroundImage={`url(${event.image})`}
                     backgroundPosition="center"
@@ -60,7 +61,7 @@ const BackgroundCarousel = () => {
                     top="0"
                     left="0"
                     opacity={index === activeIndex ? 1 : index === prevIndex ? 0 : 0}
-                    transition="opacity 2s ease-in-out"
+                    transition="opacity 4s ease-in-out"
                     zIndex={index === activeIndex ? -99 : -100}
                 >
                     <Box
@@ -69,8 +70,7 @@ const BackgroundCarousel = () => {
                         left="0"
                         width="100%"
                         height="100%"
-                        bg={isTransitioning ? "rgba(0, 0, 0, 0.3)" : "rgba(0, 0, 0, 0.4)"}  // Reduce opacity during transition
-                        transition="background-color 2s ease-in-out"
+                        bg="rgba(0, 0, 0, 0.3)"
                         zIndex="3"
                     />
                 </Box>

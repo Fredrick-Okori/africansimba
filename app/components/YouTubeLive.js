@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Box,  Container, Text, Button, Flex, IconButton } from "@chakra-ui/react";
 import { FiPlay, FiPause, FiX } from 'react-icons/fi';
+import Link from 'next/link';
 
 const FloatingVideoSection = () => {
     const [isVisible, setIsVisible] = useState(true);
@@ -16,6 +17,8 @@ const FloatingVideoSection = () => {
         <Box
             position="fixed"
             bottom="0"
+            as={Link}
+            href='/stream'
             right={2}
             width={{ base: "full", md: "400px" }}
             p={4}

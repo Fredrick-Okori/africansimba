@@ -4,6 +4,7 @@ import { Box, Container, Text, Image, Button, VStack, Flex, HStack, useBreakpoin
 import Carousel from 'react-multi-carousel';
 import "react-multi-carousel/lib/styles.css";
 import { FiExternalLink } from 'react-icons/fi';
+import Link from 'next/link';
 
 const products = [
     {
@@ -63,6 +64,8 @@ const ProductCarousel = () => {
                     <Text fontSize={subFontSize} fontWeight="normal" color="white">Check out our latest products and merchandise!</Text>
                 </Box>
                 <Button 
+                    as={Link}
+                    href='/store'
                     rightIcon={<FiExternalLink />} 
                     rounded="full" 
                     colorScheme="whiteAlpha" 
@@ -87,6 +90,7 @@ const ProductCarousel = () => {
                 transitionDuration={500}
                 containerClass="carousel-container"
                 removeArrowOnDeviceType={["tablet", "mobile"]}
+     
                 dotListClass="custom-dot-list-style"
                 itemClass="carousel-item-padding-40-px"
             >
