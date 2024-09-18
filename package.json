@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "clean": "rimraf .next",
-    "build": "next build public",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "slicemachine": "start-slicemachine"

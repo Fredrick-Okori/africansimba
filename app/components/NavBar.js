@@ -67,7 +67,7 @@ const NavBar = () => {
 
                     <Flex display={{ base: 'none', md: 'flex' }} alignItems={'center'}>
                         <Stack direction={'row'} spacing={7}>
-                            <Link href="/" _hover={{ textDecoration: 'none', color: '#df42b1' }} color="#df42b1">
+                            <Link href="/home" _hover={{ textDecoration: 'none', color: '#df42b1' }} color="#df42b1">
                                 Home
                             </Link>
                             {/* <Menu>
