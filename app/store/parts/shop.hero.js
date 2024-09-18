@@ -49,7 +49,7 @@ const StoreHeroSection = () => {
                     width={'100%'}
                     
                     height={{ base: '100%', md: '100%', lg: '100%', xl: '100%' }}
-                    backgroundImage={`url('/images/3.jpg.webp')`}
+                    backgroundImage={`url('https://images.unsplash.com/photo-1589156229687-496a31ad1d1f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=772&q=80')`}
                 backgroundSize="cover"
                 backgroundPosition="center"
                 backgroundRepeat="no-repeat"
@@ -64,11 +64,11 @@ const StoreHeroSection = () => {
                   
                     spacing={6}
                     textAlign="center"
-                    color="white"
+                    color="var( --clr-primary-1)"
                     justifyContent="center"
                     data-aos='fade-up' data-aos-duration='2000'
                 >
-                    <Heading lineHeight={{ base: '1', lg: '1.5' }} fontSize={{ base: "6xl", lg: '8xl' }} color="white">
+                    <Heading lineHeight={{ base: '1', lg: '1.5' }} fontSize={{ base: "6xl", lg: '8xl' }} color="var( --clr-primary-1)">
                         AFRICAN SIMBA SHOP
 
                     </Heading>
@@ -76,7 +76,7 @@ const StoreHeroSection = () => {
                         Get access to our luxurious African Simba shop and experience the best in artisanal crafts and handmade goods.
                     </Text>
                     <Stack direction="row" spacing={4}>
-                        <Button  _hover={{ bg: 'white', color: 'black' }} rounded='full' size="md" variant='outline' colorScheme="whiteAlpha">Information <FiArrowRight /></Button>
+                        <Button  _hover={{ bg: 'var( --clr-primary-1)', color: 'black' }} rounded='full' size="md" variant='outline' colorScheme="whiteAlpha">Information <FiArrowRight /></Button>
                     </Stack>
                 </VStack>
                 </Box>

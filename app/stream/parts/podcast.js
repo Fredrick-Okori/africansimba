@@ -18,7 +18,7 @@ const Podcasts = () => {
 
   return (
       <Container maxW="container.xl" mt="25" mb={20}>
-          <Heading as="h2" size="xl" fontWeight='normal' mb={6} color="white">
+          <Heading as="h2" size="xl" fontWeight='normal' mb={6} color="var( --clr-primary-1)">
               Enriched Podcasts
           </Heading>
           <Box p="20px">
@@ -55,7 +55,7 @@ const Podcasts = () => {
                         </Box>
                         <Box flex={1}>
 
-                            <Text fontSize="lg" color="white" fontWeight="normal">{podcast.title}</Text>
+                            <Text fontSize="lg" color="var( --clr-primary-1)" fontWeight="normal">{podcast.title}</Text>
                             <Text fontSize="sm" color="gray.500">Location: {podcast.location}</Text>
                             <Text fontSize="sm" color="gray.500">Duration: {podcast.duration}</Text>
                         </Box>

@@ -18,7 +18,7 @@ export const StoreBanner = () => (
             <Box
                 width={{ lg: 'sm' }}
                 transform={{ base: 'translateY(-50%)', lg: 'none' }}
-                color='white'
+                color='var( --clr-primary-1)'
                 mx={{ base: '6', md: '8', lg: '0' }}
                 px={{ base: '6', md: '8', lg: '0' }}
                 py={{ base: '6', md: '8', lg: '12' }}
@@ -26,15 +26,15 @@ export const StoreBanner = () => (
                 <Stack spacing={{ base: '8', lg: '10' }}>
                     <Stack spacing={{ base: '2', lg: '4' }}>
                         <Heading size="xl" >
-                            Distressed Vintage
+                           Best Brands from us
                         </Heading>
                         <Heading size="md" fontWeight="normal">
                             Refresh your wardrobe
                         </Heading>
                     </Stack>
                     <HStack spacing="3">
-                        <Button as={Link} href='/store' _hover={{ textDecoration: 'none', bg: 'white', color: 'black' }} textDecoration='none' rightIcon={<FiExternalLink />} rounded="full" colorScheme="whiteAlpha" variant="outline">
-                            Calendar
+                        <Button as={Link} href='/store' _hover={{ textDecoration: 'none', bg: 'var( --clr-primary-1)', color: 'black' }} textDecoration='none' rightIcon={<FiExternalLink />} rounded="full" colorScheme="var( --clr-primary-1)Alpha" variant="outline">
+                            View Shop
                         </Button>
 
                     </HStack>

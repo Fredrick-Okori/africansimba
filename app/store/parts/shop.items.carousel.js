@@ -1,47 +1,13 @@
 "use client";
 import React from 'react';
-import { Box, Container, Text, Image, Button, VStack, Flex, HStack, useBreakpointValue } from '@chakra-ui/react';
+import { Box, Container, Text, Image, Button, VStack, Flex, useBreakpointValue } from '@chakra-ui/react';
 import Carousel from 'react-multi-carousel';
 import "react-multi-carousel/lib/styles.css";
-import { Link } from 'next/link';
+import Link from 'next/link'; // Use Next.js Link
 import { FiExternalLink } from 'react-icons/fi';
 
-const products = [
-    {
-        name: "African Tint Art",
-        image: "https://images.unsplash.com/photo-1589156229687-496a31ad1d1f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=772&q=80",
-        price: "UGX 15000",
-        detailsUrl: "/product/african-tint-art"
-    },
-    {
-        name: "Branded Simba Cap",
-        image: "/videoposters/art.jpeg",
-        price: "UGX 140,000",
-        detailsUrl: "/product/branded-simba-cap"
-    },
-    {
-        name: "Bold Gucci Cap",
-        image: "/store/boldfit-head-caps-with-adjustable-strap-in-summer-for-men-caps-men-for-all-sports-black-product-images-orvbhpbfyho-p600039429-0-202304121406.webp",
-        price: "UGX 90,000",
-        detailsUrl: "/product/bold-gucci-cap"
-    },
-    {
-        name: "African Fibonnaci Wristband",
-        image: "https://images.unsplash.com/photo-1589156229687-496a31ad1d1f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=772&q=80",
-        price: "UGX 150,000",
-        detailsUrl: "/product/african-fibonacci-wristband"
-    },
-    {
-        name: "African Simba Logo T-shirt",
-        image: "/store/images.asos-media.avif",
-        price: "UGX 120,000",
-    },
-    {
-        name: "African Simba Logo T-shirt",
-        image: "/store/wholesale-blank-cotton-tshirts.avif",
-        price: "UGX 120,000",
-    }
-];
+import { products } from './data';
+const ROUTE_POST_ID = 'store/[id]';
 
 const responsive = {
     desktop: {
@@ -105,44 +71,49 @@ const ShopItems = () => {
                 dotListClass="custom-dot-list-style"
                 itemClass="carousel-item-padding-40-px"
             >
-                {products.map((product, index) => (
-                    <Box key={index}position="relative" borderRadius="lg" m={2} overflow="hidden" _hover={{ transform: 'scale(1.01)' }} transition="all 0.3s">
-                        <Image src={product.image} alt={product.name} w="100%" h={imageHeight} objectFit="cover" />
-                        <Box
-                            position="absolute"
-                            borderRadius='lg'
-                            top={0}
-                            left={0}
-                            right={0}
-                            bottom={0}
-                            bgGradient="linear(to-b, rgba(0,0,0,0.1), rgba(0,0,0,0.9))"
-                        >
-                            <VStack
-                                position="absolute"
-                                bottom={0}
-                                left={0}
-                                right={0}
-                                p={4}
-                                align="stretch"
-                                spacing={2}
-                            >
-                                <Text color="white" fontSize={["sm", "md", "lg"]} fontWeight="bold">{product.name}</Text>
-                                <Text color="gray.300" fontSize={["xs", "sm", "md"]}>{product.price}</Text>
-                                <Button
-                                    rounded='full'
-                                    textDecoration='none'
-                                    variant='outline'
-
-                                    colorScheme='whiteAlpha'
-                                    _hover={{ textDecoration: 'none', bg: 'white', color: 'black' }}
-                                    size={buttonSize}
-                                    fontSize={["xs", "sm"]}
-                                    alignSelf={{ base: "center", sm: "flex-end" }}
-                                >
-                                    Add to Cart
-                                </Button>
-                            </VStack>
-                        </Box>
+                {products.map((product) => (
+                    <Box key={product.id}>
+                        <Link href={`/store/${product.id}`} as={`/store/${product.id}`}>
+                            
+                                <Box position="relative" borderRadius="lg" m={2} overflow="hidden" _hover={{ transform: 'scale(1.01)' }} transition="all 0.3s" cursor="pointer">
+                                    <Image src={product.image} alt={product.name} w="100%" h={imageHeight} objectFit="cover" />
+                                    <Box
+                                        position="absolute"
+                                        borderRadius='lg'
+                                        top={0}
+                                        left={0}
+                                        right={0}
+                                        bottom={0}
+                                        bgGradient="linear(to-b, rgba(0,0,0,0.1), rgba(0,0,0,0.9))"
+                                    >
+                                        <VStack
+                                            position="absolute"
+                                            bottom={0}
+                                            left={0}
+                                            right={0}
+                                            p={4}
+                                            align="stretch"
+                                            spacing={2}
+                                        >
+                                            <Text color="var(--clr-primary-1)" fontSize={["sm", "md", "lg"]} fontWeight="bold">{product.name}</Text>
+                                            <Text color="gray.300" fontSize={["xs", "sm", "md"]}>{product.price}</Text>
+                                            <Button
+                                                rounded='full'
+                                                textDecoration='none'
+                                                variant='outline'
+                                                colorScheme='whiteAlpha'
+                                                _hover={{ textDecoration: 'none', bg: 'var(--clr-primary-1)', color: 'black' }}
+                                                size={buttonSize}
+                                                fontSize={["xs", "sm"]}
+                                                alignSelf={{ base: "center", sm: "flex-end" }}
+                                            >
+                                                Add to Cart
+                                            </Button>
+                                        </VStack>
+                                    </Box>
+                                </Box>
+                            
+                        </Link>
                     </Box>
                 ))}
             </Carousel>

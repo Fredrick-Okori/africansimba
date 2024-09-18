@@ -28,16 +28,28 @@ import { FiArrowRight } from 'react-icons/fi';
 
 const carouselItems = [
     {
-        image: '/miages/catwalk.jpg',
-        heading: 'AFRICAN SIMBA EVENTS',
-        text: 'SHANGRI-LA HOTEL BANGKOK, BANGKOK, CHINA',
+        image: '/iamges/catwalk.jpg',
+        heading: 'FLAWLESS EVENTS HOSTING',
+        text: 'A flawless events with lasting impressions',
     },
-
     {
         image: '/iamges/catwalk.jpg',
-        heading: 'PARADIGM LOUNGE GGABA',
-        text: 'Hilton Hotel, New York, USA',
-    }
+        heading: 'AFRICAN SIMBA EVENTS',
+        text: 'Creating unforgettable experience',
+    },
+
+  
+    {
+        image: '/iamges/catwalk.jpg',
+        heading: 'EXPERIMENTAL MARKETING',
+        text: 'Captivating and building brands',
+    },
+    {
+        image: '/iamges/catwalk.jpg',
+        heading: 'INFLUENCER PARTNERSHIPS',
+        text: 'Influencial personalities to amplify your brand',
+    },
+    
 ];
 
 const responsive = {
@@ -101,15 +113,15 @@ const HeroSection = () => {
                                 mt={{ base: 16, lg: 20 }}
                                 data-aos='fade-up' data-aos-duration='2000'
                             >
-                                <Heading lineHeight={{ base: '1', lg: '1.5' }} fontSize={{ base: "50px", lg: '8xl' }} color="white">
+                                <Heading lineHeight={{ base: '1', lg: '1.1' }} fontSize={{ base: "50px", lg: '8xl' }} color="var( --clr-primary-1)">
                                     {item.heading}
 
                                 </Heading>
-                                <Text fontSize={{ base: '12px', lg: '2xl' }} maxW="600px" background='rgba(255, 255, 200, 0.1)' p={2}>
+                                <Text fontSize={{ base: '12px', lg: '2xl' }} maxW="600px" background='rgba(255, 255, 200, 0.1)' py={2} px={4}>
                                     {item.text}
                                 </Text>
                                 <Stack direction="row" spacing={4}>
-                                    <Button _hover={{ textDecoration: 'none', bg: 'white', color: 'black' }} textDecoration='none' rounded='full' size="md" variant='outline' colorScheme="whiteAlpha">Information <FiArrowRight /></Button>
+                                    <Button _hover={{ textDecoration: 'none', bg: 'var( --clr-primary-1)', color: 'black' }} textDecoration='none' rounded='full' size="md" variant='outline' colorScheme="whiteAlpha">Information <FiArrowRight /></Button>
                                 </Stack>
                             </VStack>
                         </Box>

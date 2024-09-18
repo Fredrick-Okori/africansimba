@@ -15,17 +15,17 @@ const Footer = () => {
                             <Image src="/images/logo.webp" mr={3} maxW="18" alt="logo" mb={{ base: 6, lg: 0 }} />
                             <Divider orientation='horizontal' color='black'/>
                             <Link href="#" mr={2} isExternal>
-                                <FiYoutube color='black' fontSize={{base: 20, lg: 30}} />
+                                <FiYoutube color='var( --clr-primary-2)' fontSize={{base: 20, lg: 30}} />
                             </Link>
                           
                             <Link href="#" mr={2} isExternal>
-                                <FiFacebook color='black' fontSize={{base: 20, lg: 30}} />
+                                <FiFacebook color='var( --clr-primary-2)' fontSize={{base: 20, lg: 30}} />
                             </Link>
                             <Link href="#" mr={2} isExternal>
-                                <FiTwitter color='black' fontSize={{base: 20, lg: 30}} />
+                                <FiTwitter color='var( --clr-primary-2)' fontSize={{base: 20, lg: 30}} />
                             </Link>
                             <Link href="#" mr={2} isExternal>
-                                <FiInstagram color='black' fontSize={{base: 20, lg: 30}} />
+                                <FiInstagram color='var( --clr-primary-2)' fontSize={{base: 20, lg: 30}} />
                             </Link>
                         </Flex>
                     </AbsoluteCenter>
@@ -37,38 +37,38 @@ const Footer = () => {
                         <Box textAlign='start'  align="start" spacing={3} mb={{ base: 4, lg: 2 }}>
                             <Text fontWeight="bold">Useful Links</Text>
                             <Text><Link href="#">Festival</Link></Text> 
-                            <Text> <Link href="#">Practical</Link></Text>
+                            <Text> <Link href="/stream">Music</Link></Text>
                             <Text>
-                                <Link href="#">Tickets</Link>
+                                <Link href="/bookings">Tickets</Link>
                             </Text> 
-                            <Link href="#">My Bracelet</Link>
+                            <Link href="/store">Store</Link>
                         </Box>
-                        <Box textAlign='start' align="start" spacing={3} mb={{ base: 4, lg: 2 }}>
+                       <Box textAlign='start'  align="start" spacing={3} mb={{ base: 4, lg: 2 }}>
                             <Text fontWeight="bold">Useful Links</Text>
-                            <Text><Link href="#">Festival</Link></Text>
-                            <Text> <Link href="#">Practical</Link></Text>
+                            <Text><Link href="#">Festival</Link></Text> 
+                            <Text> <Link href="/stream">Music</Link></Text>
                             <Text>
-                                <Link href="#">Tickets</Link>
-                            </Text>
-                            <Link href="#">My Bracelet</Link>
+                                <Link href="/bookings">Tickets</Link>
+                            </Text> 
+                            <Link href="/store">Store</Link>
                         </Box>
-                        <Box textAlign='start' align="start" spacing={3} mb={{ base: 4, lg: 2 }}>
+                       <Box textAlign='start'  align="start" spacing={3} mb={{ base: 4, lg: 2 }}>
                             <Text fontWeight="bold">Useful Links</Text>
-                            <Text><Link href="#">Festival</Link></Text>
-                            <Text> <Link href="#">Practical</Link></Text>
+                            <Text><Link href="#">Festival</Link></Text> 
+                            <Text> <Link href="/stream">Music</Link></Text>
                             <Text>
-                                <Link href="#">Tickets</Link>
-                            </Text>
-                            <Link href="#">My Bracelet</Link>
+                                <Link href="/bookings">Tickets</Link>
+                            </Text> 
+                            <Link href="/store">Store</Link>
                         </Box>
-                        <Box textAlign='start' align="start" spacing={3} mb={{ base: 4, lg: 2 }}>
+                       <Box textAlign='start'  align="start" spacing={3} mb={{ base: 4, lg: 2 }}>
                             <Text fontWeight="bold">Useful Links</Text>
-                            <Text><Link href="#">Festival</Link></Text>
-                            <Text> <Link href="#">Practical</Link></Text>
+                            <Text><Link href="#">Festival</Link></Text> 
+                            <Text> <Link href="/stream">Music</Link></Text>
                             <Text>
-                                <Link href="#">Tickets</Link>
-                            </Text>
-                            <Link href="#">My Bracelet</Link>
+                                <Link href="/bookings">Tickets</Link>
+                            </Text> 
+                            <Link href="/store">Store</Link>
                         </Box>
                        
                     </Flex>

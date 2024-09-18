@@ -25,7 +25,7 @@ const FloatingVideoSection = () => {
             bgImage="url('/images/thrones.jpg')"  // Add your video poster image path here
             bgSize="cover"
             bgPosition="center"
-            color="white"
+            color="var( --clr-primary-1)"
             display="flex"
             flexDirection="column"
             alignItems="center"

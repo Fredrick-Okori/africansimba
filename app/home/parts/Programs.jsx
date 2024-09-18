@@ -60,8 +60,8 @@ const ProductCarousel = () => {
         <Container maxW="container.xl" py={10}>
             <Flex justify="space-between" align="center" mb={6} flexDirection={{ base: "column", md: "row" }}>
                 <Box mb={{ base: 4, md: 0 }}>
-                    <Text fontSize={fontSize} fontWeight="bold" color="white" mb={3}>From our Stores</Text>
-                    <Text fontSize={subFontSize} fontWeight="normal" color="white">Check out our latest products and merchandise!</Text>
+                    <Text fontSize={fontSize} fontWeight="bold" color="var( --clr-primary-1)" mb={3}>From our Stores</Text>
+                    <Text fontSize={subFontSize} fontWeight="normal" color="var( --clr-primary-1)">Check out our latest products and merchandise!</Text>
                 </Box>
                 <Button 
                     as={Link}
@@ -70,7 +70,7 @@ const ProductCarousel = () => {
                     rounded="full" 
                     colorScheme="whiteAlpha" 
                     variant="outline" 
-                    _hover={{ textDecoration: 'none', bg: 'white', color: 'black' }}
+                    _hover={{ textDecoration: 'none', bg: 'var( --clr-primary-1)', color: 'black' }}
                     size={buttonSize}
                 >
                     View More
@@ -115,7 +115,7 @@ const ProductCarousel = () => {
                                 align="stretch" 
                                 spacing={2}
                             >
-                                <Text color="white" fontSize={["sm", "md", "lg"]} fontWeight="bold">{product.name}</Text>
+                                <Text color="var( --clr-primary-1)" fontSize={["sm", "md", "lg"]} fontWeight="bold">{product.name}</Text>
                                 <Text color="gray.300" fontSize={["xs", "sm", "md"]}>{product.price}</Text>
                                 <Button 
                                     rounded='full' 
@@ -123,7 +123,7 @@ const ProductCarousel = () => {
                                     variant='outline' 
                                     
                                     colorScheme='whiteAlpha' 
-                                    _hover={{ textDecoration: 'none', bg: 'white', color: 'black' }}
+                                    _hover={{ textDecoration: 'none', bg: 'var( --clr-primary-1)', color: 'black' }}
                                     size={buttonSize}
                                     fontSize={["xs", "sm"]}
                                     alignSelf={{ base: "center", sm: "flex-end" }}

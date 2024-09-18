@@ -64,7 +64,7 @@ export default function EventSchedule() {
                                 bottom="20px"
                                 left="30px"
                                 right="30px"
-                                color="white"
+                                color="var( --clr-primary-1)"
                                 zIndex="2"
                             >
                                 <Text fontSize={fontSize} textAlign='center' fontWeight="normal" >
@@ -90,7 +90,7 @@ export default function EventSchedule() {
                             />
                             <Image
                                 rounded="lg"
-                                src='/images/guitarist.jpg'
+                                src="/images/guitarist_new.jpg"
                                 alt='Middle Event'
                                 transition="all 0.3s"
                                 _hover={{ transform: 'scale(1.05)' }}
@@ -115,7 +115,7 @@ export default function EventSchedule() {
                                 bottom="20px"
                                 left="30px"
                                 right="30px"
-                                color="white"
+                                color="var( --clr-primary-1)"
                                 zIndex="2"
                             >
                                 <Text fontSize={fontSize} textAlign='center' fontWeight="normal" >
@@ -164,7 +164,7 @@ export default function EventSchedule() {
                                 bottom="20px"
                                 left="30px"
                                 right="30px"
-                                color="white"
+                                color="var( --clr-primary-1)"
                                 zIndex="2"
                             >
                                 <Text fontSize={fontSize} textAlign='center' fontWeight="normal">

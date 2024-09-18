@@ -114,7 +114,7 @@ const UpcomingEvents = () => {
                                 align="stretch" 
                                 spacing={2}
                             >
-                                <Text color="white" fontSize={["sm", "md", "lg"]} fontWeight="bold">{event.title}</Text>
+                                <Text color="var( --clr-primary-1)" fontSize={["sm", "md", "lg"]} fontWeight="bold">{event.title}</Text>
                                 <Text color="gray.300" fontSize={["xs", "sm", "md"]}>{event.date} at {event.location}</Text>
                                 <Button 
                                     as={Link}
@@ -123,7 +123,7 @@ const UpcomingEvents = () => {
                                     textDecoration='none' 
                                     variant='outline' 
                                     colorScheme='whiteAlpha' 
-                                    _hover={{ textDecoration: 'none', bg: 'white', color: 'black' }}
+                                    _hover={{ textDecoration: 'none', bg: 'var( --clr-primary-1)', color: 'black' }}
                                     size={buttonSize}
                                     fontSize={["xs", "sm"]}
                                     alignSelf={{ base: "center", sm: "flex-end" }}

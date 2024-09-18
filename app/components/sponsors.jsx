@@ -27,8 +27,8 @@ const PartnerSection = () => {
 
                 <VStack spacing={4} textAlign="center">
                  
-                    <Heading color="white" size="2xl">
-                        Official Sponsors
+                    <Heading color="var( --clr-primary-1)" size="2xl">
+                        Official Partners
                     </Heading>
                 </VStack>
                 <SimpleGrid columns={[4, 4, 4, 4]} spacing={10} mt={10} p={5}>

@@ -35,6 +35,8 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation';
 import { color } from 'framer-motion';
 
+import { products } from '../store/parts/data';
+
 
 
 
@@ -53,11 +55,12 @@ const NavBar = () => {
             boxShadow='0 0 20px 0 rgba(0, 0, 0, 0.5)'
             position='fixed'
             px={3}
-            color="white"
+            color="var( --clr-primary-1)"
             zIndex={100}
             top={0}
             left={0}
             width='100%'
+            backdropFilter='blur(10px) brightness(60%)'  // Added background filter for a blurred background effect with 60% brightness
         >
             <Container maxW='container.xl'>
                 <Flex padding={5} alignItems={'center'} justifyContent={'space-between'}>
@@ -74,7 +77,7 @@ const NavBar = () => {
                                 <MenuButton _hover={{ textDecoration: 'none', color: '#df42b1' }}>
                                     Pages
                                 </MenuButton>
-                                <MenuList bg="white" borderColor="gray.700">
+                                <MenuList bg="var( --clr-primary-1)" borderColor="gray.700">
                                     <MenuItem to="/page1" _hover={{ bg: 'gray.700' }}>Page 1</MenuItem>
                                     <MenuItem to="/page2" _hover={{ bg: 'gray.700' }}>Page 2</MenuItem>
                                 </MenuList>
@@ -85,16 +88,18 @@ const NavBar = () => {
                             <Link href='/store' _hover={{ textDecoration: 'none', color: '#df42b1' }}>
                                 Shop
                             </Link>
+
                             <Link href='/bookings' _hover={{textDecoration: 'none', color: '#df42b1'}} >
                             Bookings
                             </Link>
+
                           
                             {pathname === '/store' && (
                                 <Link href="/cart" _hover={{ textDecoration: 'none', color: '#df42b1' }} >                           
                                     Cart                                                                   
                                 </Link>
                             )}
-                            <Button rounded='full' size="sm"  _hover={{ textDecoration: 'none', bg: 'white', color: 'black' }} textDecoration='none' variant='outline' colorScheme="whiteAlpha">Tickets <FiArrowRight /></Button>
+                            <Button rounded='full' size="sm"  _hover={{ textDecoration: 'none', bg: 'var( --clr-primary-1)', color: 'black' }} textDecoration='none' variant='outline' colorScheme="whiteAlpha">Tickets <FiArrowRight /></Button>
                         </Stack>
                     </Flex>
 
@@ -148,7 +153,6 @@ const MobileNav = ({ onClose }) => {
 
             <Link href="/tickets" onClick={onClose}>
                 <Icon 
-                  
                     boxSize={6}
                     color={'white'}
                     bgGradient="linear(to-r, purple.500, #df42b1)"

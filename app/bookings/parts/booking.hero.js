@@ -88,7 +88,7 @@ const BookingHero = () => {
                         height="100%"
                         spacing={4}
                         textAlign="center"
-                        color="white"
+                        color="var( --clr-primary-1)"
                         justifyContent="center"
                         data-aos='fade-up' data-aos-duration='2000'
                     >

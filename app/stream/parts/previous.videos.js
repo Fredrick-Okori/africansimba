@@ -76,7 +76,7 @@ const PreviousVideos = ({ videos = defaultVideos, onVideoSelect }) => {
     return (
         <Box as="section" py={10} mt={10}>
             <Container maxW="container.xl">
-                <Heading as="h2" size="xl" fontWeight='normal' mb={6} color="white">
+                <Heading as="h2" size="xl" fontWeight='normal' mb={6} color="var( --clr-primary-1)">
                     Previous Videos
                 </Heading>
                 <SimpleGrid columns={[1, 2, 3, 4]} spacing={6}>
@@ -139,7 +139,7 @@ const VideoCard = ({ video, onSelect, isNew }) => {
                 />
             </Box>
             <VStack align="start" spacing={1} px={2} width="100%">
-                <Text fontWeight="normal" fontSize="lg" color="white" noOfLines={2} >
+                <Text fontWeight="normal" fontSize="lg" color="var( --clr-primary-1)" noOfLines={2} >
                     {video.title}
                 </Text>
                 <Text fontSize="sm" color="gray.400" pb={2}>

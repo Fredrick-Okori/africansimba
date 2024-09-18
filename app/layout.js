@@ -2,6 +2,8 @@ import { PrismicPreview } from '@prismicio/next'
 import { repositoryName } from '@/prismicio'
 import { ChakraProvider } from '@chakra-ui/react'
 
+import './globals.css'
+
 import NavBar from './components/NavBar'
 import Footer from './components/Footer'
 

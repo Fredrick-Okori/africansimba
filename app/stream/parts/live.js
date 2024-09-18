@@ -6,12 +6,12 @@ const Live = ({ currentVideo }) => {
     return (
         <Box as="section" py={10} mt={20}>
             <Container maxW="container.xl">
-                <Heading as="h2" size="xl" mb={6} color="white">
+                <Heading as="h2" size="xl" mb={6} color="var( --clr-primary-1)">
                     Live Stream
                 </Heading>
                 {currentVideo ? (
                     <Box>
-                        <Heading as="h5" fontWeight="normal" fontSize="lg" mb={4} color="white">
+                        <Heading as="h5" fontWeight="normal" fontSize="lg" mb={4} color="var( --clr-primary-1)">
                           Playing Now:   {currentVideo.title}
                         </Heading>
                         <AspectRatio ratio={16 / 9}>
@@ -37,7 +37,7 @@ const Live = ({ currentVideo }) => {
                         </AspectRatio>
                     </Box>
                 ) : (
-                    <Text fontSize="lg" color="white">
+                    <Text fontSize="lg" color="var( --clr-primary-1)">
                         No video selected. Please choose a video from the list below.
                     </Text>
                 )}

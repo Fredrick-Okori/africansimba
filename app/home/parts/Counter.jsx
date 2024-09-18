@@ -62,7 +62,7 @@ export default function Count() {
                                 bottom="20px"
                                 left="30px"
                                 right="30px"
-                                color="white"
+                                color="var( --clr-primary-1)"
                                 zIndex="2"
                             >
                                 <Text fontSize={fontSize} textAlign='center' fontWeight="normal" >
@@ -113,7 +113,7 @@ export default function Count() {
                                 bottom="20px"
                                 left="30px"
                                 right="30px"
-                                color="white"
+                                color="var( --clr-primary-1)"
                                 zIndex="2"
                             >
                                 <Text fontSize={fontSize} textAlign='center' fontWeight="normal" >
@@ -162,7 +162,7 @@ export default function Count() {
                                 bottom="20px"
                                 left="30px"
                                 right="30px"
-                                color="white"
+                                color="var( --clr-primary-1)"
                                 zIndex="2"
                             >
                                 <Text fontSize={fontSize} textAlign='center' fontWeight="normal">

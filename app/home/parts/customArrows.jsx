@@ -41,7 +41,7 @@ const CustomRightArrow = ({ onClick }) => {
             bg='hsla(0, 0%, 0%, 0.5)'  // Adjusted background for frosted glass effect
             backgroundBlendMode='soft-light'
             boxShadow='0 0 20px 0 rgba(0, 0, 0, 0.5)'
-            color="white"
+            color="var( --clr-primary-1)"
             _hover={{
                 bgGradient: 'linear(to-r, purple.500, pink.700)',
                 boxShadow: 'xl',
