@@ -38,5 +38,19 @@ export const products = [
         name: "African Simba Logo T-shirt",
         image: "/store/wholesale-blank-cotton-tshirts.avif",
         price: "UGX 120,000",
-    }
+    },
+    {
+        id: 7,
+        name: "Branded Simba Cap",
+        image: "/videoposters/art.jpeg",
+        price: "UGX 140,000",
+        detailsUrl: "/product/branded-simba-cap"
+    },
+    {
+        id: 8,
+        name: "African Fibonnaci Wristband",
+        image: "https://images.unsplash.com/photo-1589156229687-496a31ad1d1f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=772&q=80",
+        price: "UGX 150,000",
+        detailsUrl: "/product/african-fibonacci-wristband"
+    },
 ];

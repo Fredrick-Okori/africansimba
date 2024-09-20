@@ -3,12 +3,12 @@ import { Container, Button, Grid, Heading, Text, Image, Box, ButtonGroup } from 
 
 export default function StoreBanner() {
     return (
-        <Container maxW='container.xl' position="relative" py={20} px={6}>
-            <Heading color="var( --clr-primary-1)" textAlign='center' size="2xl" pt={10} pb={5}>
+        <Container maxW={{base: 'container.lg', md: '800px', lg: '1200px' }} position="relative" py={20} px={6}>
+            <Heading color="var( --clr-primary-2)" textAlign='center' size="2xl" mt={10} pt={10} pb={{base: 3, lg:5}}>
               Official Simba Store
             </Heading>
-            {/* <Heading fontWeight='bold' fontSize='2xl' color='var( --clr-primary-1)' textAlign='center' pt={10}>Get the latest from our store</Heading> */}
-            <Text color='var( --clr-primary-1)' textAlign='center'>
+            {/* <Heading fontWeight='bold' fontSize='2xl' color='var( --clr-primary-2)' textAlign='center' pt={10}>Get the latest from our store</Heading> */}
+            <Text color='var( --clr-primary-2)' textAlign='center'>
                African simba culture and touch of African vibes wears
             </Text>
             <Box mt={10} position="relative">
@@ -49,10 +49,10 @@ export default function StoreBanner() {
                     <Text textAlign='center' fontSize={20} p={5} fontWeight='bold'>Stay up-to-date with our latest African cultured items</Text>
                     <Grid justifyContent='center'>
                         <ButtonGroup spacing={8}>
-                            <Button  _hover={{ bg: 'var( --clr-primary-1)', color: 'black' }} colorScheme="Alpha" rounded='full' variant="outline">
+                            <Button  _hover={{ bg: 'var( --clr-primary-2)', color: 'black' }} colorScheme="Alpha" rounded='full' variant="outline">
                                 Shop Now
                             </Button>
-                            <Button  _hover={{ bg: 'var( --clr-primary-1)', color: 'black' }} colorScheme="Alpha" rounded='full' variant="outline">
+                            <Button  _hover={{ bg: 'var( --clr-primary-2)', color: 'black' }} colorScheme="Alpha" rounded='full' variant="outline">
                                 Order Now
                             </Button>
                         </ButtonGroup>

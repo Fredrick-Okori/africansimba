@@ -6,8 +6,10 @@ import "react-multi-carousel/lib/styles.css";
 import Link from 'next/link'; // Use Next.js Link
 import { FiExternalLink } from 'react-icons/fi';
 
-import { products } from './data';
+
 const ROUTE_POST_ID = 'store/[id]';
+
+import { products } from './data';
 
 const responsive = {
     desktop: {
@@ -40,19 +42,10 @@ const ShopItems = () => {
         <Container maxW="container.xl" py={10}>
             <Flex justify="space-between" align="center" mb={6} flexDirection={{ base: "column", md: "row" }}>
                 <Box mb={{ base: 4, md: 0 }}>
-                    <Text fontSize={fontSize} fontWeight="bold" color="white" mb={3}>Liked by many customers</Text>
-                    <Text fontSize={subFontSize} fontWeight="normal" color="white">Check out our latest products and merchandise!</Text>
+                    <Text fontSize={fontSize} fontWeight="bold" color="var(--clr-primary-2)" mb={2}>Liked by many customers</Text>
+                    <Text fontSize={subFontSize} fontWeight="normal" color="var(--clr-gray-2)">Check out our latest products and merchandise!</Text>
                 </Box>
-                <Button
-                    rightIcon={<FiExternalLink />}
-                    rounded="full"
-                    colorScheme="whiteAlpha"
-                    variant="outline"
-                    _hover={{ textDecoration: 'none', bg: 'white', color: 'black' }}
-                    size={buttonSize}
-                >
-                    View All
-                </Button>
+             
             </Flex>
             <Carousel
                 swipeable={true}
@@ -72,8 +65,14 @@ const ShopItems = () => {
                 itemClass="carousel-item-padding-40-px"
             >
                 {products.map((product) => (
-                    <Box key={product.id}>
-                        <Link href={`/store/${product.id}`} as={`/store/${product.id}`}>
+                    <Box key={`store/${product.id}`}>
+                        <Link
+                            href={{
+                                pathname: ROUTE_POST_ID,
+                                query: { id: product.id },
+                            }}
+                            as={`/store/${product.id}`}
+                        >
                             
                                 <Box position="relative" borderRadius="lg" m={2} overflow="hidden" _hover={{ transform: 'scale(1.01)' }} transition="all 0.3s" cursor="pointer">
                                     <Image src={product.image} alt={product.name} w="100%" h={imageHeight} objectFit="cover" />
@@ -102,7 +101,7 @@ const ShopItems = () => {
                                                 textDecoration='none'
                                                 variant='outline'
                                                 colorScheme='whiteAlpha'
-                                                _hover={{ textDecoration: 'none', bg: 'var(--clr-primary-1)', color: 'black' }}
+                                                _hover={{ textDecoration: 'none', bg: 'var(--clr-primary-2)', color: 'var(--clr-primary-3)' }}
                                                 size={buttonSize}
                                                 fontSize={["xs", "sm"]}
                                                 alignSelf={{ base: "center", sm: "flex-end" }}

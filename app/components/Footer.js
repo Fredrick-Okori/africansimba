@@ -1,31 +1,36 @@
+'use client'
 import { Box, Flex, Divider, AbsoluteCenter, Text, Link, Image, Container, VStack, SimpleGrid } from '@chakra-ui/react';
 import { FiFacebook, FiInstagram, FiTwitter, FiYoutube } from 'react-icons/fi';
+import { useSearchParams, useRouter } from 'next/navigation'; // Changed import statement
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
+    const searchParams = useSearchParams();
+    const router = useRouter();
+    const isStorePage = router.pathname === '/store';
 
     return (
-        <Box color="white" py={20}>
+        <Box color={isStorePage ? 'var(--clr-primary-1)' : 'var(--clr-primary-2)'} py={20}>
             <Container maxW="container.xl">
                 <Box position='relative' my={25}>
                     <Divider />
-                    <AbsoluteCenter bg='white' backgroundBlendMode='soft-light' px='2' rounded={10}>
+                    <AbsoluteCenter bg='var(--clr-primary-1)'  backgroundBlendMode='soft-light' px='2' rounded={10}>
                        
                         <Flex p={2} alignItems='center'>
                             <Image src="/images/logo.webp" mr={3} maxW="18" alt="logo" mb={{ base: 6, lg: 0 }} />
                             <Divider orientation='horizontal' color='black'/>
                             <Link href="#" mr={2} isExternal>
-                                <FiYoutube color='var( --clr-primary-2)' fontSize={{base: 20, lg: 30}} />
+                                <FiYoutube color={isStorePage ? 'var(--clr-primary-1)' : 'var(--clr-primary-2)'} fontSize={{base: 20, lg: 30}} />
                             </Link>
                           
                             <Link href="#" mr={2} isExternal>
-                                <FiFacebook color='var( --clr-primary-2)' fontSize={{base: 20, lg: 30}} />
+                                <FiFacebook color={isStorePage ? 'var(--clr-primary-1)' : 'var(--clr-primary-2)'} fontSize={{base: 20, lg: 30}} />
                             </Link>
                             <Link href="#" mr={2} isExternal>
-                                <FiTwitter color='var( --clr-primary-2)' fontSize={{base: 20, lg: 30}} />
+                                <FiTwitter color={isStorePage ? 'var(--clr-primary-1)' : 'var(--clr-primary-2)'} fontSize={{base: 20, lg: 30}} />
                             </Link>
                             <Link href="#" mr={2} isExternal>
-                                <FiInstagram color='var( --clr-primary-2)' fontSize={{base: 20, lg: 30}} />
+                                <FiInstagram color={isStorePage ? 'var(--clr-primary-1)' : 'var(--clr-primary-2)'} fontSize={{base: 20, lg: 30}} />
                             </Link>
                         </Flex>
                     </AbsoluteCenter>

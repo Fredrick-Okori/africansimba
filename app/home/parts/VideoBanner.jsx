@@ -4,8 +4,8 @@ import { Container,Button, Grid, Link, Text, Image, Box, ButtonGroup } from '@ch
 export default function VideoBanner() {
     return (
         <Container maxW='container.xl' position="relative">
-            <Text fontWeight='bold' fontSize='4xl' color='white' textAlign='center'>African Simba Music</Text>
-            <Text color='var( --clr-primary-1)' textAlign='center'>
+            <Text fontWeight='bold' fontSize='4xl' color='var( --clr-primary-1)' textAlign='center'>African Simba Music</Text>
+            <Text color='var( --clr-primary-2)' textAlign='center'>
                 African Simbas Official music division. Introducing new music every
                 corner of the world.
             </Text>
@@ -29,6 +29,7 @@ export default function VideoBanner() {
                     height="100%"  // Adjust this value to control gradient height
                     bgGradient="linear(to-t, rgba(0, 0, 0, 0.4), transparent)"  // Gradient from bottom to top
                     zIndex="1"
+                    roundedBottom={10}
                 />
                 {/* Text Overlay */}
                 <Box

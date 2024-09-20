@@ -1,147 +1,165 @@
-"use client";
+'use client'
+
 import {
     Box,
-    Button,
-    Container,
     Flex,
-    Text,
     Image,
-    Stack,
-    IconButton,
+    Heading,
+    Text,
+    Button,
     HStack,
-    RadioGroup,
+    IconButton,
+    Stack,
     Radio,
-    Badge,
-} from "@chakra-ui/react";
-import { FiHeart, FiMinus, FiPlus } from "react-icons/fi";
-import Carousel from 'react-multi-carousel';
-import "react-multi-carousel/lib/styles.css";
-import { useRouter } from 'next/router'; // Import useRouter
-import { products } from "./parts/data"; // Ensure this path is correct
+    RadioGroup,
+    useNumberInput,
+    Container,
+
+} from '@chakra-ui/react';
+import { FaStar, FaMinus, FaPlus } from 'react-icons/fa';
+import { useState, useEffect } from 'react';
+
+import Link from 'next/link';
+
+import { useSearchParams } from 'next/navigation';
+
+import { products } from './data';
 
 const ProductDetails = () => {
-    
-    const router = useRouter();
-    const { id } = router.query; // Get product ID from the URL
 
-    const productId = id ? parseInt(id) : null;
+    const searchParams = useSearchParams();
+    const id = searchParams.get('id');
 
-    console.log("Product ID from URL:", id); // Debugging line
-    // Find the product with the matching id
-    const selectedProduct = products.find(
-        (product) => product.id === productId
-    );
-
-    if (!selectedProduct) {
-        return <div>Item not found in store.</div>;
+    if (!id) {
+        return <div>Loading...</div>;
     }
 
-    const responsive = {
-        desktop: {
-            breakpoint: { max: 3000, min: 1024 },
-            items: 3,
-            slidesToSlide: 3,
-            partialVisibilityGutter: 40
-        },
-        tablet: {
-            breakpoint: { max: 1024, min: 464 },
-            items: 2,
-            slidesToSlide: 2,
-            partialVisibilityGutter: 30
-        },
-        mobile: {
-            breakpoint: { max: 464, min: 0 },
-            items: 1,
-            slidesToSlide: 1,
-            partialVisibilityGutter: 20
-        }
-    };
+    // Find the doctor with the matching id
+    const selectedProduct = products.find(
+        (product) => product.id === parseInt(id)
+    );
+
+    const otherFacilities = products
+        .filter((item) => item.id !== selectedProduct?.id)
+        .slice(0, 4);
+
+    if (!selectedProduct) {
+        return <div>Doctor not found</div>;
+    }
+
+    // Images for the carousel
+    const images = [
+        '/images/ddane.jpg',
+        '/images/main_main.jpg',
+        '/images/ddane.jpg'
+    ];
+    const [selectedImage, setSelectedImage] = useState(images[0]);
+
+    // Number input setup for quantity
+    const {
+        getInputProps,
+        getIncrementButtonProps,
+        getDecrementButtonProps,
+    } = useNumberInput({
+        step: 1,
+        defaultValue: 1,
+        min: 1,
+    });
+
+    const incProps = getIncrementButtonProps();
+    const decProps = getDecrementButtonProps();
+    const inputProps = getInputProps();
 
     return (
         <Container maxW="container.xl" mt={10}>
-            <Flex direction={{ base: "column", md: "row" }} gap={10}>
-                {/* Image Carousel */}
-                <Box w={{ base: "100%", md: "50%" }}>
-                    <Carousel responsive={responsive}>
-                        {products.map((product) => (
-                            product.id === id && ( // Only show images for the selected product
-                                <Box key={product.name}>
-                                    <Image src={product.image} alt={`Product Image ${product.name}`} />
-                                </Box>
-                            )
-                        ))}
-                    </Carousel>
-                </Box>
 
-                {/* Product Information */}
-                <Box w={{ base: "100%", md: "50%" }}>
-                    <Text fontSize="2xl" fontWeight="bold">{selectedProduct.name}</Text>
-                    <Text fontSize="lg" color="gray.600">{selectedProduct.price}</Text>
-                    <Text mt={2}>{selectedProduct.details}</Text>
 
-                    {/* Color and Size Selection */}
-                    <Stack direction="row" mt={5} spacing={5}>
-                        <Box>
-                            <Text fontWeight="bold">Color:</Text>
-                            <HStack mt={2}>
-                                <Box bg="black" boxSize="30px" borderRadius="full" />
-                                <Box bg="gray.500" boxSize="30px" borderRadius="full" />
-                                <Box bg="gray.300" boxSize="30px" borderRadius="full" />
-                            </HStack>
-                            <Badge mt={1} colorScheme="yellow">Low stock</Badge>
-                        </Box>
+            <Box padding="20px"
+            >
+                <Flex flexDirection={{ base: 'column', md: 'row' }} gap={10}>
+                    {/* Image Carousel */}
+                    <Box flex={{ base: '1', md: '1' }}>
+                        <Image src={selectedImage} alt="Product Image" borderRadius="md" />
+                        <Flex mt={4}>
+                            {images.map((img, idx) => (
+                                <Image
+                                    key={idx}
+                                    src={img}
+                                    alt={`Product Image ${idx}`}
+                                    boxSize={{ base: '40px', md: '50px' }}
+                                    objectFit="cover"
+                                    mr={2}
+                                    onClick={() => setSelectedImage(img)}
+                                    cursor="pointer"
+                                    borderRadius="md"
+                                    border={selectedImage === img ? '1px solid grey' : 'none'}
+                                />
+                            ))}
+                        </Flex>
+                    </Box>
 
-                        <Box>
-                            <Text fontWeight="bold">Size:</Text>
-                            <RadioGroup defaultValue="32mm">
+                    {/* Product Details */}
+                    <Box flex={{ base: '1', md: '1' }}>
+                        <Heading as="h1" size="lg" color='white'>Nadetta Coat Beige</Heading>
+                        <HStack spacing={1} mt={2}>
+                            <FaStar color="var(--clr-primary-3)" />
+                            <FaStar color="var(--clr-primary-3)" />
+                            <FaStar color="var(--clr-primary-3)" />
+                            <FaStar color="var(--clr-primary-3)" />
+                            <FaStar color="var(--clr-primary-1)" />
+                            <Text fontSize="sm" color='white'>(4.8 from 328 reviews)</Text>
+                        </HStack>
+
+                        {/* Color and Size Selectors */}
+                        <Box mt={4}>
+                            <Text fontWeight="bold" color='white'>Select Color</Text>
+                            <RadioGroup defaultValue="1" mt={2}>
                                 <HStack spacing={4}>
-                                    <Radio value="32mm">32</Radio>
-                                    <Radio value="36mm">36</Radio>
-                                    <Radio value="40mm">40</Radio>
+                                    <Radio value="1" colorScheme="gray" size="lg" />
+                                    <Radio value="2" colorScheme="blackAlpha" size="lg" />
                                 </HStack>
                             </RadioGroup>
-                            <Text color="blue.500" mt={2} cursor="pointer">
-                                View our sizing guide
+
+                            <Text fontWeight="bold" mt={4} color='var(--clr-primary-1)'>Select Size</Text>
+                            <HStack spacing={2} mt={2} color='white'>
+                                <Button  size="sm">XS</Button>
+                                <Button  size="sm">S</Button>
+                                <Button  size="sm">M</Button>
+                                <Button  size="sm">L</Button>
+                                <Button  size="sm">XL</Button>
+                            </HStack>
+                        </Box>
+
+                        {/* Pricing and Purchase Options */}
+                        <Box mt={6}>
+                            <HStack>
+                                <Text fontSize="2xl" color='var(--clr-primary-1)' fontWeight="bold">$350</Text>
+                                <Text as="s" fontSize="lg" color='var(--clr-primary-1)' >$600</Text>
+                            </HStack>
+                            <HStack mt={4}>
+                                <Text color='var(--clr-primary-1)'>Quantity:</Text>
+                                <HStack>
+                                    <IconButton {...decProps} icon={<FaMinus />} />
+                                    <input {...inputProps} style={{ width: '40px', textAlign: 'center' }} />
+                                    <IconButton {...incProps} icon={<FaPlus />} />
+                                </HStack>
+                            </HStack>
+                            <HStack spacing={4} mt={6} >
+                                <Button rounded='full' colorScheme="whiteAlpha" variant="solid" flex="1">Add to Cart</Button>
+                                <Button rounded='full' colorScheme="whiteAlpha" flex="1">Buy it Now</Button>
+                            </HStack>
+                        </Box>
+
+                        {/* Product Description */}
+                        <Box mt={10} color='var(--clr-primary-1)'>
+                            <Heading size="md" mb={4}>Stylish Women's Coats</Heading>
+                            <Text>
+                                Stay cozy and stylish with our selection of women's coats! From classic trenches to warm parkas, we’ve got you covered in every season.
                             </Text>
                         </Box>
-                    </Stack>
-
-                    {/* Quantity Selector */}
-                    <Stack direction="row" mt={5} align="center">
-                        <Text fontWeight="bold">Quantity:</Text>
-                        <Flex align="center" border="1px" borderColor="gray.300">
-                            <IconButton
-                                icon={<FiMinus />}
-                                onClick={() => { }}
-                                aria-label="decrease quantity"
-                            />
-                            <Text px={4}>1</Text>
-                            <IconButton
-                                icon={<FiPlus />}
-                                onClick={() => { }}
-                                aria-label="increase quantity"
-                            />
-                        </Flex>
-                    </Stack>
-
-                    {/* Add to Cart and Favorite Buttons */}
-                    <Stack direction="row" mt={5} spacing={5}>
-                        <Button
-                            size="lg"
-                            colorScheme="blue"
-                            leftIcon={<FiPlus />}
-                            flex="1"
-                        >
-                            Add to cart
-                        </Button>
-                        <IconButton
-                            aria-label="Add to favorites"
-                            icon={<FiHeart />}
-                            colorScheme="gray"
-                        />
-                    </Stack>
-                </Box>
-            </Flex>
+                    </Box>
+                </Flex>
+            </Box>
         </Container>
     );
 };

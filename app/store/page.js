@@ -8,17 +8,23 @@ import ShopItems from './parts/shop.items.carousel'
 import StoreBanner from './parts/simba.store.banner'
 import PartnerSection from '../components/sponsors'
 import FullStore from './parts/shop.products.all'
+import ProductDetails from './parts/product.details'
+import ProductCategoryNav from './parts/products.category'
+import StoreHeroSection from './parts/shop.hero'
 
 export default function Shop() {
     return (
         <div>
             <Box position='relative' w='100vw'>
-                <BackgroundCarousel />
+                {/* <BackgroundCarousel /> */}
+
                 <Box position="relative" zIndex="1">
-                    <StoreBanner />
+                    <ProductCategoryNav/>
+                    <StoreHeroSection />
                     <ShopItems />
-                    <FullStore/>
-                    <PartnerSection />
+                    <FullStore />
+              
+                   
                 </Box>
             </Box>
         </div>

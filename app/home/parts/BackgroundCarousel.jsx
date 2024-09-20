@@ -40,18 +40,27 @@ const BackgroundCarousel = () => {
             setIsTransitioning(true);
             setPrevIndex(activeIndex);
             setActiveIndex((prevIndex) => (prevIndex + 1) % events.length);
-            setTimeout(() => setIsTransitioning(false), 2000); // Match transition duration
+            setTimeout(() => setIsTransitioning(false), 1000); // Match transition duration
         }, 20000); // change image every 20 seconds
         return () => clearInterval(interval);
     }, [activeIndex]);
 
     return (
         <Box position="fixed" top="0" left="0" width="100vw" height="100vh" zIndex="-1" overflow="hidden">
+            <Box
+                position="absolute"
+                top="0"
+                left="0"
+                width="100vw"
+                height="100vh"
+                backgroundColor="black"
+                opacity={isTransitioning ? 0.5 : 0}
+                transition="opacity 2s ease-out" // Changed transition to linear
+            />
             {events.map((event, index) => (
                 <Box
                     key={index}
                     width="100vw"
-                    // data-aos='zoom-up' data-aos-duration='2000'
                     height="100vh"
                     backgroundImage={`url(${event.image})`}
                     backgroundPosition="center"
@@ -60,20 +69,10 @@ const BackgroundCarousel = () => {
                     position="absolute"
                     top="0"
                     left="0"
-                    opacity={index === activeIndex ? 1 : index === prevIndex ? 0 : 0}
-                    transition="opacity 4s ease-in-out"
+                    opacity={index === activeIndex ? 1 : 0}
+                    transition="opacity 2s ease infinite" // Changed transition to ease infinite
                     zIndex={index === activeIndex ? -99 : -100}
-                >
-                    <Box
-                        position="absolute"
-                        top="0"
-                        left="0"
-                        width="100%"
-                        height="100%"
-                        bg="rgba(0, 0, 0, 0.3)"
-                        zIndex="3"
-                    />
-                </Box>
+                />
             ))}
         </Box>
     );

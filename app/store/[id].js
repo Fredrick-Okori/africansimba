@@ -1,11 +1,12 @@
 import ProductDetails from './parts/product.details';
-import { useRouter } from 'next/router';
+import { useSearchParams } from 'next/navigation';
 
 export default function ProductPage() {
-    const router = useRouter();
+    const searchParams = useSearchParams();
+    const id = searchParams.get('id');
     return (
         <>
-            <ProductDetails id={router.query.id} />
+            <ProductDetails id={id} />
         </>
     )
 }

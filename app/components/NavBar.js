@@ -50,7 +50,7 @@ const NavBar = () => {
 
     return (
         <Box
-            bg='hsla(0, 0%, 0%, 0.7)'  // Adjusted background for frosted glass effect
+           
             backgroundBlendMode='soft-light'
             boxShadow='0 0 20px 0 rgba(0, 0, 0, 0.5)'
             position='fixed'
@@ -60,7 +60,7 @@ const NavBar = () => {
             top={0}
             left={0}
             width='100%'
-            backdropFilter='blur(10px) brightness(60%)'  // Added background filter for a blurred background effect with 60% brightness
+            backdropFilter='blur(10px) brightness(50%)'  // Added background filter for a blurred background effect with 60% brightness
         >
             <Container maxW='container.xl'>
                 <Flex padding={5} alignItems={'center'} justifyContent={'space-between'}>
@@ -114,7 +114,8 @@ const NavBar = () => {
 
             <Drawer isOpen={isOpen} placement="bottom" onClose={onClose}>
                 <DrawerOverlay>
-                    <DrawerContent bg='hsla(0, 0%, 0%, 0.7)'  // Adjusted background for frosted glass effect
+                    <DrawerContent bg='hsla(0, 0%, 0%, 0.7)'
+                        backdropFilter='blur(10px) brightness(50%)' 
                         backgroundBlendMode='soft-light' color="white">
                         <DrawerCloseButton />
 
@@ -131,39 +132,27 @@ const NavBar = () => {
 const MobileNav = ({ onClose }) => {
     const pathname = usePathname();
     return (
-        <Flex p={4} justifyContent="space-around" alignItems="center">
-            <Link href="/" _hover={{ color: '#df42b1' }} color="#df42b1" onClick={onClose}>
-                <Icon as={FiHome} boxSize={6} />
+        <Flex p={4} justifyContent="space-between" alignItems="center" placeContent='center' gap={5}>
+            <Link href="/" _hover={{ color: '#df42b1' }} alignItems='center' color="#df42b1" onClick={onClose}>
+                <Icon as={FiHome} boxSize={5} /> Home
             </Link>
             <Link href='/stream' _hover={{ color: '#df42b1' }} onClick={onClose}>
-                <Icon as={FiVideo} boxSize={6} />
+                <Icon as={FiVideo} boxSize={5} /> Live
             </Link>
             <Link href='/store' _hover={{ color: '#df42b1' }} onClick={onClose}>
-                <Icon as={FiShoppingBag} boxSize={6} />
+                <Icon as={FiShoppingBag} boxSize={5} /> Shopping
             </Link>
             <Link href='/bookings' _hover={{ color: '#df42b1' }} onClick={onClose}>
-                <Icon as={FiCalendar} boxSize={6} />
+                <Icon as={FiCalendar} boxSize={5} /> Bookings
             </Link>
 
             {pathname === '/store' && (
                 <Link href="/cart" _hover={{ color: '#df42b1' }} onClick={onClose}>
-                    <Icon as={FiShoppingCart} boxSize={6} />
+                    <Icon as={FiShoppingCart} boxSize={5} /> Cart
                 </Link>
             )}
 
-            <Link href="/tickets" onClick={onClose}>
-                <Icon 
-                    boxSize={6}
-                    color={'white'}
-                    bgGradient="linear(to-r, purple.500, #df42b1)"
-                    p={2}
-                    borderRadius="full"
-                    _hover={{
-                        bgGradient: 'linear(to-r, purple.500, pink.700)',
-                        boxShadow: 'xl',
-                    }}
-                />
-            </Link>
+            
         </Flex>
     );
     

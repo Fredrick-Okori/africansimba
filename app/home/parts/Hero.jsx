@@ -28,7 +28,7 @@ import { FiArrowRight } from 'react-icons/fi';
 
 const carouselItems = [
     {
-        image: '/iamges/catwalk.jpg',
+        image: '/imges/gradient.avif',
         heading: 'FLAWLESS EVENTS HOSTING',
         text: 'A flawless events with lasting impressions',
     },
@@ -49,7 +49,7 @@ const carouselItems = [
         heading: 'INFLUENCER PARTNERSHIPS',
         text: 'Influencial personalities to amplify your brand',
     },
-    
+
 ];
 
 const responsive = {
@@ -83,8 +83,12 @@ const HeroSection = () => {
         <>
             <Container maxW='container.xl'>
                 <Carousel responsive={responsive}
-                    customLeftArrow={<CustomLeftArrow />}
-                    customRightArrow={<CustomRightArrow />}
+                    // customLeftArrow={<CustomLeftArrow />}
+                    // customRightArrow={<CustomRightArrow />}
+                    autoPlay={true}
+                    autoPlaySpeed={5000}
+                    infinite={true}
+                    arrows={false}
 
                 >
                     {carouselItems.map((item, index) => (
