@@ -27,25 +27,7 @@ import { products } from './data';
 
 const ProductDetails = () => {
 
-    const searchParams = useSearchParams();
-    const id = searchParams.get('id');
 
-    if (!id) {
-        return <div>Loading...</div>;
-    }
-
-    // Find the doctor with the matching id
-    const selectedProduct = products.find(
-        (product) => product.id === parseInt(id)
-    );
-
-    const otherFacilities = products
-        .filter((item) => item.id !== selectedProduct?.id)
-        .slice(0, 4);
-
-    if (!selectedProduct) {
-        return <div>Doctor not found</div>;
-    }
 
     // Images for the carousel
     const images = [
@@ -100,19 +82,19 @@ const ProductDetails = () => {
 
                     {/* Product Details */}
                     <Box flex={{ base: '1', md: '1' }}>
-                        <Heading as="h1" size="lg" color='white'>Nadetta Coat Beige</Heading>
+                        <Heading as="h1" size="lg" color='var(--clr-primary-2)'>Nadetta Coat Beige</Heading>
                         <HStack spacing={1} mt={2}>
                             <FaStar color="var(--clr-primary-3)" />
                             <FaStar color="var(--clr-primary-3)" />
                             <FaStar color="var(--clr-primary-3)" />
                             <FaStar color="var(--clr-primary-3)" />
                             <FaStar color="var(--clr-primary-1)" />
-                            <Text fontSize="sm" color='white'>(4.8 from 328 reviews)</Text>
+                            <Text fontSize="sm" color='var(--clr-primary-2)'>(4.8 from 328 reviews)</Text>
                         </HStack>
 
                         {/* Color and Size Selectors */}
                         <Box mt={4}>
-                            <Text fontWeight="bold" color='white'>Select Color</Text>
+                            <Text fontWeight="bold" color='var(--clr-primary-2)'>Select Color</Text>
                             <RadioGroup defaultValue="1" mt={2}>
                                 <HStack spacing={4}>
                                     <Radio value="1" colorScheme="gray" size="lg" />
@@ -120,8 +102,8 @@ const ProductDetails = () => {
                                 </HStack>
                             </RadioGroup>
 
-                            <Text fontWeight="bold" mt={4} color='var(--clr-primary-1)'>Select Size</Text>
-                            <HStack spacing={2} mt={2} color='white'>
+                            <Text fontWeight="bold" mt={4} color='var(--clr-primary-2)'>Select Size</Text>
+                            <HStack spacing={2} mt={2} color='var(--clr-primary-2)'>
                                 <Button  size="sm">XS</Button>
                                 <Button  size="sm">S</Button>
                                 <Button  size="sm">M</Button>
@@ -133,11 +115,11 @@ const ProductDetails = () => {
                         {/* Pricing and Purchase Options */}
                         <Box mt={6}>
                             <HStack>
-                                <Text fontSize="2xl" color='var(--clr-primary-1)' fontWeight="bold">$350</Text>
-                                <Text as="s" fontSize="lg" color='var(--clr-primary-1)' >$600</Text>
+                                <Text fontSize="2xl" color='var(--clr-primary-2)' fontWeight="bold">$350</Text>
+                                <Text as="s" fontSize="lg" color='var(--clr-primary-2)' >$600</Text>
                             </HStack>
                             <HStack mt={4}>
-                                <Text color='var(--clr-primary-1)'>Quantity:</Text>
+                                <Text color='var(--clr-primary-2)'>Quantity:</Text>
                                 <HStack>
                                     <IconButton {...decProps} icon={<FaMinus />} />
                                     <input {...inputProps} style={{ width: '40px', textAlign: 'center' }} />
@@ -145,13 +127,13 @@ const ProductDetails = () => {
                                 </HStack>
                             </HStack>
                             <HStack spacing={4} mt={6} >
-                                <Button rounded='full' colorScheme="whiteAlpha" variant="solid" flex="1">Add to Cart</Button>
-                                <Button rounded='full' colorScheme="whiteAlpha" flex="1">Buy it Now</Button>
+                                <Button rounded='full'  variant="solid" flex="1">Add to Cart</Button>
+                                <Button rounded='full'  flex="1">Buy it Now</Button>
                             </HStack>
                         </Box>
 
                         {/* Product Description */}
-                        <Box mt={10} color='var(--clr-primary-1)'>
+                        <Box mt={10} color='var(--clr-primary-2)'>
                             <Heading size="md" mb={4}>Stylish Women's Coats</Heading>
                             <Text>
                                 Stay cozy and stylish with our selection of women's coats! From classic trenches to warm parkas, we’ve got you covered in every season.

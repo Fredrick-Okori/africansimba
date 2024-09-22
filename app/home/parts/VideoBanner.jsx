@@ -5,7 +5,7 @@ export default function VideoBanner() {
     return (
         <Container maxW='container.xl' position="relative">
             <Text fontWeight='bold' fontSize='4xl' color='var( --clr-primary-1)' textAlign='center'>African Simba Music</Text>
-            <Text color='var( --clr-primary-2)' textAlign='center'>
+            <Text color='var( --clr-primary-1)' textAlign='center'>
                 African Simbas Official music division. Introducing new music every
                 corner of the world.
             </Text>
