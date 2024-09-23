@@ -23,7 +23,7 @@ export default function Shop() {
                     <StoreHeroSection />
                     <ShopItems />
                     <FullStore />
-              <ProductDetails/>
+              {/* <ProductDetails/> */}
                    
                 </Box>
             </Box>
