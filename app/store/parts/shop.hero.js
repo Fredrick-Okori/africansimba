@@ -4,11 +4,11 @@ import { Container, Button, Grid, Link, Text, Image, Box, ButtonGroup } from '@c
 export default function StoreHeroSection() {
     return (
         <Container maxW='container.xl' position="relative" mt={20} pt={10} pb={10}>
-            <Text lineHeight={1} fontWeight='bold' fontSize={{base: '4xl', lg: '6xl'}} color='var( --clr-primary-2)' textAlign='center'>
+            <Text lineHeight={1} fontWeight='bold' fontSize={{ base: '4xl', lg: '6xl' }} color='var( --clr-primary-2)' textAlign='center'>
                 African Simba Store
             </Text>
             <Text color='var( --clr-primary-2)' textAlign='center'>
-                African Simbas Official Fashion Store. Introducing trending style with our merchandise 
+                African Simbas Official Fashion Store. Introducing trending style with our merchandise
             </Text>
             <Box mt={10} position="relative">
                 <Image
@@ -46,8 +46,8 @@ export default function StoreHeroSection() {
                 >
 
 
-                    <Text textAlign='center' fontSize={{base: 'xl', lg: '3xl'}} p={5} fontWeight={{base: 'bold', lg: 'extrabold'}}>Stay up-to-date with our latest African Vibes</Text>
-                   
+                    <Text textAlign='center' fontSize={{ base: 'xl', lg: '3xl' }} p={5} fontWeight={{ base: 'bold', lg: 'extrabold' }}>Stay up-to-date with our latest African Vibes</Text>
+
 
                 </Box>
             </Box>

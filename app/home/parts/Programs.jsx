@@ -114,6 +114,7 @@ const ProductCarousel = () => {
                                 p={4} 
                                 align="stretch" 
                                 spacing={2}
+                                rounded='xl'
                             >
                                 <Text color="var( --clr-primary-1)" fontSize={["sm", "md", "lg"]} fontWeight="bold">{product.name}</Text>
                                 <Text color="gray.300" fontSize={["xs", "sm", "md"]}>{product.price}</Text>

@@ -75,7 +75,7 @@ export default function EventSchedule() {
                                 </Text>
                             </Box>
                         </Box>
-                        <Box position="relative" borderRadius="xl" height={imageHeight} _hover={{ transform: 'scale(1.02)' }} transition="all 0.3s">
+                        <Box position="relative" rounded="xl" height={imageHeight} _hover={{ transform: 'scale(1.02)' }} transition="all 0.3s">
                             <Box
                                 position="absolute"
                                 top="0"
@@ -117,6 +117,7 @@ export default function EventSchedule() {
                                 right="30px"
                                 color="var( --clr-primary-1)"
                                 zIndex="2"
+                                rounded="xl"
                             >
                                 <Text fontSize={fontSize} textAlign='center' fontWeight="normal" >
                                     Muleba Festival

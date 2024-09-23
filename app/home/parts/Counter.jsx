@@ -34,6 +34,7 @@ export default function Count() {
                                 transition="all 0.3s"
                                 _hover={{ transform: 'scale(1.05)' }}
                                 zIndex="1"
+                                rounded="lg"
                             />
                             <Image
                                 rounded="lg"

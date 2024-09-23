@@ -92,6 +92,9 @@ const NavBar = () => {
                             <Link href='/bookings' _hover={{textDecoration: 'none', color: '#df42b1'}} >
                             Bookings
                             </Link>
+                            <Link href='/saloon' _hover={{ textDecoration: 'none', color: '#df42b1' }}>
+                            Saloon
+                            </Link>
 
                           
                             {pathname === '/store' && (
