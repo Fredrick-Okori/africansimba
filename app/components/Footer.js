@@ -3,6 +3,8 @@ import { Box, Flex, Divider, AbsoluteCenter, Text, Link, Image, Container, VStac
 import { FiFacebook, FiInstagram, FiTwitter, FiYoutube } from 'react-icons/fi';
 import { useSearchParams, useRouter } from 'next/navigation'; // Changed import statement
 
+import { Suspense, lazy } from 'react';
+
 const Footer = () => {
     const currentYear = new Date().getFullYear();
     const searchParams = useSearchParams();
@@ -10,6 +12,7 @@ const Footer = () => {
     const isStorePage = router.pathname === '/store';
 
     return (
+        <Suspense>
         <Box color={isStorePage ? 'var(--clr-primary-1)' : 'var(--clr-primary-2)'} py={20}>
             <Container maxW="container.xl">
                 <Box position='relative' my={25}>
@@ -90,7 +93,8 @@ const Footer = () => {
                         </Box>
                     </Flex>
             </Container>
-        </Box>
+            </Box>
+        </Suspense>
     );
 };
 

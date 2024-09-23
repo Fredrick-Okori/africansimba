@@ -27,6 +27,7 @@ import {
     textDecoration,
 } from '@chakra-ui/react';
 
+import { Suspense } from 'react';
 
 
 import { FiArrowRight, FiMenu, FiShoppingCart, FiHome, FiVideo, FiShoppingBag, FiCalendar } from 'react-icons/fi'
@@ -49,6 +50,7 @@ const NavBar = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
 
     return (
+        <Suspense>
         <Box
            
             backgroundBlendMode='soft-light'
@@ -128,7 +130,8 @@ const NavBar = () => {
                     </DrawerContent>
                 </DrawerOverlay>
             </Drawer>
-        </Box>
+            </Box>
+        </Suspense>
     );
 };
 
@@ -156,7 +159,8 @@ const MobileNav = ({ onClose }) => {
             )}
 
             
-        </Flex>
+            </Flex>
+        
     );
     
 };

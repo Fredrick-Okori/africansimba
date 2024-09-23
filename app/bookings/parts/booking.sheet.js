@@ -54,11 +54,11 @@ export default function BookingCard() {
         <>
             <Container maxW="container.xl">
                 <Box mt={20} alignContent='center'>
-                    <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={10} alignItems='center' data-aos='fade-up' data-aos-duration='2000'
+                    <SimpleGrid  columns={{ base: 1, lg: 2 }} spacing={10} alignItems='center' data-aos='fade-up' data-aos-duration='2000'
                     >
                         {ticket.map((item, index) => (
                             <>
-                                <Box color='white' borderLeft={{base: 'none', lg: '4px solid #0077B6'}} p={5} boxShadow='lg'
+                                <Box key={index} color='white' borderLeft={{base: 'none', lg: '4px solid #0077B6'}} p={5} boxShadow='lg'
                                     flexBasis={2}
                                 >
                                     <SimpleGrid columns={{ base: 1, lg: 1 }} spacing={2}>
