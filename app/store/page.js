@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 
 import BackgroundCarousel from '../home/parts/BackgroundCarousel'
 import { Box } from '@chakra-ui/react'
@@ -15,6 +15,9 @@ import StoreHeroSection from './parts/shop.hero'
 export default function Shop() {
     return (
         <div>
+            <Suspense>
+
+            
             <Box position='relative' w='100vw'>
                 {/* <BackgroundCarousel /> */}
 
@@ -26,7 +29,8 @@ export default function Shop() {
               {/* <ProductDetails/> */}
                    
                 </Box>
-            </Box>
+                </Box>
+            </Suspense>
         </div>
     )
 }

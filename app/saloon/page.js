@@ -6,11 +6,13 @@ import FeatureSection from "./parts/Feature";
 import SaloonGallery from "./parts/SaloonGallery";
 import SaloonFilter from "./parts/SaloonFilter";
 import BackgroundCarousel from "../home/parts/BackgroundCarousel";
+import { Suspense } from "react";
 
 export default function SaloonPage() {
     return (
         <>
             <div>
+                <Suspense>
                 <Box position='relative' w='100vw'>
                     {/* <BackgroundCarousel /> */}
 
@@ -23,7 +25,8 @@ export default function SaloonPage() {
                       
 
                     </Box>
-                </Box>
+                    </Box>
+                </Suspense>
             </div>
         </>
     )

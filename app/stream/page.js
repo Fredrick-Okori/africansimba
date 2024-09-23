@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
 import Live from "./parts/live";
 import BackgroundCarousel from "../home/parts/BackgroundCarousel";
 import PartnerSection from "../components/sponsors";
@@ -16,12 +16,14 @@ export default function Stream(props) {
 
     return (
         <>
+            <Suspense>
             <BackgroundCarousel />
             <Live currentVideo={currentVideo} />
             <PreviousVideos onVideoSelect={handleVideoSelect} />
 
             <Podcast /> 
-            <PartnerSection />
+                <PartnerSection />
+            </Suspense>
         </>
     );
 }

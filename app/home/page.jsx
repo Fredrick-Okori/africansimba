@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Box } from '@chakra-ui/react';
 import NavBar from '../components/NavBar';
 import HeroSection from './parts/Hero';
@@ -16,6 +16,9 @@ import PartnerSection from '../components/sponsors';
 
 const Home = () => {
     return (
+        <Suspense>
+
+       
         <Box position="relative" width="100vw" >
             <BackgroundCarousel />
             <Box position="relative" zIndex="1">
@@ -29,7 +32,8 @@ const Home = () => {
                 <PartnerSection />
                 <FloatingVideoSection />
             </Box>
-        </Box>
+            </Box>
+        </Suspense>
     );
 };
 
