@@ -11,9 +11,7 @@ const partners = [
     { src: '/logos/CLM-LOGO.png' },
     { src: '/logos/thrones.png' },
     { src: '/logos/catwalk.png' },
-    { src: '/logos/CLM-LOGO.png' },
-    { src: '/logos/magnum.png' },
-    { src: '/logos/pa.png' },
+
 
 ];
 
@@ -32,7 +30,7 @@ const PartnerSection = () => {
                         Official Partners
                     </Heading>
                 </VStack>
-                <SimpleGrid columns={[4, 4, 4, 4]} spacing={10} mt={10} p={5}>
+                <SimpleGrid columns={[5, 5, 5, 5]} spacing={10} mt={10} p={5}>
                     {partners.map((partner, index) => (
                         <VStack
                             key={index}

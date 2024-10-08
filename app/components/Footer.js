@@ -7,39 +7,12 @@ import { Suspense, lazy } from 'react';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
-    const searchParams = useSearchParams();
-    const router = useRouter();
-    const isStorePage = router.pathname === '/store';
+ 
 
     return (
         <Suspense>
-        <Box color={isStorePage ? 'var(--clr-primary-1)' : 'var(--clr-primary-2)'} py={20}>
+        <Box color='var(--clr-primary-1)' py={20}>
             <Container maxW="container.xl">
-                <Box position='relative' my={25}>
-                    <Divider />
-                    <AbsoluteCenter bg='var(--clr-primary-1)'  backgroundBlendMode='soft-light' px='2' rounded={10}>
-                       
-                        <Flex p={2} alignItems='center'>
-                            <Image src="/images/logo.webp" mr={3} maxW="18" alt="logo" mb={{ base: 6, lg: 0 }} />
-                            <Divider orientation='horizontal' color='black'/>
-                            <Link href="#" mr={2} isExternal>
-                                <FiYoutube color={isStorePage ? 'var(--clr-primary-1)' : 'var(--clr-primary-2)'} fontSize={{base: 20, lg: 30}} />
-                            </Link>
-                          
-                            <Link href="#" mr={2} isExternal>
-                                <FiFacebook color={isStorePage ? 'var(--clr-primary-1)' : 'var(--clr-primary-2)'} fontSize={{base: 20, lg: 30}} />
-                            </Link>
-                            <Link href="#" mr={2} isExternal>
-                                <FiTwitter color={isStorePage ? 'var(--clr-primary-1)' : 'var(--clr-primary-2)'} fontSize={{base: 20, lg: 30}} />
-                            </Link>
-                            <Link href="#" mr={2} isExternal>
-                                <FiInstagram color={isStorePage ? 'var(--clr-primary-1)' : 'var(--clr-primary-2)'} fontSize={{base: 20, lg: 30}} />
-                            </Link>
-                        </Flex>
-                    </AbsoluteCenter>
-                </Box>
-               
-               
                 <SimpleGrid minChildWidth='100%' align="center"  display={{base: 'none', lg: 'contents'}} >
                     <Flex wrap="wrap" justify="space-around" w="full" my={20}>
                         <Box textAlign='start'  align="start" spacing={3} mb={{ base: 4, lg: 2 }}>
