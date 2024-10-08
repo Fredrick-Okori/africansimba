@@ -26,24 +26,8 @@ const events = [
         location: "The CatWalk Lounge",
         image: "/images/afrovibes.jpg",
     },
-    {
-        title: "Dimitri Vegas & Like Mike",
-        date: "Wednesdays Summer 2024",
-        location: "Ibiza, Spain",
-        image: "/images/ddane.jpg",
-    },
-    {
-        title: "Dimitri Vegas & Like Mike",
-        date: "Wednesdays Summer 2024",
-        location: "Ibiza, Spain",
-        image: "/images/eventposter.jpg",
-    },
-    {
-        title: "Dimitri Vegas & Like Mike",
-        date: "Wednesdays Summer 2024",
-        location: "Ibiza, Spain",
-        image: "/images/image_event.jpg",
-    },
+
+
 ];
 
 const responsive = {
@@ -117,20 +101,7 @@ const UpcomingEvents = () => {
                             >
                                 <Text color="var( --clr-primary-1)" fontSize={["sm", "md", "lg"]} fontWeight="bold">{event.title}</Text>
                                 <Text color="gray.300" fontSize={["xs", "sm", "md"]}>{event.date} at {event.location}</Text>
-                                <Button 
-                                    as={Link}
-                                    href='/bookings'
-                                    rounded='full' 
-                                    textDecoration='none' 
-                                    variant='outline' 
-                                    colorScheme='whiteAlpha' 
-                                    _hover={{ textDecoration: 'none', bg: 'var( --clr-primary-1)', color: 'black' }}
-                                    size={buttonSize}
-                                    fontSize={["xs", "sm"]}
-                                    alignSelf={{ base: "center", sm: "flex-end" }}
-                                >
-                                 Buy Ticket
-                                </Button>
+                                
                             </VStack>
                         </Box>
                     </Box>

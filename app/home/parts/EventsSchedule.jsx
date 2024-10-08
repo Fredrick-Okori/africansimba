@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { Box, Container, Grid, Text, Image, Button, useBreakpointValue } from '@chakra-ui/react'
 import Counter from './Counter'
@@ -16,15 +16,17 @@ export default function EventSchedule() {
     }, []);
 
     const imageHeight = useBreakpointValue({ base: "250px", md: "400px" });
-    const fontSize = useBreakpointValue({ base: "xl", md: "3xl" });
+    const fontSize = useBreakpointValue({ base: "xl", md: "2xl" });
     const subFontSize = useBreakpointValue({ base: "sm", md: "lg" });
+
+    const [showLogo, setShowLogo] = useState(false);
 
     return (
         <>
             <Box>
                 <Container maxW="container.xl" data-aos='zoom-in-up' data-aos-duration='1000'>
                     <Grid templateColumns={['repeat(1, 1fr)', null, '1fr 0.5fr 0.5fr']} py={{ base: 10, lg: 30 }} gap={6}>
-                        <Box position="relative" borderRadius="xl" height={imageHeight} _hover={{ transform: 'scale(1.02)' }} transition="all 0.3s">
+                        <Box position="relative"  height={imageHeight} _hover={{ transform: 'scale(1.02)' }} transition="all 0.3s ease-in-out" >
                             <Box
                                 position="absolute"
                                 top="0"
@@ -33,15 +35,16 @@ export default function EventSchedule() {
                                 bottom="0"
                                 bgGradient="linear(to-r, rgba(0,0,0,0.3), rgba(0,0,0,0.2))"
                                 borderRadius="lg"
-                                transition="all 0.3s"
+                                transition="all 0.3s ease-in-out"
                                 _hover={{ transform: 'scale(1.05)' }}
                                 zIndex="1"
                             />
                             <Image
+                                onMouseEnter={() => setShowLogo(true)} onMouseLeave={() => setShowLogo(false)}
                                 rounded="lg"
-                                src='/images/events_mc.jpg' 
+                                src='/paradigm/paradigmdj.jpg' 
                                 alt='African Simba Management Event'
-                                transition="all 0.3s"
+                                transition="all 0.3s ease-in-out"
                                 _hover={{ transform: 'scale(1.05)' }}
                                 position="relative"
                                 zIndex="0"
@@ -49,16 +52,24 @@ export default function EventSchedule() {
                                 w="100%"
                                 h="100%"
                             />
-                            <Box
-                                position="absolute"
-                                top="0"
-                                left="0"
-                                right="0"
-                                bottom="0"
-                                bgGradient="linear(to-r, rgba(0,0,0,0.3), rgba(0,0,0,0.2))"
-                                borderRadius="lg"
-                                zIndex="1"
-                            />
+                            {showLogo && (
+                                <Box
+                                    position="absolute"
+                                    top="10px"
+                                    right="10px"
+                                    display={{ base: "none", md: "block" }}
+                                    zIndex="3"
+                                    transition="all 0.3s ease-in-out"
+                                >
+                                    <Image
+                                        src='/logos/pa.png'
+                                        alt='Partner Logo'
+                                        w="100px"
+                                        h="100px"
+                                        objectFit="cover"
+                                    />
+                                </Box>
+                            )}
                             <Box
                                 position="absolute"
                                 bottom="20px"
@@ -68,14 +79,14 @@ export default function EventSchedule() {
                                 zIndex="2"
                             >
                                 <Text fontSize={fontSize} textAlign='center' fontWeight="normal" >
-                                   Africa Simba Events
+                                  Paradigm Ggaba Party
                                 </Text>
                                 <Text fontSize={subFontSize} textAlign='center' >
                                     Bringing you unforgettable experiences
                                 </Text>
                             </Box>
                         </Box>
-                        <Box position="relative" rounded="xl" height={imageHeight} _hover={{ transform: 'scale(1.02)' }} transition="all 0.3s">
+                        <Box position="relative" rounded="xl" height={imageHeight} _hover={{ transform: 'scale(1.02)' }} transition="all 0.3s ease-in-out" onMouseEnter={() => setShowLogo(true)} onMouseLeave={() => setShowLogo(false)}>
                             <Box
                                 position="absolute"
                                 top="0"
@@ -84,32 +95,41 @@ export default function EventSchedule() {
                                 bottom="0"
                                 bgGradient="linear(to-r, rgba(0,0,0,0.3), rgba(0,0,0,0.2))"
                                 borderRadius="lg"
-                                transition="all 0.3s"
+                                transition="all 0.3s ease-in-out"
                                 _hover={{ transform: 'scale(1.05)' }}
                                 zIndex="1"
                             />
                             <Image
                                 rounded="lg"
-                                src="/images/guitarist_new.jpg"
+                                src="/paradigm/simbaonly.jpg"
                                 alt='Middle Event'
-                                transition="all 0.3s"
+                                transition="all 0.3s ease-in-out"
                                 _hover={{ transform: 'scale(1.05)' }}
                                 position="relative"
                                 zIndex="0"
                                 objectFit="cover"
                                 w="100%"
                                 h="100%"
+                                onMouseEnter={() => setShowLogo(true)} onMouseLeave={() => setShowLogo(false)}
                             />
-                            <Box
-                                position="absolute"
-                                top="0"
-                                left="0"
-                                right="0"
-                                bottom="0"
-                                bgGradient="linear(to-r, rgba(0,0,0,0.3), rgba(0,0,0,0.2))"
-                                borderRadius="lg"
-                                zIndex="1"
-                            />
+                            {showLogo && (
+                                <Box
+                                    position="absolute"
+                                    top="10px"
+                                    right="10px"
+                                    display={{ base: "none", md: "block" }}
+                                    zIndex="3"
+                                    transition="all 0.3s ease-in-out"
+                                >
+                                    <Image
+                                        src='/logos/pa.png'
+                                        alt='Partner Logo'
+                                        w="100px"
+                                        h="100px"
+                                        objectFit="cover"
+                                    />
+                                </Box>
+                            )}
                             <Box
                                 position="absolute"
                                 bottom="20px"
@@ -120,14 +140,14 @@ export default function EventSchedule() {
                                 rounded="xl"
                             >
                                 <Text fontSize={fontSize} textAlign='center' fontWeight="normal" >
-                                    Muleba Festival
+                                    No Simba. No party
                                 </Text>
                                 <Text fontSize={subFontSize} textAlign='center' >
                                     Do not miss out 
                                 </Text>
                             </Box>
                         </Box>
-                        <Box position="relative" borderRadius="xl" height={imageHeight} _hover={{ transform: 'scale(1.02)' }} transition="all 0.3s">
+                        <Box position="relative"  height={imageHeight} _hover={{ transform: 'scale(1.02)' }} transition="all 0.3s ease-in-out" onMouseEnter={() => setShowLogo(true)} onMouseLeave={() => setShowLogo(false)}>
                             <Box
                                 position="absolute"
                                 top="0"
@@ -136,13 +156,14 @@ export default function EventSchedule() {
                                 bottom="0"
                                 bgGradient="linear(to-r, rgba(0,0,0,0.3), rgba(0,0,0,0.2))"
                                 borderRadius="lg"
-                                transition="all 0.3s"
+                                transition="all 0.3s ease-in-out"
                                 _hover={{ transform: 'scale(1.05)' }}
                                 zIndex="1"
                             />
                             <Image
+                                onMouseEnter={() => setShowLogo(true)} onMouseLeave={() => setShowLogo(false)}
                                 rounded="lg"
-                                src='/images/ddane.jpg'         
+                                src='/paradigm/nosimba.jpg'         
                                 alt='Wahalla'
                                 position="relative"
                                 zIndex="0"
@@ -150,16 +171,24 @@ export default function EventSchedule() {
                                 w="100%"
                                 h="100%"
                             />
-                            <Box
-                                position="absolute"
-                                top="0"
-                                left="0"
-                                right="0"
-                                bottom="0"
-                                bgGradient="linear(to-r, rgba(0,0,0,0.3), rgba(0,0,0,0.2))"
-                                borderRadius="lg"
-                                zIndex="1"
-                            />
+                            {showLogo && (
+                                <Box
+                                    position="absolute"
+                                    top="10px"
+                                    right="10px"
+                                    display={{ base: "none", md: "block" }}
+                                    zIndex="3"
+                                    transition="all 0.3s ease-in-out"
+                                >
+                                    <Image
+                                        src='/logos/pa.png'
+                                        alt='Partner Logo'
+                                        w="100px"
+                                        h="100px"
+                                        objectFit="cover"
+                                    />
+                                </Box>
+                            )}
                             <Box
                                 position="absolute"
                                 bottom="20px"
@@ -169,7 +198,7 @@ export default function EventSchedule() {
                                 zIndex="2"
                             >
                                 <Text fontSize={fontSize} textAlign='center' fontWeight="normal">
-                                 Best Djs
+                                 No Simba. No Party
                                 </Text>
                                 <Text fontSize={subFontSize} textAlign='center'>
                                     Join us for the experience

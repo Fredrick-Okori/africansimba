@@ -38,7 +38,7 @@ export default function Count() {
                             />
                             <Image
                                 rounded="lg"
-                                src='/images/muleba_festival.jpg'
+                                src='/thrones/thrones3.jpg'
                                 alt='Muleba Festival'
                                 transition="all 0.3s"
                                 _hover={{ transform: 'scale(1.05)' }}
@@ -89,7 +89,7 @@ export default function Count() {
                             />
                             <Image
                                 rounded="lg"
-                                src='/images/videoposter.jpg'
+                                src='/thrones/thrones2.jpg'
                                 alt='African Simba Management Event'
                                 transition="all 0.3s"
                                 _hover={{ transform: 'scale(1.05)' }}
@@ -118,7 +118,7 @@ export default function Count() {
                                 zIndex="2"
                             >
                                 <Text fontSize={fontSize} textAlign='center' fontWeight="normal" >
-                                    We go hard althrough the nights
+                                   Wahallah Wednesdays at Thrones
                                 </Text>
                                 <Text fontSize={subFontSize} textAlign='center' >
                                     Bringing you unforgettable experiences
@@ -140,7 +140,7 @@ export default function Count() {
                             />
                             <Image
                                 rounded="lg"
-                                src='/images/main_main.jpg'
+                                src='/images/ddane.jpg'
                                 alt='Best DJs'
                                 position="relative"
                                 zIndex="0"
@@ -167,7 +167,7 @@ export default function Count() {
                                 zIndex="2"
                             >
                                 <Text fontSize={fontSize} textAlign='center' fontWeight="normal">
-                                    Best DJs
+                                   Thrones
                                 </Text>
                                 <Text fontSize={subFontSize} textAlign='center'>
                                     Join us for the experience

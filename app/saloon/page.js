@@ -20,7 +20,7 @@ export default function SaloonPage() {
                         {/* <ProductCategoryNav/> */}
                         <HeroSection />
                         <FeatureSection />
-                        <SaloonFilter/>
+                     
                         <SaloonGallery/>
                       
 

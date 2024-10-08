@@ -1,29 +1,37 @@
 'use client';
 
-import { Container, Box, SimpleGrid, Button, Text, Image } from '@chakra-ui/react';
 import { useState } from 'react';
 import { saloonData } from './data';
+import {
+    Container, Box, SimpleGrid, Button, Text, Image,
+    Modal, ModalOverlay, ModalContent, ModalCloseButton, ModalBody, useDisclosure
+} from '@chakra-ui/react';
+import SaloonFilter from './SaloonFilter'; // Import the filter component
 
-const Carousel = ({ images, alt }) => {
+const ImageViewer = ({ isOpen, onClose, image }) => {
+    return (
+        <Modal isOpen={isOpen} onClose={onClose} size="full">
+            <ModalOverlay />
+            <ModalContent bg="transparent" boxShadow="none">
+                <ModalCloseButton color="white" />
+                <ModalBody display="flex" justifyContent="center" alignItems="center">
+                    <Image src={image} alt="Full View" objectFit="contain" maxH="90vh" />
+                </ModalBody>
+            </ModalContent>
+        </Modal>
+    );
+};
+
+const Carousel = ({ images, alt, onImageClick }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
 
     const handleNext = () => {
-        setCurrentIndex((prevIndex) => {
-          
-            const newIndex = prevIndex === images.length - 1 ? 0 : prevIndex + 1;
-            console.log("Next Image Index:", newIndex); // Debug log
-            return newIndex;
-        });
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     };
 
     const handlePrevious = () => {
-        setCurrentIndex((prevIndex) => {
-       
-            const newIndex = prevIndex === 0 ? images.length - 1 : prevIndex - 1;
-            console.log("Previous Image Index:", newIndex); // Debug log
-            return newIndex;
-        });
+        setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
     };
 
     return (
@@ -35,7 +43,16 @@ const Carousel = ({ images, alt }) => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            <Image src={images[currentIndex]} alt={alt} w="100%" h="100%" objectFit="cover" rounded={10} />
+            <Image
+                src={images[currentIndex]}
+                alt={alt}
+                w="100%"
+                h="100%"
+                objectFit="cover"
+                rounded={10}
+                onClick={() => onImageClick(images[currentIndex])} // Trigger the image viewer
+                cursor="pointer"
+            />
 
             {/* Carousel Controls (Visible on hover) */}
             {isHovered && (
@@ -71,6 +88,20 @@ const Carousel = ({ images, alt }) => {
 };
 
 const SaloonGallery = () => {
+    const [filteredServices, setFilteredServices] = useState(saloonData);
+    const { isOpen, onOpen, onClose } = useDisclosure();
+    const [selectedImage, setSelectedImage] = useState(null); // To store the clicked image
+
+    // This function gets called when the filter changes
+    const handleFilterChange = (selectedCategories) => {
+        if (selectedCategories.length === 0) {
+            setFilteredServices(saloonData); // Show all services if no filter is selected
+        } else {
+            const filtered = saloonData.filter((item) => selectedCategories.includes(item.category));
+            setFilteredServices(filtered);
+        }
+    };
+
     const [hoveredImages, setHoveredImages] = useState([]);
 
     const handleMouseEnter = (index) => {
@@ -81,10 +112,18 @@ const SaloonGallery = () => {
         setHoveredImages((prevState) => prevState.filter((i) => i !== index));
     };
 
+    const handleImageClick = (image) => {
+        setSelectedImage(image);
+        onOpen(); // Open the image viewer modal
+    };
+
     return (
         <Container maxW="container.xl" position="relative" pt={10}>
-            <SimpleGrid columns={{ base: 2, md: 3, lg: 4 }} spacing={10}>
-                {saloonData.map((item, index) => (
+            {/* Render the filter component and pass the filter handler */}
+            <SaloonFilter onFilterChange={handleFilterChange} />
+
+            <SimpleGrid columns={{ base: 2, md: 3, lg: 3 }} spacing={10} pt={10}>
+                {filteredServices.map((item, index) => (
                     <Box
                         key={index}
                         position="relative"
@@ -92,7 +131,7 @@ const SaloonGallery = () => {
                         onMouseLeave={() => handleMouseLeave(index)}
                         bg="primary.300"
                     >
-                        <Carousel images={item.images} alt={item.category} />
+                        <Carousel images={item.images} alt={item.category} onImageClick={handleImageClick} />
 
                         <Box
                             roundedBottom={10}
@@ -118,6 +157,9 @@ const SaloonGallery = () => {
                     </Box>
                 ))}
             </SimpleGrid>
+
+            {/* Image Viewer Modal */}
+            {selectedImage && <ImageViewer isOpen={isOpen} onClose={onClose} image={selectedImage} />}
         </Container>
     );
 };
