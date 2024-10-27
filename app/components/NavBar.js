@@ -230,4 +230,3 @@ const MobileNav = ({ onClose }) => {
 
 export default NavBar;
 
-

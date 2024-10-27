@@ -18,20 +18,21 @@ const Home = () => {
     return (
         <Suspense>
 
-       
-        <Box position="relative" width="100vw" >
-            <BackgroundCarousel />
-            <Box position="relative" zIndex="1">
-                <HeroSection />
-                <EventSchedule />
-                <UpcomingEvents />
-                <VideoBanner />
-              
-                <ProductCarousel />
-                <StoreBanner />
-                <PartnerSection />
-                <FloatingVideoSection />
-            </Box>
+
+            <Box position="relative" width="100vw" >
+                <BackgroundCarousel />
+                <Box position="relative" zIndex="1">
+                    <HeroSection />
+                    <VideoBanner />
+                    <EventSchedule />
+                    <UpcomingEvents />
+
+
+                    <ProductCarousel />
+                    <StoreBanner />
+                    <PartnerSection />
+                    <FloatingVideoSection />
+                </Box>
             </Box>
         </Suspense>
     );

@@ -26,6 +26,18 @@ const events = [
         location: "The CatWalk Lounge",
         image: "/images/afrovibes.jpg",
     },
+    {
+        title: "Wahallah Wednesdays",
+        date: "Wednesdays Summer 2024",
+        location: "Thrones Lounge",
+        image: "/images/wahallawednesday.jpg",
+    },
+    {
+        title: "Wahallah Wednesdays",
+        date: "Wednesdays Summer 2024",
+        location: "Thrones Lounge",
+        image: "/images/wahallawednesday.jpg",
+    },
 
 
 ];

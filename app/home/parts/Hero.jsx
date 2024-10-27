@@ -29,24 +29,24 @@ import { FiArrowRight } from 'react-icons/fi';
 const carouselItems = [
     {
         image: '/imges/gradient.avif',
-        heading: 'FLAWLESS EVENTS HOSTING',
+        heading: 'Flawless Events Hosting',
         text: 'A flawless events with lasting impressions',
     },
     {
         image: '/iamges/catwalk.jpg',
-        heading: 'AFRICAN SIMBA EVENTS',
+        heading: 'African Simba Events',
         text: 'Creating unforgettable experience',
     },
 
   
     {
         image: '/iamges/catwalk.jpg',
-        heading: 'EXPERIMENTAL MARKETING',
+        heading: 'Experimental Marketing',
         text: 'Captivating and building brands',
     },
     {
         image: '/iamges/catwalk.jpg',
-        heading: 'INFLUENCER PARTNERSHIPS',
+        heading: 'Influencer Partnerships',
         text: 'Influencial personalities to amplify your brand',
     },
 
@@ -117,7 +117,7 @@ const HeroSection = () => {
                                 mt={{ base: 16, lg: 20 }}
                                 data-aos='fade-up' data-aos-duration='2000'
                             >
-                                <Heading lineHeight={{ base: '1', lg: '1.1' }} fontSize={{ base: "50px", lg: '8xl' }} color="var( --clr-primary-1)">
+                                <Heading  lineHeight={{ base: '1', lg: '1.1' }} fontSize={{ base: "50px", lg: '8xl' }} color="var( --clr-primary-1)">
                                     {item.heading}
 
                                 </Heading>
