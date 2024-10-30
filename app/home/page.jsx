@@ -22,16 +22,16 @@ const Home = () => {
             <Box position="relative" width="100vw" >
                 <BackgroundCarousel />
                 <Box position="relative" zIndex="1">
-                    <HeroSection />
+                    {/* <HeroSection /> */}
                     <VideoBanner />
                     <EventSchedule />
                     <UpcomingEvents />
 
 
                     <ProductCarousel />
-                    <StoreBanner />
+                    {/* <StoreBanner /> */}
                     <PartnerSection />
-                    <FloatingVideoSection />
+                   
                 </Box>
             </Box>
         </Suspense>

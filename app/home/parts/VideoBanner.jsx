@@ -3,7 +3,7 @@ import { Container,Button, Grid, Link, Text, Image, Box, ButtonGroup } from '@ch
 
 export default function VideoBanner() {
     return (
-        <Container maxW='container.xl' position="relative" mb={5} pb={10}>
+        <Container maxW='container.xl' position="relative" mb={5} pt={15}>
             <Text fontWeight='bold' fontSize='4xl' color='var( --clr-primary-1)' textAlign='center'>African Simba Events</Text>
             <Text color='var( --clr-primary-1)' textAlign='center'>
                 African Simbas Official music division. Introducing new music every

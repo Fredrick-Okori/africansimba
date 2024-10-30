@@ -14,45 +14,7 @@ const Footer = () => {
         <Box color='var(--clr-primary-1)' py={20}>
             <Container maxW="container.xl">
                 <SimpleGrid minChildWidth='100%' align="center"  display={{base: 'none', lg: 'contents'}} >
-                    <Flex wrap="wrap" justify="space-around" w="full" my={20}>
-                        <Box textAlign='start'  align="start" spacing={3} mb={{ base: 4, lg: 2 }}>
-                            <Text fontWeight="bold">Useful Links</Text>
-                            <Text><Link href="#">Festival</Link></Text> 
-                            <Text> <Link href="/stream">Music</Link></Text>
-                            <Text>
-                                <Link href="/bookings">Tickets</Link>
-                            </Text> 
-                            <Link href="/store">Store</Link>
-                        </Box>
-                       <Box textAlign='start'  align="start" spacing={3} mb={{ base: 4, lg: 2 }}>
-                            <Text fontWeight="bold">Useful Links</Text>
-                            <Text><Link href="#">Festival</Link></Text> 
-                            <Text> <Link href="/stream">Music</Link></Text>
-                            <Text>
-                                <Link href="/bookings">Tickets</Link>
-                            </Text> 
-                            <Link href="/store">Store</Link>
-                        </Box>
-                       <Box textAlign='start'  align="start" spacing={3} mb={{ base: 4, lg: 2 }}>
-                            <Text fontWeight="bold">Useful Links</Text>
-                            <Text><Link href="#">Festival</Link></Text> 
-                            <Text> <Link href="/stream">Music</Link></Text>
-                            <Text>
-                                <Link href="/bookings">Tickets</Link>
-                            </Text> 
-                            <Link href="/store">Store</Link>
-                        </Box>
-                       <Box textAlign='start'  align="start" spacing={3} mb={{ base: 4, lg: 2 }}>
-                            <Text fontWeight="bold">Useful Links</Text>
-                            <Text><Link href="#">Festival</Link></Text> 
-                            <Text> <Link href="/stream">Music</Link></Text>
-                            <Text>
-                                <Link href="/bookings">Tickets</Link>
-                            </Text> 
-                            <Link href="/store">Store</Link>
-                        </Box>
-                       
-                    </Flex>
+                   
 
                 </SimpleGrid>
                     <Flex direction={{ base: 'column', lg: 'row' }} justifyContent="space-evenly" mt={{base: '20', lg: 'auto'}} align="center" w="full" gap={5}>

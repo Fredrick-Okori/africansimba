@@ -9,7 +9,7 @@ import {
     Container,
     Stack,
     Avatar,
-HStack,
+    HStack,
     useColorModeValue,
     IconButton,
     Menu,
@@ -52,93 +52,90 @@ const NavBar = () => {
 
     return (
         <Suspense>
-        <Box
+            <Box
 
-            backgroundBlendMode='soft-light'
-            boxShadow='0 0 20px 0 rgba(0, 0, 0, 0.5)'
-            position='fixed'
-            
-            color="var( --clr-primary-1)"
-            zIndex={100}
-            top={0}
-            left={0}
-            width='100%'
-            backdropFilter='blur(10px) brightness(50%)'  // Added background filter for a blurred background effect with 60% brightness
-        >
-            <Container maxW='container.xl'>
-                <Flex padding={5} alignItems={'center'} justifyContent={'space-between'}>
-                    <Box   display="flex" alignItems="center">
-                        <Image width="70px" src="/logos/simba_white.png" alt="logo" />
-                    </Box>
+                backgroundBlendMode='soft-light'
+                boxShadow='0 0 20px 0 rgba(0, 0, 0, 0.5)'
+                position='fixed'
 
-                    <Flex display={{ base: 'none', md: 'flex' }} alignItems={'center'}>
-                        <Stack direction={'row'} spacing={7}>
-                            <Link href="/home" _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/home' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/home')}>
-                                Home
-                            </Link>
-                            {/* <Menu>
-                                <MenuButton _hover={{ textDecoration: 'none', color: '#df42b1' }}>
-                                    Pages
-                                </MenuButton>
-                                <MenuList bg="var( --clr-primary-1)" borderColor="gray.700">
-                                    <MenuItem to="/page1" _hover={{ bg: 'gray.700' }}>Page 1</MenuItem>
-                                    <MenuItem to="/page2" _hover={{ bg: 'gray.700' }}>Page 2</MenuItem>
-                                </MenuList>
-                            </Menu> */}
-                            <Link href='/stream' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/stream' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/stream')}>
-                            Live 
-                            </Link>
-                            <Link href='/store' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/store' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/store')}>
-                                Shop
-                            </Link>
+                color="var( --clr-primary-1)"
+                zIndex={100}
+                top={0}
+                left={0}
+                width='100%'
+                backdropFilter='blur(10px) brightness(50%)'  // Added background filter for a blurred background effect with 60% brightness
+            >
+                <Container maxW='container.xl'>
+                    <Flex padding={5} alignItems={'center'} justifyContent={'space-between'}>
+                        <Box display="flex" alignItems="center">
+                            <Image width="70px" src="/logos/simba_white.png" alt="logo" />
+                        </Box>
 
-                            <Link href='/bookings' _hover={{textDecoration: 'none', color: '#df42b1'}} color={selectedMenu === '/bookings' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/bookings')}>
-                            Bookings
-                            </Link>
-                            {/* <Link href='/saloon' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/saloon' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/saloon')}>
+                        <Flex display={{ base: 'none', md: 'flex' }} alignItems={'center'}>
+                            <Stack direction={'row'} spacing={7}>
+                                <Link href="/home" fontSize='12px' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/home' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/home')}>
+                                    HOME
+                                </Link>
+                                <Link href='/about' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/about' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/about')}>
+                                    ABOUT
+                                </Link>
+
+                                <Link href='/stream' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/stream' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/stream')}>
+                                    EVENTS
+                                </Link>
+
+
+                                <Link href='/bookings' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/bookings' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/bookings')}>
+                                    TICKETS
+                                </Link>
+                                {/* <Link href='/saloon' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/saloon' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/saloon')}>
                             Saloon
                             </Link> */}
 
-                            <Link href='/about' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/about' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/about')}>
-                                About Us
-                            </Link>
-                            <Link href='/contact' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/contact' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/contact')}>
-                                Contact Us
-                            </Link>
-
-                            {pathname === '/store' && (
-                                <Link href="/cart" _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/cart' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/cart')} >                           
-                                    Cart                                                                   
+                               
+                                <Link href='/store' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/store' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/store')}>
+                                    PROFILE
                                 </Link>
-                            )}
-                            <Button rounded='full' size="sm"  _hover={{ textDecoration: 'none', bg: 'var( --clr-primary-1)', color: 'black' }} textDecoration='none' variant='outline' colorScheme="whiteAlpha">Tickets <FiArrowRight /></Button>
-                        </Stack>
+                                <Link href='/contact' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/contact' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/contact')}>
+                                    CONTACT
+                                </Link>
+                                <Link href='/store' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/store' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/store')}>
+                                    SHOP
+                                </Link>
+
+                                {pathname === '/store' && (
+                                    <Link href="/cart" _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/cart' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/cart')} >
+                                        Cart
+                                    </Link>
+                                )}
+                                <Button rounded='full' size="sm" _hover={{ textDecoration: 'none', bg: 'var( --clr-primary-1)', color: 'black' }} textDecoration='none' variant='outline' colorScheme="whiteAlpha">TICKETS <FiArrowRight /></Button>
+                            </Stack>
+                        </Flex>
+
+                        <IconButton
+                            aria-label="Open Menu"
+                            icon={<FiMenu />}
+                            display={{ base: 'flex', md: 'none' }}
+                            onClick={onOpen}
+                        />
                     </Flex>
+                </Container>
 
-                    <IconButton
-                        aria-label="Open Menu"
-                        icon={<FiMenu />}
-                        display={{ base: 'flex', md: 'none' }}
-                        onClick={onOpen}
-                    />
-                </Flex>
-            </Container>
-
-            <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
-                <DrawerOverlay>
-                    <DrawerContent bg='hsla(0, 0%, 0%, 0.7)'
+                <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
+                    <DrawerOverlay>
+                        <DrawerContent bg='hsla(0, 0%, 0%, 0.7)'
 
                             backgroundBlendMode='soft-light' color="white"
                             backdropFilter='blur(10px) brightness(60%)'
                         >
-                        <DrawerCloseButton />
+                            <DrawerCloseButton />
 
-                        <DrawerBody>
-                            <MobileNav onClose={onClose} />
-                        </DrawerBody>
-                    </DrawerContent>
-                </DrawerOverlay>
-            </Drawer>
+                            <DrawerBody>
+                                <MobileNav onClose={onClose} />
+                            </DrawerBody>
+                        </DrawerContent>
+                    </DrawerOverlay>
+                </Drawer>
             </Box>
         </Suspense>
     );
