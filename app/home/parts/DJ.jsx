@@ -7,7 +7,7 @@ import { Box, Container, Grid, Text, Image, useBreakpointValue } from '@chakra-u
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 
-export default function Count() {
+export default function DJS() {
     useEffect(() => {
         Aos.init();
         Aos.refresh();
@@ -38,8 +38,8 @@ export default function Count() {
                             />
                             <Image
                                 rounded="lg"
-                                src='/thrones/thrones3.jpg'
-                                alt='Muleba Festival'
+                                src='/compressed/paradigmdj.webp'
+                                alt='Dj Slick Stuart'
                                 transition="all 0.3s"
                                 _hover={{ transform: 'scale(1.05)' }}
                                 position="relative"
@@ -67,10 +67,10 @@ export default function Count() {
                                 zIndex="2"
                             >
                                 <Text fontSize={fontSize} textAlign='center' fontWeight="normal" >
-                                    Muleba Festival
+                                   Dj Slick Stuart
                                 </Text>
                                 <Text fontSize={subFontSize} textAlign='center' >
-                                    Do not miss out 
+                                    Your girlfriends best dj
                                 </Text>
                             </Box>
                         </Box>
@@ -89,8 +89,8 @@ export default function Count() {
                             />
                             <Image
                                 rounded="lg"
-                                src='/compressed/vj.webp'
-                                alt='African simba events anniversary'
+                                src='/compressed/djAlisha.webp'
+                                alt='Dj Alisha'
                                 transition="all 0.3s"
                                 _hover={{ transform: 'scale(1.05)' }}
                                 position="relative"
@@ -118,7 +118,7 @@ export default function Count() {
                                 zIndex="2"
                             >
                                 <Text fontSize={fontSize} textAlign='center' fontWeight="normal" >
-                                   Wahallah Wednesdays at Thrones
+                                   Dj Alisha every week
                                 </Text>
                                 <Text fontSize={subFontSize} textAlign='center' >
                                     Bringing you unforgettable experiences
@@ -140,8 +140,8 @@ export default function Count() {
                             />
                             <Image
                                 rounded="lg"
-                                src='/compressed/paradigmnights.webp'
-                                alt='Paradigm Fridays'
+                                src='/compressed/dj2.webp'
+                                alt='Best DJs'
                                 position="relative"
                                 zIndex="0"
                                 objectFit="cover"
@@ -167,7 +167,7 @@ export default function Count() {
                                 zIndex="2"
                             >
                                 <Text fontSize={fontSize} textAlign='center' fontWeight="normal">
-                                   Paradigm
+                                    Thrones
                                 </Text>
                                 <Text fontSize={subFontSize} textAlign='center'>
                                     Join us for the experience

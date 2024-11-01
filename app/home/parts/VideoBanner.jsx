@@ -3,8 +3,8 @@ import { Container,Button, Grid, Link, Text, Image, Box, ButtonGroup } from '@ch
 
 export default function VideoBanner() {
     return (
-        <Container maxW='container.xl' position="relative" mb={5} pt={15}>
-            <Text fontWeight='bold' fontSize='4xl' color='var( --clr-primary-1)' textAlign='center'>African Simba Events</Text>
+        <Container maxW='container.xl' position="relative" mb={5} mt={{ base: 16, lg: 20 }} pt={{base: 10, lg:20}}>
+            <Text fontWeight='bold' fontSize={{ base: '3xl', lg: '7xl'}} color='var( --clr-primary-1)' textAlign='center'>African Simba Events</Text>
             <Text color='var( --clr-primary-1)' textAlign='center'>
                 African Simbas Official music division. Introducing new music every
                 corner of the world.
@@ -44,13 +44,16 @@ export default function VideoBanner() {
                 >
                    
                    
-                    <Text textAlign='center' fontSize={20} p={5} fontWeight='bold'>Stay up-to-date with our latest African Vibes</Text>
+                        <Text fontWeight='bold' fontSize='3xl' color='var( --clr-primary-1)' textAlign='center'>Celebrate with the Game Changers</Text>
+                    <Text color='var( --clr-primary-1)' mb={2} textAlign='center'>
+                        Experience Immersive party that happens every week in Kampala, Uganda
+                    </Text>
                     <Grid justifyContent='center'>
                         <ButtonGroup spacing={8}>
                             <Button as={Link} href='/stream'
                                 _hover={{ textDecoration: 'none', bg: 'var( --clr-primary-1)', color: 'black' }}
                                 textDecoration='none' target='_blank' colorScheme="Alpha" rounded='full' variant="outline">
-                                Watch Video live
+                                More Info
                             </Button>
                             <Button as={Link} href='/stream' _hover={{ textDecoration: 'none', bg: 'var( --clr-primary-1)', color: 'black' }}  textDecoration='none' colorScheme="Alpha" rounded='full' variant="outline">
                                 Podcast Music
