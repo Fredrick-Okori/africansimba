@@ -6,8 +6,7 @@ export default function VideoBanner() {
         <Container maxW='container.xl' position="relative" mb={5} mt={{ base: 16, lg: 20 }} pt={{base: 10, lg:20}}>
             <Text fontWeight='bold' fontSize={{ base: '3xl', lg: '7xl'}} color='var( --clr-primary-1)' textAlign='center'>African Simba Events</Text>
             <Text color='var( --clr-primary-1)' textAlign='center'>
-                African Simbas Official music division. Introducing new music every
-                corner of the world.
+                Experience Immersive party that happens every week in Kampala, Uganda
             </Text>
             <Box mt={10} position="relative">
                 <Image

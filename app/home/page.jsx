@@ -25,11 +25,11 @@ const Home = () => {
                     {/* <HeroSection /> */}
                     <VideoBanner />
                     <EventSchedule />
-                    <UpcomingEvents />
+                    {/* <UpcomingEvents /> */}
 
 
+                    <StoreBanner />
                     <ProductCarousel />
-                    {/* <StoreBanner /> */}
                     <PartnerSection />
                    
                 </Box>

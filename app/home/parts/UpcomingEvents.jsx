@@ -1,80 +1,80 @@
-"use client";
-import React from 'react';
-import { Box, Container, Text, Image, Button, VStack, Flex, HStack, useBreakpointValue } from '@chakra-ui/react';
-import Link from 'next/link';
+import {
+    Box,
+    Flex,
+    Heading,
+    HStack,
+    Icon,
+    Image,
+    Link,
+    Skeleton,
+    Stack,
+    Button,
+} from '@chakra-ui/react'
+import { FiExternalLink } from 'react-icons/fi'
 
-import Carousel from 'react-multi-carousel';
-import "react-multi-carousel/lib/styles.css";
-import { FiExternalLink } from 'react-icons/fi';
+export const UpcomingEvents = () => (
+    <Box maxW="7xl" mx="auto" px={{ base: '0', lg: '12' }} py={{ base: '0', lg: '12' }}>
+        <Stack direction={{ base: 'column-reverse', lg: 'row' }} spacing={{ base: '0', lg: '20' }}>
+            <Box
+                width={{ lg: 'sm' }}
+                rounded={{ base: '10', lg: '10' }}
+                transform={{ base: 'translateY(-50%)', lg: 'none' }}
 
-const events = [
-    {
-        title: "Wahallah Wednesdays",
-        date: "Wednesdays Summer 2024",
-        location: "Thrones Lounge",
-        image: "/images/wahallawednesday.jpg",
-    },
-    {
-        title: "Simba Fiesta Sundays",
-        date: "Sundays Summer 2024",
-        location: "The Villa, Kampala",
-        image: "/images/fiesta_sunday.jpg",
-    },
-    {
-        title: "Afro Vibez Friday",
-        date: "Wednesdays Summer 2024",
-        location: "The CatWalk Lounge",
-        image: "/images/afrovibes.jpg",
-    },
-    {
-        title: "Wahallah Wednesdays",
-        date: "Wednesdays Summer 2024",
-        location: "Thrones Lounge",
-        image: "/images/wahallawednesday.jpg",
-    },
-    {
-        title: "Wahallah Wednesdays",
-        date: "Wednesdays Summer 2024",
-        location: "Thrones Lounge",
-        image: "/images/wahallawednesday.jpg",
-    },
+                mx={{ base: '6', md: '8', lg: '0' }}
+                px={{ base: '6', md: '8', lg: '0' }}
+                py={{ base: '6', md: '8', lg: '12' }}
+                bg={{ base: 'var(--clr-primary-3)', md: 'var(--clr-primary-3)', lg: 'transparent' }}
+            >
+                <Stack spacing={{ base: '8', lg: '10' }} >
+                    <Stack spacing={{ base: '2', lg: '4' }}>
+                        <Heading size="xl" color={{ base: 'var(--clr-primary-2)', md: 'var(--clr-primary-2)', lg: 'var(--clr-primary-1)' }} fontWeight="bold">
+                            No Simba. No Party
+                        </Heading>
+                        <Heading size="md" fontWeight="normal" color='var( --clr-primary-1)'>
+                            Unforgettable experience at Paradigm
+                        </Heading>
+                    </Stack>
+                    <HStack spacing="3" color='var( --clr-primary-1)'>
+                        <Button as={Link} href='/store' _hover={{ textDecoration: 'none', bg: 'var( --clr-primary-1)', color: 'black' }} textDecoration='none' rightIcon={<FiExternalLink />} rounded="full" colorScheme="var( --clr-primary-1)Alpha" variant="outline">
+                            View Events
+                        </Button>
+
+                    </HStack>
+                </Stack>
+            </Box>
+            <Flex flex="1" overflow="hidden">
+                <Image
+                    src="/paradigm/nosimba.jpg"
+                    alt="Lovely Image"
+                    fallback={<Skeleton />}
+                    roundedRight='0'
+                    roundedLeft='10'
+                    maxH="450px"
+                    minW="300px"
+                    objectFit="cover"
+                    transition="all 0.3s"
+                    zIndex={-100}
+                    flex="1"
+                    _hover={{ transform: 'scale(1.05)', boxShadow: 'xl', border: '1px solid grey' }}
+                />
+                <Image
+                    display={{ base: 'none', sm: 'initial' }}
+                    src="/paradigm/dj.jpg"
+                    alt="Paradigm_dj"
+                    fallback={<Skeleton />}
+                    roundedRight='10'
+                    roundedLeft='0'
+                    maxH="450px"
+                    minW="300px"
+                    objectFit="cover"
+                    transition="all 0.3s"
+                    zIndex={-100}
 
 
-];
+                    _hover={{ transform: 'scale(1.05)', boxShadow: 'xl', border: '1px solid grey' }}
 
-const responsive = {
-    desktop: {
-        breakpoint: { max: 3000, min: 1024 },
-        items: 4,
-        slidesToSlide: 4,
-        partialVisibilityGutter: 40
-    },
-    tablet: {
-        breakpoint: { max: 1024, min: 464 },
-        items: 2,
-        slidesToSlide: 2,
-        partialVisibilityGutter: 30
-    },
-    mobile: {
-        breakpoint: { max: 464, min: 0 },
-        items: 1,
-        slidesToSlide: 1,
-        partialVisibilityGutter: 20
-    }
-};
-
-const UpcomingEvents = () => {
-    const fontSize = useBreakpointValue({ base: "2xl", md: "3xl" });
-    const subFontSize = useBreakpointValue({ base: "md", md: "xl" });
-    const buttonSize = useBreakpointValue({ base: "sm", md: "md" });
-    const imageHeight = useBreakpointValue({ base: "300px", md: "400px" });
-
-    return (
-        <Container maxW="container.xl" py={10}>
-            <Text fontSize={{base: '3xl', lg: '4xl'}} fontWeight="bold" color='white' mb={10}>Exciting events all through</Text>
-            
-        </Container>
-    );
-};
-
-export default UpcomingEvents;
+                />
+            </Flex>
+        </Stack>
+    </Box>
+)

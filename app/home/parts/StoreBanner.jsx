@@ -28,10 +28,11 @@ export const StoreBanner = () => (
                 <Stack spacing={{ base: '8', lg: '10' }} >
                     <Stack spacing={{ base: '2', lg: '4' }}>
                         <Heading size="xl" color={{ base: 'var(--clr-primary-2)', md: 'var(--clr-primary-2)', lg: 'var(--clr-primary-1)' }} fontWeight="bold">
-                            No Simba. No Party
+                           We are the Game Changers
                         </Heading>
                         <Heading size="md" fontWeight="normal" color='var( --clr-primary-1)'>
-                            Unforgettable experience at Paradigm
+                            An emotional and authentic experience with the Game Changers including the high-energy DJs
+                         
                         </Heading>
                     </Stack>
                     <HStack spacing="3" color='var( --clr-primary-1)'>
@@ -43,37 +44,17 @@ export const StoreBanner = () => (
                 </Stack>
             </Box>
             <Flex flex="1" overflow="hidden">
-                <Image
-                    src="/paradigm/nosimba.jpg"
-                    alt="Lovely Image"
-                    fallback={<Skeleton />}
-                    roundedRight='0'
-                    roundedLeft='10'
-                    maxH="450px"
-                    minW="300px"
-                    objectFit="cover"
-                    transition="all 0.3s"
-                    zIndex={-100}
-                    flex="1"
-                    _hover={{ transform: 'scale(1.05)', boxShadow: 'xl', border: '1px solid grey' }}
-                />
-                <Image
-                    display={{ base: 'none', sm: 'initial' }}
-                    src="/paradigm/dj.jpg"
-                    alt="Paradigm_dj"
-                    fallback={<Skeleton />}
-                    roundedRight='10'
-                    roundedLeft='0'
-                    maxH="450px"
-                    minW="300px"
-                    objectFit="cover"
-                    transition="all 0.3s"
-                    zIndex={-100}
-                    
-               
-                    _hover={{ transform: 'scale(1.05)', boxShadow: 'xl', border: '1px solid grey' }}
-                    
-                />
+                {/* video events */}
+                <iframe
+                    width="100%"
+                    height="100%"
+                    src="https://www.youtube.com/embed/cvysB_dyOd8"
+                    title="Muleba Official video"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen>
+                </iframe>
+
             </Flex>
         </Stack>
     </Box>

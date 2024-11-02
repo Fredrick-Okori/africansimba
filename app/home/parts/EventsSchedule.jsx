@@ -30,7 +30,7 @@ export default function EventSchedule() {
 
                     </Grid>
 
-                    {/* Counter area */}
+                   
                     <DJS />
                     <Counter />
                 </Container>
