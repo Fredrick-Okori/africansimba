@@ -5,16 +5,16 @@ import { useSearchParams, useRouter } from 'next/navigation'; // Changed import 
 
 import { Suspense, lazy } from 'react';
 
-const Footer = () => {
+const ShopFooter = () => {
     const currentYear = new Date().getFullYear();
- 
+
 
     return (
         <Suspense>
-        <Box color='var(--clr-primary-1)' py={20}>
-            <Container maxW="container.xl">
-               
-                    <Flex direction={{ base: 'column', lg: 'row' }} justifyContent="space-evenly" mt={{base: '20', lg: 'auto'}} align="center" w="full" gap={5}>
+            <Box color='var(--clr-primary-2)' py={20}>
+                <Container maxW="container.xl">
+
+                    <Flex direction={{ base: 'column', lg: 'row' }} justifyContent="space-evenly" mt={{ base: '20', lg: 'auto' }} align="center" w="full" gap={5}>
                         <Box textAlign={{ base: 'center', lg: 'left' }}>
                             <Text>Copyright &copy; {currentYear} African Simba Events. All rights reserved.</Text>
                         </Box>
@@ -24,10 +24,10 @@ const Footer = () => {
                             </Text>
                         </Box>
                     </Flex>
-            </Container>
+                </Container>
             </Box>
         </Suspense>
     );
 };
 
-export default Footer;
+export default ShopFooter;

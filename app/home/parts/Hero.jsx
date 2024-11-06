@@ -17,9 +17,7 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 
 //Carousel Arrows
-import { CustomLeftArrow, CustomRightArrow } from './customArrows';
 
-import { useSinglePrismicDocument } from '@prismicio/react';
 import { FiArrowRight } from 'react-icons/fi';
 
 

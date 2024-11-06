@@ -4,29 +4,27 @@ import {
     Box,
     Flex,
     Text,
-    Image,
+    
     Button,
     Container,
     Stack,
     Avatar,
     HStack,
-    useColorModeValue,
+   
     IconButton,
-    Menu,
-    MenuButton,
-    MenuList,
-    MenuItem,
+   
     Drawer,
     DrawerBody,
-    DrawerHeader,
+    
     DrawerOverlay,
     DrawerContent,
     DrawerCloseButton,
     useDisclosure,
     Icon,
     VStack,
-    textDecoration,
+    
 } from '@chakra-ui/react';
+import Image from 'next/image';
 
 import { Suspense } from 'react';
 
@@ -66,41 +64,36 @@ const NavBar = () => {
                 backdropFilter='blur(10px) brightness(50%)'  // Added background filter for a blurred background effect with 60% brightness
             >
                 <Container maxW='container.xl'>
-                    <Flex padding={5} alignItems={'center'} justifyContent={'space-between'}>
+                    <Flex  alignItems={'center'} justifyContent={'space-between'}>
                         <Box display="flex" alignItems="center">
-                            <Image width="70px" src="/logos/simba_white.png" alt="logo" />
+                            <Image width="100" height="100" loading='lazy' quality={70} src="/logos/simba_white.png" alt="logo" />
                         </Box>
 
                         <Flex display={{ base: 'none', md: 'flex' }} alignItems={'center'}>
                             <Stack direction={'row'} spacing={7}>
                                 <Link href="/home" fontSize='12px' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/home' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/home')}>
-                                    HOME
+                                    Home
+                                </Link>
+                                <Link href='/events' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/stream' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/stream')}>
+                                    Events
                                 </Link>
                                 <Link href='/about' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/about' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/about')}>
-                                    ABOUT
+                                    About
                                 </Link>
-
-                                <Link href='/stream' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/stream' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/stream')}>
-                                    EVENTS
-                                </Link>
-
-
                                 <Link href='/bookings' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/bookings' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/bookings')}>
-                                    TICKETS
+                                    Tickets
                                 </Link>
                                 {/* <Link href='/saloon' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/saloon' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/saloon')}>
                             Saloon
                             </Link> */}
-
-                               
                                 <Link href='/store' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/store' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/store')}>
-                                    PROFILE
+                                    Profile
                                 </Link>
                                 <Link href='/contact' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/contact' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/contact')}>
-                                    CONTACT
+                                    Contact
                                 </Link>
                                 <Link href='/store' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/store' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/store')}>
-                                    SHOP
+                                    Shop
                                 </Link>
 
                                 {pathname === '/store' && (

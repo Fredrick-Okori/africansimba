@@ -14,8 +14,8 @@ export default function Count() {
     }, []);
 
     const imageHeight = useBreakpointValue({ base: "250px", md: "400px" });
-    const fontSize = useBreakpointValue({ base: "xl", md: "3xl" });
-    const subFontSize = useBreakpointValue({ base: "sm", md: "lg" });
+    const fontSize = useBreakpointValue({ base: "xl", md: "2xl" });
+    const subFontSize = useBreakpointValue({ base: "sm", md: "sm" });
 
     return (
         <>
@@ -38,7 +38,7 @@ export default function Count() {
                             />
                             <Image
                                 rounded="lg"
-                                src='/thrones/thrones3.jpg'
+                                src='/compressed/djblacks.jpg'
                                 alt='Muleba Festival'
                                 transition="all 0.3s"
                                 _hover={{ transform: 'scale(1.05)' }}

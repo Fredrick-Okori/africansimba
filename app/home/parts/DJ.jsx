@@ -14,8 +14,8 @@ export default function DJS() {
     }, []);
 
     const imageHeight = useBreakpointValue({ base: "250px", md: "400px" });
-    const fontSize = useBreakpointValue({ base: "xl", md: "3xl" });
-    const subFontSize = useBreakpointValue({ base: "sm", md: "lg" });
+    const fontSize = useBreakpointValue({ base: "xl", md: "2xl" });
+    const subFontSize = useBreakpointValue({ base: "sm", md: "sm" });
 
     return (
         <>
@@ -38,7 +38,7 @@ export default function DJS() {
                             />
                             <Image
                                 rounded="lg"
-                                src='/compressed/paradigmdj.webp'
+                                src='/compressed/roger&stuart.jpg'
                                 alt='Dj Slick Stuart'
                                 transition="all 0.3s"
                                 _hover={{ transform: 'scale(1.05)' }}
@@ -140,7 +140,7 @@ export default function DJS() {
                             />
                             <Image
                                 rounded="lg"
-                                src='/compressed/dj2.webp'
+                                src='/compressed/djblacks.jpg'
                                 alt='Best DJs'
                                 position="relative"
                                 zIndex="0"
@@ -167,7 +167,7 @@ export default function DJS() {
                                 zIndex="2"
                             >
                                 <Text fontSize={fontSize} textAlign='center' fontWeight="normal">
-                                    Thrones
+                                    Dj Blacks
                                 </Text>
                                 <Text fontSize={subFontSize} textAlign='center'>
                                     Join us for the experience

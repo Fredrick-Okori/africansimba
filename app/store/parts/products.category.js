@@ -17,22 +17,15 @@ const ProductCategoryNav = () => {
   return (
     <Box bg={'var(--clr-primary-3)'} >
     <Container maxW="container.xl" py={10} pt='10%' >
-        <Text fontSize="lg" color="var( --clr-primary-2)" fontWeight="bold" mb={4}>
-        Store Categories
-      </Text>
-        <Flex flexWrap="wrap" gap={4} color="var( --clr-primary-2)">
-        {categories.map((category) => (
-          <Button
-            rounded='full'
-            key={category.name}
-            as={Link} href={category.href}
-            _hover={{ textDecoration: 'none', bg: 'var(--clr-primary-1)' }}
-            leftIcon={<Icon as={category.icon} w={6} h={6} />}
-          >
-            {category.name}
-          </Button>
-        ))}
-      </Flex>
+        <Box>
+          <Text lineHeight={1} fontWeight='bold' fontSize={{ base: '4xl', lg: '6xl' }} color='var( --clr-primary-2)' textAlign='center'>
+            African Simba Events - Store
+          </Text>
+          <Text color='var( --clr-primary-2)' textAlign='center'>
+            African Simbas Official Fashion Store. Introducing trending style with our merchandise
+          </Text>
+        </Box>
+     
     </Container>
       </Box>
   );

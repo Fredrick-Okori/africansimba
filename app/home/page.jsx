@@ -26,12 +26,9 @@ const Home = () => {
                     <VideoBanner />
                     <EventSchedule />
                     {/* <UpcomingEvents /> */}
-
-
                     <StoreBanner />
                     <ProductCarousel />
-                    <PartnerSection />
-                   
+                    <PartnerSection />                  
                 </Box>
             </Box>
         </Suspense>

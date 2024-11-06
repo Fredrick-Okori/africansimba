@@ -11,6 +11,7 @@ import FullStore from './parts/shop.products.all'
 import ProductDetails from './parts/product.details'
 import ProductCategoryNav from './parts/products.category'
 import StoreHeroSection from './parts/shop.hero'
+import ShopFooter from './parts/footer'
 
 export default function Shop() {
     return (
@@ -26,7 +27,8 @@ export default function Shop() {
                     <StoreHeroSection />
                     <ShopItems />
                     <FullStore />
-              {/* <ProductDetails/> */}
+                        {/* <ProductDetails/> */}
+                        <ShopFooter/>
                    
                 </Box>
                 </Box>

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Container,Button, Grid, Link, Text, Image, Box, ButtonGroup } from '@chakra-ui/react';
+import { Container, Button, Grid, Image, Link, Text, Box, ButtonGroup } from '@chakra-ui/react';
+
 
 export default function VideoBanner() {
     return (
@@ -10,11 +11,12 @@ export default function VideoBanner() {
             </Text>
             <Box mt={10} position="relative">
                 <Image
-                    w='100%'
-                    height={450}
+                  
+                    width={{ base: '100%', lg: '100%' }}
+                    height={{ base: '300px', lg: '500px' }}
                     objectFit='cover'
                     rounded={10}
-                    src="/images/guitarist_new.jpg"
+                    src="/compressed/home_hero.jpg"
                     alt='night club'
                     transition="all 0.3s"
                     _hover={{ transform: 'scale(1.05)' }}
@@ -43,19 +45,19 @@ export default function VideoBanner() {
                 >
                    
                    
-                        <Text fontWeight='bold' fontSize='3xl' color='var( --clr-primary-1)' textAlign='center'>Celebrate with the Game Changers</Text>
+                        <Text fontWeight='bold' fontSize={{base: '2xl', lg: '3xl'}} color='var( --clr-primary-1)' textAlign='center'>Celebrate with the Game Changers</Text>
                     <Text color='var( --clr-primary-1)' mb={2} textAlign='center'>
                         Experience Immersive party that happens every week in Kampala, Uganda
                     </Text>
                     <Grid justifyContent='center'>
                         <ButtonGroup spacing={8}>
-                            <Button as={Link} href='/stream'
+                            <Button as={Link} href='/events'
                                 _hover={{ textDecoration: 'none', bg: 'var( --clr-primary-1)', color: 'black' }}
                                 textDecoration='none' target='_blank' colorScheme="Alpha" rounded='full' variant="outline">
-                                More Info
+                                More Information
                             </Button>
-                            <Button as={Link} href='/stream' _hover={{ textDecoration: 'none', bg: 'var( --clr-primary-1)', color: 'black' }}  textDecoration='none' colorScheme="Alpha" rounded='full' variant="outline">
-                                Podcast Music
+                            <Button as={Link} href='/bookings' _hover={{ textDecoration: 'none', bg: 'var( --clr-primary-1)', color: 'black' }}  textDecoration='none' colorScheme="Alpha" rounded='full' variant="outline">
+                               Get Ticket Now
                             </Button>
                         </ButtonGroup>
                     </Grid>

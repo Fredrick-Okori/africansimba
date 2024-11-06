@@ -15,18 +15,6 @@ import {
 // Animation
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-
-//Carousel Arrows
-
-
-import { useSinglePrismicDocument } from '@prismicio/react';
-import { FiArrowRight } from 'react-icons/fi';
-import { FaLocationArrow } from 'react-icons/fa';
-
-
-
-// import { CustomLeftArrow, CustomRightArrow } from '../Home/CustomArrows';
-
 const carouselItems = [
     {
         image: '/images/videoposter.jpg',

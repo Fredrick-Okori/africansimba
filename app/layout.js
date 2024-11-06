@@ -1,5 +1,4 @@
-import { PrismicPreview } from '@prismicio/next'
-import { repositoryName } from '@/prismicio'
+
 import { ChakraProvider } from '@chakra-ui/react'
 
 import { Lexend } from 'next/font/google'
@@ -22,17 +21,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-   
         <ChakraProvider>
           <NavBar />
           <main className={lexend.className}>
             {children}
-          </main>
-        
+          </main>     
           <Footer/>
           </ChakraProvider>  
-    
-        <PrismicPreview repositoryName={repositoryName} />
       </body>
     </html>
   )

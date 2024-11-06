@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "clean": "rimraf .next",
-"build": "next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "slicemachine": "start-slicemachine"
@@ -15,9 +15,6 @@
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
     "@madzadev/audio-player": "^2.1.13",
-    "@prismicio/client": "^7.7.4",
-    "@prismicio/next": "^1.6.0",
-    "@prismicio/react": "^2.8.0",
     "aos": "^3.0.0-beta.6",
     "framer-motion": "^11.3.19",
     "next": "14.2.5",
@@ -25,7 +22,6 @@
     "react": "^18",
     "react-audio-play": "^1.0.2",
     "react-dom": "^18",
-    "react-h5-audio-player": "^3.9.3",
     "react-icons": "^5.2.1",
     "react-multi-carousel": "^2.8.5",
     "react-router-dom": "^6.25.1"
