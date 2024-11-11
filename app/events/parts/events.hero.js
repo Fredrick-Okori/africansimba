@@ -14,8 +14,7 @@ export default function EventsHero() {
                 Experience Immersive party that happens every week in Kampala, Uganda
             </Text>
             <Box mt={10} position="relative">
-                <Image
-                  
+                <Image                  
                     quality={60}
                   style={{borderRadius: '10px'}}
                     loading='lazy'
@@ -24,8 +23,7 @@ export default function EventsHero() {
                     objectFit='cover'
                     rounded={10}
                     src="/compressed/events_hero.jpg"
-                    alt='Events hero image'
-                   
+                    alt='Events hero image'                  
                 />
             </Box>
         </Container>

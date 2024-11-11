@@ -1,7 +1,8 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import {
-    Box, Heading, SimpleGrid, VStack, Text, Container, Icon, Badge, IconButton, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody
+    Box, Heading, SimpleGrid, VStack, Text, Container, Icon, Badge, IconButton, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody,
+    ModalFooter
 } from '@chakra-ui/react';
 import { FaMapMarkerAlt, FaHeart } from 'react-icons/fa';
 import Image from 'next/image';
@@ -115,6 +116,7 @@ const PreviousVideos = ({ videos = defaultVideos }) => {
                             />
                         )}
                     </ModalBody>
+                    <ModalFooter bg='var(--clr-primary-2)' color='var(--clr-primary-1)'>Join the experience on Youtube & Social media</ModalFooter>
                 </ModalContent>
             </Modal>
         </Box>

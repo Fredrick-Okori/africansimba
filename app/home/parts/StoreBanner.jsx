@@ -13,6 +13,9 @@ import {
 import { FiExternalLink } from 'react-icons/fi';
 import { useState } from 'react';
 
+import Video from 'next-video';
+
+import MulebaIntroductionVideo from '@/videos/introduction_video.mp4'
 export const StoreBanner = () => {
     const [isVideoLoaded, setVideoLoaded] = useState(false);
 
@@ -49,32 +52,7 @@ export const StoreBanner = () => {
                     </Stack>
                 </Box>
                 <Flex flex="1" overflow="hidden" position="relative">
-                    {/* Video poster */}
-                    {!isVideoLoaded && (
-                        <Image
-                            src="https://img.youtube.com/vi/cvysB_dyOd8/hqdefault.jpg"
-                            alt="Video Poster"
-                            width="100%"
-                            height="100%"
-                            objectFit="cover"
-                            position="absolute"
-                            top="0"
-                            left="0"
-                        />
-                    )}
-
-                    {/* Video iframe */}
-                    <iframe
-                        width="100%"
-                        height="100%"
-                        src={isVideoLoaded ? "https://www.youtube.com/embed/cvysB_dyOd8?autoplay=1" : ""}
-                        title="Muleba Official video"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        onLoad={handleVideoLoad}
-                    >
-                    </iframe>
+                    <Video src={MulebaIntroductionVideo} style={{maxWidth: '55rem'}} accentColor="#ff0000" onLoadedData={handleVideoLoad} />
                 </Flex>
             </Stack>
         </Box>

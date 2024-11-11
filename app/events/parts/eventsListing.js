@@ -12,7 +12,6 @@ import { events } from './data';
 const EventsListing = () => {
     const fontSize = useBreakpointValue({ base: "2xl", md: "3xl" });
     const subFontSize = useBreakpointValue({ base: "md", md: "xl" });
-    const buttonSize = useBreakpointValue({ base: "sm", md: "md" });
     const imageHeight = useBreakpointValue({ base: "300px", md: "400px" });
 
     return (
@@ -22,7 +21,6 @@ const EventsListing = () => {
                     <Text fontSize={fontSize} fontWeight="bold" color="var( --clr-primary-1)" mb={3}>Every event is special</Text>
                     <Text fontSize={subFontSize} fontWeight="normal" color="white">Join the Game Changers</Text>
                 </Box>
-
             </Flex>
             <Grid templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(2, 1fr)", lg: "repeat(4, 1fr)" }} gap={4}>
                 {events.map((event, index) => (
