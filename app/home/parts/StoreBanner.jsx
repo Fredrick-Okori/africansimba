@@ -25,19 +25,19 @@ export const StoreBanner = () => {
 
     return (
         <Box maxW="7xl" mx="auto" px={{ base: '0', lg: '12' }} py={{ base: '0', lg: '12' }}>
-            <Stack direction={{ base: 'column-reverse', lg: 'row' }} spacing={{ base: '0', lg: '20' }}>
+            <Stack direction={{ base: 'column', lg: 'row' }} spacing={{ base: '0', lg: '20' }}>
                 <Box
                     width={{ lg: 'sm' }}
                     rounded={{ base: '10', lg: '10' }}
-                    transform={{ base: 'translateY(-50%)', lg: 'none' }}
+                  
                     mx={{ base: '6', md: '8', lg: '0' }}
                     px={{ base: '6', md: '8', lg: '0' }}
                     py={{ base: '6', md: '8', lg: '12' }}
-                    bg={{ base: 'var(--clr-primary-3)', md: 'var(--clr-primary-3)', lg: 'transparent' }}
+                    bg={{ base: 'none', md: 'var(--clr-primary-3)', lg: 'transparent' }}
                 >
                     <Stack spacing={{ base: '8', lg: '10' }} >
                         <Stack spacing={{ base: '2', lg: '4' }}>
-                            <Heading size="xl" color={{ base: 'var(--clr-primary-2)', md: 'var(--clr-primary-2)', lg: 'var(--clr-primary-1)' }} fontWeight="bold">
+                            <Heading size="xl" color={{ base: 'var(--clr-primary-1)', md: 'var(--clr-primary-2)', lg: 'var(--clr-primary-1)' }} fontWeight="bold">
                                 We are the Game Changers
                             </Heading>
                             <Heading size="md" fontWeight="normal" color='var(--clr-primary-1)'>
@@ -51,8 +51,8 @@ export const StoreBanner = () => {
                         </HStack>
                     </Stack>
                 </Box>
-                <Flex flex="1" overflow="hidden" position="relative">
-                    <Video src={MulebaIntroductionVideo} style={{maxWidth: '55rem'}} accentColor="#ff0000" onLoadedData={handleVideoLoad} />
+                <Flex flex="1" overflow="hidden" position="relative" padding={{ base: '0', lg: '0' }}>
+                    <Video src={MulebaIntroductionVideo} style={{maxWidth: '55rem', borderRadius: '10px', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.5)'}} accentColor="var(--clr-primary-)" onLoadedData={handleVideoLoad} />
                 </Flex>
             </Stack>
         </Box>

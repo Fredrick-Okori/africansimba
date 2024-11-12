@@ -1,7 +1,0 @@
-{"status":"ready",
-"originalFilePath":"videos/test_video.mp4",
-"provider":"mux","providerMetadata":{},
-"createdAt":1724368605493,
-"updatedAt":1724368605493,"size":7655976,
-"poster": "./stream_poster.avif"
-}

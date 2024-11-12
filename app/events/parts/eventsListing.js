@@ -46,7 +46,7 @@ const EventsListing = () => {
                                 spacing={2}
                             >
                                 <Text color="var( --clr-primary-1)" fontSize={["sm", "md", "lg"]} fontWeight="bold">{event.name}</Text>
-                                <Text color="gray.300" fontSize={["xs", "sm", "md"]}>{event.price}</Text>
+                                <Text color="gray.300" fontSize={["xs", "sm", "md"]}>{event.host}</Text>
                                
                             </VStack>
                         </Box>
