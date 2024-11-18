@@ -5,7 +5,7 @@ import { Lexend } from 'next/font/google'
 import './globals.css'
 
 import NavBar from './components/NavBar'
-import Footer from './components/Footer'
+
 
 const lexend = Lexend({
   family: 'Neuton',
@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
           <main className={lexend.className}>
             {children}
           </main>     
-          <Footer/>
+         
           </ChakraProvider>  
       </body>
     </html>

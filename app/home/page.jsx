@@ -13,6 +13,7 @@ import VideoBanner from './parts/VideoBanner';
 import Link from 'next/link';
 import { StoreBanner } from './parts/StoreBanner';
 import PartnerSection from '../components/sponsors';
+import Footer from '../components/Footer';
 
 const Home = () => {
     return (
@@ -28,7 +29,8 @@ const Home = () => {
                     {/* <UpcomingEvents /> */}
                     <StoreBanner />
                     <ProductCarousel />
-                    <PartnerSection />                  
+                    <PartnerSection />   
+                    <Footer/>
                 </Box>
             </Box>
         </Suspense>

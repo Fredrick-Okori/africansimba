@@ -15,14 +15,14 @@ const defaultVideos = [
         title: "Muleba Festival highlights",
         videoUrl: "https://www.youtube.com/embed/cvysB_dyOd8?autoplay=1",
         thumbnail: "/videoposters/african_vibes.jpeg",
-        location: "Lagos, Nigeria",
+        location: "Tanzania Festival Events",
     },
     {
         id: 2,
         videoUrl: "https://www.youtube.com/watch?v=YXbXzOn6rK4?autoplay=1",
-        title: "Gabba Big Ballers Nights at Paradigm",
+        title: "Wahallah Wednesdays",
         thumbnail: "/videoposters/afro_beauty.avif",
-        location: "Accra, Ghana",
+        location: "The Thrones, Bugolobi",
     },
     {
         id: 3,

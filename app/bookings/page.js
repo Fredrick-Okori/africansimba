@@ -4,6 +4,7 @@ import BookingHero from "./parts/booking.hero"
 import CreateBooking from "./parts/booking.sheet"
 import PartnerSection from "../components/sponsors"
 import { Suspense } from "react"
+import Footer from "../components/Footer"
 export default function BookingService() {
     return (
         <>
@@ -13,6 +14,7 @@ export default function BookingService() {
                 <BookingHero />
                 <CreateBooking />
                 <PartnerSection/>
+                <Footer/>
                 </Box>
             </Suspense>
         </>

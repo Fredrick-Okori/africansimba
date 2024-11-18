@@ -1,11 +1,13 @@
 import React from 'react';
-import { Box, Text, Flex, VStack, SimpleGrid, Container } from '@chakra-ui/react';
+import { Box, Stack, Heading, HStack, Button, Text, Flex, VStack, SimpleGrid, Container } from '@chakra-ui/react';
 import Image from 'next/image';
+import { FiExternalLink } from "react-icons/fi";
+import Link from 'next/link';
 
 const teamMembers = [
     {
-        name: 'John Doe',
-        position: 'CEO',
+        name: 'Tyra Tyra',
+        position: 'Events Organizer',
         bio: 'John is the visionary leader with over 20 years of experience.',
         imageUrl: '/videoposters/afro_beauty.avif'
     },
@@ -13,6 +15,24 @@ const teamMembers = [
         name: 'Jane Smith',
         position: 'CTO',
         bio: 'Jane is the tech mastermind behind our innovative solutions.',
+        imageUrl: '/videoposters/afro_beauty.avif'
+    },
+    {
+        name: 'Emily Johnson',
+        position: 'Lead Designer',
+        bio: 'Emily brings creativity and aesthetics to the forefront of our projects.',
+        imageUrl: '/videoposters/afro_beauty.avif'
+    },
+    {
+        name: 'Emily Johnson',
+        position: 'Lead Designer',
+        bio: 'Emily brings creativity and aesthetics to the forefront of our projects.',
+        imageUrl: '/videoposters/afro_beauty.avif'
+    },
+    {
+        name: 'Emily Johnson',
+        position: 'Lead Designer',
+        bio: 'Emily brings creativity and aesthetics to the forefront of our projects.',
         imageUrl: '/videoposters/afro_beauty.avif'
     },
     {
@@ -63,6 +83,38 @@ const TeamSection = () => {
                     </Box>
                 ))}
             </SimpleGrid>
+            <Box maxW="7xl" mx="auto" px={{ base: '0', lg: '12' }} py={{ base: '0', lg: '12' }}>
+            <Stack direction={{ base: 'column', lg: 'row' }} spacing={{ base: '0', lg: '20' }}>
+                <Box
+                    width={{ lg: 'sm' }}
+                    rounded={{ base: '10', lg: '10' }}
+                  
+                    mx={{ base: '6', md: '8', lg: '0' }}
+                    px={{ base: '6', md: '8', lg: '0' }}
+                    py={{ base: '6', md: '8', lg: '12' }}
+                    bg={{ base: 'none', md: 'var(--clr-primary-3)', lg: 'transparent' }}
+                >
+                    <Stack spacing={{ base: '8', lg: '10' }} >
+                        <Stack spacing={{ base: '2', lg: '4' }}>
+                            <Heading size="xl" color={{ base: 'var(--clr-primary-3)', md: 'var(--clr-primary-2)', lg: 'var(--clr-primary-3)' }} fontWeight="bold">
+                                We are the Game Changers
+                            </Heading>
+                            <Heading size="sm" fontWeight="normal" color='var(--clr-primary-2)'>
+                                An emotional and authentic experience with the Game Changers including the high-energy DJs
+                            </Heading>
+                        </Stack>
+                        <HStack spacing="3">
+                            <Button as={Link} href='/store' _hover={{ textDecoration: 'none', bg: 'var(--clr-primary-3)', color: 'var(--clr-primary-1' }} textDecoration='none' rightIcon={<FiExternalLink />} rounded="full" colorScheme="var(--clr-primary-3)" variant="outline">
+                                View Events
+                            </Button>
+                        </HStack>
+                    </Stack>
+                </Box>
+                <Flex flex="1" overflow="hidden" position="relative" padding={{ base: '0', lg: '0' }}>
+                    <Image src="/compressed/new_muleba.jpeg" loading='lazy' alt="African Simba Team" style={{borderRadius: '10px'}} width={500} height={200} objectFit="cover" quality={100} />
+                </Flex>
+            </Stack>
+        </Box>
         </Container>
     );
 };

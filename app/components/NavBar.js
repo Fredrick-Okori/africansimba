@@ -77,19 +77,20 @@ const NavBar = () => {
                                 <Link href='/events' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/stream' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/stream')}>
                                     Events
                                 </Link>
-                                <Link href='/about' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/about' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/about')}>
-                                    About
-                                </Link>
+                            
                                 <Link href='/bookings' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/bookings' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/bookings')}>
                                     Tickets
                                 </Link>
                                 {/* <Link href='/saloon' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/saloon' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/saloon')}>
                             Saloon
-                            </Link> */}
+                            </Link>
                                 <Link href='/store' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/store' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/store')}>
                                     Profile
+                                </Link> */}
+                                    <Link href='/about' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/about' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/about')}>
+                                    About
                                 </Link>
-                                <Link href='/contact' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/contact' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/contact')}>
+                                <Link href='/contact-us' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/contact' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/contact')}>
                                     Contact
                                 </Link>
                                 <Link href='/store' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/store' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/store')}>
