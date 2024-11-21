@@ -3,14 +3,14 @@ import { Box, Flex, Divider, AbsoluteCenter, Text, Link, Image, Container, VStac
 import { FiFacebook, FiInstagram, FiTwitter, FiYoutube } from 'react-icons/fi';
 import { useSearchParams, useRouter } from 'next/navigation'; // Changed import statement
 
-import { Suspense, lazy } from 'react';
+
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
  
 
     return (
-        <Suspense>
+<>
         <Box color='var(--clr-primary-1)' py={20}>
             <Container maxW="container.xl">
                
@@ -26,7 +26,7 @@ const Footer = () => {
                     </Flex>
             </Container>
             </Box>
-        </Suspense>
+            </>
     );
 };
 

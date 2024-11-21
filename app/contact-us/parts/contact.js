@@ -56,7 +56,7 @@ const ContactUs = () => {
             <HStack>
               <Icon as={MdLocationOn} boxSize={6} color="var(--clr-primary-3" />
               <Text fontSize="md" color="gray.700">
-                123 Simba Avenue, Kampala, Uganda
+               Acacia Avenue, Kampala, Uganda
               </Text>
             </HStack>
             <HStack>
@@ -72,35 +72,7 @@ const ContactUs = () => {
               </Text>
             </HStack>
           </VStack>
-          <VStack
-            
-           
-          
-            p={6}
-            align="flex-start"
-            spacing={6}
-            w={{ base: 'full', md: '40%' }}
-          >
-                <Heading as="h2" size="md" color="gray.700">Main Office</Heading>
-            <HStack>
-              <Icon as={MdLocationOn} boxSize={6} color="var(--clr-primary-3" />
-              <Text fontSize="md" color="gray.700">
-                123 Simba Avenue, Kampala, Uganda
-              </Text>
-            </HStack>
-            <HStack>
-              <Icon as={MdPhone} boxSize={6} color="var(--clr-primary-3" />
-              <Text fontSize="md" color="gray.700">
-                +256 123 456 789
-              </Text>
-            </HStack>
-            <HStack>
-              <Icon as={MdEmail} boxSize={6} color="var(--clr-primary-3" />
-              <Text fontSize="md" color="gray.700">
-                info@simbaevents.com
-              </Text>
-            </HStack>
-          </VStack>
+        
 
           {/* Contact Form */}
           <Box

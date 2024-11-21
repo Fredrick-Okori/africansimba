@@ -6,40 +6,49 @@ import Link from 'next/link';
 
 const teamMembers = [
     {
-        name: 'Tyra Tyra',
-        position: 'Events Organizer',
-        bio: 'John is the visionary leader with over 20 years of experience.',
-        imageUrl: '/videoposters/afro_beauty.avif'
+        name: 'Shilla Angel',
+        position: 'Personal Assistant',
+        imageUrl: '/team/shillah_Angel.webp'
     },
     {
-        name: 'Jane Smith',
-        position: 'CTO',
-        bio: 'Jane is the tech mastermind behind our innovative solutions.',
-        imageUrl: '/videoposters/afro_beauty.avif'
+        name: 'Tyra Osbert',
+        position: 'Media and Production Manager',   
+        imageUrl: '/team/Tyra_Osbert.webp'
     },
     {
-        name: 'Emily Johnson',
-        position: 'Lead Designer',
-        bio: 'Emily brings creativity and aesthetics to the forefront of our projects.',
-        imageUrl: '/videoposters/afro_beauty.avif'
+        name: 'Kimnana Lil Stunner',
+        position: 'Official Hostess',   
+        imageUrl: '/team/kimnana_lil_stunner.webp'
     },
     {
-        name: 'Emily Johnson',
-        position: 'Lead Designer',
-        bio: 'Emily brings creativity and aesthetics to the forefront of our projects.',
-        imageUrl: '/videoposters/afro_beauty.avif'
+        name: 'Laylah Mckenzie',
+        position: 'Official Hostess',      
+        imageUrl: '/team/Laylah_mak.webp'
     },
     {
-        name: 'Emily Johnson',
-        position: 'Lead Designer',
-        bio: 'Emily brings creativity and aesthetics to the forefront of our projects.',
-        imageUrl: '/videoposters/afro_beauty.avif'
+        name: 'Hannah Tewodross',
+        position: 'Official Hostess',    
+        imageUrl: '/team/hannah_tewodross.webp'
     },
     {
-        name: 'Emily Johnson',
-        position: 'Lead Designer',
-        bio: 'Emily brings creativity and aesthetics to the forefront of our projects.',
-        imageUrl: '/videoposters/afro_beauty.avif'
+        name: 'Gift Kihembo',
+        position: 'Offical Hostess',  
+        imageUrl: '/team/gift_kihembo.webp'
+    },
+    {
+        name: 'Dj Katso',
+        position: 'Official Deejay',  
+        imageUrl: '/team/dj_katso.webp'
+    },
+    {
+        name: 'Dj Ashley',
+        position: 'Offical Deejay',  
+        imageUrl: '/team/dj_ashley.webp'
+    },
+    {
+        name: 'Raoul Mak',
+        position: 'Management',    
+        imageUrl: '/team/Raoul_Mak.webp'
     },
     // Add more team members as needed
 ];
@@ -49,72 +58,59 @@ const TeamSection = () => {
         <Container maxW="container.lg" py={10}>
             <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
                 {teamMembers.map((member, index) => (
-                    <Box
-                        key={index}
-                        borderRadius="md"
-                        overflow="hidden"
-                        boxShadow="lg"
-                        bg="white"
-                        maxW="sm"
-                        p={5}
-                        _hover={{ transform: 'scale(1.05)', transition: '0.3s ease' }}
-                    >
-                        <Box borderRadius="full" overflow="hidden" width="100px" height="100px" mx="auto">
-                            <Image
-                                src={member.imageUrl}
-                                alt={`${member.name}'s photo`}
-                                width={100}
-                                height={100}
-                                objectFit="cover"
-                                quality={100}
-                            />
-                        </Box>
-                        <VStack mt={4} spacing={1} textAlign="center">
-                            <Text fontWeight="bold" fontSize="xl">
-                                {member.name}
-                            </Text>
-                            <Text color="gray.500" fontSize="md">
-                                {member.position}
-                            </Text>
-                            <Text fontSize="sm" color="gray.600" mt={2}>
-                                {member.bio}
-                            </Text>
-                        </VStack>
-                    </Box>
+                 <Box
+                 key={index}
+                 borderRadius="md"
+                 overflow="hidden"
+                 boxShadow="lg"
+                 position="relative"
+                
+               >
+                 {/* Image Wrapper */}
+                 <Box position="relative" overflow="hidden" w="100%" h="300px">
+                   <Image
+                     src={member.imageUrl}
+                     alt={`${member.name}'s photo`}
+                     layout="fill"
+                     objectFit="cover"
+                     quality={80}
+                     priority
+                     style={{ borderRadius: "lg" }}
+                   />
+                   {/* Overlay */}
+                   <Box
+                     className="overlay"
+                     position="absolute"
+                     top={0}
+                     left={0}
+                     w="100%"
+                     h="100%"
+                     bg="rgba(0, 0, 0, 0.6)"
+                     opacity={0}
+                     zIndex={1}
+                   />
+                   {/* Hover Text Content */}
+                  
+                 </Box>
+                 
+                 {/* Default Text Content */}
+                 <Box textAlign="center" mt={4}>
+                   <Text fontWeight="bold" color="var(--clr-primary-1)" fontSize="lg">
+                     {member.name}
+                   </Text>
+                   <Text color="var(--clr-primary-1)" fontSize="sm">
+                     {member.position}
+                   </Text>
+                   <Text fontSize="xs" mt={2} color="gray.600">
+                     {member.bio}
+                   </Text>
+                 </Box>
+               </Box>
+        
+
                 ))}
             </SimpleGrid>
-            <Box maxW="7xl" mx="auto" px={{ base: '0', lg: '12' }} py={{ base: '0', lg: '12' }}>
-            <Stack direction={{ base: 'column', lg: 'row' }} spacing={{ base: '0', lg: '20' }}>
-                <Box
-                    width={{ lg: 'sm' }}
-                    rounded={{ base: '10', lg: '10' }}
-                  
-                    mx={{ base: '6', md: '8', lg: '0' }}
-                    px={{ base: '6', md: '8', lg: '0' }}
-                    py={{ base: '6', md: '8', lg: '12' }}
-                    bg={{ base: 'none', md: 'var(--clr-primary-3)', lg: 'transparent' }}
-                >
-                    <Stack spacing={{ base: '8', lg: '10' }} >
-                        <Stack spacing={{ base: '2', lg: '4' }}>
-                            <Heading size="xl" color={{ base: 'var(--clr-primary-3)', md: 'var(--clr-primary-2)', lg: 'var(--clr-primary-3)' }} fontWeight="bold">
-                                We are the Game Changers
-                            </Heading>
-                            <Heading size="sm" fontWeight="normal" color='var(--clr-primary-2)'>
-                                An emotional and authentic experience with the Game Changers including the high-energy DJs
-                            </Heading>
-                        </Stack>
-                        <HStack spacing="3">
-                            <Button as={Link} href='/store' _hover={{ textDecoration: 'none', bg: 'var(--clr-primary-3)', color: 'var(--clr-primary-1' }} textDecoration='none' rightIcon={<FiExternalLink />} rounded="full" colorScheme="var(--clr-primary-3)" variant="outline">
-                                View Events
-                            </Button>
-                        </HStack>
-                    </Stack>
-                </Box>
-                <Flex flex="1" overflow="hidden" position="relative" padding={{ base: '0', lg: '0' }}>
-                    <Image src="/compressed/new_muleba.jpeg" loading='lazy' alt="African Simba Team" style={{borderRadius: '10px'}} width={500} height={200} objectFit="cover" quality={100} />
-                </Flex>
-            </Stack>
-        </Box>
+       
         </Container>
     );
 };

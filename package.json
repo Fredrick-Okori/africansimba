@@ -7,7 +7,7 @@
     "clean": "rimraf .next",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "slicemachine": "start-slicemachine"
   },
   "dependencies": {
@@ -15,6 +15,9 @@
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
     "@madzadev/audio-player": "^2.1.13",
+    "@prismicio/client": "^7.7.4",
+    "@prismicio/next": "^1.6.0",
+    "@prismicio/react": "^2.8.0",
     "aos": "^3.0.0-beta.6",
     "framer-motion": "^11.3.19",
     "next": "14.2.5",
@@ -23,16 +26,18 @@
     "react-audio-play": "^1.0.2",
     "react-dom": "^18",
     "react-icons": "^5.2.1",
-    "@prismicio/client": "^7.7.4",
-    "@prismicio/next": "^1.6.0",
-    "@prismicio/react": "^2.8.0",
     "react-multi-carousel": "^2.8.5",
     "react-router-dom": "^6.25.1"
   },
   "devDependencies": {
+    "@eslint/js": "^9.15.0",
     "@slicemachine/adapter-next": "^0.3.43",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.5",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^14.2.5",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "globals": "^15.12.0",
+    "prettier": "^3.3.3",
     "slice-machine-ui": "^2.3.0"
   }
 }

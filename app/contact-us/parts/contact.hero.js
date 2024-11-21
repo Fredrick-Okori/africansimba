@@ -12,10 +12,10 @@ const ContactHero = () => {
     <Container maxW="container.xl" py={10} pt={{base: '25%', lg: '10%'}} >
         <Box pb={10}>
           <Text lineHeight={1} fontWeight='bold' fontSize={{ base: '5xl', lg: '6xl' }} color='var( --clr-primary-2)' textAlign='center'>
-            African Simba Events - Contact Us
+           AFRICAN SIMBA EVENTS
           </Text>
           <Text color='var( --clr-primary-2)' textAlign='center' >
-            African Simbas Official Fashion Store. Introducing trending style with our merchandise
+            "The Game Changers"
           </Text>
         </Box>
      
