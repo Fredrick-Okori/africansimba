@@ -44,7 +44,7 @@ export const UpcomingEvents = () => (
             </Box>
             <Flex flex="1" overflow="hidden">
                 <Image
-                    src="/paradigm/nosimba.jpg"
+                    src="/paradigm/nosimba.webp"
                     alt="Lovely Image"
                     fallback={<Skeleton />}
                     roundedRight='0'
@@ -59,7 +59,7 @@ export const UpcomingEvents = () => (
                 />
                 <Image
                     display={{ base: 'none', sm: 'initial' }}
-                    src="/paradigm/dj.jpg"
+                    src="/paradigm/dj.webp"
                     alt="Paradigm_dj"
                     fallback={<Skeleton />}
                     roundedRight='10'

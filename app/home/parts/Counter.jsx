@@ -1,7 +1,9 @@
 "use client"
 import React, { useEffect } from 'react'
 
-import { Box, Container, Grid, Text, Image, useBreakpointValue } from '@chakra-ui/react'
+import { Box, Container, Grid, Text,  useBreakpointValue } from '@chakra-ui/react'
+
+import Image from 'next/image';
 
 //importing animation
 import Aos from 'aos';
@@ -38,15 +40,15 @@ export default function Count() {
                             />
                             <Image
                                 rounded="lg"
-                                src='/compressed/djblacks.jpg'
+                                src='/compressed/djblacks.webp'
                                 alt='Muleba Festival'
-                                transition="all 0.3s"
-                                _hover={{ transform: 'scale(1.05)' }}
-                                position="relative"
-                                zIndex="0"
-                                objectFit="cover"
-                                w="100%"
-                                h="100%"
+                                layout="fill" 
+                                objectFit="cover" 
+                                priority 
+                                sizes="(max-width: 768px) 100vw, 
+                                       (max-width: 1200px) 50vw, 
+                                       33vw" 
+                              
                             />
                             <Box
                                 position="absolute"
@@ -91,13 +93,14 @@ export default function Count() {
                                 rounded="lg"
                                 src='/compressed/vj.webp'
                                 alt='African simba events anniversary'
-                                transition="all 0.3s"
-                                _hover={{ transform: 'scale(1.05)' }}
-                                position="relative"
-                                zIndex="0"
-                                objectFit="cover"
-                                w="100%"
-                                h="100%"
+                                layout="fill" 
+                                objectFit="cover" 
+                                priority 
+                                sizes="(max-width: 768px) 100vw, 
+                                       (max-width: 1200px) 50vw, 
+                                       33vw" 
+                              
+                               
                             />
                             <Box
                                 position="absolute"
@@ -125,7 +128,7 @@ export default function Count() {
                                 </Text>
                             </Box>
                         </Box>
-                        <Box position="relative" borderRadius="xl" height={imageHeight} _hover={{ transform: 'scale(1.02)' }} transition="all 0.3s">
+                        <Box position="relative" rounded='lg' height={imageHeight} _hover={{ transform: 'scale(1.02)' }} transition="all 0.3s">
                             <Box
                                 position="absolute"
                                 top="0"
@@ -142,11 +145,13 @@ export default function Count() {
                                 rounded="lg"
                                 src='/compressed/paradigmnights.webp'
                                 alt='Paradigm Fridays'
-                                position="relative"
-                                zIndex="0"
-                                objectFit="cover"
-                                w="100%"
-                                h="100%"
+                                layout="fill" 
+                                objectFit="cover" 
+                                
+                                priority 
+                                sizes="(max-width: 768px) 100vw, 
+                                       (max-width: 1200px) 50vw, 
+                                       33vw" 
                             />
                             <Box
                                 position="absolute"

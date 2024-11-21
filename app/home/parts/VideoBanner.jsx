@@ -1,26 +1,31 @@
 import React from 'react';
-import { Container, Button, Grid, Image, Link, Text, Box, ButtonGroup } from '@chakra-ui/react';
+import { Container, Button, Grid, Link, Text, Box, ButtonGroup } from '@chakra-ui/react';
+
+import Image from 'next/image';
 
 
 export default function VideoBanner() {
     return (
-        <Container maxW='container.xl' position="relative" mb={5} mt={{ base: 16, lg: 20 }} pt={{base: 10, lg:20}}>
+        <Container maxW='container.xl' position="relative" mb={5} mt={{ base: 16, lg: 18 }} pt={{base: 10, lg:20}}>
             <Text fontWeight='bold' fontSize={{ base: '3xl', lg: '7xl'}} color='var( --clr-primary-1)' textAlign='center'>African Simba Events</Text>
             <Text color='var( --clr-primary-1)' textAlign='center'>
                 Experience Immersive party that happens every week in Kampala, Uganda
             </Text>
             <Box mt={10} position="relative">
-                <Image
-                  
-                    width={{ base: '100%', lg: '100%' }}
-                    height={{ base: '300px', lg: '500px' }}
-                    objectFit='cover'
-                    rounded={10}
-                    src="/compressed/home_hero.jpg"
-                    alt='night club'
-                    transition="all 0.3s"
-                    _hover={{ transform: 'scale(1.05)' }}
-                />
+            <div style={{ position: "relative", width: "100%", height: "600px" }}>
+  <Image
+    src="/compressed/home_hero.webp"
+    alt="night club"
+    layout="fill" // Makes the image fill the parent container
+    objectFit="cover" // Ensures the image maintains its aspect ratio and fills the area
+    style={{
+      borderRadius: "10px", // Rounded corners
+      transition: "transform 0.3s", // Smooth hover effect
+    }}
+   
+    priority // Optimized for loading
+  />
+</div>
                 {/* Gradient Overlay */}
                 <Box
                     position="absolute"

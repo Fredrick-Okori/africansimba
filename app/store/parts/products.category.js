@@ -4,15 +4,7 @@ import { FaShoePrints, FaTshirt, FaHatCowboy, FaBiking, FaHome, FaMusic, FaFilm 
 import Link from 'next/link';
 
 const ProductCategoryNav = () => {
-  const categories = [
-    { name: 'Shoes', href: '/store/foot-wear', icon: FaShoePrints },
-    { name: 'Clothing', href: '/store/clothing', icon: FaTshirt },
-    { name: 'Accessories', href: '/store/home-accessories', icon: FaHatCowboy },
-    { name: 'Sports & Outdoors', href: '/store/sports-outdoors', icon: FaBiking },
-    { name: 'Home & Decor', href: '/store/home-decor', icon: FaHome },
-    { name: 'Music & Instruments', href: '/store/music-instruments', icon: FaMusic },
-    { name: 'Movies & TV', href: '/store/movies-tv', icon: FaFilm },
-  ];
+ 
 
   return (
     <Box bg={'var(--clr-primary-3)'} >

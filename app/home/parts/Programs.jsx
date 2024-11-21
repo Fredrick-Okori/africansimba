@@ -9,12 +9,12 @@ import Link from 'next/link';
 const products = [
     {
         name: "African Tint Art",
-        image: "/videoposters/amaps.jpg",
+        image: "/store/amaps.webp",
         price: "UGX 15000"
     },
     {
         name: "Branded Simba Cap",
-        image: "/videoposters/art.jpeg",
+        image: "/store/art.webp",
         price: "UGX 140,000"
     },
     {
@@ -24,7 +24,7 @@ const products = [
     },
     {
         name: "African Fibonnaci Wristband",
-        image: "/store/wholesale-blank-cotton-tshirts.jpg",
+        image: "/store/store_tshirt_dark_simba.jpg",
         price: "UGX 150,000"
     }
 ];

@@ -20,16 +20,17 @@ import Image from 'next/image';
 const ContactUs = () => {
   return (
     <>
-    <Box position="relative" w="100%" h={{ base: "50px", md: "50px" }} overflow="hidden">
-    <Image
-        src="/compressed/print_patterns.avif"
-        alt="African Simba Print Patterns"
-        layout="fill"
-        objectFit="cover"
-        priority
-        quality={100}
-    />
-</Box>
+   <Box
+  w="100%"
+  h={{ base: "50px", md: "50px" }}
+  bgImage="url('/compressed/print_patterns.avif')"
+  bgSize="contain" /* Adjusts the pattern size */
+  bgRepeat="repeat-x" /* Repeats horizontally */
+  bgPosition="center"
+  /* Set the overlay color */
+  bgBlendMode="overlay" /* Blend the color and image */
+  opacity={0.5}
+/>
     <Box py={10}>
       <Container maxW="container.xl" px={6}>
         <Heading as="h1" size="xl" textAlign="center" mb={10} color="var(--clr-primary-3">

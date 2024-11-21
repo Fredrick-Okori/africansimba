@@ -3,25 +3,27 @@ import React, { useEffect, useState } from 'react';
 import { Box } from "@chakra-ui/react";
 import "react-multi-carousel/lib/styles.css";
 
+
+
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 
 const events = [
     {
         title: "Dimitri Vegas & Like Mike, Ushuaïa Ibiza",
-        image: "/images/redbg.jpg",
+        image: "/images/redbg.webp",
     },
     {
         title: "Tomorrowland Belgium",
-        image: "/images/eventsbg.jpg",
+        image: "/images/eventsbg.webp",
     },
     {
         title: "Love Tomorrow Conference",
-        image: "/images/bg.jpg",
+        image: "/images/bg.webp",
     },
     {
         title: "Tomorrowland Brasil",
-        image: "/images/defaultbg.jpg",
+        image: "/images/defaultbg.webp",
     },
 ];
 

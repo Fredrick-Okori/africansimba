@@ -26,24 +26,24 @@ import { FiArrowRight } from 'react-icons/fi';
 
 const carouselItems = [
     {
-        image: '/imges/gradient.avif',
+        image: '/imges/gradient.webp',
         heading: 'Flawless Events Hosting',
         text: 'A flawless events with lasting impressions',
     },
     {
-        image: '/iamges/catwalk.jpg',
+        image: '/iamges/catwalk.webp',
         heading: 'African Simba Events',
         text: 'Creating unforgettable experience',
     },
 
   
     {
-        image: '/iamges/catwalk.jpg',
+        image: '/iamges/catwalk.webp',
         heading: 'Experimental Marketing',
         text: 'Captivating and building brands',
     },
     {
-        image: '/iamges/catwalk.jpg',
+        image: '/iamges/catwalk.webp',
         heading: 'Influencer Partnerships',
         text: 'Influencial personalities to amplify your brand',
     },

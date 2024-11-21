@@ -1,7 +1,8 @@
 "use client"
 import React, { useEffect } from 'react'
 
-import { Box, Container, Grid, Text, Image, useBreakpointValue } from '@chakra-ui/react'
+import { Box, Container, Grid, Text, useBreakpointValue } from '@chakra-ui/react'
+import Image from 'next/image';
 
 //importing animation
 import Aos from 'aos';
@@ -36,18 +37,16 @@ export default function DJS() {
                                 zIndex="1"
                                 rounded="lg"
                             />
-                            <Image
-                                rounded="lg"
-                                src='/compressed/roger&stuart.jpg'
-                                alt='Dj Slick Stuart'
-                                transition="all 0.3s"
-                                _hover={{ transform: 'scale(1.05)' }}
-                                position="relative"
-                                zIndex="0"
-                                objectFit="cover"
-                                w="100%"
-                                h="100%"
-                            />
+                              <Image
+    src="/compressed/roger&stuart.webp"
+    alt="Dj Slick Stuart"
+    layout="fill" 
+    objectFit="cover" 
+    priority 
+    sizes="(max-width: 768px) 100vw, 
+           (max-width: 1200px) 50vw, 
+           33vw" 
+  />
                             <Box
                                 position="absolute"
                                 top="0"
@@ -91,13 +90,12 @@ export default function DJS() {
                                 rounded="lg"
                                 src='/compressed/djAlisha.webp'
                                 alt='Dj Alisha'
-                                transition="all 0.3s"
-                                _hover={{ transform: 'scale(1.05)' }}
-                                position="relative"
-                                zIndex="0"
-                                objectFit="cover"
-                                w="100%"
-                                h="100%"
+                                layout="fill" 
+                                objectFit="cover" 
+                                priority 
+                                sizes="(max-width: 768px) 100vw, 
+                                       (max-width: 1200px) 50vw, 
+                                       33vw" 
                             />
                             <Box
                                 position="absolute"
@@ -140,13 +138,14 @@ export default function DJS() {
                             />
                             <Image
                                 rounded="lg"
-                                src='/compressed/djblacks.jpg'
+                                src='/compressed/djblacks.webp'
                                 alt='Best DJs'
-                                position="relative"
-                                zIndex="0"
-                                objectFit="cover"
-                                w="100%"
-                                h="100%"
+                                layout="fill" 
+                                objectFit="cover" 
+                                priority 
+                                sizes="(max-width: 768px) 100vw, 
+                                       (max-width: 1200px) 50vw, 
+                                       33vw" 
                             />
                             <Box
                                 position="absolute"
