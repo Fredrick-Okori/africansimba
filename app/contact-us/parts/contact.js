@@ -27,8 +27,7 @@ const ContactUs = () => {
   bgSize="contain" /* Adjusts the pattern size */
   bgRepeat="repeat-x" /* Repeats horizontally */
   bgPosition="center"
-  /* Set the overlay color */
-  bgBlendMode="overlay" /* Blend the color and image */
+  bgBlendMode="overlay"
   opacity={0.5}
 />
     <Box py={10}>
