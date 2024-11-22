@@ -169,10 +169,28 @@ const MobileNav = ({ onClose }) => {
                     </Flex>
                 </Link>
 
-                <Link href="/stream" _hover={{ color: "purple.200" }} w="100%">
+                <Link href="/events" _hover={{ color: "purple.200" }} w="100%">
                     <Flex align="center">
                         <Icon as={FiActivity} boxSize={5} mr={3} />
-                        <Text>Live</Text>
+                        <Text>Events</Text>
+                    </Flex>
+                </Link>
+                <Link href="/bookings" _hover={{ color: "purple.200" }} w="100%">
+                    <Flex align="center">
+                        <Icon as={FiArrowRight} boxSize={5} mr={3} />
+                        <Text>Tickets</Text>
+                    </Flex>
+                </Link>
+                <Link href="/about" _hover={{ color: "purple.200" }} w="100%">
+                    <Flex align="center">
+                        <Icon as={FiUsers} boxSize={5} mr={3} />
+                        <Text>About Us</Text>
+                    </Flex>
+                </Link>
+                <Link href="/contact-us" _hover={{ color: "purple.200" }} w="100%">
+                    <Flex align="center">
+                        <Icon as={FiMessageCircle} boxSize={5} mr={3} />
+                        <Text>Contact Us</Text>
                     </Flex>
                 </Link>
 
@@ -180,26 +198,6 @@ const MobileNav = ({ onClose }) => {
                     <Flex align="center">
                         <Icon as={FiShoppingCart} boxSize={5} mr={3} />
                         <Text>Shop</Text>
-                    </Flex>
-                </Link>
-
-                <Link href="/bookings" _hover={{ color: "purple.200" }} w="100%">
-                    <Flex align="center">
-                        <Icon as={FiArrowRight} boxSize={5} mr={3} />
-                        <Text>Bookings</Text>
-                    </Flex>
-                </Link>
-
-                <Link href="/about" _hover={{ color: "purple.200" }} w="100%">
-                    <Flex align="center">
-                        <Icon as={FiUsers} boxSize={5} mr={3} />
-                        <Text>About Us</Text>
-                    </Flex>
-                </Link>
-                <Link href="/contact" _hover={{ color: "purple.200" }} w="100%">
-                    <Flex align="center">
-                        <Icon as={FiMessageCircle} boxSize={5} mr={3} />
-                        <Text>Contact Us</Text>
                     </Flex>
                 </Link>
 
