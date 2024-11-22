@@ -8,8 +8,8 @@ export default function VideoBanner() {
     return (
         <Container maxW='container.xl' position="relative" mb={5} mt={{ base: 16, lg: 18 }} pt={{base: 10, lg:20}}>
             <Text fontWeight='bold' fontSize={{ base: '3xl', lg: '7xl'}} color='var( --clr-primary-1)' textAlign='center'>AFRICAN SIMBA EVENTS</Text>
-            <Text color='var( --clr-primary-1)' textAlign='center'>
-                Experience Immersive party that happens every week in Kampala, Uganda
+            <Text color='var( --clr-primary-1)' fontSize={{ base: '2xl', lg: '3xl'}} textAlign='center'>
+              " THE GAME CHANGERS"
             </Text>
             <Box mt={10} position="relative">
             <div style={{ position: "relative", width: "100%", height: "600px" }}>

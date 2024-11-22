@@ -20,16 +20,17 @@ import Image from 'next/image';
 const ContactUs = () => {
   return (
     <>
-   <Box
-  w="100%"
-  h={{ base: "50px", md: "50px" }}
-  bgImage="url('/compressed/print_patterns.avif')"
-  bgSize="contain" /* Adjusts the pattern size */
-  bgRepeat="repeat-x" /* Repeats horizontally */
-  bgPosition="center"
-  bgBlendMode="overlay"
-  opacity={0.5}
-/>
+      {/* Background Image */}
+      <Box position="relative" w="100%" h="50px" overflow="hidden">
+                <Image
+                    src="/compressed/print_patterns.avif"
+                    alt="African Simba Print Patterns"
+                    layout="fill"
+                    objectFit="cover"
+                    priority
+                    quality={100}
+                />
+            </Box>
     <Box py={10}>
       <Container maxW="container.xl" px={6}>
         <Heading as="h1" size="xl" textAlign="center" mb={10} color="var(--clr-primary-3">
@@ -62,7 +63,19 @@ const ContactUs = () => {
             <HStack>
               <Icon as={MdPhone} boxSize={6} color="var(--clr-primary-3" />
               <Text fontSize="md" color="gray.700">
-                +256 123 456 789
+                +256 754 033 164
+              </Text>
+            </HStack>
+            <HStack>
+              <Icon as={MdPhone} boxSize={6} color="var(--clr-primary-3" />
+              <Text fontSize="md" color="gray.700">
+                +256 778 105 878
+              </Text>
+            </HStack>
+            <HStack>
+              <Icon as={MdPhone} boxSize={6} color="var(--clr-primary-3" />
+              <Text fontSize="md" color="gray.700">
+                +256 759 545 761
               </Text>
             </HStack>
             <HStack>

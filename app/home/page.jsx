@@ -11,7 +11,7 @@ import FloatingVideoSection from '../components/YouTubeLive';
 import VideoBanner from './parts/VideoBanner';
 
 import Link from 'next/link';
-import { StoreBanner } from './parts/StoreBanner';
+
 import PartnerSection from '../components/sponsors';
 import Footer from '../components/Footer';
 
@@ -27,7 +27,7 @@ const Home = () => {
                     <VideoBanner />
                     <EventSchedule />
                     {/* <UpcomingEvents /> */}
-                    <StoreBanner />
+               
                     <ProductCarousel />
                     <PartnerSection />   
                     <Footer/>

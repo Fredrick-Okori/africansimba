@@ -17,9 +17,9 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 const carouselItems = [
     {
-        image: '/images/videoposter.jpg',
+        image: '/images/videoposter.webp',
         heading: 'Buy your Ticket',
-        text: 'Next Show around the corner at Catwalk',
+        text: 'For the next show with the Game Changers',
     }
 
 
@@ -63,7 +63,7 @@ const BookingHero = () => {
                     backgroundImage={`url(${item.image})`}
                     backgroundPosition="center"
                     mt={50}
-
+priority="high"
                     zIndex={-100}
                
                    

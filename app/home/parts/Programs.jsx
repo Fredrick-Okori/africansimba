@@ -8,25 +8,45 @@ import Link from 'next/link';
 
 const products = [
     {
-        name: "African Tint Art",
-        image: "/store/amaps.webp",
-        price: "UGX 15000"
+        id:1,
+        name: "White Jamboree Branded Cap ",
+        image: "/store/jamboree_cap.webp",
+        price: "UGX 15000",
+        
     },
     {
-        name: "Branded Simba Cap",
-        image: "/store/art.webp",
-        price: "UGX 140,000"
+        id: 2,
+        name: "White Jamboree Branded T-shirt",
+        image: "/store/jamboree_branded_tshirt.webp",
+        price: "UGX 140,000",
+      
     },
     {
-        name: "Bold Gucci Cap",
-        image: "/store/boldfit-head-caps-with-adjustable-strap-in-summer-for-men-caps-men-for-all-sports-black-product-images-orvbhpbfyho-p600039429-0-202304121406.webp",
-        price: "UGX 90,000"
+        id: 3,
+        name: "Black Jamboree Collar Shirt",
+        image: "/store/jamboree_collar_shirt.webp",
+        price: "UGX 90,000",
+        
     },
     {
-        name: "African Fibonnaci Wristband",
-        image: "/store/store_tshirt_dark_simba.jpg",
-        price: "UGX 150,000"
-    }
+        id: 4,
+        name: "Black Jamboree Branded Cap",
+        image: "/store/jamboree_cap_black.webp",
+        price: "UGX 150,000",
+        detailsUrl: "/product/african-fibonacci-wristband"
+    },
+    {
+        id: 5,
+        name: "Black Jamboree Hoodie",
+        image: "/store/black_jamboree_hoodie.webp",
+        price: "UGX 120,000",
+    },
+    {
+        id: 6,
+        name: "African Simba Logo T-shirt",
+        image: "/store/store_tshirt_dark.webp",
+        price: "UGX 120,000",
+    },
 ];
 
 const responsive = {

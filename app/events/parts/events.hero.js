@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Container, Box, Text, Button, ButtonGroup } from '@chakra-ui/react';
 import Image from 'next/image';
 import { FiExternalLink } from 'react-icons/fi';
-import EventIntroductionVideo from '@/videos/events_introduction_video.mp4';
+
 
 
 export default function EventsHero() {
@@ -12,7 +12,7 @@ export default function EventsHero() {
     return (
         <Container maxW="container.xl" position="relative" mt={20} pt={10} pb={10}>
             <Text fontWeight="bold" fontSize={{ base: '3xl', lg: '5xl' }} color="var(--clr-primary-1)" textAlign="left">
-                Weekly African Simba Party
+                Our Weekly Events
             </Text>
             <Text color="var(--clr-primary-1)" textAlign="left">
                 Experience an immersive party that happens every week in Kampala, Uganda

@@ -1,36 +1,36 @@
 export const products = [
     {
         id:1,
-        name: "African Tint Art",
-        image: "/store/store_tshirt_dark.webp",
+        name: "White Jamboree Branded Cap ",
+        image: "/store/jamboree_cap.webp",
         price: "UGX 15000",
-        detailsUrl: "/product/african-tint-art"
+        
     },
     {
         id: 2,
-        name: "Branded Simba Cap",
-        image: "/store/store_tshirt_dark.webp",
+        name: "White Jamboree Branded T-shirt",
+        image: "/store/jamboree_branded_tshirt.webp",
         price: "UGX 140,000",
-        detailsUrl: "/product/branded-simba-cap"
+      
     },
     {
         id: 3,
-        name: "Bold Gucci Cap",
-        image: "/store/boldfit-head-caps-with-adjustable-strap-in-summer-for-men-caps-men-for-all-sports-black-product-images-orvbhpbfyho-p600039429-0-202304121406.webp",
+        name: "Black Jamboree Collar Shirt",
+        image: "/store/jamboree_collar_shirt.webp",
         price: "UGX 90,000",
-        detailsUrl: "/product/bold-gucci-cap"
+        
     },
     {
         id: 4,
-        name: "African Fibonnaci Wristband",
-        image: "https://images.unsplash.com/photo-1589156229687-496a31ad1d1f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=772&q=80",
+        name: "Black Jamboree Branded Cap",
+        image: "/store/jamboree_cap_black.webp",
         price: "UGX 150,000",
         detailsUrl: "/product/african-fibonacci-wristband"
     },
     {
         id: 5,
-        name: "African Simba Logo T-shirt",
-        image: "/store/store_tshirt.webp",
+        name: "Black Jamboree Hoodie",
+        image: "/store/black_jamboree_hoodie.webp",
         price: "UGX 120,000",
     },
     {
@@ -39,18 +39,5 @@ export const products = [
         image: "/store/store_tshirt_dark.webp",
         price: "UGX 120,000",
     },
-    {
-        id: 7,
-        name: "Branded Simba Cap",
-        image: "/videoposters/baseball.jpg",
-        price: "UGX 140,000",
-        detailsUrl: "/product/branded-simba-cap"
-    },
-    {
-        id: 8,
-        name: "African Fibonnaci Wristband",
-        image: "https://images.unsplash.com/photo-1589156229687-496a31ad1d1f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=772&q=80",
-        price: "UGX 150,000",
-        detailsUrl: "/product/african-fibonacci-wristband"
-    },
+    
 ];

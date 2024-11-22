@@ -1,10 +1,10 @@
 export const events = [
     {
         id: 1,
-        name: "Jamboree Adventures",
-       image: "/nights/jamboree_adventures.webp",
+        name: "Muleba Festival",
+       image: "/nights/muleba_festival.webp",
        
-        host: "Dubai, UAE"
+        host: "Magical Lounge, Tanzania"
     },
     {
         id: 2,
@@ -27,12 +27,6 @@ export const events = [
         host: "Paradigm Loune and Bar, Gaba",
    
     },
-    {
-        id: 5,
-        name: "Fiesta Sunday",
-        image: "/nights/fiesta_sunday.webp",
-        host: "The Villa Ug",
-   
-    },
+ 
    
 ];

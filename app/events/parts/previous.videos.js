@@ -8,6 +8,7 @@ import { FaMapMarkerAlt, FaHeart } from 'react-icons/fa';
 import Image from 'next/image';
 import EventsHero from './events.hero';
 import EventsListing from './eventsListing';
+import Upcoming from './upcoming';
 
 const defaultVideos = [
     {
@@ -80,6 +81,7 @@ const PreviousVideos = ({ videos = defaultVideos }) => {
     return (
         <Box as="section" py={10} mt={10}>
             <EventsHero />
+            <Upcoming/>
             <EventsListing/>
             <Container maxW="container.xl" pt={10}>
                 <Heading as="h2" size="xl" fontWeight='normal' mb={6} color="var(--clr-primary-1)">
@@ -142,7 +144,7 @@ const VideoCard = ({ video, onSelect, isNew }) => {
             transition="all 0.3s"
             border='1px solid transparent'
             position="relative"
-            _hover={{ transform: 'scale(1.05)', boxShadow: 'xl', border: '1px solid grey' }}
+            _hover={{ transform: 'scale(1.01)', boxShadow: 'xl', transition: "all 0.3s", border: '1px solid grey' }}
         >
             <Box height="300px" width="100%" overflow="hidden" position="relative">
                 <Image src={video.thumbnail} alt={video.title} loading='lazy' width={700} height={200} objectFit="cover" />
