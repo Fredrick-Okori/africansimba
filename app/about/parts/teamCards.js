@@ -16,23 +16,28 @@ const teamMembers = [
         imageUrl: '/team/Tyra_Osbert.webp'
     },
     {
+      name: 'Raoul Mak',
+      position: 'Management',    
+      imageUrl: '/team/Raoul_Mak.webp'
+  },
+    {
         name: 'Kimnana Lil Stunner',
-        position: 'Official Hostess',   
+        position: 'Hostess',   
         imageUrl: '/team/kimnana_lil_stunner.webp'
     },
     {
         name: 'Laylah Mckenzie',
-        position: 'Official Hostess',      
+        position: 'Hostess',      
         imageUrl: '/team/Laylah_mak.webp'
     },
     {
         name: 'Hannah Tewodross',
-        position: 'Official Hostess',    
+        position: 'Hostess',    
         imageUrl: '/team/hannah_tewodross.webp'
     },
     {
         name: 'Gift Kihembo',
-        position: 'Offical Hostess',  
+        position: 'Hostess',  
         imageUrl: '/team/gift_kihembo.webp'
     },
     {
@@ -46,10 +51,40 @@ const teamMembers = [
         imageUrl: '/team/dj_ashley.webp'
     },
     {
-        name: 'Raoul Mak',
-        position: 'Management',    
-        imageUrl: '/team/Raoul_Mak.webp'
-    },
+      name: 'Dj Wizzy',
+      position: 'Offical Deejay',  
+      imageUrl: '/team/dj_wizzy.webp'
+  },
+  {
+    name: 'Future MC',
+    position: 'Official MC',  
+    imageUrl: '/team/future_mc.webp'
+},
+{
+  name: 'Mugisho',
+  position: 'Official MC',  
+  imageUrl: '/team/Mugisho.webp'
+},
+{
+  name: 'Petrie MC',
+  position: 'Official MC',  
+  imageUrl: '/team/petrie_mc.webp'
+},
+{
+  name: 'Brenda Cloudz',
+  position: 'Official MC',  
+  imageUrl: '/team/brenda_cloudz.webp'
+},
+{
+  name: 'Selecta Ryan',
+  position: 'Official Deejay',  
+  imageUrl: '/team/selecta_ryan.webp'
+},
+{
+  name: 'Tracy Belaire',
+  position: 'Hostess',  
+  imageUrl: '/team/tracy_belaire.webp'
+},
     // Add more team members as needed
 ];
 

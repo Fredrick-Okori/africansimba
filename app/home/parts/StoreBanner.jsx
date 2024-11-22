@@ -13,16 +13,9 @@ import {
 import { FiExternalLink } from 'react-icons/fi';
 import { useState } from 'react';
 
-import Video from 'next-video';
 
-import MulebaIntroductionVideo from '@/videos/introduction_video.mp4'
 export const StoreBanner = () => {
-    const [isVideoLoaded, setVideoLoaded] = useState(false);
-
-    const handleVideoLoad = () => {
-        setVideoLoaded(true);
-    };
-
+  
     return (
         <Box maxW="7xl" mx="auto" px={{ base: '0', lg: '12' }} py={{ base: '0', lg: '12' }}>
             <Stack direction={{ base: 'column', lg: 'row' }} spacing={{ base: '0', lg: '20' }}>
@@ -51,9 +44,9 @@ export const StoreBanner = () => {
                         </HStack>
                     </Stack>
                 </Box>
-                <Flex flex="1" overflow="hidden" position="relative" padding={{ base: '0', lg: '0' }}>
+                {/* <Flex flex="1" overflow="hidden" position="relative" padding={{ base: '0', lg: '0' }}>
                     <Video src={MulebaIntroductionVideo} style={{maxWidth: '55rem', borderRadius: '10px', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.5)'}} accentColor="var(--clr-primary-)" onLoadedData={handleVideoLoad} />
-                </Flex>
+                </Flex> */}
             </Stack>
         </Box>
     );

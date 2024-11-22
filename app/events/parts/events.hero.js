@@ -4,7 +4,7 @@ import { Container, Box, Text, Button, ButtonGroup } from '@chakra-ui/react';
 import Image from 'next/image';
 import { FiExternalLink } from 'react-icons/fi';
 import EventIntroductionVideo from '@/videos/events_introduction_video.mp4';
-import Video from 'next-video';
+
 
 export default function EventsHero() {
     const [showImage, setShowImage] = useState(true);
@@ -37,7 +37,7 @@ export default function EventsHero() {
             </ButtonGroup>
 
             <Box mt={10} position="relative">
-                {showImage ? (
+              
                     <Image
                         quality={60}
                         style={{ borderRadius: '10px' }}
@@ -48,16 +48,7 @@ export default function EventsHero() {
                         src="/compressed/events_hero.jpg"
                         alt="Events hero image"
                     />
-                ) : (
-                    <Video
-                        src={EventIntroductionVideo}
-                        
-                            style={{ borderRadius: '20px' }}
-                            accentColor="var(--clr-primary-3)"
-                   />
-                        
-                 
-                )}
+                               
             </Box>
         </Container>
     );
