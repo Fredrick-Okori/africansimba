@@ -67,7 +67,7 @@ export default function DJS() {
                                 zIndex="2"
                             >
                                 <Text fontSize={fontSize} textAlign='center' fontWeight="normal" >
-                                   Boy B in Uganda
+                                   Boypee in Uganda
                                 </Text>
                                 <Text fontSize={subFontSize} textAlign='center' >
                                    Catwalk 4th Anniversary
@@ -140,7 +140,7 @@ export default function DJS() {
                             />
                             <Image
                                 rounded="lg"
-                                src='/compressed/slick_stuart.webp'
+                                src='/thrones/dj_slick_stuart.webp'
                                 alt='Best DJs'
                                 layout="fill" 
                                 objectFit="cover" 

@@ -70,10 +70,10 @@ export default function Count() {
                                 zIndex="2"
                             >
                                 <Text fontSize={fontSize} textAlign='center' fontWeight="normal" >
-                                    Muleba Festival
+                                   Mbosso live in Muleba Festival
                                 </Text>
                                 <Text fontSize={subFontSize} textAlign='center' >
-                                    Do not miss out 
+                                Muleba Tanzania
                                 </Text>
                             </Box>
                         </Box>
@@ -145,7 +145,7 @@ export default function Count() {
                             />
                             <Image
                                 rounded="lg"
-                                src='/team/dj_ashley.webp'
+                                 src='/compressed/slick_stuart.webp'
                                 alt='Paradigm Fridays'
                                 layout="fill" 
                                 objectFit="cover" 
@@ -175,7 +175,7 @@ export default function Count() {
                                 zIndex="2"
                             >
                                 <Text fontSize={fontSize} textAlign='center' fontWeight="normal">
-                                   Dj Ashley at Paradigm
+                                   Dj Ashley at Fiesta Sunday
                                 </Text>
                                 <Text fontSize={subFontSize} textAlign='center'>
                                    Mid-day to Midnight
