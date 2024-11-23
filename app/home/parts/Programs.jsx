@@ -9,35 +9,35 @@ import Link from 'next/link';
 const products = [
     {
         id:1,
-        name: "White Jamboree Branded Cap ",
+        name: "White Jomboree Branded Cap ",
         image: "/store/jamboree_cap.webp",
         price: "UGX 15000",
         
     },
     {
         id: 2,
-        name: "White Jamboree Branded T-shirt",
+        name: "White Jomboree Branded T-shirt",
         image: "/store/jamboree_branded_tshirt.webp",
         price: "UGX 140,000",
       
     },
     {
         id: 3,
-        name: "Black Jamboree Collar Shirt",
+        name: "Black Jomboree Collar Shirt",
         image: "/store/jamboree_collar_shirt.webp",
         price: "UGX 90,000",
         
     },
     {
         id: 4,
-        name: "Black Jamboree Branded Cap",
+        name: "Black Jomboree Branded Cap",
         image: "/store/jamboree_cap_black.webp",
         price: "UGX 150,000",
         detailsUrl: "/product/african-fibonacci-wristband"
     },
     {
         id: 5,
-        name: "Black Jamboree Hoodie",
+        name: "Black Jomboree Hoodie",
         image: "/store/black_jamboree_hoodie.webp",
         price: "UGX 120,000",
     },

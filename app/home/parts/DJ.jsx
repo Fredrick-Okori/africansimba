@@ -38,8 +38,9 @@ export default function DJS() {
                                 rounded="lg"
                             />
                               <Image
-    src="/compressed/roger&stuart.webp"
-    alt="Dj Slick Stuart"
+    src="/compressed/boy_b.webp"
+    alt="Boy B in Uganda"
+    quality={60}
     layout="fill" 
     objectFit="cover" 
     priority 
@@ -66,10 +67,10 @@ export default function DJS() {
                                 zIndex="2"
                             >
                                 <Text fontSize={fontSize} textAlign='center' fontWeight="normal" >
-                                   Dj Slick Stuart
+                                   Boy B in Uganda
                                 </Text>
                                 <Text fontSize={subFontSize} textAlign='center' >
-                                    Your girlfriends best dj
+                                   Catwalk 4th Anniversary
                                 </Text>
                             </Box>
                         </Box>
@@ -92,7 +93,8 @@ export default function DJS() {
                                 alt='Dj Alisha'
                                 layout="fill" 
                                 objectFit="cover" 
-                                priority 
+                                priority
+                                quality={60} 
                                 sizes="(max-width: 768px) 100vw, 
                                        (max-width: 1200px) 50vw, 
                                        33vw" 
@@ -116,10 +118,10 @@ export default function DJS() {
                                 zIndex="2"
                             >
                                 <Text fontSize={fontSize} textAlign='center' fontWeight="normal" >
-                                   Dj Alisha every week
+                                   Dj Alisha at GBB
                                 </Text>
                                 <Text fontSize={subFontSize} textAlign='center' >
-                                    Bringing you unforgettable experiences
+                                    The in the Party
                                 </Text>
                             </Box>
                         </Box>
@@ -138,11 +140,12 @@ export default function DJS() {
                             />
                             <Image
                                 rounded="lg"
-                                src='/compressed/djblacks.webp'
+                                src='/compressed/slick_stuart.webp'
                                 alt='Best DJs'
                                 layout="fill" 
                                 objectFit="cover" 
                                 priority 
+                                quality={60}
                                 sizes="(max-width: 768px) 100vw, 
                                        (max-width: 1200px) 50vw, 
                                        33vw" 
@@ -166,10 +169,10 @@ export default function DJS() {
                                 zIndex="2"
                             >
                                 <Text fontSize={fontSize} textAlign='center' fontWeight="normal">
-                                    Dj Blacks
+                                    Dj Slick Stuart
                                 </Text>
                                 <Text fontSize={subFontSize} textAlign='center'>
-                                    Join us for the experience
+                                    Your girlfriend's best DJ
                                 </Text>
                             </Box>
                         </Box>

@@ -13,7 +13,7 @@ export default function BookingService() {
             <Box position="relative" zIndex="1">
                 <BookingHero />
                 <CreateBooking />
-                <PartnerSection/>
+               
                 <Footer/>
                 </Box>
             </Suspense>

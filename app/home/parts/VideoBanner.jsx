@@ -14,7 +14,7 @@ export default function VideoBanner() {
             <Box mt={10} position="relative">
             <div style={{ position: "relative", width: "100%", height: "600px" }}>
   <Image
-    src="/compressed/home_hero.webp"
+    src="/compressed/bg_image.webp"
     alt="night club"
     layout="fill" // Makes the image fill the parent container
     objectFit="cover" // Ensures the image maintains its aspect ratio and fills the area
@@ -33,7 +33,7 @@ export default function VideoBanner() {
                     left="0"
                     width="100%"
                     height="100%"  // Adjust this value to control gradient height
-                    bgGradient="linear(to-t, rgba(0, 0, 0, 0.4), transparent)"  // Gradient from bottom to top
+                    bgGradient="linear(to-t, rgba(0, 0, 0, 0.9), transparent)"  // Gradient from bottom to top
                     zIndex="1"
                     roundedBottom={10}
                 />

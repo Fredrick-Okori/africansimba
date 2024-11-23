@@ -6,7 +6,7 @@ import { FiExternalLink } from "react-icons/fi";
 
 const teamMembers = [
     {
-        name: 'Shilla Angel',
+        name: 'Shillah Angel',
         position: 'Personal Assistant',
         imageUrl: '/team/shillah_Angel.webp'
     },
@@ -22,11 +22,11 @@ const teamMembers = [
   },
   {
     name: 'Bivince Mugisho',
-    position: 'Official MC',  
+    position: 'Management',  
     imageUrl: '/team/Mugisho.webp'
   },
   {
-    name: 'Luouis 256',
+    name: 'Luois 256',
     position: 'Media and Videography',   
     imageUrl: '/team/kimnana_lil_stunner.webp'
 },
@@ -37,19 +37,25 @@ const teamMembers = [
 },
     {
         name: 'Kimnana Lil Stunner',
-        position: 'Hostess',   
+        position: 'Host',   
         imageUrl: '/team/kimnana_lil_stunner.webp'
     },
     {
         name: 'Laylah Mckenzie',
-        position: 'Hostess',      
+        position: 'Host',      
         imageUrl: '/team/Laylah_mak.webp'
+    },
+    {
+      name: 'Brenda Cloudz',
+      position: 'Host',  
+      imageUrl: '/team/brenda_cloudz.webp'
     },
     {
         name: 'Hannah Tewodross',
         position: 'Hostess',    
         imageUrl: '/team/hannah_tewodross.webp'
     },
+   
     {
         name: 'Gift Kihembo',
         position: 'Hostess',  
@@ -67,12 +73,12 @@ const teamMembers = [
     },
     {
         name: 'Dj Ashley',
-        position: 'Offical Deejay',  
+        position: 'Official Deejay',  
         imageUrl: '/team/dj_ashley.webp'
     },
     {
       name: 'Dj Wizzy',
-      position: 'Offical Deejay',  
+      position: 'Official Deejay',  
       imageUrl: '/team/dj_wizzy.webp'
   },
   {
@@ -91,11 +97,7 @@ const teamMembers = [
   position: 'Official MC',  
   imageUrl: '/team/petrie_mc.webp'
 },
-{
-  name: 'Brenda Cloudz',
-  position: 'Official MC',  
-  imageUrl: '/team/brenda_cloudz.webp'
-},
+
 
 
     // Add more team members as needed

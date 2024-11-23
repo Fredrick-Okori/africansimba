@@ -5,9 +5,10 @@ import BackgroundCarousel from "../home/parts/BackgroundCarousel";
 import PartnerSection from "../components/sponsors";
 import PreviousVideos from "./parts/previous.videos";
 import EventsListing from "./parts/eventsListing";
+import Footer from "../components/Footer";
 
 export default function Stream(props) {
-    const [currentVideo, setCurrentVideo] = useState(null);
+   
 
 
     const handleVideoSelect = (video) => {
@@ -21,7 +22,7 @@ export default function Stream(props) {
               
                 <PreviousVideos onVideoSelect={handleVideoSelect} />
               
-                <PartnerSection />
+                <Footer/>
             </Suspense>
         </>
     );

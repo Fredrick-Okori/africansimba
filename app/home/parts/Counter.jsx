@@ -40,8 +40,9 @@ export default function Count() {
                             />
                             <Image
                                 rounded="lg"
-                                src='/compressed/djblacks.webp'
+                                src='/compressed/mbosso.webp'
                                 alt='Muleba Festival'
+                                quality={60}
                                 layout="fill" 
                                 objectFit="cover" 
                                 priority 
@@ -96,6 +97,7 @@ export default function Count() {
                                 layout="fill" 
                                 objectFit="cover" 
                                 priority 
+                                quality={60}
                                 sizes="(max-width: 768px) 100vw, 
                                        (max-width: 1200px) 50vw, 
                                        33vw" 
@@ -121,10 +123,10 @@ export default function Count() {
                                 zIndex="2"
                             >
                                 <Text fontSize={fontSize} textAlign='center' fontWeight="normal" >
-                                   Wahallah Wednesdays at Thrones
+                               Petrie MC at Legacy Bar
                                 </Text>
                                 <Text fontSize={subFontSize} textAlign='center' >
-                                    Bringing you unforgettable experiences
+                                    Mister Specials
                                 </Text>
                             </Box>
                         </Box>
@@ -136,18 +138,18 @@ export default function Count() {
                                 right="0"
                                 bottom="0"
                                 bgGradient="linear(to-t, rgba(0,0,0,255), rgba(0,0,0,0.1))"
-                                borderRadius="lg"
+                                rounded="lg"
                                 transition="all 0.3s"
                                 _hover={{ transform: 'scale(1.05)' }}
                                 zIndex="1"
                             />
                             <Image
                                 rounded="lg"
-                                src='/compressed/paradigmnights.webp'
+                                src='/team/dj_ashley.webp'
                                 alt='Paradigm Fridays'
                                 layout="fill" 
                                 objectFit="cover" 
-                                
+                                quality={60}
                                 priority 
                                 sizes="(max-width: 768px) 100vw, 
                                        (max-width: 1200px) 50vw, 
@@ -157,6 +159,7 @@ export default function Count() {
                                 position="absolute"
                                 top="0"
                                 left="0"
+                                rounded='lg'
                                 right="0"
                                 bottom="0"
                                 bgGradient="linear(to-r, rgba(0,0,0,0.2), rgba(0,0,0,0.1))"
@@ -172,10 +175,10 @@ export default function Count() {
                                 zIndex="2"
                             >
                                 <Text fontSize={fontSize} textAlign='center' fontWeight="normal">
-                                   Paradigm
+                                   Dj Ashley at Paradigm
                                 </Text>
                                 <Text fontSize={subFontSize} textAlign='center'>
-                                    Join us for the experience
+                                   Mid-day to Midnight
                                 </Text>
                             </Box>
                         </Box>

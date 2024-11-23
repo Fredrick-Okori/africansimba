@@ -31,7 +31,7 @@ export default function EventSchedule() {
         <>
             <Box>
                 <Container maxW="container.xl" data-aos='zoom-in-up' data-aos-duration='1000'>
-                <Box maxW="container.xl" mx="auto" px={{ base: '0', lg: '12' }} py={{ base: '0', lg: '12' }}>
+                <Box maxW="container.xl" mx="auto"  py={{ base: '0', lg: '12' }}>
            
                
                     <Stack spacing={{ base: '8', lg: '10' }} >
@@ -44,7 +44,7 @@ export default function EventSchedule() {
                             </Heading>
                         </Stack>
                         <HStack spacing="3" color='var(--clr-primary-1)'>
-                            <Button as={Link} href='/store' _hover={{ textDecoration: 'none', bg: 'var(--clr-primary-1)', color: 'black' }} textDecoration='none' rightIcon={<FiExternalLink />} rounded="full" colorScheme="var(--clr-primary-1)Alpha" variant="outline">
+                            <Button as={Link} href='/events' _hover={{ textDecoration: 'none', bg: 'var(--clr-primary-1)', color: 'black' }} textDecoration='none' rightIcon={<FiExternalLink />} rounded="full" colorScheme="var(--clr-primary-1)Alpha" variant="outline">
                                 View Events
                             </Button>
                         </HStack>
