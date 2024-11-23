@@ -15,35 +15,35 @@ const defaultVideos = [
         id: 1,
         title: "Muleba Festival highlights",
         videoUrl: "https://www.youtube.com/embed/cvysB_dyOd8?autoplay=1",
-        thumbnail: "/videoposters/african_vibes.jpeg",
+        thumbnail: "/videoposters/muleba_video_poster.webp",
         location: "Tanzania Festival Events",
     },
     {
         id: 2,
         videoUrl: "https://www.youtube.com/watch?v=YXbXzOn6rK4?autoplay=1",
-        title: "Wahallah Wednesdays",
-        thumbnail: "/videoposters/afro_beauty.avif",
+        title: "Wahala Wednesday",
+        thumbnail: "/videoposters/wahala_video_poster.webp",
         location: "The Thrones, Bugolobi",
     },
     {
         id: 3,
         videoUrl: "https://www.youtube.com/watch?v=Y2736fANAMc?autoplay=1",
-        title: "Afro Vibz Nights ",
-        thumbnail: "/videoposters/amaps.jpg",
+        title: "Afro Vibes ",
+        thumbnail: "/videoposters/afro_vibez.webp",
         location: "CatWalk Lounge, Kampala, Uganda",
     },
     {
         id: 4,
         videoUrl: "https://www.youtube.com/watch?v=eyfDVaXVw_E?autoplay=1",
-        title: "The Fiesta Sunday Show",
-        thumbnail: "/videoposters/beauty_cover.jpg",
-        location: "The Villa",
+        title: "The Fiesta Sundays",
+        thumbnail: "/videoposters/fiesta_sunday.webp",
+        location: "The Villa Ug",
     },
     {
         id: 5,
         videoUrl: "https://www.youtube.com/watch?v=0TR8qVeGygg?autoplay=1",
         title: "Gabba Big Ballers Nights at Paradigm",
-        thumbnail: "/videoposters/art.jpeg",
+        thumbnail: "/videoposters/paradigm_video_poster.webp",
         location: "Gabba, Kabagala",
     },
    
@@ -141,6 +141,7 @@ const VideoCard = ({ video, onSelect, isNew }) => {
             cursor="pointer"
             borderRadius="xl"
             overflow="hidden"
+           
             transition="all 0.3s"
             border='1px solid transparent'
             position="relative"

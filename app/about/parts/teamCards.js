@@ -28,7 +28,7 @@ const teamMembers = [
   {
     name: 'Luois 256',
     position: 'Media and Videography',   
-    imageUrl: '/team/kimnana_lil_stunner.webp'
+    imageUrl: '/team/luois.jpeg'
 },
 {
   name: 'Allan',
@@ -53,7 +53,7 @@ const teamMembers = [
     {
         name: 'Hannah Tewodross',
         position: 'Hostess',    
-        imageUrl: '/team/hannah_tewodross.webp'
+        imageUrl: '/team/hannah.jpeg'
     },
    
     {
