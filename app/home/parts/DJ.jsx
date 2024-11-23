@@ -121,7 +121,7 @@ export default function DJS() {
                                    Dj Alisha at GBB
                                 </Text>
                                 <Text fontSize={subFontSize} textAlign='center' >
-                                    The in the Party
+                                    The doll in the Party
                                 </Text>
                             </Box>
                         </Box>
