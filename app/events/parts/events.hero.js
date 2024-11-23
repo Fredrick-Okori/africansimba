@@ -45,7 +45,7 @@ export default function EventsHero() {
                         width={1300}
                         height={600}
                         objectFit="cover"
-                        src="/compressed/events_hero.jpg"
+                        src="/compressed/events_hero.webp"
                         alt="Events hero image"
                     />
                                

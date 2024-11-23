@@ -66,7 +66,7 @@ const NavBar = () => {
                 <Container maxW='container.xl'>
                     <Flex  alignItems={'center'} justifyContent={'space-between'}>
                         <Box display="flex" alignItems="center">
-                            <Image width="100" height="100" loading='lazy' quality={70} src="/logos/simba_white.png" alt="logo" />
+                            <Image width="100" height="100" loading='lazy' quality={70} src="/logos/simba_white.webp" alt="logo" />
                         </Box>
 
                         <Flex display={{ base: 'none', md: 'flex' }} alignItems={'center'}>

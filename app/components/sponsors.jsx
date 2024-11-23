@@ -8,7 +8,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 const partners = [
-  { src: "/logos/magnum.webp", name: "Magnum" },
+  { src: "/logos/Magnum.webp", name: "Magnum" },
   { src: "/logos/CLM-LOGO.webp", name: "CLM Logo" },
   { src: "/logos/simba_saloon.webp", name: "African Simba Saloon" },
 ];

@@ -33,7 +33,7 @@ const teamMembers = [
 {
   name: 'Allan',
   position: 'Director of Photography',   
-  imageUrl: '/team/kimnana_lil_stunner.webp'
+  imageUrl: '/team/allan.jpeg'
 },
     {
         name: 'Kimnana Lil Stunner',
@@ -53,7 +53,7 @@ const teamMembers = [
     {
         name: 'Hannah Tewodross',
         position: 'Hostess',    
-        imageUrl: '/team/hannah.jpeg'
+        imageUrl: '/team/hannah_tewodross_copy.jpg'
     },
    
     {
@@ -74,7 +74,7 @@ const teamMembers = [
     {
         name: 'Dj Ashley',
         position: 'Official Deejay',  
-        imageUrl: '/team/dj_ashley.webp'
+        imageUrl: '/team/dj_ashley_copy.jpg'
     },
     {
       name: 'Dj Wizzy',
