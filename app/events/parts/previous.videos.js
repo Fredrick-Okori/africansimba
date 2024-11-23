@@ -13,7 +13,7 @@ import Upcoming from './upcoming';
 const defaultVideos = [
     {
         id: 1,
-        title: "Muleba Festival highlights",
+        title: "Muleba Official Aftermovie",
         videoUrl: "https://www.youtube.com/embed/cvysB_dyOd8?autoplay=1",
         thumbnail: "/videoposters/muleba_video_poster.webp",
         location: "Tanzania Festival Events",
