@@ -17,7 +17,7 @@ import { Metadata} from "next";
 export const metadata = {
   title: {
     default: 'African Simba Events',
-    template: `%s - "African Simba Events"`,
+    template: `%s - African Simba Events`,
   },
   description: 'We are a team of passionate professionals dedicated to delivering top-notch experiences in everything we do. From event planning to execution, we believe in creating memorable experiences that make a difference.',
   icons: {

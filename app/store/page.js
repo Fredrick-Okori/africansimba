@@ -1,3 +1,4 @@
+
 import React, { Suspense } from 'react'
 
 import BackgroundCarousel from '../home/parts/BackgroundCarousel'
@@ -14,6 +15,13 @@ import StoreHeroSection from './parts/shop.hero'
 import ShopFooter from './parts/footer'
 import DarkFooter from '../components/Footer.dark'
 
+
+export const metadata = {
+    title: 'Shop',
+    openGraph: {
+      title: 'Shop',
+    },
+  }
 export default function Shop() {
     return (
         <div>

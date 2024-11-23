@@ -1,3 +1,4 @@
+
 import React, { Suspense } from 'react'
 
 import BackgroundCarousel from '../home/parts/BackgroundCarousel'
@@ -11,6 +12,13 @@ import AboutHero from './parts/about.hero'
 import DarkFooter from '../components/Footer.dark'
 import Footer from '../components/Footer'
 
+
+export const metadata = {
+    title: 'About Us',
+    openGraph: {
+      title: 'About us',
+    },
+  }
 export default function About() {
     return (
         <div>

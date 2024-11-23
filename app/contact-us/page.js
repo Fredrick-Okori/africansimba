@@ -1,3 +1,4 @@
+
 import React, { Suspense } from 'react'
 
 
@@ -8,6 +9,14 @@ import ContactHero from './parts/contact.hero'
 import ContactUs from './parts/contact'
 import DarkFooter from '../components/Footer.dark'
 
+
+
+export const metadata = {
+    title: 'Contact Us',
+    openGraph: {
+      title: 'Contact Us',
+    },
+  }
 
 export default function About() {
     return (
