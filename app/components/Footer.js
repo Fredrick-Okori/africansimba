@@ -11,7 +11,7 @@ const Footer = () => {
 
     return (
 <>
-        <Box color='var(--clr-primary-1)' py={20}>
+        <Box color='var(--clr-primary-1)' py={15}>
             <Container maxW="container.xl">
                
                     <Flex direction={{ base: 'column', lg: 'row' }} justifyContent="space-evenly" mt={{base: '20', lg: 'auto'}} align="center" w="full" gap={5}>

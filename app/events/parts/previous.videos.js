@@ -87,7 +87,7 @@ const PreviousVideos = ({ videos = defaultVideos }) => {
                 <Heading as="h2" size="xl" fontWeight='normal' mb={6} color="var(--clr-primary-1)">
                     Previous Videos
                 </Heading>
-                <SimpleGrid columns={[1, 2, 3, 2]} spacing={6}>
+                <SimpleGrid columns={[1, 1, 3]} spacing={6}>
                     {videos.map((video, index) => (
                         <VideoCard key={video.id} video={video} onSelect={handleVideoSelect} isNew={index === 0} />
                     ))}
@@ -100,7 +100,7 @@ const PreviousVideos = ({ videos = defaultVideos }) => {
                 backdropFilter='blur(10px) brightness(50%)'
                 motionPreset='slideInBottom'
             >
-                <ModalOverlay bg='blackAlpha.300'
+                <ModalOverlay bg='blackAlpha.100'
                     backdropFilter='blur(10px)' />
                 <ModalContent>
                     <ModalHeader bg='var(--clr-primary-2)' color='var(--clr-primary-1)'>{selectedVideo?.title}</ModalHeader>
@@ -148,7 +148,7 @@ const VideoCard = ({ video, onSelect, isNew }) => {
             _hover={{ transform: 'scale(1.01)', boxShadow: 'xl', transition: "all 0.3s", border: '1px solid grey' }}
         >
             <Box height="300px" width="100%" overflow="hidden" position="relative">
-                <Image src={video.thumbnail} alt={video.title} loading='lazy' width={700} height={200} objectFit="cover" />
+                <Image src={video.thumbnail} alt={video.title} loading='lazy' width={700} height={200} objectFit="fill" />
                 {isNew && (
                     <Badge
                         position="absolute"

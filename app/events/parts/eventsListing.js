@@ -9,7 +9,7 @@ import { events } from "./data";
 const EventsListing = () => {
   const fontSize = useBreakpointValue({ base: "2xl", md: "3xl" });
   const subFontSize = useBreakpointValue({ base: "md", md: "xl" });
-  const imageHeight = useBreakpointValue({ base: "300px", md: "400px" });
+  const imageHeight = useBreakpointValue({ base: "500px", md: "400px" });
 
   const responsive = {
     superLargeDesktop: {

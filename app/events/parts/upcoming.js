@@ -7,7 +7,7 @@ import { events } from '../data.upcoming';
 export default function Upcoming() {
     const fontSize = useBreakpointValue({ base: "2xl", md: "3xl" });
     const subFontSize = useBreakpointValue({ base: "md", md: "xl" });
-    const imageHeight = useBreakpointValue({ base: "300px", md: "400px" });
+    const imageHeight = useBreakpointValue({ base: "500px", md: "400px" });
   return (
     <div>
          <Container maxW="container.xl" py={10}>

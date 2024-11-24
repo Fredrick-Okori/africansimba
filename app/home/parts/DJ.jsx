@@ -89,7 +89,7 @@ export default function DJS() {
                             />
                             <Image
                                 rounded="lg"
-                                src='/compressed/djAlisha.webp'
+                                src='/compressed/dj_alisha.webp'
                                 alt='Dj Alisha'
                                 layout="fill" 
                                 objectFit="cover" 
