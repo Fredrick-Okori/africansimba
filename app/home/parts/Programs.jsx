@@ -80,7 +80,7 @@ const ProductCarousel = () => {
         <Container maxW="container.xl" py={10}>
             <Flex justify="space-between" align="center" mb={6} flexDirection={{ base: "column", md: "row" }}>
                 <Box mb={{ base: 4, md: 0 }}>
-                    <Text fontSize={fontSize} fontWeight="bold" color="var( --clr-primary-1)" mb={3}>From our Stores</Text>
+                    <Text fontSize={fontSize} fontWeight="bold" color="var( --clr-primary-1)" mb={3}>From our Store</Text>
                     <Text fontSize={subFontSize} fontWeight="normal" color="var( --clr-primary-1)">Check out our latest products and merchandise!</Text>
                 </Box>
                 <Button 

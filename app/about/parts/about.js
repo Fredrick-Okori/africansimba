@@ -1,6 +1,6 @@
 'use client';
 
-import { Box, Flex, Heading, Text, VStack, Container } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text, SimpleGrid, VStack, Container } from "@chakra-ui/react";
 import Image from "next/image";
 
 const About = () => {
@@ -19,9 +19,11 @@ const About = () => {
             </Box>
 
             <Container maxW="container.xl" p={{ base: 4, md: 8 }}>
-                <VStack spacing={10} align="center">
+          
                     {/* Header Section */}
-                    <Box textAlign="center" mb={10}>
+                    <Box display='flex' dir={{base: 'row', lg: 'column'}} mt={10} mb={10} alignItems='center' justifyContent='space-evenly'>
+                    
+                        <Box textAlign="left" mb={10} w={{ base: "100%", md: "50%" }}>
                         <Heading size={{ base: "2xl", md: "lg" }} mb={4} color="var(--clr-primary-1)">
                             About Us
                         </Heading>
@@ -36,38 +38,50 @@ const About = () => {
                             Our mission is to create and execute exceptional events that helps people celebrate life.
                             We aim to provide innovative and effective solutions through our passion for event management.
                         </Text>
+                        </Box>
+                        <Box  color='var(--clr-primary-1)'>
+                        <Heading color='var(--clr-primary-1'>Our Services</Heading>
+                        <Text as='p'  color='var(--clr-primary-1)' mb={5} textAlign='left' >
+                        Activities
+                        </Text>
+                        <Text as='ul'  color='var(--clr-primary-1)' mb={5} textAlign='left' >
+                        <li>Hosting</li>
+                        <li>Marketing</li>
+                        <li>Event Planning</li>
+                        <li>Talent Management</li>
+                        <li>Video Coverage</li>
+                        <li>Conceptualisation</li>
+                       
+                        </Text>
+                        </Box>
+                   
                     </Box>
 
                     {/* CEO Section */}
                     <Box w="100%">
-                        <Heading as="h2" size="lg" color="var(--clr-primary-1)" textAlign="center" mb={6}>
+                        <Heading as="h2" size="2xl" color="var(--clr-primary-1)" textAlign="left" mb={6}>
                             Our Team
                         </Heading>
                         <Flex 
                             direction={{ base: "column", md: "row" }} 
                             align="center" 
                             gap={8} 
-                            px={{ base: 2, md: 4 }}
+                            
                         >
                             {/* CEO Image */}
-                            <Box 
-                               
-                                w={{ base: "300px", md: "400px" }} 
-                                h={{ base: "300px", md: "400px" }} 
-                                position="relative" 
-                                overflow="hidden" 
-                                rounded="lg"
-                            >
+                           
                                 <Image
                                     src="/compressed/ceo_2.webp"
                                     alt="CEO Image"
-                                    layout="fill"
+                                  width={300}
+                                  height={200}
                                     objectFit="contain"
                                     quality={80}
+                                    style={{borderRadius: '10px'}}
                                     priority
-                                    style={{ borderRadius: "10px" }}
+                                   
                                 />
-                            </Box>
+                         
 
                             {/* CEO Description */}
                             <VStack 
@@ -84,7 +98,7 @@ const About = () => {
                                 </Text>
                                 <Text fontSize="sm" color="var(--clr-primary-1)">
                               
-                                CEO/Host/Bookwriter/Marketer
+                                CEO/Host/Bookwriter/Marketer/Speaker
                                 </Text>
                                 <Text mt={2} fontSize="md" color="var(--clr-primary-1)">
                                     African Simba is a visionary leader committed to fostering innovation and excellence
@@ -94,7 +108,7 @@ const About = () => {
                             </VStack>
                         </Flex>
                     </Box>
-                </VStack>
+             
             </Container>
         </>
     );

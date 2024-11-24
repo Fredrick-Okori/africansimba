@@ -40,7 +40,7 @@ export default function VideoBanner() {
       <Box mt={10} position="relative" height={{ base: "300px", md: "600px" }}>
         {/* Background Image */}
         <Image
-          src="/compressed/bg_image.webp"
+          src="/compressed/events_hero.webp"
           alt="night club"
           layout="fill"
           objectFit="cover"
@@ -48,7 +48,7 @@ export default function VideoBanner() {
           style={{
             borderRadius: "10px", // Rounded corners
             transition: "transform 0.3s", // Smooth hover effect
-            opacity: 0.5,
+           
           }}
         />
 
@@ -59,7 +59,7 @@ export default function VideoBanner() {
           left="0"
           width="100%"
           height="100%"
-          bgGradient="linear(to-t, rgba(0, 0, 0, 0.9), transparent)" // Gradient from bottom to top
+          bgGradient="linear(to-t, rgba(0, 0, 0, 0.7), transparent)" // Gradient from bottom to top
           zIndex="1"
           borderRadius="10px"
         />
@@ -80,11 +80,10 @@ export default function VideoBanner() {
             fontSize={{ base: "xl", lg: "3xl" }}
             color="var(--clr-primary-1)"
           >
-            Celebrate with the Game Changers
+            Celebrate life with the Game Changers
           </Text>
           <Text color="var(--clr-primary-1)" mb={4}>
-            Experience Immersive party that happens every week in Kampala,
-            Uganda
+            Experience Immersive party that happens every week in Kampala and worldwide
           </Text>
           <Grid justifyContent="center">
             <ButtonGroup spacing={8}>

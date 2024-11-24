@@ -1,11 +1,5 @@
 export const events = [
-    {
-        id: 1,
-        name: "Jamboree Adventures",
-       image: "/nights/jamboree_adventures.webp",
-       
-        host: "Dubai, UAE"
-    },
+  
     {
         id: 2,
         name: "Wahala Wednesday",

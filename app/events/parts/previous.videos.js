@@ -81,8 +81,8 @@ const PreviousVideos = ({ videos = defaultVideos }) => {
     return (
         <Box as="section" py={10} mt={10}>
             <EventsHero />
-            <Upcoming/>
             <EventsListing/>
+            <Upcoming/>
             <Container maxW="container.xl" pt={10}>
                 <Heading as="h2" size="xl" fontWeight='normal' mb={6} color="var(--clr-primary-1)">
                     Previous Videos

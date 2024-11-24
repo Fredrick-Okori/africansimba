@@ -102,7 +102,7 @@ const NavBar = () => {
                                         Cart
                                     </Link>
                                 )}
-                                <Button rounded='full' size="sm" _hover={{ textDecoration: 'none', bg: 'var( --clr-primary-1)', color: 'black' }} textDecoration='none' variant='outline' colorScheme="whiteAlpha">TICKETS <FiArrowRight /></Button>
+                                <Button rounded='full' size="sm" _hover={{ textDecoration: 'none', bg: 'var( --clr-primary-1)', color: 'black' }} textDecoration='none' variant='outline' colorScheme="whiteAlpha">Booking <FiArrowRight /></Button>
                             </Stack>
                         </Flex>
 

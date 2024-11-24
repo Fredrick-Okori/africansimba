@@ -69,12 +69,7 @@ export default function Count() {
                                 color="var( --clr-primary-1)"
                                 zIndex="2"
                             >
-                                <Text fontSize={fontSize} textAlign='center' fontWeight="normal" >
-                                   Mbosso live in Muleba Festival
-                                </Text>
-                                <Text fontSize={subFontSize} textAlign='center' >
-                                Muleba Tanzania
-                                </Text>
+                               
                             </Box>
                         </Box>
                         <Box position="relative" borderRadius="xl" height={imageHeight} _hover={{ transform: 'scale(1.02)' }} transition="all 0.3s">
@@ -92,7 +87,7 @@ export default function Count() {
                             />
                             <Image
                                 rounded="lg"
-                                src='/compressed/vj.webp'
+                                src='/compressed/muleba_crowd.webp'
                                 alt='African simba events anniversary'
                                 layout="fill" 
                                 objectFit="cover" 
@@ -122,12 +117,7 @@ export default function Count() {
                                 color="var( --clr-primary-1)"
                                 zIndex="2"
                             >
-                                <Text fontSize={fontSize} textAlign='center' fontWeight="normal" >
-                               Petrie MC at Legacy Bar
-                                </Text>
-                                <Text fontSize={subFontSize} textAlign='center' >
-                                    Mister Specials
-                                </Text>
+                               
                             </Box>
                         </Box>
                         <Box position="relative" rounded='lg' height={imageHeight} _hover={{ transform: 'scale(1.02)' }} transition="all 0.3s">
@@ -145,7 +135,7 @@ export default function Count() {
                             />
                             <Image
                                 rounded="lg"
-                                 src='/compressed/slick_stuart.webp'
+                                 src='/compressed/new_photo.webp'
                                 alt='Paradigm Fridays'
                                 layout="fill" 
                                 objectFit="cover" 
@@ -162,7 +152,7 @@ export default function Count() {
                                 rounded='lg'
                                 right="0"
                                 bottom="0"
-                                bgGradient="linear(to-r, rgba(0,0,0,0.2), rgba(0,0,0,0.1))"
+                                bgGradient="linear(to-r, rgba(0,0,0,0.3), rgba(0,0,0,0.7))"
                                 borderRadius="lg"
                                 zIndex="1"
                             />
@@ -174,12 +164,7 @@ export default function Count() {
                                 color="var( --clr-primary-1)"
                                 zIndex="2"
                             >
-                                <Text fontSize={fontSize} textAlign='center' fontWeight="normal">
-                                   Dj Ashley at Fiesta Sunday
-                                </Text>
-                                <Text fontSize={subFontSize} textAlign='center'>
-                                   Mid-day to Midnight
-                                </Text>
+                                
                             </Box>
                         </Box>
                     </Grid>

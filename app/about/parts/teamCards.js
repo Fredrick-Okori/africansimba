@@ -105,7 +105,7 @@ const teamMembers = [
 
 const TeamSection = () => {
     return (
-        <Container maxW="container.lg" pt={10}>
+     <Container maxW="container.xl">
             <SimpleGrid columns={{ base: 2, md: 3, lg: 3 }} padding={5} spacing={8}>
                 {teamMembers.map((member, index) => (
                  <Box
@@ -162,8 +162,8 @@ const TeamSection = () => {
 
                 ))}
             </SimpleGrid>
-       
-        </Container>
+            </Container>
+     
     );
 };
 

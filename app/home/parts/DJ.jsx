@@ -38,7 +38,7 @@ export default function DJS() {
                                 rounded="lg"
                             />
                               <Image
-    src="/compressed/boy_b.webp"
+    src="/compressed/first_image.webp"
     alt="Boy B in Uganda"
     quality={60}
     layout="fill" 
@@ -66,12 +66,7 @@ export default function DJS() {
                                 color="var( --clr-primary-1)"
                                 zIndex="2"
                             >
-                                <Text fontSize={fontSize} textAlign='center' fontWeight="normal" >
-                                   Boypee in Uganda
-                                </Text>
-                                <Text fontSize={subFontSize} textAlign='center' >
-                                   Catwalk 4th Anniversary
-                                </Text>
+                               
                             </Box>
                         </Box>
                         <Box position="relative" borderRadius="xl" height={imageHeight} _hover={{ transform: 'scale(1.02)' }} transition="all 0.3s">
@@ -89,7 +84,7 @@ export default function DJS() {
                             />
                             <Image
                                 rounded="lg"
-                                src='/compressed/dj_alisha.webp'
+                                src='/compressed/second_image.webp'
                                 alt='Dj Alisha'
                                 layout="fill" 
                                 objectFit="cover" 
@@ -117,12 +112,7 @@ export default function DJS() {
                                 color="var( --clr-primary-1)"
                                 zIndex="2"
                             >
-                                <Text fontSize={fontSize} textAlign='center' fontWeight="normal" >
-                                   Dj Alisha at GBB
-                                </Text>
-                                <Text fontSize={subFontSize} textAlign='center' >
-                                    The doll in the Party
-                                </Text>
+                                
                             </Box>
                         </Box>
                         <Box position="relative" borderRadius="xl" height={imageHeight} _hover={{ transform: 'scale(1.02)' }} transition="all 0.3s">
@@ -140,7 +130,7 @@ export default function DJS() {
                             />
                             <Image
                                 rounded="lg"
-                                src='/thrones/dj_slick_stuart.webp'
+                                src='/compressed/third_photo.webp'
                                 alt='Best DJs'
                                 layout="fill" 
                                 objectFit="cover" 
@@ -168,12 +158,7 @@ export default function DJS() {
                                 color="var( --clr-primary-1)"
                                 zIndex="2"
                             >
-                                <Text fontSize={fontSize} textAlign='center' fontWeight="normal">
-                                    Dj Slick Stuart
-                                </Text>
-                                <Text fontSize={subFontSize} textAlign='center'>
-                                    Your girlfriend's best DJ
-                                </Text>
+                               
                             </Box>
                         </Box>
                     </Grid>
