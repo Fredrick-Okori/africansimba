@@ -33,14 +33,15 @@ const BookingHero = () => {
         textAlign="center"
         px={4}
       >
-        <Heading
-          fontSize={{ base: "4xl", md: "5xl", lg: "7xl" }}
-          color="var(--clr-primary-2)"
-          data-aos="fade-up"
-          data-aos-duration="2000"
-        >
-          Buy you ticket
-        </Heading>
+       <Heading fontSize={{ base: "5xl", lg: '7xl' }} bg='hsla(0, 0%, 0%, 0.7)'  // Adjusted background for frosted glass effect
+                            backgroundBlendMode='soft-light'
+                            lineHeight={1}
+                            boxShadow='0 0 20px 0 rgba(0, 0, 0, 0.5)' py={20} borderLeft='5px dotted grey' p={5} color="white" 
+                            >
+                           Buy your Ticket
+
+                       
+                        </Heading>
         <Text
           fontSize={{ base: "lg", md: "lg", lg: "2xl" }}
           color="var(--clr-primary-2)"

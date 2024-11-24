@@ -39,13 +39,13 @@ export default function EventsHero() {
             <Box mt={10} position="relative">
               
                     <Image
-                        quality={60}
+                        quality={100}
                         style={{ borderRadius: '10px' }}
                         loading="lazy"
                         width={1300}
-                        height={600}
+                        height={400}
                         objectFit="cover"
-                        src="/compressed/events_hero.webp"
+                        src="/images/events_hero_page_copy.jpg"
                         alt="Events hero image"
                     />
                                

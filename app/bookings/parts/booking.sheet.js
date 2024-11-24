@@ -53,9 +53,14 @@ export default function BookingCard() {
                         Activities
                     </Text>
                     <Text as='ul'  color='var(--clr-primary-1)' mb={5} textAlign='left' >
-                        <li>Day 1: Dubai City Tour</li>
-                        <li>Day 2: Dubai Museum Tour</li>
-                        <li>Day 3: Dubai Palace Tour</li>
+                        <li>Desert Safari</li>
+                        <li>Miracle Gardens</li>
+                        <li>Burj Khalifo</li>
+                        <li>Abu Dhabi City Tour</li>
+                        <li>Yatch Party</li>
+                        <li>Under water Aquarium</li>
+                        <li>Ferrari World / Water Park</li>
+                        <li>Dubai Marina</li>
                     </Text>
                     </Box>
                 </Box>
@@ -81,17 +86,19 @@ export default function BookingCard() {
                                        
 
                                         <SimpleGrid columns={{ base: 2, lg: 2 }}>
-                                            <Text> Buying ticket for (1) at for {item.title} 50,000/=</Text>
+                                            <Text> Buying ticket for (1) at {item.price}</Text>
                                             <SimpleGrid column={{base: 1, lg: 2}}>
     <Text mb={3} fontSize={'2xl'} fontWeight={'bold'} color='var(--clr-primary-1)' textAlign='center'>{item.price}</Text>
     <Button
                 as={Link}
-                href="/bookings"
+                href="https://wa.me/+256778105878"
                 _hover={{
                   textDecoration: "none",
                   bg: "var(--clr-primary-1)",
                   color: "black",
                 }}
+                target="_blank"
+                        rel="noopener noreferrer"
                 rounded="full"
                 variant="outline"
                 color="var(--clr-primary-1)"

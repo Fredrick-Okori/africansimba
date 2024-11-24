@@ -51,8 +51,8 @@ const About = () => {
                         >
                             {/* CEO Image */}
                             <Box 
-                                flexShrink={0} 
-                                w={{ base: "100%", md: "50%" }} 
+                               
+                                w={{ base: "300px", md: "400px" }} 
                                 h={{ base: "300px", md: "400px" }} 
                                 position="relative" 
                                 overflow="hidden" 
@@ -62,7 +62,7 @@ const About = () => {
                                     src="/compressed/ceo_2.webp"
                                     alt="CEO Image"
                                     layout="fill"
-                                    objectFit="cover"
+                                    objectFit="contain"
                                     quality={80}
                                     priority
                                     style={{ borderRadius: "10px" }}
@@ -87,7 +87,7 @@ const About = () => {
                                 CEO/Host/Bookwriter/Marketer
                                 </Text>
                                 <Text mt={2} fontSize="md" color="var(--clr-primary-1)">
-                                    Simba is a visionary leader committed to fostering innovation and excellence
+                                    African Simba is a visionary leader committed to fostering innovation and excellence
                                     across all aspects of our company. With years of experience in event management,
                                     his leadership has been instrumental in achieving our mission and vision.
                                 </Text>

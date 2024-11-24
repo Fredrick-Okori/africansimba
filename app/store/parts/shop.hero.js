@@ -8,10 +8,10 @@ export default function StoreHeroSection() {
             <Box mt={10} position="relative">
                 <Image
                     w='100%'
-                    height={450}
+                    height={600}
                     objectFit='cover'
                     rounded={10}
-                    src="https://images.unsplash.com/photo-1589156206699-bc21e38c8a7d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=772&q=80"
+                    src="/store/store_banner.webp"
                     alt='night club'
                     transition="all 0.3s"
                     _hover={{ transform: 'scale(1.05)' }}

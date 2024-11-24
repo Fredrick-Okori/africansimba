@@ -12,26 +12,26 @@ const teamMembers = [
     },
     {
         name: 'Tyra Osbert',
-        position: 'Media and Production Manager',   
+        position: 'Media and Production Management',   
         imageUrl: '/team/Tyra_Osbert.webp'
     },
     {
       name: 'Raoul Mak',
-      position: 'Management',    
+      position: 'Finance Management',    
       imageUrl: '/team/Raoul_Mak.webp'
   },
   {
     name: 'Bivince Mugisho',
-    position: 'Management',  
+    position: 'Floor Management',  
     imageUrl: '/team/Mugisho.webp'
   },
   {
-    name: 'Luois 256',
-    position: 'Media and Videography',   
+    name: 'Louis 256',
+    position: 'Creative Director',   
     imageUrl: '/team/luois.jpeg'
 },
 {
-  name: 'Allan',
+  name: 'Allan Photography',
   position: 'Director of Photography',   
   imageUrl: '/team/allan.jpeg'
 },
