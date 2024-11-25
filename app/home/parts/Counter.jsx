@@ -31,7 +31,7 @@ export default function Count() {
                                 left="0"
                                 right="0"
                                 bottom="0"
-                                bgGradient="linear(to-t, rgba(0,0,0,0.7), rgba(0,0,0,0.1))"
+                                bgGradient="linear(to-t, rgba(0,0,0,0.3), rgba(0,0,0,0.1))"
                                 borderRadius="xl"
                                 transition="all 0.3s"
                                 _hover={{ transform: 'scale(1.05)' }}
@@ -39,13 +39,14 @@ export default function Count() {
                                 rounded="lg"
                             />
                             <Image
-                                rounded="lg"
+                             
                                 src='/compressed/mbosso.webp'
                                 alt='Muleba Festival'
                                 quality={60}
                                 layout="fill" 
                                 objectFit="cover" 
                                 priority 
+                                style={{borderRadius: 'lg'}}
                                 sizes="(max-width: 768px) 100vw, 
                                        (max-width: 1200px) 50vw, 
                                        33vw" 
@@ -58,7 +59,7 @@ export default function Count() {
                                 right="0"
                                 bottom="0"
                                 bgGradient="linear(to-r, rgba(0,0,0,0.2), rgba(0,0,0,0.1))"
-                                borderRadius="xl"
+                             rounded='lg'
                                 zIndex="1"
                             />
                             <Box
@@ -68,18 +69,19 @@ export default function Count() {
                                 right="30px"
                                 color="var( --clr-primary-1)"
                                 zIndex="2"
+                                rounded='lg'
                             >
                                
                             </Box>
                         </Box>
-                        <Box position="relative" borderRadius="xl" height={imageHeight} _hover={{ transform: 'scale(1.02)' }} transition="all 0.3s">
+                        <Box position="relative" rounded="lg" height={imageHeight} _hover={{ transform: 'scale(1.02)' }} transition="all 0.3s">
                             <Box
                                 position="absolute"
                                 top="0"
                                 left="0"
                                 right="0"
                                 bottom="0"
-                                bgGradient="linear(to-t, rgba(0,0,0,0.7), rgba(0,0,0,0.1))"
+                                      bgGradient="linear(to-t, rgba(0,0,0,0.3), rgba(0,0,0,0.1))"
                                 borderRadius="xl"
                                 transition="all 0.3s"
                                 _hover={{ transform: 'scale(1.05)' }}
@@ -92,6 +94,7 @@ export default function Count() {
                                 layout="fill" 
                                 objectFit="cover" 
                                 priority 
+                                style={{borderRadius: 'lg'}}
                                 quality={60}
                                 sizes="(max-width: 768px) 100vw, 
                                        (max-width: 1200px) 50vw, 
@@ -127,7 +130,7 @@ export default function Count() {
                                 left="0"
                                 right="0"
                                 bottom="0"
-                                bgGradient="linear(to-t, rgba(0,0,0,255), rgba(0,0,0,0.1))"
+                                bgGradient="linear(to-t, rgba(0,0,0,0.3), rgba(0,0,0,0.1))"
                                 rounded="lg"
                                 transition="all 0.3s"
                                 _hover={{ transform: 'scale(1.05)' }}
@@ -141,6 +144,7 @@ export default function Count() {
                                 objectFit="cover" 
                                 quality={60}
                                 priority 
+                                style={{borderRadius: 'lg'}}
                                 sizes="(max-width: 768px) 100vw, 
                                        (max-width: 1200px) 50vw, 
                                        33vw" 

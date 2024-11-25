@@ -13,7 +13,7 @@ const BookingHero = () => {
   return (
     <Box
 
-      bgImage="url('/images/jomboree_hero.webp')" // Background image
+      bgImage="url('/compressed/ticket_cover-copy.jpg')" // Background image
       bgPosition="center"
       bgSize="cover"
       bgRepeat="no-repeat"
@@ -36,7 +36,7 @@ const BookingHero = () => {
        <Heading fontSize={{ base: "5xl", lg: '7xl' }} bg='hsla(0, 0%, 0%, 0.7)'  // Adjusted background for frosted glass effect
                             backgroundBlendMode='soft-light'
                             lineHeight={1}
-                            boxShadow='0 0 20px 0 rgba(0, 0, 0, 0.5)' py={20} borderLeft='5px dotted grey' p={5} color="white" 
+                            boxShadow='0 0 20px 0 rgba(0, 0, 0, 0.5)' py={20} borderLeft='5px dotted white' p={5} color="white" 
                             >
                            Buy your Ticket
 
@@ -44,7 +44,7 @@ const BookingHero = () => {
                         </Heading>
         <Text
           fontSize={{ base: "lg", md: "lg", lg: "2xl" }}
-          color="var(--clr-primary-2)"
+          color="var(--clr-primary-1)"
           maxW="600px"
           data-aos="fade-up"
           data-aos-duration="2500"

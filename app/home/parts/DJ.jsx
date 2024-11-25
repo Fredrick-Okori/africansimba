@@ -30,7 +30,7 @@ export default function DJS() {
                                 left="0"
                                 right="0"
                                 bottom="0"
-                                bgGradient="linear(to-t, rgba(0,0,0,0.7), rgba(0,0,0,0.1))"
+                                bgGradient="linear(to-t, rgba(0,0,0,0.3), rgba(0,0,0,0.1))"
                                 borderRadius="xl"
                                 transition="all 0.3s"
                                 _hover={{ transform: 'scale(1.05)' }}
@@ -42,6 +42,7 @@ export default function DJS() {
     alt="Boy B in Uganda"
     quality={60}
     layout="fill" 
+    style={{borderRadius: 'lg'}}
     objectFit="cover" 
     priority 
     sizes="(max-width: 768px) 100vw, 
@@ -76,7 +77,7 @@ export default function DJS() {
                                 left="0"
                                 right="0"
                                 bottom="0"
-                                bgGradient="linear(to-t, rgba(0,0,0,0.7), rgba(0,0,0,0.1))"
+                                bgGradient="linear(to-t, rgba(0,0,0,0.3), rgba(0,0,0,0.1))"
                                 borderRadius="xl"
                                 transition="all 0.3s"
                                 _hover={{ transform: 'scale(1.05)' }}
@@ -89,6 +90,7 @@ export default function DJS() {
                                 layout="fill" 
                                 objectFit="cover" 
                                 priority
+                                style={{borderRadius: 'lg'}}
                                 quality={60} 
                                 sizes="(max-width: 768px) 100vw, 
                                        (max-width: 1200px) 50vw, 
@@ -122,7 +124,7 @@ export default function DJS() {
                                 left="0"
                                 right="0"
                                 bottom="0"
-                                bgGradient="linear(to-t, rgba(0,0,0,255), rgba(0,0,0,0.1))"
+                                bgGradient="linear(to-t, rgba(0,0,0,0.3), rgba(0,0,0,0.1))"
                                 borderRadius="lg"
                                 transition="all 0.3s"
                                 _hover={{ transform: 'scale(1.05)' }}
@@ -136,6 +138,7 @@ export default function DJS() {
                                 objectFit="cover" 
                                 priority 
                                 quality={60}
+                                style={{borderRadius: 'lg'}}
                                 sizes="(max-width: 768px) 100vw, 
                                        (max-width: 1200px) 50vw, 
                                        33vw" 

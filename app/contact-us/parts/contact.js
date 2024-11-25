@@ -13,9 +13,11 @@ import {
   Icon,
   Text,
 } from '@chakra-ui/react';
-import { MdLocationOn, MdPhone, MdEmail } from 'react-icons/md';
+import { MdLocationOn, MdPhone, MdEmail, MdFacebook } from 'react-icons/md';
 
 import Image from 'next/image';
+import Link from 'next/link';
+import { FaFacebook, FaInstagram, FaTiktok, FaTwitter, FaYoutube } from 'react-icons/fa';
 
 const ContactUs = () => {
   return (
@@ -72,20 +74,55 @@ const ContactUs = () => {
                 +256 778 105 878
               </Text>
             </HStack>
-            <HStack>
-              <Icon as={MdPhone} boxSize={6} color="var(--clr-primary-3" />
-              <Text fontSize="md" color="gray.700">
-                +256 759 545 761
-              </Text>
-            </HStack>
+          
             <HStack>
               <Icon as={MdEmail} boxSize={6} color="var(--clr-primary-3" />
               <Text fontSize="md" color="gray.700">
-                info@simbaevents.com
+                info@simbaafrica@gmail.com
               </Text>
             </HStack>
           </VStack>
-        
+          <VStack
+            
+           
+           
+            p={6}
+            align="flex-start"
+            spacing={6}
+            w={{ base: 'full', md: '40%' }}
+          >
+                <Heading as="h2" size="md" color="gray.700">Social Media</Heading>
+           
+            <HStack as={Link} href='https://www.facebook.com/p/African-SIMBA-Events-100093632272961/' target='_blank' _hover={{color: 'var(--clr-primary-2'}}>
+              <Icon as={FaFacebook} boxSize={6} color="var(--clr-primary-3" />
+              <Text fontSize="md" color="gray.700">
+Facebook              </Text>
+            </HStack>
+            <HStack as={Link} href='https://x.com/Afsimbaevents' target='_blank' _hover={{color: 'var(--clr-primary-2'}}>
+              <Icon as={FaTwitter} boxSize={6} color="var(--clr-primary-3" />
+              <Text fontSize="md" color="gray.700">
+                Twitter
+              </Text>
+            </HStack >
+            <HStack  as={Link} href='https://www.instagram.com/africansimbaevents/' target='_blank' _hover={{color: 'var(--clr-primary-2'}}>
+              <Icon as={FaInstagram} boxSize={6} color="var(--clr-primary-3" />
+              <Text fontSize="md" color="gray.700">
+                Instagram
+              </Text>
+            </HStack>
+            <HStack as={Link} href='https://www.tiktok.com/@africansimbaevents' target='_blank' _hover={{color: 'var(--clr-primary-2'}}>
+              <Icon as={FaTiktok} boxSize={6} color="var(--clr-primary-3" />
+              <Text fontSize="md" color="gray.700">
+                Tiktok
+              </Text>
+            </HStack>
+            <HStack as={Link} href='https://www.youtube.com/@africansimbaevents' target='_blank' >
+              <Icon as={FaYoutube} boxSize={6} color="var(--clr-primary-3" />
+              <Text _hover={{color: 'var(--clr-primary-3', textDecor: 'underline'}}  fontSize="md" color="gray.700">
+                Youtube
+              </Text>
+            </HStack>
+          </VStack>
 
           {/* Contact Form */}
           <Box
