@@ -9,7 +9,7 @@ export const events = [
     {
         id: 2,
         name: "Boypee in Uganda",
-        image: "/compressed/boypee.jpg",
+        image: "/compressed/boypee.webp",
         host: "Catwalk Bar & Lounge, Kololo",
         
     },
@@ -23,7 +23,7 @@ export const events = [
     {
         id: 4,
         name: "Afro Vibes Anniversary",
-        image: "/images/afro_vibez_anniversary.jpg",
+        image: "/images/afro_vibez_anniversary.webp",
         host: "Catwalk Lounge, Kololo",
    
     },
