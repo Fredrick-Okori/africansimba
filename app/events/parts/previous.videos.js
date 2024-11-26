@@ -1,10 +1,10 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
-    Box, Heading, SimpleGrid, VStack, Text, Container, Icon, Badge, IconButton, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody,
+    Box, Heading, SimpleGrid, VStack, Center, Text, Container, Icon, Badge, IconButton, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody,
     ModalFooter
 } from '@chakra-ui/react';
-import { FaMapMarkerAlt, FaHeart } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaHeart, FaPlay } from 'react-icons/fa';
 import Image from 'next/image';
 import EventsHero from './events.hero';
 import EventsListing from './eventsListing';
@@ -127,64 +127,106 @@ const PreviousVideos = ({ videos = defaultVideos }) => {
 
 const VideoCard = ({ video, onSelect, isNew }) => {
     const [isLiked, setIsLiked] = useState(false);
-
+  
     const handleLike = (e) => {
-        e.stopPropagation();
-        setIsLiked(!isLiked);
+      e.stopPropagation();
+      setIsLiked(!isLiked);
     };
-
+  
     return (
-        <VStack
-            spacing={3}
-            align="start"
-            onClick={() => onSelect(video)}
-            cursor="pointer"
-            borderRadius="xl"
-            overflow="hidden"
-           
-            transition="all 0.3s"
-            border='1px solid transparent'
-            position="relative"
-            _hover={{ transform: 'scale(1.01)', boxShadow: 'xl', transition: "all 0.3s", border: '1px solid grey' }}
-        >
-            <Box height="300px" width="100%" overflow="hidden" position="relative">
-                <Image src={video.thumbnail} alt={video.title} loading='lazy' width={700} height={200} objectFit="fill" />
-                {isNew && (
-                    <Badge
-                        position="absolute"
-                        top="10px"
-                        right="10px"
-                        colorScheme="pink"
-                        variant="solid"
-                        fontSize="0.8em"
-                        px={3}
-                        py={1}
-                        borderRadius="full"
-                    >
-                        New
-                    </Badge>
-                )}
-                <IconButton
-                    icon={<Icon as={FaHeart} color={isLiked ? "red.500" : "grey"} />}
-                    aria-label="Like"
-                    position="absolute"
-                    bottom="10px"
-                    right="10px"
-                    onClick={handleLike}
-                    bg="transparent"
-                    _hover={{ bg: "transparent" }}
-                />
-            </Box>
-            <VStack align="start" spacing={1} px={2} width="100%">
-                <Text fontWeight="normal" fontSize="lg" color="var(--clr-primary-1)" noOfLines={2}>
-                    {video.title}
-                </Text>
-                <Text fontSize="sm" color="gray.400" pb={2}>
-                    <Icon as={FaMapMarkerAlt} mr={1} /> {video.location}
-                </Text>
-            </VStack>
-        </VStack>
-    );
-};
+      <VStack
+        spacing={3}
+        align="start"
+        onClick={() => onSelect(video)}
+        cursor="pointer"
+        borderRadius="xl"
+        overflow="hidden"
+        transition="all 0.3s"
+        border="1px solid transparent"
+        position="relative"
+        _hover={{ transform: "scale(1.01)", boxShadow: "xl" }}
+      >
+        <Box height="300px" width="100%" overflow="hidden" position="relative">
+          {/* Thumbnail Image */}
+          <Image
+            src={video.thumbnail}
+            alt={video.title}
+            loading="lazy"
+            width={700}
+            height={200}
+            objectFit="fill"
+          />
+  
+          {/* Play Button */}
+          <Center position="absolute" top="0" left="0" width="100%" height="100%">
+  <IconButton
+    icon={<Icon as={FaPlay} w={8} h={8} />}
+    aria-label="Play Video"
+    size="lg"
+    bg="var(--clr-primary-1)"
+    color="var(--clr-primary-2)"
+    boxSize="80px"
+    borderRadius="full"
+    opacity={0.8}
+    transition="all 0.3s ease-in-out, transform 0.3s ease-in-out"
+    _hover={{
+      bg: "var(--clr-primary-3)",
+      color: "var(--clr-primary-1)",
+      opacity: 1,
+      transform: "scale(1.1)",
+    }}
+    _active={{
+      transform: "scale(0.95)",
+    }}
+    onClick={(e) => {
+      e.stopPropagation();
+      onSelect(video); // Open the video in the modal
+    }}
+  />
+</Center>
 
+  
+          {/* "New" Badge */}
+          {isNew && (
+            <Badge
+              position="absolute"
+              top="10px"
+              right="10px"
+              colorScheme="pink"
+              variant="solid"
+              fontSize="0.8em"
+              px={3}
+              py={1}
+              borderRadius="full"
+            >
+              New
+            </Badge>
+          )}
+  
+          {/* Like Button */}
+          <IconButton
+            icon={<Icon as={FaHeart} color={isLiked ? "red.500" : "grey"} />}
+            aria-label="Like"
+            position="absolute"
+            bottom="10px"
+            right="10px"
+            onClick={handleLike}
+            bg="transparent"
+            _hover={{ bg: "transparent" }}
+          />
+        </Box>
+  
+        {/* Video Title and Location */}
+        <VStack align="start" spacing={1} px={2} width="100%">
+          <Text fontWeight="normal" fontSize="lg" color="var(--clr-primary-1)" noOfLines={2}>
+            {video.title}
+          </Text>
+          <Text fontSize="sm" color="gray.400" pb={2}>
+            <Icon as={FaMapMarkerAlt} mr={1} /> {video.location}
+          </Text>
+        </VStack>
+      </VStack>
+    );
+  };
+  
 export default PreviousVideos;
