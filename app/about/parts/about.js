@@ -23,7 +23,7 @@ const About = () => {
                     {/* Header Section */}
                     <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}  mt={10} mb={10} >
                     
-                        <Box textAlign="left"  p={10} w={{ base: "100%", md: "50%" }}>
+                        <Box textAlign="left"  p={10} w={{ base: "100%", md: "100%" }}>
                         <Heading size={{ base: "2xl", md: "lg" }} mb={4} color="var(--clr-primary-1)">
                             About Us
                         </Heading>
@@ -39,7 +39,7 @@ const About = () => {
                             We aim to provide innovative and effective solutions through our passion for event management.
                         </Text>
                         </Box>
-                        <Box  color='var(--clr-primary-1)' p={10} w={{ base: "100%", md: "50%" }}>
+                        <Box  color='var(--clr-primary-1)' p={10} w={{ base: "100%", md: "100%" }}>
                         <Heading color='var(--clr-primary-1'>Our Services</Heading>
                         <Text as='p'  color='var(--clr-primary-1)' mb={5} textAlign='left' >
                         Activities
@@ -58,7 +58,7 @@ const About = () => {
                     </SimpleGrid>
 
                     {/* CEO Section */}
-                    <Box w="100%">
+                    <Box w="100%" alignItems='center'>
                         <Heading as="h2" size="2xl" color="var(--clr-primary-1)" textAlign="left" mb={6}>
                             Our Team
                         </Heading>
