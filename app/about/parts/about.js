@@ -21,9 +21,9 @@ const About = () => {
             <Container maxW="container.xl" p={{ base: 4, md: 8 }}>
           
                     {/* Header Section */}
-                    <Box display='flex' dir={{base: 'row', lg: 'column'}} mt={10} mb={10} alignItems='center' justifyContent='space-evenly'>
+                    <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}  mt={10} mb={10} >
                     
-                        <Box textAlign="left" mb={10} w={{ base: "100%", md: "50%" }}>
+                        <Box textAlign="left"  p={10} w={{ base: "100%", md: "50%" }}>
                         <Heading size={{ base: "2xl", md: "lg" }} mb={4} color="var(--clr-primary-1)">
                             About Us
                         </Heading>
@@ -31,7 +31,7 @@ const About = () => {
                             We are a team of passionate professionals dedicated to delivering top-notch experiences in everything we do.
                             From event planning to execution, we believe in creating memorable experiences that make a difference.
                         </Text>
-                        <Heading as="h2" size="lg" mt={6} mb={4} color="var(--clr-primary-1)">
+                        <Heading size={{ base: "2xl", md: "lg" }} mt={6} mb={4} color="var(--clr-primary-1)">
                             Our Mission
                         </Heading>
                         <Text fontSize={{ base: "sm", md: "md" }} color="var(--clr-primary-1)" maxW="700px">
@@ -39,7 +39,7 @@ const About = () => {
                             We aim to provide innovative and effective solutions through our passion for event management.
                         </Text>
                         </Box>
-                        <Box  color='var(--clr-primary-1)'>
+                        <Box  color='var(--clr-primary-1)' p={10} w={{ base: "100%", md: "50%" }}>
                         <Heading color='var(--clr-primary-1'>Our Services</Heading>
                         <Text as='p'  color='var(--clr-primary-1)' mb={5} textAlign='left' >
                         Activities
@@ -55,7 +55,7 @@ const About = () => {
                         </Text>
                         </Box>
                    
-                    </Box>
+                    </SimpleGrid>
 
                     {/* CEO Section */}
                     <Box w="100%">
@@ -64,7 +64,7 @@ const About = () => {
                         </Heading>
                         <Flex 
                             direction={{ base: "column", md: "row" }} 
-                            align="center" 
+                            
                             gap={8} 
                             
                         >
@@ -100,7 +100,7 @@ const About = () => {
                               
                                 CEO/Host/Bookwriter/Marketer/Speaker
                                 </Text>
-                                <Text mt={2} fontSize="md" color="var(--clr-primary-1)">
+                                <Text mt={2} fontSize="md" textAlign='left' color="var(--clr-primary-1)">
                                     African Simba is a visionary leader committed to fostering innovation and excellence
                                     across all aspects of our company. With years of experience in event management,
                                     his leadership has been instrumental in achieving our mission and vision.
