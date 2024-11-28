@@ -40,7 +40,7 @@ export default function VideoBanner() {
       <Box mt={10} position="relative" height={{ base: "300px", md: "600px" }}>
         {/* Background Image */}
         <Image
-          src="/compressed/events_hero.webp"
+          src="/compressed/home_hero.webp"
           alt="night club"
           layout="fill"
           objectFit="cover"
