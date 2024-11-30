@@ -46,9 +46,9 @@ export default function VideoBanner() {
           objectFit="cover"
           priority // Optimized for loading
           style={{
-            borderRadius: "10px", // Rounded corners
-            transition: "transform 0.3s", // Smooth hover effect
-           
+            mixBlendMode: "overlay", // Options: multiply, screen, overlay, etc.
+            filter: "brightness(90%)",
+            borderRadius: "10px",
           }}
         />
 

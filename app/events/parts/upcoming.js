@@ -1,6 +1,6 @@
 import React from'react';
 
-import { Container, Flex, Box, Text, Grid, Image, VStack ,useBreakpointValue} from '@chakra-ui/react';
+import { Container, Flex, Box, Text, Grid, Image, VStack ,useBreakpointValue, Heading} from '@chakra-ui/react';
 
 import { events } from '../data.upcoming';
 
@@ -11,9 +11,9 @@ export default function Upcoming() {
   return (
     <div>
          <Container maxW="container.xl" py={10}>
-            <Flex justify="space-between" align="center" mb={6} flexDirection={{ base: "column", md: "row" }}>
+            <Flex justify="space-between" align="left" mb={6} flexDirection={{ base: "column", md: "row" }}>
                 <Box mb={{ base: 4, md: 0 }}>
-                    <Text fontSize={fontSize} fontWeight="bold" color="var( --clr-primary-1)" mb={3}>Previous Events</Text>
+                    <Heading size='xl' fontWeight="bold" color="var( --clr-primary-1)" mb={3}>Previous Events</Heading>
                     <Text fontSize={subFontSize} fontWeight="normal" color="white">Join the Game Changers</Text>
                 </Box>
             </Flex>

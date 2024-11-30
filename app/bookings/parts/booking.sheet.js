@@ -42,7 +42,11 @@ export default function BookingCard() {
             <Container maxW="container.xl">
                 <Box display={'flex'} flexDir={{ base: 'column', lg: 'row' }} gap={10} mt={10} mb={{base: 5, lg: 20}} data-aos='fade-up' data-aos-duration='2000'>
                     <Box flexBasis={700}>
-                <Image src='/nights/jamboree_adventures.webp' width={500} height={400} alt='event poster' rounded={10} />
+                <Image src='/nights/jamboree_adventures.webp' 
+                width={500} height={400} alt='Jamboree Adventures in Dubai'
+                style={{borderRadius: '10px'}}
+                 
+                 />
                 </Box>
                 <Box mt={5} padding={10}>
 <Heading as='h1' color='var(--clr-primary-1)' size='xl' mb={5} textAlign='left'>Jamboree Adventures</Heading>

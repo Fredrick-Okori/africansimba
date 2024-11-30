@@ -71,14 +71,14 @@ const NavBar = () => {
 
                         <Flex display={{ base: 'none', md: 'flex' }} alignItems={'center'}>
                             <Stack direction={'row'} spacing={7}>
-                                <Link href="/home" fontSize='12px' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/home' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/home')}>
+                                <Link href="/home" onClose={onClose} fontSize='12px' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/home' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/home')}>
                                     Home
                                 </Link>
-                                <Link href='/events' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/stream' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/stream')}>
+                                <Link href='/events' onClose={onClose} _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/stream' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/stream')}>
                                     Events
                                 </Link>
                             
-                                <Link href='/bookings' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/bookings' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/bookings')}>
+                                <Link href='/bookings' onClose={onClose} _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/bookings' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/bookings')}>
                                     Tickets
                                 </Link>
                                 {/* <Link href='/saloon' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/saloon' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/saloon')}>
@@ -87,22 +87,22 @@ const NavBar = () => {
                                 <Link href='/store' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/store' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/store')}>
                                     Profile
                                 </Link> */}
-                                    <Link href='/about' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/about' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/about')}>
+                                    <Link href='/about' onClose={onClose} _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/about' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/about')}>
                                     About
                                 </Link>
-                                <Link href='/contact-us' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/contact' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/contact')}>
+                                <Link href='/contact-us' onClose={onClose} _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/contact' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/contact')}>
                                     Contact
                                 </Link>
-                                <Link href='/store' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/store' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/store')}>
+                                <Link href='/store' onClose={onClose} _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/store' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/store')}>
                                     Shop
                                 </Link>
 
                                 {pathname === '/store' && (
-                                    <Link href="/cart" _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/cart' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/cart')} >
+                                    <Link href="/cart" onClose={onClose} _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/cart' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/cart')} >
                                         Cart
                                     </Link>
                                 )}
-                                <Button rounded='full' size="sm" _hover={{ textDecoration: 'none', bg: 'var( --clr-primary-1)', color: 'black' }} textDecoration='none' variant='outline' colorScheme="whiteAlpha">Booking <FiArrowRight /></Button>
+                                <Button rounded='full' size="sm" _hover={{ textDecoration: 'none', bg: 'var( --clr-primary-1)', color: 'black' }} textDecoration='none' variant='outline' colorScheme="whiteAlpha">Tickets <FiArrowRight /></Button>
                             </Stack>
                         </Flex>
 
@@ -153,14 +153,13 @@ const MobileNav = ({ onClose }) => {
             rounded="xl"
             boxShadow="xl"
         >
-            <HStack spacing={4}>
-                <Avatar size="md" src="/images/logo2.jpg" />
-                <Text >African Simba Events</Text>
+            <HStack spacing={2}>
+                <Image src='/logos/simba_white.webp' width="100" height="70" alt='Logo' />
+                <Text fontWeight='bold' size='lg' fontFamily='heading' >African Simba Events</Text>
             </HStack>
 
 
 
-            {/* Navigation Links */}
             <VStack align="flex-start" spacing={6} pt={10} w="100%">
                 <Link href="/home" _hover={{ color: "purple.200" }} w="100%">
                     <Flex align="center">

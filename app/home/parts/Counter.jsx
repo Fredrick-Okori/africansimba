@@ -24,7 +24,7 @@ export default function Count() {
             <Box>
                 <Container maxW="container.xl" >
                     <Grid templateColumns={['repeat(1, 1fr)', null, '0.5fr 1fr 0.5fr']} py={{ base: 10, lg: 30 }} gap={6}>
-                        <Box position="relative" borderRadius="xl" height={imageHeight} _hover={{ transform: 'scale(1.02)' }} transition="all 0.3s">
+                        <Box position="relative" height={imageHeight} _hover={{ transform: 'scale(1.02)' }} transition="all 0.3s">
                             <Box
                                 position="absolute"
                                 top="0"
@@ -32,49 +32,29 @@ export default function Count() {
                                 right="0"
                                 bottom="0"
                                 bgGradient="linear(to-t, rgba(0,0,0,0.3), rgba(0,0,0,0.1))"
-                                borderRadius="xl"
+                              rounded='lg'
                                 transition="all 0.3s"
-                                _hover={{ transform: 'scale(1.05)' }}
+                                _hover={{ transform: 'scale(1.05)', bgGradient: 'none' }}
                                 zIndex="1"
-                                rounded="lg"
+                            
                             />
                             <Image
-                             
                                 src='/compressed/mbosso.webp'
                                 alt='Muleba Festival'
                                 quality={60}
                                 layout="fill" 
                                 objectFit="cover" 
                                 priority 
-                                style={{borderRadius: 'lg'}}
+                               style={{borderRadius: '10px'}}
                                 sizes="(max-width: 768px) 100vw, 
                                        (max-width: 1200px) 50vw, 
                                        33vw" 
-                              
+
                             />
-                            <Box
-                                position="absolute"
-                                top="0"
-                                left="0"
-                                right="0"
-                                bottom="0"
-                                bgGradient="linear(to-r, rgba(0,0,0,0.2), rgba(0,0,0,0.1))"
-                             rounded='lg'
-                                zIndex="1"
-                            />
-                            <Box
-                                position="absolute"
-                                bottom="20px"
-                                left="30px"
-                                right="30px"
-                                color="var( --clr-primary-1)"
-                                zIndex="2"
-                                rounded='lg'
-                            >
-                               
-                            </Box>
+                           
+                         
                         </Box>
-                        <Box position="relative" rounded="lg" height={imageHeight} _hover={{ transform: 'scale(1.02)' }} transition="all 0.3s">
+                        <Box position="relative"                                       bgGradient="linear(to-t, rgba(0,0,0,0.3), rgba(0,0,0,0.1))" rounded="lg" height={imageHeight} _hover={{ transform: 'scale(1.02)' }} transition="all 0.3s">
                             <Box
                                 position="absolute"
                                 top="0"
@@ -82,9 +62,9 @@ export default function Count() {
                                 right="0"
                                 bottom="0"
                                       bgGradient="linear(to-t, rgba(0,0,0,0.3), rgba(0,0,0,0.1))"
-                                borderRadius="xl"
+                                rounded='lg'
                                 transition="all 0.3s"
-                                _hover={{ transform: 'scale(1.05)' }}
+                                _hover={{ transform: 'scale(1.05)', bgGradient: 'none' }}
                                 zIndex="1"
                             />
                             <Image
@@ -94,7 +74,7 @@ export default function Count() {
                                 layout="fill" 
                                 objectFit="cover" 
                                 priority 
-                                style={{borderRadius: 'lg'}}
+                                style={{borderRadius: '10px'}}
                                 quality={60}
                                 sizes="(max-width: 768px) 100vw, 
                                        (max-width: 1200px) 50vw, 
@@ -102,28 +82,10 @@ export default function Count() {
                               
                                
                             />
-                            <Box
-                                position="absolute"
-                                top="0"
-                                left="0"
-                                right="0"
-                                bottom="0"
-                                bgGradient="linear(to-r, rgba(0,0,0,0.2), rgba(0,0,0,0.1))"
-                                borderRadius="xl"
-                                zIndex="1"
-                            />
-                            <Box
-                                position="absolute"
-                                bottom="20px"
-                                left="30px"
-                                right="30px"
-                                color="var( --clr-primary-1)"
-                                zIndex="2"
-                            >
-                               
-                            </Box>
+                          
+    
                         </Box>
-                        <Box position="relative" rounded='lg' height={imageHeight} _hover={{ transform: 'scale(1.02)' }} transition="all 0.3s">
+                        <Box position="relative" rounded='lg' height={imageHeight} >
                             <Box
                                 position="absolute"
                                 top="0"
@@ -133,7 +95,7 @@ export default function Count() {
                                 bgGradient="linear(to-t, rgba(0,0,0,0.3), rgba(0,0,0,0.1))"
                                 rounded="lg"
                                 transition="all 0.3s"
-                                _hover={{ transform: 'scale(1.05)' }}
+                                _hover={{ transform: 'scale(1.05)', bgGradient: 'none' }}
                                 zIndex="1"
                             />
                             <Image
@@ -144,32 +106,12 @@ export default function Count() {
                                 objectFit="cover" 
                                 quality={60}
                                 priority 
-                                style={{borderRadius: 'lg'}}
+                                style={{borderRadius: '10px'}}
                                 sizes="(max-width: 768px) 100vw, 
                                        (max-width: 1200px) 50vw, 
                                        33vw" 
                             />
-                            <Box
-                                position="absolute"
-                                top="0"
-                                left="0"
-                                rounded='lg'
-                                right="0"
-                                bottom="0"
-                                bgGradient="linear(to-r, rgba(0,0,0,0.3), rgba(0,0,0,0.7))"
-                                borderRadius="lg"
-                                zIndex="1"
-                            />
-                            <Box
-                                position="absolute"
-                                bottom="20px"
-                                left="30px"
-                                right="30px"
-                                color="var( --clr-primary-1)"
-                                zIndex="2"
-                            >
-                                
-                            </Box>
+                  
                         </Box>
                     </Grid>
                 </Container>

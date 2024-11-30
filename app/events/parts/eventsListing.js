@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Box, Container, Text, Image, VStack, Flex, useBreakpointValue } from "@chakra-ui/react";
+import { Box, Container, Heading, Text, Image, VStack, Flex, useBreakpointValue } from "@chakra-ui/react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
@@ -32,11 +32,11 @@ const EventsListing = () => {
 
   return (
     <Container maxW="container.xl" py={10}>
-      <Flex justify="space-between" align="center" mb={6} flexDirection={{ base: "column", md: "row" }}>
+      <Flex justify="space-between" align="left" mb={6} flexDirection={{ base: "column", md: "row" }}>
         <Box mb={{ base: 4, md: 0 }}>
-          <Text fontSize={fontSize} fontWeight="bold" color="var(--clr-primary-1)" mb={3}>
-            Hosted Nights
-          </Text>
+        <Heading as="h2" size="xl" fontWeight='bold' mb={2} color="var(--clr-primary-1)">
+                    Hosted Nights
+                </Heading>
           <Text fontSize={subFontSize} fontWeight="normal" color="white">
             Join the Game Changers
           </Text>
