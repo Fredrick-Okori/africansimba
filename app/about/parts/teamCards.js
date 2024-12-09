@@ -27,7 +27,7 @@ const teamMembers = [
   },
   {
     name: 'Delphin Jack',
-    position: 'Management',  
+    position: 'Floor Management',  
     imageUrl: '/team/delphin_jack.webp'
   },
   {
