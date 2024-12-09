@@ -17,13 +17,18 @@ const teamMembers = [
     },
     {
       name: 'Raoul Mak',
-      position: 'Finance Management',    
+      position: 'Management',    
       imageUrl: '/team/Raoul_Mak.webp'
   },
   {
     name: 'Bivince Mugisho',
-    position: 'Floor Management',  
+    position: 'Management',  
     imageUrl: '/team/Mugisho.webp'
+  },
+  {
+    name: 'Delphin Jack',
+    position: 'Management',  
+    imageUrl: '/team/delphin_jack.webp'
   },
   {
     name: 'Louis 256',
