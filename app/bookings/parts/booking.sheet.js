@@ -16,19 +16,34 @@ const ticket = [
         id: 1,
         title: 'Ordinary ticket',
         description: 'Ticket for one',
-        price: 'UGX: 3.5M',
+        price: 'UGX: 20K',
         image: '/images/image_event.jpg'
 
     },
     {
         id: 2,
-        title: 'Platinum ticket',
-        description: 'Ticket for one,',
-        price: 'USD: $2000',
+        title: 'Ordinary Special ticket',
+        description: 'Ticket for many,',
+        price: 'UGX: 1M',
         image: '/images/eventposter.jpg'
 
     },
-   
+    {
+        id: 3,
+        title: 'Gold ticket',
+        description: 'Ticket for many,',
+        price: 'UGX: 2M',
+        image: '/images/eventposter.jpg'
+
+    },
+    {
+        id: 3,
+        title: 'Platinum ticket',
+        description: 'Ticket for many,',
+        price: 'UGX: 3M',
+        image: '/images/eventposter.jpg'
+
+    },
 
 ]
 
@@ -40,32 +55,23 @@ export default function BookingCard() {
     return (
         <>
             <Container maxW="container.xl">
-                <Box display={'flex'} flexDir={{ base: 'column', lg: 'row' }} gap={10} mt={10} mb={{base: 5, lg: 20}} data-aos='fade-up' data-aos-duration='2000'>
+                <Box display={'flex'} flexDir={{ base: 'column', lg: 'row' }} alignItems='center' gap={10} mt={10} mb={{base: 5, lg: 20}} data-aos='fade-up' data-aos-duration='2000'>
                     <Box flexBasis={700}>
-                <Image src='/nights/jamboree_adventures.webp' 
+                <Image src='/updates/event_anniversary.jpeg' 
                 width={500} height={400} alt='Jamboree Adventures in Dubai'
                 style={{borderRadius: '10px'}}
                  
                  />
                 </Box>
                 <Box mt={5} padding={10}>
-<Heading as='h1' color='var(--clr-primary-1)' size='xl' mb={5} textAlign='left'>Jamboree Adventures</Heading>
+<Heading as='h1' color='var(--clr-primary-1)' size='xl' mb={5} textAlign='left'>Afro Vibes Anniversary</Heading>
                     <Text as='p'  color='var(--clr-primary-1)' mb={5} textAlign='left' >
-                        Jamboree Adventures is a 3-day adventure tour that will take you on a thrilling journey through the wilds of Dubai. Join us as we explore the culture, history, and culture of Africa.
+                    Afro vibes is a high tier event with a blend of africanacity and flavours of our roots 
+Every year we spread out textures of themes to only celebrate who we are ;
+This year we bring you the BANTU EDITION.
+Stay with us #ase
                     </Text>
-                    <Text as='p'  color='var(--clr-primary-1)' mb={5} textAlign='left' >
-                        Activities
-                    </Text>
-                    <Text as='ul'  color='var(--clr-primary-1)' mb={5} textAlign='left' >
-                        <li>Desert Safari</li>
-                        <li>Miracle Gardens</li>
-                        <li>Burj Khalifo</li>
-                        <li>Abu Dhabi City Tour</li>
-                        <li>Yatch Party</li>
-                        <li>Under water Aquarium</li>
-                        <li>Ferrari World / Water Park</li>
-                        <li>Dubai Marina</li>
-                    </Text>
+                  
                     </Box>
                 </Box>
                 <Box mt={20} mb={20} alignContent='center'>

@@ -13,7 +13,7 @@ const BookingHero = () => {
   return (
     <Box
 
-      bgImage="url('/compressed/ticket_cover-copy.jpg')" // Background image
+      bgImage="url('/updates/afro_vibes_anniversary.jpeg')" // Background image
       bgPosition="center"
       bgSize="cover"
       bgRepeat="no-repeat"

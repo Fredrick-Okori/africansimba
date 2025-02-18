@@ -45,7 +45,7 @@ export default function EventsHero() {
                         width={1300}
                         height={400}
                         objectFit="cover"
-                        src="/images/programs.webp"
+                        src="/updates/weekly_events.jpeg"
                         alt="Events hero image"
                     />
                                

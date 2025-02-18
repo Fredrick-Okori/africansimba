@@ -32,13 +32,7 @@ const defaultVideos = [
         thumbnail: "/videoposters/afro_vibez.webp",
         location: "CatWalk Lounge, Kololo",
     },
-    {
-        id: 4,
-        videoUrl: "https://www.youtube.com/watch?v=eyfDVaXVw_E?autoplay=1",
-        title: "The Fiesta Sundays",
-        thumbnail: "/videoposters/fiesta_sunday_copy.jpg",
-        location: "The Villa Ug, Bukoto",
-    },
+   
     {
         id: 5,
         videoUrl: "https://www.youtube.com/watch?v=0TR8qVeGygg?autoplay=1",
