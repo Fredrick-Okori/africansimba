@@ -38,7 +38,7 @@ const BookingHero = () => {
                             lineHeight={1}
                             boxShadow='0 0 20px 0 rgba(0, 0, 0, 0.5)' py={20} borderLeft='5px dotted white' p={5} color="white" 
                             >
-                           Buy your Ticket
+                           Afro Vibes 2nd Anniversary
 
                        
                         </Heading>
@@ -49,7 +49,7 @@ const BookingHero = () => {
           data-aos="fade-up"
           data-aos-duration="2500"
         >
-For Jamboree Adventures in Dubai
+This year we bring you the Bantu Edition
         </Text>
       </VStack>
     </Box>
