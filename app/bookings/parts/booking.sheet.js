@@ -96,7 +96,7 @@ Stay with us #ase
                                        
 
                                         <SimpleGrid columns={{ base: 2, lg: 2 }}>
-                                            <Text> Buying ticket for (1) at {item.price}</Text>
+                                            <Text> Buying ticket  at {item.price}</Text>
                                             <SimpleGrid column={{base: 1, lg: 2}}>
     <Text mb={3} fontSize={'2xl'} fontWeight={'bold'} color='var(--clr-primary-1)' textAlign='center'>{item.price}</Text>
     <Button
