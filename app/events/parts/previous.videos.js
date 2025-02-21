@@ -40,7 +40,21 @@ const defaultVideos = [
         thumbnail: "/videoposters/paradigm_video_poster.webp",
         location: "Gabba, Kabagala",
     },
-   
+    {
+      id: 6,
+        videoUrl: "https://www.youtube.com/watch?v=KCcTldwDI9M?autoplay=1",
+        title: "Superstar Soon | Petrie MC | ASE Talent",
+        thumbnail: "/images/WhatsApp.webp",
+        location: "Archieves",
+    },
+    
+    {
+        id: 7,
+        videoUrl: "https://www.youtube.com/watch?v=4CVgMct-8rc?autoplay=1",
+        title: "Jamboree 2024 Dubai Adventures",
+        thumbnail: "/compressed/ticket_cover-copy.jpg",
+        location: "Dubai",
+    },
   
 ];
 
