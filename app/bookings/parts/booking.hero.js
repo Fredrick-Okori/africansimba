@@ -49,7 +49,7 @@ const BookingHero = () => {
           data-aos="fade-up"
           data-aos-duration="2500"
         >
-This year we bring you the Bantu Edition
+No simba, No party, Unleashing Petrie MC
         </Text>
       </VStack>
     </Box>
