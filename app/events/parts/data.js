@@ -1,5 +1,5 @@
 export const events = [
-  
+    
     {
         id: 2,
         name: "Wahala Wednesday",
@@ -9,10 +9,16 @@ export const events = [
     },
     {
         id: 3,
-        name: "Afro Vibes",
-        image: "/nights/afro_vibes.webp",
+        name: "Blow Out Thursday",
+        image: "/updates/blow_out.webp",
         host: "Catwalk Lounge, Kololo",
         
+    },
+    {
+        id: 2,
+        name: "Unleashing Mc. Petrie",
+        image: "/updates/mc_petrie.webp",
+        host: "Catwalk Lounge, Kololo",
     },
     {
         id: 3,
@@ -22,11 +28,23 @@ export const events = [
         
     },
     {
+        id: 4,
+        name: "Afro Vibes Friday",
+        image: "/updates/afro_vibes_vault.webp",
+        host: "Vault, Bandali Rise, Bugologi",
+    },
+    {
         id: 5,
         name: "Gaba Big Ballers",
         image: "/nights/gaba_big_ballers.webp",
         host: "Paradigm Loune and Bar, Gaba",
    
+    },
+    {
+    id: 1,
+        name: "Beats & Brunch",
+        image: "/updates/beats_brunch.webp",
+        host: "Ruby, Bandali Rise",
     },
     
    

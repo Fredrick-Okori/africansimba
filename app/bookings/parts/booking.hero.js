@@ -13,7 +13,7 @@ const BookingHero = () => {
   return (
     <Box
 
-      bgImage="url('/updates/afro_vibes_anniversary.jpeg')" // Background image
+      bgImage="url('/updates/bookings_hero.webp')" // Background image
       bgPosition="center"
       bgSize="cover"
       bgRepeat="no-repeat"
@@ -38,7 +38,7 @@ const BookingHero = () => {
                             lineHeight={1}
                             boxShadow='0 0 20px 0 rgba(0, 0, 0, 0.5)' py={20} borderLeft='5px dotted white' p={5} color="white" 
                             >
-                           Afro Vibes 2nd Anniversary
+                          Unleashing Petrie MC
 
                        
                         </Heading>
