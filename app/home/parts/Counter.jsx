@@ -69,7 +69,7 @@ export default function Count() {
                             />
                             <Image
                                 rounded="lg"
-                                src='/compressed/muleba_crowd.webp'
+                                src='/updates/afro_vibes.webp'
                                 alt='African simba events anniversary'
                                 layout="fill" 
                                 objectFit="cover" 
@@ -100,7 +100,7 @@ export default function Count() {
                             />
                             <Image
                                 rounded="lg"
-                                 src='/compressed/new_photo.webp'
+                                 src='/updates/mc_ase.webp'
                                 alt='Paradigm Fridays'
                                 layout="fill" 
                                 objectFit="cover" 

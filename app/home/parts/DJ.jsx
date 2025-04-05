@@ -38,7 +38,7 @@ export default function DJS() {
                                 rounded="lg"
                             />
                               <Image
-    src="/compressed/first_image.webp"
+    src="/updates/vault.webp"
     alt="Boy B in Uganda"
     quality={60}
     layout="fill" 
@@ -66,7 +66,7 @@ export default function DJS() {
                             />
                             <Image
                                 rounded="lg"
-                                src='/compressed/second_image.webp'
+                                src='/updates/middle_event.webp'
                                 alt='Dj Alisha'
                                 layout="fill" 
                                 objectFit="cover" 
@@ -94,7 +94,7 @@ export default function DJS() {
                             />
                             <Image
                                 rounded="lg"
-                                src='/compressed/third_photo.webp'
+                                src='/updates/one_light_night.webp'
                                 alt='Best DJs'
                                 layout="fill" 
                                 objectFit="cover" 
