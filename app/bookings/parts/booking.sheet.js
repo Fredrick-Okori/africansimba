@@ -17,7 +17,7 @@ const ticket = [
     {
         id: 2,
         title: 'Gold Table',
-        description: 'Experience the BANTU EDITION with Unleashing Petrie MC! This ticket includes 6 mixers and is priced at 1M.',
+        description: 'Gold Table at Unleashing Petrie MC! This ticket includes 6 mixers and is priced at 1M.',
         price: 'UGX: 1M',
         image: '/images/eventposter.jpg'
     },
@@ -50,7 +50,7 @@ export default function BookingCard() {
                     <Box mt={5} padding={10}>
                         <Heading as='h1' color='var(--clr-primary-1)' size='xl' mb={5} textAlign='left'>Unleashing Petrie MC</Heading>
                         <Text as='p' color='var(--clr-primary-1)' mb={5} textAlign='left'>
-                            Unleashing Petrie MC is a high-tier event that blends African culture and flavors of our roots. Every year, we present different themes to celebrate who we are. This year, we bring you the BANTU EDITION. Stay with us #ase!
+                            Unleashing Petrie MC is a high-tier event that blends African culture and flavors of our roots. Every year, we present different themes to celebrate who we are.  Stay with us #ase!
                         </Text>
                     </Box>
                 </Box>

@@ -49,7 +49,7 @@ const BookingHero = () => {
           data-aos="fade-up"
           data-aos-duration="2500"
         >
-No simba, No party, Unleashing Petrie MC
+17th April | No simba, No party
         </Text>
       </VStack>
     </Box>

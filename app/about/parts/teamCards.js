@@ -30,11 +30,7 @@ const teamMembers = [
     position: 'Floor Management',  
     imageUrl: '/team/delphin_jack.webp'
   },
-  {
-    name: 'Louis 256',
-    position: 'Creative Director',   
-    imageUrl: '/team/luois.jpeg'
-},
+
 {
   name: 'Allan Photography',
   position: 'Director of Photography',   
