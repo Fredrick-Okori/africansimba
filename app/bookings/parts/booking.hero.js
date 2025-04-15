@@ -13,7 +13,7 @@ const BookingHero = () => {
   return (
     <Box
 
-      bgImage="url('/updates/bookings_hero.webp')" // Background image
+      bgImage="url('/images/petrie_mc.webp')" // Background image
       bgPosition="center"
       bgSize="cover"
       bgRepeat="no-repeat"
@@ -21,7 +21,7 @@ const BookingHero = () => {
       height={{ base: "300px", md: "500px", lg: "600px" }} // Responsive height
     >
       {/* Overlay for darker effect */}
-    
+
 
       {/* Content */}
       <VStack
@@ -51,6 +51,8 @@ const BookingHero = () => {
         >
 17th April | No simba, No party
         </Text>
+
+        
       </VStack>
     </Box>
   );

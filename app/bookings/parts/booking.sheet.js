@@ -50,7 +50,8 @@ export default function BookingCard() {
                     <Box mt={5} padding={10}>
                         <Heading as='h1' color='var(--clr-primary-1)' size='xl' mb={5} textAlign='left'>Unleashing Petrie MC</Heading>
                         <Text as='p' color='var(--clr-primary-1)' mb={5} textAlign='left'>
-                            Unleashing Petrie MC is a high-tier event that blends African culture and flavors of our roots. Every year, we present different themes to celebrate who we are.  Stay with us #ase!
+                        Unleashing Petrie Mc is a unveil into the music industry of a fresh , generational Mc called Petrie Mc 
+                        17 April will mark history as he steps on the scene as second to non. Mr continental the minister of enjoyment
                         </Text>
                     </Box>
                 </Box>

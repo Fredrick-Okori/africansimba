@@ -26,14 +26,14 @@ export default function VideoBanner() {
         color="var(--clr-primary-1)"
         textAlign="center"
       >
-        AFRICAN SIMBA EVENTS
+        African Simba Events
       </Text>
       <Text
         color="var(--clr-primary-1)"
         fontSize={{ base: "2xl", lg: "3xl" }}
         textAlign="center"
       >
-        "THE GAME CHANGERS"
+        "The Game Changers"
       </Text>
 
       {/* Hero Image Section */}
