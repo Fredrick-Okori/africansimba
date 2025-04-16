@@ -32,11 +32,7 @@ const teamMembers = [
   },
  
 
-{
-  name: 'Allan Photography',
-  position: 'Director of Photography',   
-  imageUrl: '/team/allan.jpeg'
-},
+
 {
   name: 'Freeman',
   position: 'Photographer',  
