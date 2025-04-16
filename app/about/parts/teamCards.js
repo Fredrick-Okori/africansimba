@@ -52,11 +52,7 @@ const teamMembers = [
         position: 'Host',      
         imageUrl: '/team/Laylah_mak.webp'
     },
-    {
-      name: 'Brenda Cloudz',
-      position: 'Host',  
-      imageUrl: '/team/brenda_cloudz.webp'
-    },
+   
     {
         name: 'Hannah Tewodross',
         position: 'Hostess',    
@@ -102,7 +98,7 @@ const teamMembers = [
 {
   name: 'Petrie MC',
   position: 'Official MC',  
-  imageUrl: '/team/petrie_mc.webp'
+  imageUrl: '/team/petrie.jpeg'
 },
 
 
