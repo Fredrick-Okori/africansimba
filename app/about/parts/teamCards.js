@@ -30,11 +30,17 @@ const teamMembers = [
     position: 'Floor Management',  
     imageUrl: '/team/delphin_jack.webp'
   },
+ 
 
 {
   name: 'Allan Photography',
   position: 'Director of Photography',   
   imageUrl: '/team/allan.jpeg'
+},
+{
+  name: 'Freeman',
+  position: 'Photographer',  
+  imageUrl: '/team/freeman.jpeg'
 },
     {
         name: 'Kimnana Lil Stunner',

@@ -154,45 +154,54 @@ const VideoCard = ({ video, onSelect, isNew }) => {
         position="relative"
         _hover={{ transform: "scale(1.01)", boxShadow: "xl" }}
       >
-        <Box height="300px" width="100%" overflow="hidden" position="relative">
+        <Box 
+          width="100%" 
+          height="220px" 
+          overflow="hidden" 
+          position="relative"
+        >
           {/* Thumbnail Image */}
           <Image
             src={video.thumbnail}
             alt={video.title}
             loading="lazy"
-            width={700}
-            height={200}
-            objectFit="fill"
+            width={500}
+            height={500}
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              objectPosition: 'center'
+            }}
           />
   
           {/* Play Button */}
           <Center position="absolute" top="0" left="0" width="100%" height="100%">
-  <IconButton
-    icon={<Icon as={FaPlay} w={8} h={8} />}
-    aria-label="Play Video"
-    size="lg"
-    bg="var(--clr-primary-1)"
-    color="var(--clr-primary-2)"
-    boxSize="80px"
-    borderRadius="full"
-    opacity={0.8}
-    transition="all 0.3s ease-in-out, transform 0.3s ease-in-out"
-    _hover={{
-      bg: "var(--clr-primary-3)",
-      color: "var(--clr-primary-1)",
-      opacity: 1,
-      transform: "scale(1.1)",
-    }}
-    _active={{
-      transform: "scale(0.95)",
-    }}
-    onClick={(e) => {
-      e.stopPropagation();
-      onSelect(video); // Open the video in the modal
-    }}
-  />
-</Center>
-
+            <IconButton
+              icon={<Icon as={FaPlay} w={8} h={8} />}
+              aria-label="Play Video"
+              size="lg"
+              bg="var(--clr-primary-1)"
+              color="var(--clr-primary-2)"
+              boxSize="80px"
+              borderRadius="full"
+              opacity={0.8}
+              transition="all 0.3s ease-in-out, transform 0.3s ease-in-out"
+              _hover={{
+                bg: "var(--clr-primary-3)",
+                color: "var(--clr-primary-1)",
+                opacity: 1,
+                transform: "scale(1.1)",
+              }}
+              _active={{
+                transform: "scale(0.95)",
+              }}
+              onClick={(e) => {
+                e.stopPropagation();
+                onSelect(video); // Open the video in the modal
+              }}
+            />
+          </Center>
   
           {/* "New" Badge */}
           {isNew && (
@@ -225,7 +234,7 @@ const VideoCard = ({ video, onSelect, isNew }) => {
         </Box>
   
         {/* Video Title and Location */}
-        <VStack align="start" spacing={1} px={2} width="100%">
+        <VStack align="start" spacing={1} px={2} width="100%" height="80px">
           <Text fontWeight="normal" fontSize="lg" color="var(--clr-primary-1)" noOfLines={2}>
             {video.title}
           </Text>
