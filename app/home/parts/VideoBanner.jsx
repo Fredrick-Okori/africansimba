@@ -52,6 +52,8 @@ export default function VideoBanner() {
           }}
         />
 
+
+
         {/* Gradient Overlay */}
         <Box
           position="absolute"
