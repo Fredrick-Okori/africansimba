@@ -13,11 +13,11 @@ const BookingHero = () => {
   return (
     <Box
 
-      bgImage="url('/images/petrie_mc.webp')" // Background image
+      bgImage="url('/updates/skales_hero.webp')" // Background image
       bgPosition="center"
       bgSize="cover"
       bgRepeat="no-repeat"
-    
+  
       height={{ base: "300px", md: "500px", lg: "600px" }} // Responsive height
     >
       {/* Overlay for darker effect */}
@@ -38,7 +38,8 @@ const BookingHero = () => {
                             lineHeight={1}
                             boxShadow='0 0 20px 0 rgba(0, 0, 0, 0.5)' py={20} borderLeft='5px dotted white' p={5} color="white" 
                             >
-                          Unleashing Petrie MC
+                         GBB 1 Year Anniversary
+
 
                        
                         </Heading>
@@ -49,7 +50,7 @@ const BookingHero = () => {
           data-aos="fade-up"
           data-aos-duration="2500"
         >
-17th April | No simba, No party
+12th July | GBB one year anniversary
         </Text>
 
         

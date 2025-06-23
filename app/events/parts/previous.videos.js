@@ -43,8 +43,8 @@ const defaultVideos = [
     {
       id: 6,
         videoUrl: "https://www.youtube.com/watch?v=KCcTldwDI9M?autoplay=1",
-        title: "Superstar Soon | Petrie MC | ASE Talent",
-        thumbnail: "/images/WhatsApp.webp",
+        title: "Superstar Soon | | ASE Talent",
+        thumbnail: "/updates/petrie.webp",
         location: "Archieves",
     },
     

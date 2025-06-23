@@ -15,9 +15,9 @@ export const events = [
     },
     {
         id: 3,
-        name: "Grand Opening",
-        image: "/images/grand_opening.webp",
-        host: "Legacy Bar and Lounge",
+        name: "Sleek Sunday",
+        image: "/nights/chameleone.jpg",
+        host: "Live at Luna",
         
     },
     {
