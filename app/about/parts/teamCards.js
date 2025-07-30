@@ -28,7 +28,7 @@ const teamMembers = [
         position: 'Personal Assistant',
         imageUrl: '/team/shillah_Angel.webp',
         bio: 'Dedicated personal assistant ensuring smooth operations and coordination across all events and activities.',
-        experience: '3+ years',
+        experience: '2+ years',
         specialties: ['Event Coordination', 'Administrative Support', 'Client Relations'],
         social: { instagram: '@shillah_angel', twitter: '@shillah' }
     },
@@ -37,7 +37,7 @@ const teamMembers = [
         position: 'Media and Production Management',   
         imageUrl: '/team/Tyra_Osbert.webp',
         bio: 'Expert in media production and content management, bringing creative vision to life through visual storytelling.',
-        experience: '5+ years',
+        experience: '2+ years',
         specialties: ['Video Production', 'Content Strategy', 'Post-Production'],
         social: { instagram: '@tyra_osbert', twitter: '@tyra' }
     },
@@ -46,7 +46,7 @@ const teamMembers = [
         position: 'Management',    
         imageUrl: '/team/Raoul_Mak.webp',
         bio: 'Strategic leader focused on business development and team coordination for optimal event execution.',
-        experience: '7+ years',
+        experience: '1+ years',
         specialties: ['Team Leadership', 'Business Strategy', 'Operations Management'],
         social: { instagram: '@raoul_mak', twitter: '@raoul' }
     },
@@ -55,7 +55,7 @@ const teamMembers = [
         position: 'Management',  
         imageUrl: '/team/Mugisho.webp',
         bio: 'Experienced manager specializing in logistics and ensuring seamless event operations.',
-        experience: '4+ years',
+        experience: '2+ years',
         specialties: ['Logistics Management', 'Vendor Relations', 'Quality Control'],
         social: { instagram: '@bivince', twitter: '@bivince' }
     },
@@ -73,7 +73,7 @@ const teamMembers = [
         position: 'Photographer',  
         imageUrl: '/team/freeman.jpeg',
         bio: 'Professional photographer capturing memorable moments and creating stunning visual content.',
-        experience: '6+ years',
+        experience: '1+ years',
         specialties: ['Event Photography', 'Portrait Photography', 'Visual Documentation'],
         social: { instagram: '@freeman_photos', twitter: '@freeman' }
     },
@@ -82,7 +82,7 @@ const teamMembers = [
         position: 'Host',   
         imageUrl: '/team/kimnana_lil_stunner.webp',
         bio: 'Charismatic host bringing energy and entertainment to every event with exceptional stage presence.',
-        experience: '4+ years',
+        experience: '1+ years',
         specialties: ['Live Hosting', 'Audience Engagement', 'Entertainment'],
         social: { instagram: '@kimnana_stunner', twitter: '@kimnana' }
     },
@@ -91,7 +91,7 @@ const teamMembers = [
         position: 'Host',      
         imageUrl: '/team/Laylah_mak.webp',
         bio: 'Dynamic host with natural charm and ability to connect with diverse audiences.',
-        experience: '3+ years',
+        experience: '1+ years',
         specialties: ['Event Hosting', 'Public Speaking', 'Crowd Interaction'],
         social: { instagram: '@laylah_mckenzie', twitter: '@laylah' }
     },
@@ -104,21 +104,13 @@ const teamMembers = [
         specialties: ['Guest Relations', 'Hospitality', 'Customer Service'],
         social: { instagram: '@hannah_tew', twitter: '@hannah' }
     },
-    {
-        name: 'Gift Kihembo',
-        position: 'Hostess',  
-        imageUrl: '/team/gift_kihembo.webp',
-        bio: 'Warm and welcoming hostess ensuring every guest feels valued and comfortable.',
-        experience: '2+ years',
-        specialties: ['Guest Welcome', 'Event Support', 'Communication'],
-        social: { instagram: '@gift_kihembo', twitter: '@gift' }
-    },
+ 
     {
         name: 'Tracy Belaire',
         position: 'Hostess',  
         imageUrl: '/team/tracy_belaire.webp',
         bio: 'Experienced hostess with a focus on creating memorable first impressions for all guests.',
-        experience: '3+ years',
+        experience: '1+ years',
         specialties: ['Guest Experience', 'Protocol Management', 'Event Assistance'],
         social: { instagram: '@tracy_belaire', twitter: '@tracy' }
     },
@@ -128,7 +120,7 @@ const teamMembers = [
         position: 'Official Deejay',  
         imageUrl: '/team/dj_ashley_copy.jpg',
         bio: 'Talented DJ specializing in diverse music genres and creating unforgettable party experiences.',
-        experience: '4+ years',
+        experience: '1+ years',
         specialties: ['Multi-Genre Mixing', 'Party Atmosphere', 'Sound Engineering'],
         social: { instagram: '@dj_ashley', twitter: '@djashley' }
     },
@@ -137,7 +129,7 @@ const teamMembers = [
         position: 'Official Deejay',  
         imageUrl: '/team/dj_wizzy.webp',
         bio: 'Creative DJ known for innovative mixes and keeping dance floors packed all night long.',
-        experience: '6+ years',
+        experience: '2+ years',
         specialties: ['Creative Mixing', 'Dance Music', 'Technical Skills'],
         social: { instagram: '@dj_wizzy', twitter: '@djwizzy' }
     },
@@ -146,7 +138,7 @@ const teamMembers = [
         position: 'Official Deejay',  
         imageUrl: '/team/selecta_ryan.webp',
         bio: 'Versatile selector with deep music knowledge and ability to adapt to any event style.',
-        experience: '5+ years',
+        experience: '2+ years',
         specialties: ['Music Selection', 'Reggae/Dancehall', 'Event Adaptation'],
         social: { instagram: '@selecta_ryan', twitter: '@selectaryan' }
     },
@@ -155,7 +147,7 @@ const teamMembers = [
         position: 'Official MC',  
         imageUrl: '/team/future_mc.webp',
         bio: 'Professional MC with commanding stage presence and ability to energize any crowd.',
-        experience: '4+ years',
+        experience: '1+ years',
         specialties: ['Stage Presence', 'Crowd Control', 'Live Performance'],
         social: { instagram: '@future_mc', twitter: '@futuremc' }
     },
@@ -164,7 +156,7 @@ const teamMembers = [
         position: 'Official MC',  
         imageUrl: '/team/petrie.jpeg',
         bio: 'Experienced MC with natural charisma and talent for keeping events flowing smoothly.',
-        experience: '3+ years',
+        experience: '2+ years',
         specialties: ['Event Flow', 'Audience Interaction', 'Entertainment'],
         social: { instagram: '@petrie_mc', twitter: '@petriemc' }
     }
