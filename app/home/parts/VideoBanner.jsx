@@ -13,31 +13,16 @@ import Image from "next/image";
 export default function VideoBanner() {
   return (
     <Container
-      maxW="container.xl"
+      maxW="container.2xl"
       position="relative"
       mb={5}
-      mt={{ base: 16, lg: 18 }}
-      pt={{ base: 10, lg: 20 }}
+      p={-10}
+    
     >
-      {/* Header Text */}
-      <Text
-        fontWeight="bold"
-        fontSize={{ base: "3xl", lg: "7xl" }}
-        color="var(--clr-primary-1)"
-        textAlign="center"
-      >
-        African Simba Events
-      </Text>
-      <Text
-        color="var(--clr-primary-1)"
-        fontSize={{ base: "2xl", lg: "3xl" }}
-        textAlign="center"
-      >
-        "The Game Changers"
-      </Text>
+    
 
       {/* Hero Image Section */}
-      <Box mt={10} position="relative" height={{ base: "300px", md: "600px" }}>
+      <Box mt={10} position="relative" height={{ base: "400px", md: "600px" }}>
         {/* Background Image */}
         <Image
           src="/updates/cover.webp"
@@ -67,7 +52,7 @@ export default function VideoBanner() {
         {/* Text Overlay */}
         <Box
           position="absolute"
-          bottom="0"
+          bottom="10"
           left="0"
           width="100%"
           p={4}
@@ -75,6 +60,14 @@ export default function VideoBanner() {
           color="var(--clr-primary-1)"
           textAlign="center"
         >
+           <Text
+        fontWeight="bold"
+        fontSize={{ base: "3xl", lg: "7xl" }}
+        color="var(--clr-primary-1)"
+        textAlign="center"
+      >
+        African Simba Events
+      </Text>
           <Text
             fontWeight="bold"
             fontSize={{ base: "xl", lg: "3xl" }}
