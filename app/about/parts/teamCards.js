@@ -34,7 +34,7 @@ const teamMembers = [
     },
     {
         name: 'Tyra Osbert',
-        position: 'Media and Production Management',   
+        position: 'Creative Director',   
         imageUrl: '/team/Tyra_Osbert.webp',
         bio: 'Expert in media production and content management, bringing creative vision to life through visual storytelling.',
         experience: '2+ years',
@@ -76,6 +76,15 @@ const teamMembers = [
         experience: '1+ years',
         specialties: ['Event Photography', 'Portrait Photography', 'Visual Documentation'],
         social: { instagram: '@freeman_photos', twitter: '@freeman' }
+    },
+   {
+        name: 'Isaac Kanye',
+        position: 'Official Videographer',  
+        imageUrl: '/team/isacc_kanye.webp',
+        bio: 'A skilled videographer who brings stories to life through motion, creating dynamic and engaging video content for every occasion.',
+        experience: '1+ years',
+        specialties: ['Event Videography', 'Cinematic Storytelling', 'Video Editing & Post-Production'],
+        social: { instagram: '@isaac_kanye', twitter: '@isaac_kanye' }
     },
     {
         name: 'Kimnana Lil Stunner',
@@ -331,7 +340,7 @@ const TeamSection = () => {
                             <Box
                                 position="relative"
                                 h="200px"
-                                bg={`linear-gradient(135deg, var(--clr-primary-1), var(--clr-primary-3))`}
+                                bg={`linear-gradient(135deg, var(--clr-primary-2), var(--clr-primary-3))`}
                             >
                                 <ModalCloseButton 
                                     color="white" 
@@ -345,7 +354,7 @@ const TeamSection = () => {
                                 {/* Profile Image Floating */}
                                 <Box
                                     position="absolute"
-                                    bottom="-60px"
+                                    bottom="-40px"
                                     left="40px"
                                     w="120px"
                                     h="120px"
