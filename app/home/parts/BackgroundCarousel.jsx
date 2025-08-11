@@ -8,21 +8,21 @@ import "react-multi-carousel/lib/styles.css"
 
 const events = [
   {
-    image: "/images/bg_red.jpg",
-  },
-  {
     image: "/images/bg_blue.jpg",
   },
-  {
-    image: "/images/bg_brown.jpg",
+  // {
+  //   image: "/images/bg_blue.jpg",
+  // },
+  // {
+  //   image: "/images/bg_brown.jpg",
 
-  },
-  {
-    image: "/images/bg_gray.jpg",
-  },
-  {
-    image: '/images/bg_green.jpg'
-  }
+  // },
+  // {
+  //   image: "/images/bg_gray.jpg",
+  // },
+  // {
+  //   image: '/images/bg_green.jpg'
+  // }
 ]
 
 const BackgroundCarousel = () => {
@@ -61,11 +61,12 @@ const BackgroundCarousel = () => {
         backgroundImage={`url(${events[activeIndex].image})`}
         backgroundPosition="center"
         backgroundRepeat="no-repeat"
+      
         backgroundSize="cover"
         position="absolute"
         top="0"
         left="0"
-        opacity={1}
+        opacity={1.1}
         zIndex={-99}
         sx={{
           transform: isTransitioning ? "scale(1.05)" : "scale(1)",

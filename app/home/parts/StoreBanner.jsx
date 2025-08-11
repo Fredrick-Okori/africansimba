@@ -38,7 +38,7 @@ export const StoreBanner = () => {
                             </Heading>
                         </Stack>
                         <HStack spacing="3" color='var(--clr-primary-1)'>
-                            <Button as={Link} href='/store' _hover={{ textDecoration: 'none', bg: 'var(--clr-primary-1)', color: 'black' }} textDecoration='none' rightIcon={<FiExternalLink />} rounded="full" colorScheme="var(--clr-primary-1)Alpha" variant="outline">
+                            <Button as={Link} size='lg' href='/store' _hover={{ textDecoration: 'none', bg: 'var(--clr-primary-1)', color: 'black' }} textDecoration='none' rightIcon={<FiExternalLink />} rounded="full" colorScheme="var(--clr-primary-1)Alpha" variant="outline">
                                 View Events
                             </Button>
                         </HStack>
