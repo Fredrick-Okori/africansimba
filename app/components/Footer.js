@@ -20,7 +20,7 @@ const Footer = () => {
                         </Box>
                          <Box color='transparent' textAlign={{ base: 'center', lg: 'right' }}>
                             <Text>
-                                <Link href="htts://kayeticets.com" isExternal>powered by Kayetickets</Link> | <Link href="#" isExternal>Terms of Service</Link>
+                                <Link  rel='noopener' href="https://kayetickets.com" isExternal>powered by Kayetickets</Link> | <Link href="#" isExternal>Terms of Service</Link>
                             </Text>
                         </Box>
                         <Box textAlign={{ base: 'center', lg: 'right' }}>

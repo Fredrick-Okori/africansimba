@@ -1,11 +1,5 @@
 export const events = [
-    {
-        id: 1,
-        name: "Muleba Festival",
-       image: "/nights/muleba_festival.webp",
-       
-        host: "Magical Lounge, Tanzania"
-    },
+   
     {
         id: 2,
         name: "Boypee in Uganda",
@@ -26,6 +20,14 @@ export const events = [
         image: "/images/afro_vibez_anniversary.webp",
         host: "Catwalk Lounge, Kololo",
    
+    },
+    {
+
+    
+     id: 1,
+        name: "Beats & Brunch",
+        image: "/updates/beats_brunch.webp",
+        host: "Ruby, Bandali Rise",
     },
  
    

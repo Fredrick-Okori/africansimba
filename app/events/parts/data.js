@@ -1,32 +1,21 @@
 export const events = [
     
     {
-        id: 2,
+        id: 1,
         name: "Wahala Wednesday",
         image: "/nights/wahala_wednesday.webp",
         host: "Thrones Lounge, Bugologi",
         
     },
     {
-        id: 3,
+        id: 2,
         name: "Blow Out Thursday",
         image: "/updates/blow_out.webp",
         host: "Catwalk Lounge, Kololo",
         
     },
-    {
-        id: 2,
-        name: "Unleashing Mc. Petrie",
-        image: "/updates/mc_petrie.webp",
-        host: "Catwalk Lounge, Kololo",
-    },
-    {
-        id: 3,
-        name: "Wahala Wednesday",
-        image: "/nights/wahala_wednesday.webp",
-        host: "Thrones Lounge, Bugologi",
-        
-    },
+
+ 
     {
         id: 4,
         name: "Afro Vibes Friday",
@@ -40,13 +29,15 @@ export const events = [
         host: "Paradigm Loune and Bar, Gaba",
    
     },
-    {
-    id: 1,
-        name: "Beats & Brunch",
-        image: "/updates/beats_brunch.webp",
-        host: "Ruby, Bandali Rise",
-    },
     
+   
+    
+     {
+    id: 6,
+        name: "Swift Fridays",
+        image: "/updates/swift_fridays.webp",
+        host: "NOMAD, Ggaba Rd",
+    },
    
    
 ];
