@@ -23,7 +23,7 @@ const weeklyPrograms = [
         venue: "Thrones Lounge",
         location: "Bugolobi",
         genre: "Afrobeats",
-        description: "Get ready for some sweet wahala! Dance to infectious Afrobeats rhythms and experience the chaos of pure fun at Kampala's hottest Wednesday night."
+        description: "Midweek Party Madness"
     },
     {
         day: "21", 
@@ -31,7 +31,7 @@ const weeklyPrograms = [
         event: "BLOWOUT THURSDAY",
         venue: "Catwalk Lounge",
         location: "Kololo",
-        description: "Blow out the stress of the week with explosive beats, premium drinks, and an unforgettable party atmosphere that'll leave you wanting more."
+        description: "Crazy but Premium vibes"
     },
     {
         day: "22",
@@ -39,15 +39,15 @@ const weeklyPrograms = [
         event: "SWIFT FRIDAYS",
         venue: "NOMAD Lounge",
         location: "Gaba",
-        description: "Move swift and smooth into the weekend with fast-paced beats, quick service, and instant vibes that get the party started right."
+        description: "Premium Hyper Party"
     },
     {
         day: "23",
         dayName: "SATURDAY",
         event: "GGABA BIG BALLERS",
         venue: "Paradigm Lounge",
-        location: "Naguru",
-        description: "Live like a big baller with VIP treatment, premium bottle service, and exclusive vibes for those who know how to party in style."
+        location: "Ggaba",
+        description: "Big Baller Experience"
     }
 ];
 
@@ -119,10 +119,10 @@ const weeklyPrograms = [
         transformOrigin="center"
         whiteSpace="nowrap"
         position="absolute"
-        top="100px"
-        left="0" // Adjust this value to control spacing
+        top="120px"
+        left="-7" // Adjust this value to control spacing
     >
-        EVENT
+        Weekly 
     </Text>
     <Text
         color="white"
@@ -138,7 +138,7 @@ const weeklyPrograms = [
         left="0"
         opacity="0.7"
     >
-        SCHEDULE
+        Programs
     </Text>
 </Box>
 
@@ -184,6 +184,8 @@ const weeklyPrograms = [
                         <VStack spacing={0} align="stretch">
                             {weeklyPrograms.map((program, index) => (
                                 <Grid
+                                as={Link}
+                                href='/bookings'
                                     key={index}
                                     templateColumns={{ base: "80px 1fr", md: "100px 1fr" }}
                                     gap={{ base: 4, md: 6 }}
@@ -290,13 +292,13 @@ const weeklyPrograms = [
                                 fontWeight="bold"
                                 mb={4}
                             >
-                                Book Your Event Now!
+                                Book Now for the Night!
                             </Text>
                             
                             <VStack spacing={3} align="start">
                               
                                 <HStack spacing={3}>
-                                    <FiGlobe color="white" size="18" />
+                                  
                                     <Text color="white" fontSize={{ base: "md", md: "lg" }} fontWeight="600">
                                         No simba, No Party!
                                     </Text>

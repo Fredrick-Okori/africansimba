@@ -18,11 +18,17 @@ const Footer = () => {
                         <Box textAlign={{ base: 'center', lg: 'left' }}>
                             <Text>Copyright &copy; {currentYear} African Simba Events. All rights reserved.</Text>
                         </Box>
+                         <Box color='transparent' textAlign={{ base: 'center', lg: 'right' }}>
+                            <Text>
+                                <Link href="htts://kayeticets.com" isExternal>powered by Kayetickets</Link> | <Link href="#" isExternal>Terms of Service</Link>
+                            </Text>
+                        </Box>
                         <Box textAlign={{ base: 'center', lg: 'right' }}>
                             <Text>
                                 <Link href="#" isExternal>Privacy Policy</Link> | <Link href="#" isExternal>Terms of Service</Link>
                             </Text>
                         </Box>
+                        
                     </Flex>
             </Container>
             </Box>
