@@ -22,7 +22,7 @@ export default function VideoBanner() {
       <Box  position="relative" height={{ base: "400px", md: "600px" }}>
         {/* Background Image */}
         <Image
-          src="/compressed/events_hero.webp"
+          src="/haul/red_bg.webp"
           alt="night club"
           layout="fill"
           objectFit="cover"
@@ -43,9 +43,9 @@ export default function VideoBanner() {
           width="100%"
           height="100%"
          
-          bgGradient="linear(to-t, rgba(5, 0, 48, 0.9) 0%, rgba(22, 8, 79, 0.6) 30%, rgba(5, 0, 0, 0.3) 60%, transparent 100%)"
+          bgGradient="linear(to-t, rgba(183, 2, 2, 0.2) 0%, rgba(183, 2, 2, 0.2) 30%, rgba(5, 0, 0, 0.3) 60%, transparent 100%)"
           zIndex="1"
-          borderRadius="10px"
+          borderRadius="20px"
         />
 
         {/* Optional: Additional Vignette Effect */}
@@ -55,9 +55,9 @@ export default function VideoBanner() {
           left="0"
           width="100%"
           height="100%"
-          background="radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.2) 100%)"
+          background="radial-gradient(ellipse at center, transparent 40%, rgba(183, 2, 2, 0.2) 100%)"
           zIndex="1"
-          borderRadius="10px"
+          borderRadius="20px"
         />
 
         {/* Text Overlay */}
@@ -73,17 +73,17 @@ export default function VideoBanner() {
         >
           <Text
             fontWeight="bold"
-            fontSize={{ base: "3xl", lg: "7xl" }}
+            fontSize={{ base: "3xl", lg: "8xl" }}
             color="var(--clr-primary-1)"
             textAlign="center"
             textShadow="2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)"
-            letterSpacing="-0.02em"
+            
           >
             African Simba Events
           </Text>
           <Text
             fontWeight="bold"
-            fontSize={{ base: "xl", lg: "3xl" }}
+            fontSize={{ base: "xl", lg: "4xl" }}
             color="var(--clr-primary-1)"
             textShadow="1px 1px 4px rgba(0,0,0,0.8)"
           >
@@ -97,7 +97,7 @@ export default function VideoBanner() {
             maxW="600px"
             mx="auto"
           >
-            Experience Immersive party that happens every week in Kampala and worldwide
+            Experience Immersive party that happens every week
           </Text>
           <Grid justifyContent="center">
             <ButtonGroup spacing={8}>

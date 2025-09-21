@@ -75,7 +75,7 @@ const weeklyPrograms = [
                     width="60%"
                     height="80%"
                     borderRadius="50%"
-                    bg="blue"
+                    bg="red"
                     transform="rotate(-15deg)"
                 />
                 <Box
@@ -85,7 +85,7 @@ const weeklyPrograms = [
                     width="70%"
                     height="90%"
                     borderRadius="50%"
-                    bg="blue"
+                    bg="red"
                     transform="rotate(25deg)"
                 />
                 <Box
@@ -95,7 +95,7 @@ const weeklyPrograms = [
                     width="40%"
                     height="60%"
                     borderRadius="50%"
-                    bg="blue"
+                    bg="red"
                     transform="rotate(-45deg)"
                 />
             </Box>
@@ -120,7 +120,7 @@ const weeklyPrograms = [
         whiteSpace="nowrap"
         position="absolute"
         top="120px"
-        left="-7" // Adjust this value to control spacing
+        left="-10" // Adjust this value to control spacing
     >
         Weekly 
     </Text>
@@ -138,7 +138,7 @@ const weeklyPrograms = [
         left="0"
         opacity="0.7"
     >
-        Programs
+        Schedule
     </Text>
 </Box>
 
@@ -176,7 +176,7 @@ const weeklyPrograms = [
                                 fontWeight="900"
                                 letterSpacing="-0.02em"
                             >
-                                Our Weekly Programs
+                               Be part of the Game Changers
                             </Text>
                         </Box>
 

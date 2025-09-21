@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const AboutHero = () => {
   return (
-    <Box position="relative" h="40vh" bg="var(--clr-primary-3)">
+    <Box position="relative" h="40vh">
     
 
       {/* Content */}
@@ -14,12 +14,12 @@ const AboutHero = () => {
             lineHeight={1}
             fontWeight="bold"
             fontSize={{ base: '5xl', lg: '6xl' }}
-            color="var(--clr-primary-2)"
+            color="var(--clr-primary-1)"
             textAlign="center"
           >
             AFRICAN SIMBA EVENTS
           </Text>
-          <Text fontSize={{ base: 'lg', lg: '2xl' }} color="var(--clr-primary-2)" textAlign="center">
+          <Text fontSize={{ base: 'lg', lg: '2xl' }} color="var(--clr-primary-1)" textAlign="center">
             "The Game Changers"
           </Text>
         </Box>

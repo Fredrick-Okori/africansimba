@@ -27,12 +27,12 @@ export const UpcomingEvents = () => (
             >
                 <Stack spacing={{ base: '8', lg: '10' }} >
                     <Stack spacing={{ base: '2', lg: '4' }}>
-                        <Heading size="xl" color={{ base: 'var(--clr-primary-2)', md: 'var(--clr-primary-2)', lg: 'var(--clr-primary-1)' }} fontWeight="bold">
+                        <Text size="xl" as='h1' color={{ base: 'var(--clr-primary-2)', md: 'var(--clr-primary-2)', lg: 'var(--clr-primary-1)' }} fontWeight="bold">
                             No Simba. No Party
-                        </Heading>
-                        <Heading size="md" fontWeight="normal" color='var( --clr-primary-1)'>
+                        </Text>
+                        <Text size="md" as='p' fontWeight="normal" color='var( --clr-primary-1)'>
                             Unforgettable experience at Paradigm
-                        </Heading>
+                        </Text>
                     </Stack>
                     <HStack spacing="3" color='var( --clr-primary-1)'>
                         <Button as={Link} size='lg' href='/events' _hover={{ textDecoration: 'none', bg: 'var( --clr-primary-1)', color: 'black' }} textDecoration='none' rightIcon={<FiExternalLink />} rounded="full" colorScheme="var( --clr-primary-1)Alpha" variant="outline">
@@ -44,7 +44,7 @@ export const UpcomingEvents = () => (
             </Box>
             <Flex flex="1" overflow="hidden">
                 <Image
-                    src="/paradigm/nosimba.webp"
+                    src="/haul/nosimba.webp"
                     alt="Lovely Image"
                     fallback={<Skeleton />}
                     roundedRight='0'
@@ -59,8 +59,8 @@ export const UpcomingEvents = () => (
                 />
                 <Image
                     display={{ base: 'none', sm: 'initial' }}
-                    src="/paradigm/dj.webp"
-                    alt="Paradigm_dj"
+                    src="/haul/simba.webp"
+                    alt="African Simba"
                     fallback={<Skeleton />}
                     roundedRight='10'
                     roundedLeft='0'

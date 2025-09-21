@@ -1,7 +1,10 @@
 
 import { ChakraProvider } from '@chakra-ui/react'
 
-import { Lexend } from 'next/font/google'
+
+
+import {Merriweather} from 'next/font/google'
+
 import './globals.css'
 
 import NavBar from './components/NavBar'
@@ -26,13 +29,16 @@ export const metadata = {
   },
 };
 
-const lexend = Lexend({
-  family: 'Neuton',
-  style: ['normal'],
-  weight: [  '400'],
-  subsets: ['latin']
 
+const marriweather = Merriweather({
+    subsets: ['cyrillic', 'vietnamese', 'cyrillic-ext', 'latin', 'latin-ext'],
+  weight: ['300', '400', '700', '900'],
+  display: 'swap',
+  variable: '--font-marriweather',
 })
+
+
+
 
 
 
@@ -47,7 +53,7 @@ export default function RootLayout({ children }) {
       <body>
         <ChakraProvider>
           <NavBar />
-          <main className={lexend.className}>
+          <main className={marriweather.className}>
             {children}
           </main>     
          

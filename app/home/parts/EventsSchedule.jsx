@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 
-import { Box, Container, Stack, Heading, HStack, Flex, Button, useBreakpointValue } from '@chakra-ui/react'
+import { Box, Container, Stack, Text, HStack, Flex, Button, useBreakpointValue } from '@chakra-ui/react'
 import Counter from './Counter'
 
 import Link from 'next/link';
@@ -36,12 +36,24 @@ export default function EventSchedule() {
                
                     <Stack spacing={{ base: '8', lg: '10' }} >
                         <Stack spacing={{ base: '2', lg: '4' }}>
-                            <Heading size="xl" color={{ base: 'var(--clr-primary-1)', md: 'var(--clr-primary-2)', lg: 'var(--clr-primary-1)' }} fontWeight="bold">
-                                We are the Game Changers
-                            </Heading>
-                            <Heading size="md" fontWeight="normal" color='var(--clr-primary-1)'>
-                                An emotional and authentic experience with the Game Changers including the high-energy DJs
-                            </Heading>
+                            
+                           
+                                <Text
+                                        fontWeight="bold"
+                                        fontSize={{ base: "xl", lg: "4xl" }}
+                                        color="var(--clr-primary-1)"
+                                        textShadow="1px 1px 4px rgba(0,0,0,0.8)"
+                                      >
+                                        We are the Game Changers
+                                      </Text>
+                                       <Text
+                                        fontWeight="bold"
+                                        fontSize={{ base: "sm", lg: "md" }}
+                                        color="var(--clr-primary-1)"
+                                        textShadow="1px 1px 4px rgba(0,0,0,0.8)"
+                                      >
+                                       An emotional and authentic experience with the Game <br/> Changers including the high-energy DJs
+                                      </Text>
                         </Stack>
                         <HStack spacing="3" color='var(--clr-primary-1)'>
                             <Button as={Link} href='/events' _hover={{ textDecoration: 'none', bg: 'var(--clr-primary-1)', color: 'black' }} textDecoration='none' rightIcon={<FiExternalLink />} rounded="full" colorScheme="var(--clr-primary-1)Alpha" variant="outline">

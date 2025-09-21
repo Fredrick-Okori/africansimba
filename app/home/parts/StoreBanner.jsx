@@ -2,7 +2,7 @@
 import {
     Box,
     Flex,
-    Heading,
+    Text,
     HStack,
     Image,
     Link,
@@ -30,12 +30,12 @@ export const StoreBanner = () => {
                 >
                     <Stack spacing={{ base: '8', lg: '10' }} >
                         <Stack spacing={{ base: '2', lg: '4' }}>
-                            <Heading size="xl" color={{ base: 'var(--clr-primary-1)', md: 'var(--clr-primary-2)', lg: 'var(--clr-primary-1)' }} fontWeight="bold">
+                            <Text size="xl" color={{ base: 'var(--clr-primary-1)', md: 'var(--clr-primary-2)', lg: 'var(--clr-primary-1)' }} fontWeight="bold">
                                 We are the Game Changers
-                            </Heading>
-                            <Heading size="md" fontWeight="normal" color='var(--clr-primary-1)'>
+                            </Text>
+                            <Text size="md" fontWeight="normal" color='var(--clr-primary-1)'>
                                 An emotional and authentic experience with the Game Changers including the high-energy DJs
-                            </Heading>
+                            </Text>
                         </Stack>
                         <HStack spacing="3" color='var(--clr-primary-1)'>
                             <Button as={Link} size='lg' href='/store' _hover={{ textDecoration: 'none', bg: 'var(--clr-primary-1)', color: 'black' }} textDecoration='none' rightIcon={<FiExternalLink />} rounded="full" colorScheme="var(--clr-primary-1)Alpha" variant="outline">

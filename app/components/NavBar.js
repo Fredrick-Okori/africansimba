@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import React, { useState } from 'react';
 import {
     Box,
@@ -8,7 +8,6 @@ import {
     Button,
     Container,
     Stack,
-    Avatar,
     HStack,
    
     IconButton,
@@ -29,16 +28,10 @@ import Image from 'next/image';
 import { Suspense } from 'react';
 
 
-import { FiArrowRight, FiMenu, FiActivity, FiBarChart2, FiMessageCircle, FiTrendingUp, FiImage, FiSettings, FiBell, FiUsers, FiShoppingCart, FiHome } from 'react-icons/fi'
+import { FiArrowRight, FiMenu, FiActivity, FiMessageCircle, FiUsers, FiShoppingCart, FiHome } from 'react-icons/fi'
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation';
-import { color } from 'framer-motion';
-
-import { products } from '../store/parts/data';
-
-
-
 
 
 const NavBar = () => {
@@ -51,58 +44,79 @@ const NavBar = () => {
     return (
         <Suspense>
             <Box
-
-                backgroundBlendMode='soft-light'
-                boxShadow='0 0 20px 0 rgba(0, 0, 0, 0.5)'
+                // Glass-like styling applied here
+                bg='rgba(255, 255, 255, 0.05)'
+                borderBottom='1px solid rgba(255, 255, 255, 0.1)'
+                backdropFilter='blur(20px) saturate(180%)'
+                boxShadow='0 8px 32px 0 rgba(0, 0, 0, 0.37)'
+                
                 position='fixed'
-
-                color="var( --clr-primary-1)"
+                color="white"
                 zIndex={100}
                 top={0}
                 left={0}
                 width='100%'
-                backdropFilter='blur(10px) brightness(50%)'  // Added background filter for a blurred background effect with 60% brightness
             >
-                <Container maxW='container.xl'>
-                    <Flex  alignItems={'center'} justifyContent={'space-between'}>
+                <Container maxW='container.xl' px={{ base: 4, md: 8 }} >
+                    <Flex alignItems={'center'} justifyContent={'space-between'}>
                         <Box display="flex" alignItems="center">
                             <Image width="100" height="100" loading='lazy' quality={70} src="/logos/simba_white.webp" alt="logo" />
                         </Box>
 
                         <Flex display={{ base: 'none', md: 'flex' }} alignItems={'center'}>
                             <Stack direction={'row'} spacing={7}>
-                                <Link href="/home" onClose={onClose} fontSize='12px' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/home' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/home')}>
+                                <Link href="/home" onClose={onClose} fontSize='12px' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/home' ? '#df42b1' : 'white'} onClick={() => setSelectedMenu('/home')}>
                                     Home
                                 </Link>
-                                <Link href='/events' onClose={onClose} _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/stream' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/stream')}>
+                                <Link href='/events' onClose={onClose} _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/stream' ? '#df42b1' : 'white'} onClick={() => setSelectedMenu('/stream')}>
                                     Events
                                 </Link>
                             
-                                <Link href='/bookings' onClose={onClose} _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/bookings' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/bookings')}>
+                                <Link href='/bookings' onClose={onClose} _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/bookings' ? '#df42b1' : 'white'} onClick={() => setSelectedMenu('/bookings')}>
                                     Tickets
                                 </Link>
-                                {/* <Link href='/saloon' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/saloon' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/saloon')}>
-                            Saloon
-                            </Link>
-                                <Link href='/store' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/store' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/store')}>
-                                    Profile
-                                </Link> */}
-                                    <Link href='/about' onClose={onClose} _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/about' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/about')}>
+                                <Link href='/about' onClose={onClose} _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/about' ? '#df42b1' : 'white'} onClick={() => setSelectedMenu('/about')}>
                                     About
                                 </Link>
-                                <Link href='/contact-us' onClose={onClose} _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/contact' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/contact')}>
+                                <Link href='/contact-us' onClose={onClose} _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/contact' ? '#df42b1' : 'white'} onClick={() => setSelectedMenu('/contact')}>
                                     Contact
                                 </Link>
-                                <Link href='/store' onClose={onClose} _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/store' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/store')}>
-                                    Shop
-                                </Link>
+                                <Link href='/gallery' onClose={onClose} _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/store' ? '#df42b1' : 'white'} onClick={() => setSelectedMenu('/store')}>
+                                    Gallery
+                                </Link> 
 
-                                {pathname === '/store' && (
-                                    <Link href="/cart" onClose={onClose} _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/cart' ? '#df42b1' : 'var( --clr-primary-1)'} onClick={() => setSelectedMenu('/cart')} >
-                                        Cart
-                                    </Link>
-                                )}
-                                <Button rounded='full' size="sm" _hover={{ textDecoration: 'none', bg: 'var( --clr-primary-1)', color: 'black' }} textDecoration='none' variant='outline' colorScheme="whiteAlpha">Tickets <FiArrowRight /></Button>
+                              
+ <Button 
+                                    rounded='full' 
+                                    size="sm"
+                                    // Liquid effect styling
+                                    position="relative"
+                                    overflow="hidden"
+                                    sx={{
+                                        '&::before': {
+                                            content: '""',
+                                            position: 'absolute',
+                                            top: '50%',
+                                            left: '50%',
+                                            transform: 'translate(-50%, -50%) scale(0)',
+                                            width: '10px',
+                                            height: '10px',
+                                            rounded: 'full',
+                                            bg: 'var(--clr-primary-1)',
+                                            transition: 'all 0.5s cubic-bezier(0.64, 0.0, 0.35, 1.25)', // Bouncy transition
+                                            zIndex: -1,
+                                        },
+                                        '&:hover::before': {
+                                            transform: 'translate(-50%, -50%) scale(25)', // Scale up to cover the button
+                                        },
+                                    }}
+                                    _hover={{ textDecoration: 'none', color: 'black' }} 
+                                    textDecoration='none' 
+                                    variant='outline' 
+                                    colorScheme="whiteAlpha"
+                                >
+                                    Tickets <FiArrowRight />
+                                </Button>
                             </Stack>
                         </Flex>
 
@@ -111,19 +125,21 @@ const NavBar = () => {
                             icon={<FiMenu />}
                             display={{ base: 'flex', md: 'none' }}
                             onClick={onOpen}
+                            bg='rgba(255, 255, 255, 0.1)'
+                            border='1px solid rgba(255, 255, 255, 0.2)'
                         />
                     </Flex>
                 </Container>
 
                 <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
                     <DrawerOverlay>
-                        <DrawerContent bg='hsla(0, 0%, 0%, 0.7)'
-
-                            backgroundBlendMode='soft-light' color="white"
-                            backdropFilter='blur(10px) brightness(60%)'
+                        <DrawerContent 
+                            bg='rgba(255, 255, 255, 0.05)'
+                            borderRight='1px solid rgba(255, 255, 255, 0.1)'
+                            backdropFilter='blur(20px) saturate(180%)'
+                            color="white"
                         >
                             <DrawerCloseButton />
-
                             <DrawerBody>
                                 <MobileNav onClose={onClose} />
                             </DrawerBody>
@@ -144,7 +160,6 @@ const MobileNav = ({ onClose }) => {
         <Flex
             h="100vh"
             w="250px"
-
             color="white"
             direction="column"
             justify="start"
@@ -157,9 +172,6 @@ const MobileNav = ({ onClose }) => {
                 <Image src='/logos/simba_white.webp' width="100" height="70" alt='Logo' />
                 <Text fontWeight='bold' size='lg' fontFamily='heading' >African Simba Events</Text>
             </HStack>
-
-
-
             <VStack align="flex-start" spacing={6} pt={10} w="100%">
                 <Link href="/home" _hover={{ color: "purple.200" }} w="100%">
                     <Flex align="center">
@@ -213,8 +225,4 @@ const MobileNav = ({ onClose }) => {
     );
 };
 
-
-
-
 export default NavBar;
-

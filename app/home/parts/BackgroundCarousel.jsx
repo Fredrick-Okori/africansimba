@@ -8,7 +8,7 @@ import "react-multi-carousel/lib/styles.css"
 
 const events = [
   {
-    image: "/images/bg_blue.jpg",
+    image: "/images/bg_red.jpg",
   },
   // {
   //   image: "/images/bg_blue.jpg",

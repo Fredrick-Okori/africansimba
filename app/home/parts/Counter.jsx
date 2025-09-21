@@ -39,7 +39,7 @@ export default function Count() {
                             
                             />
                             <Image
-                                src='/compressed/mbosso.webp'
+                                src='/haul/don_julio.webp'
                                 alt='Muleba Festival'
                                 quality={60}
                                 layout="fill" 
@@ -69,7 +69,7 @@ export default function Count() {
                             />
                             <Image
                                 rounded="lg"
-                                src='/updates/afro_vibes.webp'
+                                src='/haul/awilo.webp'
                                 alt='African simba events anniversary'
                                 layout="fill" 
                                 objectFit="cover" 
@@ -100,7 +100,7 @@ export default function Count() {
                             />
                             <Image
                                 rounded="lg"
-                                 src='/updates/mc_ase.webp'
+                                 src='/haul/djs.webp'
                                 alt='Paradigm Fridays'
                                 layout="fill" 
                                 objectFit="cover" 
