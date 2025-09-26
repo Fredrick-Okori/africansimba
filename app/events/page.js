@@ -1,31 +1,19 @@
-"use client";
-import React, { Suspense, useState } from "react";
+import React from 'react'
 
-import BackgroundCarousel from "../home/parts/BackgroundCarousel";
-import PartnerSection from "../components/sponsors";
-import PreviousVideos from "./parts/previous.videos";
-import EventsListing from "./parts/eventsListing";
-import Footer from "../components/Footer";
+import VideoStream from './parts/video'
 
 
+export const metadata = {
+    title: 'Events',
+    openGraph: {
+      title: 'Events',
+    },
+  }
 
-export default function Stream(props) {
-   
-
-
-    const handleVideoSelect = (video) => {
-        setCurrentVideo(video);
-    };
-
-    return (
+export default function EventsPage(){
+    return(
         <>
-            <Suspense>
-                <BackgroundCarousel />
-              
-                <PreviousVideos onVideoSelect={handleVideoSelect} />
-              
-                <Footer/>
-            </Suspense>
+       <VideoStream/>
         </>
-    );
+    )
 }

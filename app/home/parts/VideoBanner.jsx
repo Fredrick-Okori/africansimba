@@ -9,6 +9,7 @@ import {
   ButtonGroup,
 } from "@chakra-ui/react";
 import Image from "next/image";
+import { FiChevronRight } from "react-icons/fi";
 
 export default function VideoBanner() {
   return (
@@ -104,6 +105,11 @@ export default function VideoBanner() {
               <Button
                 as={Link}
                 href="/events"
+                bg='var(--clr-primary-1)'
+                color='black'
+               
+                  transform="translateY(-2px)"
+                  boxShadow="0 8px 25px rgba(0,0,0,0.3)"
                 _hover={{
                   textDecoration: "none",
                   bg: "var(--clr-primary-1)",
@@ -112,18 +118,25 @@ export default function VideoBanner() {
                   boxShadow: "0 8px 25px rgba(0,0,0,0.3)"
                 }}
                 rounded="full"
-                size="lg"
+                size="md"
                 variant="outline"
-                color="var(--clr-primary-1)"
+                
                 backdropFilter="blur(8px)"
-                bg="rgba(255, 255, 255, 0.1)"
+               
+             
                 transition="all 0.3s ease"
               >
-                More Information
+              More Information
+               <FiChevronRight   style={{ marginLeft: '8px' }} />
               </Button>
               <Button
                 as={Link}
                 href="/bookings"
+                 bg='var(--clr-primary-1)'
+                color='black'
+               
+                  transform="translateY(-2px)"
+                  boxShadow="0 8px 25px rgba(0,0,0,0.3)"
                 _hover={{
                   textDecoration: "none",
                   bg: "var(--clr-primary-1)",
@@ -132,14 +145,16 @@ export default function VideoBanner() {
                   boxShadow: "0 8px 25px rgba(0,0,0,0.3)"
                 }}
                 rounded="full"
-                size="lg"
+                size="md"
                 variant="outline"
-                color="var(--clr-primary-1)"
+                
+              
                 backdropFilter="blur(8px)"
-                bg="rgba(255, 255, 255, 0.1)"
+             
                 transition="all 0.3s ease"
               >
-                Get Ticket Now
+               Book Now
+               <FiChevronRight   style={{ marginLeft: '8px' }} />
               </Button>
             </ButtonGroup>
           </Grid>

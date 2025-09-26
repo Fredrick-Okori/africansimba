@@ -10,7 +10,7 @@ import {
     Stack,
     Button,
 } from '@chakra-ui/react'
-import { FiExternalLink } from 'react-icons/fi'
+import { FiChevronRight, FiExternalLink } from 'react-icons/fi'
 
 export const UpcomingEvents = () => (
     <Box maxW="7xl" mx="auto" px={{ base: '0', lg: '12' }} py={{ base: '0', lg: '12' }}>
@@ -35,7 +35,7 @@ export const UpcomingEvents = () => (
                         </Text>
                     </Stack>
                     <HStack spacing="3" color='var( --clr-primary-1)'>
-                        <Button as={Link} size='lg' href='/events' _hover={{ textDecoration: 'none', bg: 'var( --clr-primary-1)', color: 'black' }} textDecoration='none' rightIcon={<FiExternalLink />} rounded="full" colorScheme="var( --clr-primary-1)Alpha" variant="outline">
+                        <Button as={Link} size='lg' href='/events' _hover={{ textDecoration: 'none', bg: 'var( --clr-primary-1)', color: 'black' }} textDecoration='none' rightIcon={<FiChevronRight style={{marginLeft: '8px'}} />} rounded="full" colorScheme="var( --clr-primary-1)Alpha" variant="outline">
                             View Events
                         </Button>
 

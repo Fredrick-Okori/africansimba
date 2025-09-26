@@ -3,7 +3,7 @@ import React from 'react';
 import { Box, Container, Text, Image, Button, VStack, Flex, HStack, useBreakpointValue } from '@chakra-ui/react';
 import Carousel from 'react-multi-carousel';
 import "react-multi-carousel/lib/styles.css";
-import { FiExternalLink } from 'react-icons/fi';
+import { FiExternalLink, FiChevronRight } from 'react-icons/fi';
 import Link from 'next/link';
 
 const products = [
@@ -86,14 +86,18 @@ const ProductCarousel = () => {
                 <Button 
                     as={Link}
                     href='/store'
-                    rightIcon={<FiExternalLink />} 
+                   
                     rounded="full" 
-                    colorScheme="whiteAlpha" 
+                 
+                    color='white'
+                    textDecoration='none' 
+                  
                     variant="outline" 
                     _hover={{ textDecoration: 'none', bg: 'var( --clr-primary-1)', color: 'black' }}
                     size={buttonSize}
                 >
                     View More
+                    <FiChevronRight style={{marginLeft: '8px'}} />
                 </Button>
             </Flex>
             <Carousel

@@ -43,16 +43,7 @@ ServiceItem.displayName = 'ServiceItem';
 // Memoized CEO section component
 const CEOSection = React.memo(() => (
   <Box w="100%" alignItems="center" as="section" aria-labelledby="team-heading">
-    <Heading 
-      as="h2" 
-      id="team-heading"
-      size="2xl" 
-      color="var(--clr-primary-1)" 
-      textAlign="left" 
-      mb={6}
-    >
-      Our Team
-    </Heading>
+    
     <Flex 
       direction={{ base: "column", md: "row" }} 
       gap={8} 
@@ -62,14 +53,14 @@ const CEOSection = React.memo(() => (
       <Box
         flexShrink={0}
         w={{ base: "280px", md: "300px" }}
-        h={{ base: "186px", md: "200px" }}
+        h={{ base: "186px", md: "400px" }}
         position="relative"
         borderRadius="10px"
         overflow="hidden"
         boxShadow="lg"
       >
         <Image
-          src="/haul/simba.webp"
+          src="/haul/ceo_2.webp"
           alt="African Simba - CEO and Founder of African Simba Events"
           fill
           sizes="(max-width: 768px) 280px, 300px"
@@ -89,14 +80,14 @@ const CEOSection = React.memo(() => (
         textAlign={{ base: "center", md: "left" }}
         maxW={{ base: "100%", md: "600px" }}
       >
-        <Heading 
+        <Text 
           as="h3"
-          size="lg" 
+          size="3xl" 
           color="var(--clr-primary-1)"
           fontWeight="bold"
         >
           African Simba
-        </Heading>
+        </Text>
         <Text 
           fontSize="md" 
           color="var(--clr-primary-1)"

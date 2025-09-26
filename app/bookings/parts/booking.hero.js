@@ -6,14 +6,15 @@ import { Box, VStack, Text, Heading,Button, ButtonGroup, IconButton, HStack } fr
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { FiChevronRight } from "react-icons/fi";
 
 // Optimized hero data with unique IDs and better structure
 const heroData = [
   {
     id: "gbb-anniversary-1",
     bgImage: "/gallery/12.webp",
-    title: "GBB 1 Year Anniversary",
-    description: "12th July | GBB one year anniversary",
+    title: "More to Discover",
+    description: "Experience the extraordinary with us",
   
     priority: true, // First image should load with priority
   },
@@ -28,7 +29,7 @@ const heroData = [
   {
     id: "gbb-celebration",
     bgImage: "/gallery/15.webp",
-    title: "Celebration Moments",
+    title: "Premium Moments",
     description: "Creating memories that last forever",
  
     priority: false,
@@ -63,33 +64,6 @@ const HeroSlide = React.memo(({ hero, isActive, isPrev, isNext }) => {
     },
   };
 
-  const overlayTextVariants = {
-    initial: { 
-      opacity: 0, 
-      y: 100,
-      scale: 0.8
-    },
-    animate: { 
-      opacity: 1, 
-      y: 0,
-      scale: 1,
-      transition: { 
-        duration: 1.2, 
-        delay: 0.5,
-        ease: [0.25, 0.46, 0.45, 0.94]
-      } 
-    },
-    exit: { 
-      opacity: 0, 
-      y: -50,
-      scale: 0.8,
-      transition: { 
-        duration: 0.6,
-        ease: "easeIn" 
-      } 
-    },
-  };
-
   return (
     <motion.div
       key={hero.id}
@@ -100,7 +74,7 @@ const HeroSlide = React.memo(({ hero, isActive, isPrev, isNext }) => {
       style={{
         position: "absolute",
         inset: 0,
-        zIndex: isActive ? -1 : 0,
+        zIndex: 1, // Changed from -1 to 1
       }}
     >
       {/* Background Image */}
@@ -162,10 +136,9 @@ const HeroContent = React.memo(({ hero }) => {
       animate="animate"
       exit="exit"
       variants={contentVariants}
-      zIndex={100}
     >
       <VStack spacing={4} textAlign="center">
-        <Heading
+        <Text
           as="h1"
           fontSize={{ base: "4xl", sm: "5xl", md: "6xl", lg: "7xl" }}
           lineHeight={1.1}
@@ -175,7 +148,7 @@ const HeroContent = React.memo(({ hero }) => {
           maxW="800px"
         >
           {hero.title}
-        </Heading>
+        </Text>
         <Text
           fontSize={{ base: "lg", md: "xl", lg: "2xl" }}
           color="whiteAlpha.900"
@@ -185,56 +158,57 @@ const HeroContent = React.memo(({ hero }) => {
         >
           {hero.description}
         </Text>
+        <ButtonGroup spacing={8}>
+          <Button
+            as={Link}
+            href="/events"
+            _hover={{
+              textDecoration: "none",
+              bg: "var(--clr-primary-1)",
+              color: "black",
+              transform: "translateY(-2px)",
+              boxShadow: "0 8px 25px rgba(0,0,0,0.3)"
+            }}
+            rounded="full"
+            size="lg"
+            variant="outline"
+             bg="var(--clr-primary-1)"
+            color="black"
+            backdropFilter="blur(8px)"
+            
+            transition="all 0.3s ease"
+          >
+            More Information
+              <FiChevronRight style={{ marginLeft: '8px' }} />
+          </Button>
+          <Button
+            as={Link}
+            href="/bookings"
+            _hover={{
+              textDecoration: "none",
+              bg: "var(--clr-primary-1)",
+              color: "black",
+              transform: "translateY(-2px)",
+              boxShadow: "0 8px 25px rgba(0,0,0,0.3)"
+            }}
+            rounded="full"
+            size="lg"
+            variant="outline"
+            color="var(--clr-primary-1)"
+            backdropFilter="blur(8px)"
+            bg="rgba(255, 255, 255, 0.1)"
+            transition="all 0.3s ease"
+          >
+            Get Ticket Now
+            <FiChevronRight style={{ marginLeft: '8px' }} />
+          </Button>
+        </ButtonGroup>
       </VStack>
-          <ButtonGroup spacing={8}>
-                      <Button
-                        as={Link}
-                        href="/events"
-                        _hover={{
-                          textDecoration: "none",
-                          bg: "var(--clr-primary-1)",
-                          color: "black",
-                          transform: "translateY(-2px)",
-                          boxShadow: "0 8px 25px rgba(0,0,0,0.3)"
-                        }}
-                        rounded="full"
-                        size="lg"
-                        variant="outline"
-                        color="var(--clr-primary-1)"
-                        backdropFilter="blur(8px)"
-                        bg="rgba(255, 255, 255, 0.1)"
-                        transition="all 0.3s ease"
-                      >
-                        More Information
-                      </Button>
-                      <Button
-                        as={Link}
-                        href="/bookings"
-                        _hover={{
-                          textDecoration: "none",
-                          bg: "var(--clr-primary-1)",
-                          color: "black",
-                          transform: "translateY(-2px)",
-                          boxShadow: "0 8px 25px rgba(0,0,0,0.3)"
-                        }}
-                        rounded="full"
-                        size="lg"
-                        variant="outline"
-                        color="var(--clr-primary-1)"
-                        backdropFilter="blur(8px)"
-                        bg="rgba(255, 255, 255, 0.1)"
-                        transition="all 0.3s ease"
-                      >
-                        Get Ticket Now
-                      </Button>
-                    </ButtonGroup>
     </motion.div>
   );
 });
 
 HeroContent.displayName = 'HeroContent';
-
-
 
 // Memoized indicator dots
 const CarouselIndicators = React.memo(({ total, current, onDotClick }) => (
@@ -347,7 +321,7 @@ const BookingHero = () => {
   return (
     <Box
       position="relative"
-      height={{ base: "70vh", md: "80vh", lg: "90vh" }}
+      height={{ base: "70vh", md: "80vh", lg: "80vh" }}
       width="100%"
       overflow="hidden"
       onMouseEnter={handleMouseEnter}
@@ -360,7 +334,7 @@ const BookingHero = () => {
       aria-live="polite"
     >
       {/* Background Images */}
-      <Box position="relative" height="100%" width="100%">
+      <Box position="relative" height="80%" width="100%">
         <AnimatePresence mode="wait">
           <HeroSlide
             hero={currentHero}
@@ -372,18 +346,17 @@ const BookingHero = () => {
       {/* Gradient Overlay */}
       <Box
         position="absolute"
+        height='80%'
         inset={0}
         background="linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.8) 100%)"
         zIndex={2}
         pointerEvents="none"
       />
 
-   
-
       {/* Content */}
       <VStack
         position="absolute"
-        zIndex={10}
+        top={0} // Changed from undefined to 0
         height="100%"
         width="100%"
         justifyContent="center"
@@ -391,22 +364,14 @@ const BookingHero = () => {
         spacing={6}
         px={{ base: 4, md: 8 }}
         textAlign="center"
+        zIndex={3} // Added explicit z-index higher than gradient
       >
         <AnimatePresence mode="wait">
           <HeroContent hero={currentHero} />
         </AnimatePresence>
       </VStack>
 
-   
-
-      {/* Carousel Indicators */}
-      <CarouselIndicators
-        total={heroData.length}
-        current={currentIndex}
-        onDotClick={goToSlide}
-      />
-
-   
+    
     </Box>
   );
 };

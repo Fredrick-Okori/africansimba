@@ -7,23 +7,35 @@ import {
     Grid, 
     VStack, 
     HStack, 
+    ButtonGroup,
     Button,
     useColorModeValue
 } from '@chakra-ui/react';
-import { FiPhone, FiGlobe, FiArrowRight } from 'react-icons/fi';
+import { FiPhone, FiGlobe, FiArrowRight, FiMapPin, FiInfo, FiChevronRight } from 'react-icons/fi';
 import Link from 'next/link';
 
 export default function EventsHero() {
- // Weekly programs data
+ // Weekly programs data - UPDATED with bookingLink
 const weeklyPrograms = [
+    {
+        day: "19",
+        dayName: "MONDAY",
+        event: "QUEVA MONDAYS",
+        venue: "La Queva Lounge",
+        location: "Bukoto-Ntinda Rd",
+        genre: "HipHop, RnB, Afrobeats",
+        description: "The Ultimate Week Starter Party",
+        bookingLink: "https://kayetickets.com/event/queva-mondays" // ADDED booking link
+    },
     {
         day: "20",
         dayName: "WEDNESDAY",
-        event: "Wahala Wednesday",
+        event: "WAHALA WEDNESDAYS",
         venue: "Thrones Lounge",
         location: "Bugolobi",
         genre: "Afrobeats",
-        description: "Midweek Party Madness"
+        description: "Midweek Party Madness",
+        bookingLink: "https://kayetickets.com/event/wahala-wednesdays" // ADDED booking link
     },
     {
         day: "21", 
@@ -31,7 +43,8 @@ const weeklyPrograms = [
         event: "BLOWOUT THURSDAY",
         venue: "Catwalk Lounge",
         location: "Kololo",
-        description: "Crazy but Premium vibes"
+        description: "Crazy but Premium vibes",
+        bookingLink: "https://kayetickets.com/event/blowout-thursday" // ADDED booking link
     },
     {
         day: "22",
@@ -39,7 +52,8 @@ const weeklyPrograms = [
         event: "SWIFT FRIDAYS",
         venue: "NOMAD Lounge",
         location: "Gaba",
-        description: "Premium Hyper Party"
+        description: "Premium Hyper Party",
+        bookingLink: "https://kayetickets.com/event/swift-fridays" // ADDED booking link
     },
     {
         day: "23",
@@ -47,7 +61,8 @@ const weeklyPrograms = [
         event: "GGABA BIG BALLERS",
         venue: "Paradigm Lounge",
         location: "Ggaba",
-        description: "Big Baller Experience"
+        description: "Big Baller Experience",
+        bookingLink: "https://kayetickets.com/event/ggaba-big-ballers" // ADDED booking link
     }
 ];
 
@@ -185,7 +200,11 @@ const weeklyPrograms = [
                             {weeklyPrograms.map((program, index) => (
                                 <Grid
                                 as={Link}
-                                href='/bookings'
+                                // UPDATED: Use the specific bookingLink
+                                href={program.bookingLink} 
+                                // Added external link properties for kayetickets.com
+                                target="_blank"
+                                rel="noopener noreferrer"
                                     key={index}
                                     templateColumns={{ base: "80px 1fr", md: "100px 1fr" }}
                                     gap={{ base: 4, md: 6 }}
@@ -228,13 +247,16 @@ const weeklyPrograms = [
                                         </HStack>
 
                                         <HStack spacing={4} flexWrap="wrap">
+                                            <FiMapPin color='white'/>
                                             <Text
                                                 color="white"
                                                 fontSize={{ base: "sm", md: "md" }}
                                                 opacity="0.8"
                                             >
+                                                
                                                 {program.venue} • {program.location}
                                             </Text>
+                                           
                                             <Text
                                                 color="white"
                                                 fontSize={{ base: "sm", md: "md" }}
@@ -266,7 +288,11 @@ const weeklyPrograms = [
                                             borderRadius="full"
                                             px={4}
                                             as={Link}
-                                            href="/bookings"
+                                            // UPDATED: Use the specific bookingLink
+                                            href={program.bookingLink}
+                                            // Added external link properties for kayetickets.com
+                                            target="_blank"
+                                            rel="noopener noreferrer"
                                             fontWeight="bold"
                                             rightIcon={<FiArrowRight />}
                                             display={{ base: "inline-flex", md: "none" }}
@@ -285,65 +311,69 @@ const weeklyPrograms = [
                             bg="rgba(0,0,0,0.3)"
                             borderRadius="2xl"
                             backdropFilter="blur(20px)"
+                     
+                       
+                        alignItems={{ base: "start", md: "center" }}
                         >
-                            <Text
-                                color="white"
-                                fontSize={{ base: "lg", md: "xl" }}
-                                fontWeight="bold"
-                                mb={4}
+                             <Text
+                                color="#ffffffff"
+                                fontSize={{ base: "3xl", md: "4xl", lg: "4xl" }}
+                                fontWeight="900"
+                                letterSpacing="-0.02em"
                             >
-                                Book Now for the Night!
+                                 Book your premium spot now
                             </Text>
                             
                             <VStack spacing={3} align="start">
                               
                                 <HStack spacing={3}>
                                   
-                                    <Text color="white" fontSize={{ base: "md", md: "lg" }} fontWeight="600">
-                                        No simba, No Party!
-                                    </Text>
+                                    <Text
+                                                                          fontWeight="bold"
+                                                                          fontSize={{ base: "sm", lg: "md" }}
+                                                                          color="var(--clr-primary-1)"
+                                                                          mt={2}
+                                                                          textShadow="1px 1px 4px rgba(0,0,0,0.8)"
+                                                                        >
+                                                                         An emotional and authentic experience with the Game <br/> Changers including the high-energy DJs
+                                                                        </Text>
                                 </HStack>
                             </VStack>
 
-                            {/* CTA Buttons */}
+                            {/* CTA Buttons - Assuming these will link to a general events/booking page */}
                             <HStack spacing={4} mt={6} flexWrap="wrap">
-                                <Button
-                                    bg="#F59E0B"
-                                    color="white"
-                                    _hover={{
-                                        bg: "#D97706",
-                                        transform: "translateY(-2px)"
-                                    }}
-                                    borderRadius="full"
-                                    px={6}
-                                    as={Link
-                                
-                                    }
-                                    href="/bookings"
-                                    rightIcon={<FiArrowRight />}
-                                    fontWeight="bold"
-                                    size={{ base: "md", md: "lg" }}
-                                >
-                                    Book Now
-                                </Button>
-                                <Button
-                                    variant="outline"
-                                    borderColor="white"
-                                    color="white"
-                                    _hover={{
-                                        bg: "rgba(255,255,255,0.1)",
-                                        transform: "translateY(-2px)"
-                                    }}
-                                    borderRadius="full"
-                                    px={6}
-                                    as={Link}
-                                    href="/contact-us"
-                                    rightIcon={<FiPhone />}
-                                    fontWeight="bold"
-                                    size={{ base: "md", md: "lg" }}
-                                >
-                                    Contact Us
-                                </Button>
+                                <ButtonGroup spacing={8}>
+                                          
+                                             <Button
+                                               as={Link}
+                                               href="/contact-us" // Example: general booking page on kayetickets
+                                               target="_blank" // Open in new tab
+                                               rel="noopener noreferrer"
+                                                bg='var(--clr-primary-1)'
+                                               color='black'
+                                              
+                                                 transform="translateY(-2px)"
+                                                 boxShadow="0 8px 25px rgba(0,0,0,0.3)"
+                                               _hover={{
+                                                 textDecoration: "none",
+                                                 bg: "var(--clr-primary-1)",
+                                                 color: "black",
+                                                 transform: "translateY(-2px)",
+                                                 boxShadow: "0 8px 25px rgba(0,0,0,0.3)"
+                                               }}
+                                               rounded="full"
+                                               size="md"
+                                               variant="outline"
+                                               
+                                             
+                                               backdropFilter="blur(8px)"
+                                            
+                                               transition="all 0.3s ease"
+                                             >
+                                              Book Now
+                                              <FiChevronRight style={{ marginLeft: '8px' }} />
+                                             </Button>
+                                           </ButtonGroup>
                             </HStack>
                         </Box>
                     </VStack>

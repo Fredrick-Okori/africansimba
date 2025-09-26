@@ -5,7 +5,7 @@ import { Box, Container, Stack, Text, HStack, Flex, Button, useBreakpointValue }
 import Counter from './Counter'
 
 import Link from 'next/link';
-import { FiExternalLink } from'react-icons/fi';
+import { FiChevronRight, FiExternalLink } from'react-icons/fi';
 
 
 
@@ -56,7 +56,7 @@ export default function EventSchedule() {
                                       </Text>
                         </Stack>
                         <HStack spacing="3" color='var(--clr-primary-1)'>
-                            <Button as={Link} href='/events' _hover={{ textDecoration: 'none', bg: 'var(--clr-primary-1)', color: 'black' }} textDecoration='none' rightIcon={<FiExternalLink />} rounded="full" colorScheme="var(--clr-primary-1)Alpha" variant="outline">
+                            <Button as={Link} href='/events' _hover={{ textDecoration: 'none', bg: 'var(--clr-primary-1)', color: 'black' }} textDecoration='none' rightIcon={<FiChevronRight style={{marginLeft: '8px'}} />} rounded="full" colorScheme="var(--clr-primary-1)Alpha" variant="outline">
                                 View Events
                             </Button>
                         </HStack>

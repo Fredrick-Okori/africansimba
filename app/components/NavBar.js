@@ -28,7 +28,7 @@ import Image from 'next/image';
 import { Suspense } from 'react';
 
 
-import { FiArrowRight, FiMenu, FiActivity, FiMessageCircle, FiUsers, FiShoppingCart, FiHome } from 'react-icons/fi'
+import { FiArrowRight, FiMenu, FiActivity, FiMessageCircle, FiUsers, FiShoppingCart, FiHome, FiImage, FiChevronRight } from 'react-icons/fi'
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation';
@@ -92,6 +92,8 @@ const NavBar = () => {
                                     // Liquid effect styling
                                     position="relative"
                                     overflow="hidden"
+                                      bg='var(--clr-primary-1)'
+                color='black'
                                     sx={{
                                         '&::before': {
                                             content: '""',
@@ -113,9 +115,9 @@ const NavBar = () => {
                                     _hover={{ textDecoration: 'none', color: 'black' }} 
                                     textDecoration='none' 
                                     variant='outline' 
-                                    colorScheme="whiteAlpha"
+                                   
                                 >
-                                    Tickets <FiArrowRight />
+                                    Tickets <FiChevronRight style={{marginLeft: '8px'}} />
                                 </Button>
                             </Stack>
                         </Flex>
@@ -156,6 +158,10 @@ const NavBar = () => {
 const MobileNav = ({ onClose }) => {
     const pathname = usePathname();
 
+    const handleLinkClick = () => {
+        onClose(); // Close the drawer when any link is clicked
+    };
+
     return (
         <Flex
             h="100vh"
@@ -173,47 +179,47 @@ const MobileNav = ({ onClose }) => {
                 <Text fontWeight='bold' size='lg' fontFamily='heading' >African Simba Events</Text>
             </HStack>
             <VStack align="flex-start" spacing={6} pt={10} w="100%">
-                <Link href="/home" _hover={{ color: "purple.200" }} w="100%">
+                <Link href="/home" _hover={{ color: "purple.200" }} w="100%" onClick={handleLinkClick}>
                     <Flex align="center">
                         <Icon as={FiHome} boxSize={5} mr={3} />
                         <Text>Home</Text>
                     </Flex>
                 </Link>
 
-                <Link href="/events" _hover={{ color: "purple.200" }} w="100%">
+                <Link href="/events" _hover={{ color: "purple.200" }} w="100%" onClick={handleLinkClick}>
                     <Flex align="center">
                         <Icon as={FiActivity} boxSize={5} mr={3} />
                         <Text>Events</Text>
                     </Flex>
                 </Link>
-                <Link href="/bookings" _hover={{ color: "purple.200" }} w="100%">
+                <Link href="/bookings" _hover={{ color: "purple.200" }} w="100%" onClick={handleLinkClick}>
                     <Flex align="center">
-                        <Icon as={FiArrowRight} boxSize={5} mr={3} />
+                        <Icon as={FiChevronRight} boxSize={5} mr={3} />
                         <Text>Tickets</Text>
                     </Flex>
                 </Link>
-                <Link href="/about" _hover={{ color: "purple.200" }} w="100%">
+                <Link href="/about" _hover={{ color: "purple.200" }} w="100%" onClick={handleLinkClick}>
                     <Flex align="center">
                         <Icon as={FiUsers} boxSize={5} mr={3} />
                         <Text>About Us</Text>
                     </Flex>
                 </Link>
-                <Link href="/contact-us" _hover={{ color: "purple.200" }} w="100%">
+                <Link href="/contact-us" _hover={{ color: "purple.200" }} w="100%" onClick={handleLinkClick}>
                     <Flex align="center">
                         <Icon as={FiMessageCircle} boxSize={5} mr={3} />
                         <Text>Contact Us</Text>
                     </Flex>
                 </Link>
 
-                <Link href="/store" _hover={{ color: "purple.200" }} w="100%">
+                <Link href="/gallery" _hover={{ color: "purple.200" }} w="100%" onClick={handleLinkClick}>
                     <Flex align="center">
-                        <Icon as={FiShoppingCart} boxSize={5} mr={3} />
-                        <Text>Shop</Text>
+                        <Icon as={FiImage} boxSize={5} mr={3} />
+                        <Text>Gallery</Text>
                     </Flex>
                 </Link>
 
                 {pathname === '/store' && (
-                    <Link href="/cart" _hover={{ color: "purple.200" }} w="100%">
+                    <Link href="/cart" _hover={{ color: "purple.200" }} w="100%" onClick={handleLinkClick}>
                         <Flex align="center">
                             <Icon as={FiShoppingCart} boxSize={5} mr={3} />
                             <Text>Cart</Text>

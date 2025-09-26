@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Aos from 'aos';
 import 'aos/dist/aos.css'
+import { FiChevronRight } from 'react-icons/fi';
 
 const ticket = [
     {
@@ -32,7 +33,7 @@ export default function BookingCard() {
     return (
         <>
             <Container maxW="container.xl">
-                <Box display={'flex'} flexDir={{ base: 'column', lg: 'row' }} alignItems='center' gap={10} mt={10} mb={{base: 5, lg: 20}} data-aos='fade-up' data-aos-duration='2000'>
+                {/* <Box display={'flex'} flexDir={{ base: 'column', lg: 'row' }} alignItems='center' gap={10} mt={10} mb={{base: 5, lg: 20}} data-aos='fade-up' data-aos-duration='2000'>
                     <Box flexBasis={700}>
                         <Image src='/updates/skales_gbb.webp' 
                                width={500} 
@@ -48,9 +49,9 @@ export default function BookingCard() {
                         the biggest Djs in Kampala such as Slick Stuart, Ryan and Wizzy. 
                         </Text>
                     </Box>
-                </Box>
-                <Box mt={20} mb={20} alignContent='center'>
-                    <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={10} alignItems='center' data-aos='fade-up' data-aos-duration='2000'>
+                </Box> */}
+                <Box mb={20} alignContent='center'>
+                    <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={10} alignItems='center'>
                         {ticket.map((item, index) => (
                             <Box key={index} color='white' p={5} boxShadow='lg' flexBasis={2}>
                                 <SimpleGrid columns={{ base: 1, lg: 1 }} padding={10} rounded='lg' _hover={{ bg: 'var(--clr-primary-3)', color: 'var(--clr-primary-2)', padding: 10, borderRadius: 10, transition: 'all 0.3s ease' }} spacing={2}>
@@ -74,10 +75,12 @@ export default function BookingCard() {
                                                 rel="noopener noreferrer"
                                                 rounded="full"
                                                 variant="outline"
+                                                size="md"
                                                 padding={2}
                                                 color="var(--clr-primary-1)"
                                             >
                                                  Book Now 
+                                                 <FiChevronRight style={{ marginLeft: '8px' }} />
                                             </Button>
                                         </SimpleGrid>
                                     </SimpleGrid>
