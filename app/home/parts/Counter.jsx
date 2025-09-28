@@ -69,7 +69,7 @@ export default function Count() {
                             />
                             <Image
                                 rounded="lg"
-                                src='/haul/awilo.webp'
+                                src='/haul/moses.webp'
                                 alt='African simba events anniversary'
                                 layout="fill" 
                                 objectFit="cover" 
