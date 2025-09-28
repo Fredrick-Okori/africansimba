@@ -199,10 +199,7 @@ const weeklyPrograms = [
                         <VStack spacing={0} align="stretch">
                             {weeklyPrograms.map((program, index) => (
                                 <Grid
-                                as={Link}
-                                // UPDATED: Use the specific bookingLink
-                                href={program.bookingLink} 
-                                // Added external link properties for kayetickets.com
+                               
                                 target="_blank"
                                 rel="noopener noreferrer"
                                     key={index}
