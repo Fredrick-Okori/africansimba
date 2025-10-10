@@ -12,7 +12,7 @@ import { FiChevronRight } from "react-icons/fi";
 const heroData = [
   {
     id: "gbb-anniversary-1",
-    bgImage: "/gallery/12.webp",
+    bgImage: "/updates/crowd_hero.webp",
     title: "More to Discover",
     description: "Experience the extraordinary with us",
   
@@ -20,15 +20,15 @@ const heroData = [
   },
   {
     id: "don-julio-event",
-    bgImage: "/haul/don_julio.webp", 
-    title: "Don Julio Experience",
+    bgImage: "/updates/crowd_hero_group.webp", 
+    title: "Baller Experience",
     description: "Premium events with unforgettable moments",
    
     priority: false,
   },
   {
     id: "gbb-celebration",
-    bgImage: "/gallery/15.webp",
+    bgImage: "/updates/crowd_green.webp",
     title: "Premium Moments",
     description: "Creating memories that last forever",
  
@@ -183,7 +183,7 @@ const HeroContent = React.memo(({ hero }) => {
           </Button>
           <Button
             as={Link}
-            href="/bookings"
+         href="/contact-us"
             _hover={{
               textDecoration: "none",
               bg: "var(--clr-primary-1)",
@@ -199,7 +199,7 @@ const HeroContent = React.memo(({ hero }) => {
             bg="rgba(255, 255, 255, 0.1)"
             transition="all 0.3s ease"
           >
-            Get Ticket Now
+            Reserve Now
             <FiChevronRight style={{ marginLeft: '8px' }} />
           </Button>
         </ButtonGroup>

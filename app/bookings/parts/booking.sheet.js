@@ -11,7 +11,7 @@ const ticket = [
     {
         id: 1,
         title: 'Premium bottle Race',
-        description: 'Here Ballers race to be the biggest spender by buying the most numbers of premium bottles, and is crowned the big baller of the year',
+        description: 'Reserve a table.',
         price: ' ',
         image: '/images/eventposter.jpg'
     },
@@ -19,8 +19,8 @@ const ticket = [
     {
         id: 3,
         title: 'The Baller Package',
-        description: 'A starter package for the premium bottle race comes with Classe Azur 0r Don Julio',
-        price: 'UGX: 2M',
+        description: 'VIP seat 500k  + Premium Bottle race - Ordinary 250K+',
+        price: 'UGX: 500K',
         image: '/images/eventposter.jpg'
     },
 ]
@@ -60,7 +60,7 @@ export default function BookingCard() {
                                     </Heading>
                                     <Text textAlign='left'>{item.description}</Text>
                                     <SimpleGrid columns={{ base: 2, lg: 2 }}>
-                                        <Text>Buying ticket at {item.price}</Text>
+                                        <Text>Book a table {item.price}</Text>
                                         <SimpleGrid columns={{base: 1, lg: 2}}>
                                             <Text mb={3} fontSize={'xl'} fontWeight={'bold'} color='var(--clr-primary-1)' textAlign='center'>{item.price}</Text>
                                             <Button

@@ -153,7 +153,7 @@ export default function VideoBanner() {
              
                 transition="all 0.3s ease"
               >
-               Book Now
+               Reserve Now
                <FiChevronRight   style={{ marginLeft: '8px' }} />
               </Button>
             </ButtonGroup>

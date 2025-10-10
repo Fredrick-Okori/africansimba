@@ -20,8 +20,8 @@ const weeklyPrograms = [
     {
         day: "19",
         dayName: "MONDAY",
-        event: "QUEVA MONDAYS",
-        venue: "La Queva Lounge",
+        event: "CUEVA MONDAYS",
+        venue: "La Cueva Lounge",
         location: "Bukoto-Ntinda Rd",
         genre: "HipHop, RnB, Afrobeats",
         description: "The Ultimate Week Starter Party",
@@ -40,7 +40,7 @@ const weeklyPrograms = [
     {
         day: "21", 
         dayName: "THURSDAY",
-        event: "BLOWOUT THURSDAY",
+        event: "BLOWOUT THURSDAYS",
         venue: "Catwalk Lounge",
         location: "Kololo",
         description: "Crazy but Premium vibes",
@@ -51,7 +51,7 @@ const weeklyPrograms = [
         dayName: "FRIDAY",
         event: "SWIFT FRIDAYS",
         venue: "NOMAD Lounge",
-        location: "Gaba",
+        location: "Ggaba",
         description: "Premium Hyper Party",
         bookingLink: "https://kayetickets.com/event/swift-fridays" // ADDED booking link
     },

@@ -1,9 +1,9 @@
 export const events = [
     {
         id: 0,
-        name: "Queva Mondays",
+        name: "La Cueva Mondays",
         image: "/haul/queva.webp",
-        host: "La Queva, Bukoto-Ntinda Rd",
+        host: "La Cueva, Bukoto-Ntinda Rd",
 
     },
     

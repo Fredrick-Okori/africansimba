@@ -11,6 +11,20 @@ import EventsListing from './eventsListing';
 import Upcoming from './upcoming';
 
 const defaultVideos = [
+   {
+        id: 1,
+        title: "African Simba Birthday Bash ",
+        videoUrl: "https://youtube.com/shorts/W1iBgno0hI4?si=clhkiSPsBgdJEdTu?autoplay=1",
+        thumbnail: "/haul/simba.webp",
+        location: "Tanzania Muleba Fest",
+    },
+    {
+        id: 5,
+        videoUrl: "https://youtube.com/shorts/oyEJxlG6Eow?si=HdJOdMR5uXOFkypc?autoplay=1",
+        title: "Swift Fridays at Nomad",
+        thumbnail: "/haul/rays.webp",
+        location: "Nomad Lounge, Kabagala",
+    },
     {
         id: 1,
         title: "Muleba Official Aftermovie",
@@ -22,39 +36,27 @@ const defaultVideos = [
         id: 2,
         videoUrl: "https://www.youtube.com/watch?v=rEifWYsUPKw?autoplay=1",
         title: "Wahala Wednesday",
-        thumbnail: "/videoposters/wahala_video_poster.webp",
+        thumbnail: "/haul/addict.webp",
         location: "Thrones Lounge Bugolobi",
     },
-    {
-        id: 3,
-        videoUrl: "https://www.youtube.com/watch?v=Y2736fANAMc?autoplay=1",
-        title: "Afro Vibes ",
-        thumbnail: "/videoposters/afro_vibez.webp",
-        location: "CatWalk Lounge, Kololo",
+   {
+        id: 7,
+        videoUrl: "hhttps://youtube.com/shorts/lyNWyC3IjoU?si=yJJUKM2NRtBLijW2=1",
+        title: "Blowout Thursday at Catwalk",
+        thumbnail: "/haul/roger.webp",
+        location: "Dubai",
     },
    
     {
         id: 5,
-        videoUrl: "https://www.youtube.com/watch?v=0TR8qVeGygg?autoplay=1",
+        videoUrl: "https://youtube.com/shorts/lyNWyC3IjoU?si=yJJUKM2NRtBLijW2?autoplay=1",
         title: "Gabba Big Ballers Nights at Paradigm",
-        thumbnail: "/videoposters/paradigm_video_poster.webp",
+        thumbnail: "/haul/gbb.webp",
         location: "Gabba, Kabagala",
     },
-    {
-      id: 6,
-        videoUrl: "https://www.youtube.com/watch?v=KCcTldwDI9M?autoplay=1",
-        title: "Superstar Soon | | ASE Talent",
-        thumbnail: "/updates/petrie.webp",
-        location: "Archieves",
-    },
+   
     
-    {
-        id: 7,
-        videoUrl: "https://www.youtube.com/watch?v=4CVgMct-8rc?autoplay=1",
-        title: "Jamboree 2024 Dubai Adventures",
-        thumbnail: "/compressed/ticket_cover-copy.jpg",
-        location: "Dubai",
-    },
+ 
   
 ];
 
