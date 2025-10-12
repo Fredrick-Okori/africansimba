@@ -54,7 +54,7 @@ export default function BookingCard() {
                     <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={10} alignItems='center'>
                         {ticket.map((item, index) => (
                             <Box key={index} color='white' p={5} boxShadow='lg' flexBasis={2}>
-                                <SimpleGrid columns={{ base: 1, lg: 1 }} padding={10} rounded='lg' _hover={{ bg: 'var(--clr-primary-3)', color: 'var(--clr-primary-2)', padding: 10, borderRadius: 10, transition: 'all 0.3s ease' }} spacing={2}>
+                                <SimpleGrid columns={{ base: 1, lg: 1 }}  rounded='lg' _hover={{ bg: 'var(--clr-primary-3)', color: 'var(--clr-primary-2)', padding: 10, borderRadius: 10, transition: 'all 0.3s ease' }} spacing={2}>
                                     <Heading mb={5} textDecoration='underline' textAlign='left' textDecorationThickness={1} textUnderlineOffset={10} textDecorationColor='var(--clr-primary-1)'>
                                         {item.title}
                                     </Heading>

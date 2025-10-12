@@ -161,8 +161,10 @@ const HeroContent = React.memo(({ hero }) => {
       <Grid justifyContent="center">
             <ButtonGroup 
               spacing={{ base: 4, md: 8 }}
-              flexDirection={{ base: "column", sm: "row" }}
+              flexDirection={{ base: "row", sm: "row" }}
+              
               alignItems="center"
+             
             >
               <Button
                 as={Link}
@@ -179,7 +181,7 @@ const HeroContent = React.memo(({ hero }) => {
                   boxShadow: "0 8px 25px rgba(0,0,0,0.3)"
                 }}
                 rounded="full"
-                size={{ base: "sm", md: "md" }}
+                size={{ base: "md", md: "md" }}
                 variant="outline"
                 backdropFilter="blur(8px)"
                 transition="all 0.3s ease"
@@ -204,7 +206,7 @@ const HeroContent = React.memo(({ hero }) => {
                   boxShadow: "0 8px 25px rgba(0,0,0,0.3)"
                 }}
                 rounded="full"
-                size={{ base: "sm", md: "md" }}
+                size={{ base: "md", md: "md" }}
                 variant="outline"
                 backdropFilter="blur(8px)"
                 transition="all 0.3s ease"
@@ -334,7 +336,7 @@ const BookingHero = () => {
   return (
     <Box
       position="relative"
-      height={{ base: "70vh", md: "80vh", lg: "80vh" }}
+      height={{base: '600px', md: "80vh", lg: "80vh" }}
       width="100%"
       overflow="hidden"
       onMouseEnter={handleMouseEnter}
