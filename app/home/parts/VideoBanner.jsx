@@ -101,15 +101,18 @@ export default function VideoBanner() {
             Experience Immersive party that happens every week
           </Text>
           <Grid justifyContent="center">
-            <ButtonGroup spacing={8}>
+            <ButtonGroup 
+              spacing={{ base: 4, md: 8 }}
+              flexDirection={{ base: "column", sm: "row" }}
+              alignItems="center"
+            >
               <Button
                 as={Link}
                 href="/events"
                 bg='var(--clr-primary-1)'
                 color='black'
-               
-                  transform="translateY(-2px)"
-                  boxShadow="0 8px 25px rgba(0,0,0,0.3)"
+                transform="translateY(-2px)"
+                boxShadow="0 8px 25px rgba(0,0,0,0.3)"
                 _hover={{
                   textDecoration: "none",
                   bg: "var(--clr-primary-1)",
@@ -118,25 +121,23 @@ export default function VideoBanner() {
                   boxShadow: "0 8px 25px rgba(0,0,0,0.3)"
                 }}
                 rounded="full"
-                size="md"
+                size={{ base: "sm", md: "md" }}
                 variant="outline"
-                
                 backdropFilter="blur(8px)"
-               
-             
                 transition="all 0.3s ease"
+                width={{ base: "full", sm: "auto" }}
+                minW={{ base: "200px", sm: "auto" }}
               >
               More Information
-               <FiChevronRight   style={{ marginLeft: '8px' }} />
+               <FiChevronRight style={{ marginLeft: '8px' }} />
               </Button>
               <Button
                 as={Link}
                 href="/bookings"
-                 bg='var(--clr-primary-1)'
+                bg='var(--clr-primary-1)'
                 color='black'
-               
-                  transform="translateY(-2px)"
-                  boxShadow="0 8px 25px rgba(0,0,0,0.3)"
+                transform="translateY(-2px)"
+                boxShadow="0 8px 25px rgba(0,0,0,0.3)"
                 _hover={{
                   textDecoration: "none",
                   bg: "var(--clr-primary-1)",
@@ -145,16 +146,15 @@ export default function VideoBanner() {
                   boxShadow: "0 8px 25px rgba(0,0,0,0.3)"
                 }}
                 rounded="full"
-                size="md"
+                size={{ base: "sm", md: "md" }}
                 variant="outline"
-                
-              
                 backdropFilter="blur(8px)"
-             
                 transition="all 0.3s ease"
+                width={{ base: "full", sm: "auto" }}
+                minW={{ base: "200px", sm: "auto" }}
               >
                Reserve Now
-               <FiChevronRight   style={{ marginLeft: '8px' }} />
+               <FiChevronRight style={{ marginLeft: '8px' }} />
               </Button>
             </ButtonGroup>
           </Grid>

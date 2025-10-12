@@ -16,14 +16,14 @@ const defaultVideos = [
         title: "African Simba Birthday Bash ",
         videoUrl: "https://youtube.com/shorts/W1iBgno0hI4?si=clhkiSPsBgdJEdTu?autoplay=1",
         thumbnail: "/haul/simba.webp",
-        location: "Tanzania Muleba Fest",
+        location: "One Week Celebrations, Kampala",
     },
     {
         id: 5,
         videoUrl: "https://youtube.com/shorts/oyEJxlG6Eow?si=HdJOdMR5uXOFkypc?autoplay=1",
         title: "Swift Fridays at Nomad",
-        thumbnail: "/haul/rays.webp",
-        location: "Nomad Lounge, Kabagala",
+        thumbnail: "/gallery/48.webp",
+        location: "Nomad Lounge, Ggaba Rd",
     },
     {
         id: 1,
@@ -37,14 +37,14 @@ const defaultVideos = [
         videoUrl: "https://www.youtube.com/watch?v=rEifWYsUPKw?autoplay=1",
         title: "Wahala Wednesday",
         thumbnail: "/haul/addict.webp",
-        location: "Thrones Lounge Bugolobi",
+        location: "Thrones Lounge, Bugolobi",
     },
    {
         id: 7,
         videoUrl: "hhttps://youtube.com/shorts/lyNWyC3IjoU?si=yJJUKM2NRtBLijW2=1",
         title: "Blowout Thursday at Catwalk",
         thumbnail: "/haul/roger.webp",
-        location: "Dubai",
+        location: "Catwalk Lounge, Kololo",
     },
    
     {
@@ -52,7 +52,7 @@ const defaultVideos = [
         videoUrl: "https://youtube.com/shorts/lyNWyC3IjoU?si=yJJUKM2NRtBLijW2?autoplay=1",
         title: "Gabba Big Ballers Nights at Paradigm",
         thumbnail: "/haul/gbb.webp",
-        location: "Gabba, Kabagala",
+        location: "Paradigm Lounge, Ggaba Rd",
     },
    
     

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useCallback, useMemo, useRef } from "react";
-import { Box, VStack, Text, Heading,Button, ButtonGroup, IconButton, HStack } from "@chakra-ui/react";
+import { Box, VStack, Grid, Text, Heading,Button, ButtonGroup, IconButton, HStack } from "@chakra-ui/react";
 
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -158,52 +158,65 @@ const HeroContent = React.memo(({ hero }) => {
         >
           {hero.description}
         </Text>
-        <ButtonGroup spacing={8}>
-          <Button
-            as={Link}
-            href="/events"
-            _hover={{
-              textDecoration: "none",
-              bg: "var(--clr-primary-1)",
-              color: "black",
-              transform: "translateY(-2px)",
-              boxShadow: "0 8px 25px rgba(0,0,0,0.3)"
-            }}
-            rounded="full"
-            size="lg"
-            variant="outline"
-             bg="var(--clr-primary-1)"
-            color="black"
-            backdropFilter="blur(8px)"
-            
-            transition="all 0.3s ease"
-          >
-            More Information
-              <FiChevronRight style={{ marginLeft: '8px' }} />
-          </Button>
-          <Button
-            as={Link}
-         href="/contact-us"
-            _hover={{
-              textDecoration: "none",
-              bg: "var(--clr-primary-1)",
-              color: "black",
-              transform: "translateY(-2px)",
-              boxShadow: "0 8px 25px rgba(0,0,0,0.3)"
-            }}
-            rounded="full"
-            size="lg"
-            variant="outline"
-            color="var(--clr-primary-1)"
-            backdropFilter="blur(8px)"
-            bg="rgba(255, 255, 255, 0.1)"
-            transition="all 0.3s ease"
-          >
-            Reserve Now
-            <FiChevronRight style={{ marginLeft: '8px' }} />
-          </Button>
-        </ButtonGroup>
-      </VStack>
+      <Grid justifyContent="center">
+            <ButtonGroup 
+              spacing={{ base: 4, md: 8 }}
+              flexDirection={{ base: "column", sm: "row" }}
+              alignItems="center"
+            >
+              <Button
+                as={Link}
+                href="/events"
+                bg='var(--clr-primary-1)'
+                color='black'
+                transform="translateY(-2px)"
+                boxShadow="0 8px 25px rgba(0,0,0,0.3)"
+                _hover={{
+                  textDecoration: "none",
+                  bg: "var(--clr-primary-1)",
+                  color: "black",
+                  transform: "translateY(-2px)",
+                  boxShadow: "0 8px 25px rgba(0,0,0,0.3)"
+                }}
+                rounded="full"
+                size={{ base: "sm", md: "md" }}
+                variant="outline"
+                backdropFilter="blur(8px)"
+                transition="all 0.3s ease"
+                width={{ base: "full", sm: "auto" }}
+                minW={{ base: "200px", sm: "auto" }}
+              >
+              More Information
+               <FiChevronRight style={{ marginLeft: '8px' }} />
+              </Button>
+              <Button
+                as={Link}
+                href="/bookings"
+                bg='var(--clr-primary-1)'
+                color='black'
+                transform="translateY(-2px)"
+                boxShadow="0 8px 25px rgba(0,0,0,0.3)"
+                _hover={{
+                  textDecoration: "none",
+                  bg: "var(--clr-primary-1)",
+                  color: "black",
+                  transform: "translateY(-2px)",
+                  boxShadow: "0 8px 25px rgba(0,0,0,0.3)"
+                }}
+                rounded="full"
+                size={{ base: "sm", md: "md" }}
+                variant="outline"
+                backdropFilter="blur(8px)"
+                transition="all 0.3s ease"
+                width={{ base: "full", sm: "auto" }}
+                minW={{ base: "200px", sm: "auto" }}
+              >
+               Reserve Now
+               <FiChevronRight style={{ marginLeft: '8px' }} />
+              </Button>
+            </ButtonGroup>
+          </Grid>
+          </VStack>
     </motion.div>
   );
 });

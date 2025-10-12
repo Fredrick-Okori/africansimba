@@ -90,7 +90,7 @@ const teamMembers = [
         position: 'Co-Host',   
         imageUrl: '/teams/nana.webp',
         bio: 'Charismatic host bringing energy and entertainment to every event with exceptional stage presence.',
-        experience: '1+ years',
+        experience: '2+ years',
         specialties: ['Live Hosting', 'Audience Engagement', 'Entertainment'],
         social: { instagram: '@kimnana_stunner', twitter: '@kimnana' }
     },
@@ -121,7 +121,7 @@ const teamMembers = [
         position: 'Hostess',  
         imageUrl: '/teams/trace.webp',
         bio: 'Experienced hostess with a focus on creating memorable first impressions for all guests.',
-        experience: '1+ years',
+        experience: '2+ years',
         specialties: ['Guest Experience', 'Protocol Management', 'Event Assistance'],
         social: { instagram: '@tracy_belaire', twitter: '@tracy' }
     },
