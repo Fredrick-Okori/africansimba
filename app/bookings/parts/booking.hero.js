@@ -1,29 +1,26 @@
 "use client";
 
 import React, { useState, useEffect, useCallback, useMemo, useRef } from "react";
-import { Box, VStack, Grid, Text, Heading,Button, ButtonGroup, IconButton, HStack } from "@chakra-ui/react";
-
+import { Box, VStack, Grid, Text, Button, ButtonGroup, HStack } from "@chakra-ui/react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import Link from "next/link";
 import { FiChevronRight } from "react-icons/fi";
 
-// Optimized hero data with unique IDs and better structure
+// Optimized hero data
 const heroData = [
   {
     id: "gbb-anniversary-1",
     bgImage: "/updates/crowd_hero.webp",
     title: "More to Discover",
     description: "Experience the extraordinary with us",
-  
-    priority: true, // First image should load with priority
+    priority: true,
   },
   {
     id: "don-julio-event",
     bgImage: "/updates/crowd_hero_group.webp", 
     title: "Baller Experience",
     description: "Premium events with unforgettable moments",
-   
     priority: false,
   },
   {
@@ -31,34 +28,37 @@ const heroData = [
     bgImage: "/updates/crowd_green.webp",
     title: "Premium Moments",
     description: "Creating memories that last forever",
- 
     priority: false,
   },
 ];
 
-// Memoized slide component to prevent unnecessary re-renders
-const HeroSlide = React.memo(({ hero, isActive, isPrev, isNext }) => {
-  const slideVariants = {
+// Memoized slide component with performance optimizations
+const HeroSlide = React.memo(({ hero, shouldReduceMotion }) => {
+  const slideVariants = shouldReduceMotion ? {
+    initial: { opacity: 0 },
+    animate: { opacity: 1, transition: { duration: 0.3 } },
+    exit: { opacity: 0, transition: { duration: 0.3 } },
+  } : {
     initial: { 
       opacity: 0, 
-      scale: 1.1,
-      x: 100 
+      scale: 1.05,
+      x: 50 
     },
     animate: { 
       opacity: 1, 
       scale: 1,
       x: 0,
       transition: { 
-        duration: 0.8, 
-        ease: [0.25, 0.46, 0.45, 0.94] // Custom easing
+        duration: 0.7, 
+        ease: [0.25, 0.46, 0.45, 0.94]
       } 
     },
     exit: { 
       opacity: 0, 
-      scale: 0.95,
-      x: -100,
+      scale: 0.98,
+      x: -50,
       transition: { 
-        duration: 0.6, 
+        duration: 0.5, 
         ease: [0.25, 0.46, 0.45, 0.94] 
       } 
     },
@@ -74,19 +74,18 @@ const HeroSlide = React.memo(({ hero, isActive, isPrev, isNext }) => {
       style={{
         position: "absolute",
         inset: 0,
-        zIndex: 1, // Changed from -1 to 1
+        zIndex: 1,
+        willChange: shouldReduceMotion ? 'opacity' : 'opacity, transform',
       }}
     >
-      {/* Background Image */}
       <Image
         src={hero.bgImage}
         alt={hero.title}
         fill
-        sizes="100vw"
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
         style={{
           objectFit: "cover",
           objectPosition: "center",
-          
         }}
         quality={85}
         priority={hero.priority}
@@ -100,30 +99,31 @@ const HeroSlide = React.memo(({ hero, isActive, isPrev, isNext }) => {
 
 HeroSlide.displayName = 'HeroSlide';
 
-// Memoized content component
-const HeroContent = React.memo(({ hero }) => {
-  const contentVariants = {
+// Memoized content component with optimized animations
+const HeroContent = React.memo(({ hero, shouldReduceMotion }) => {
+  const contentVariants = shouldReduceMotion ? {
+    initial: { opacity: 0 },
+    animate: { opacity: 1, transition: { duration: 0.3 } },
+    exit: { opacity: 0, transition: { duration: 0.3 } },
+  } : {
     initial: { 
-      y: 30, 
+      y: 20, 
       opacity: 0,
-      filter: "blur(4px)"
     },
     animate: { 
       y: 0, 
       opacity: 1,
-      filter: "blur(0px)",
       transition: { 
-        duration: 0.8, 
-        delay: 0.3,
+        duration: 0.6, 
+        delay: 0.2,
         ease: "easeOut" 
       } 
     },
     exit: { 
-      y: -30, 
+      y: -20, 
       opacity: 0,
-      filter: "blur(4px)",
       transition: { 
-        duration: 0.5,
+        duration: 0.4,
         ease: "easeIn" 
       } 
     },
@@ -136,111 +136,126 @@ const HeroContent = React.memo(({ hero }) => {
       animate="animate"
       exit="exit"
       variants={contentVariants}
+      style={{ willChange: shouldReduceMotion ? 'opacity' : 'opacity, transform' }}
     >
-      <VStack spacing={4} textAlign="center">
+      <VStack spacing={{ base: 3, md: 4, lg: 5 }} textAlign="center">
         <Text
           as="h1"
-          fontSize={{ base: "4xl", sm: "5xl", md: "6xl", lg: "7xl" }}
-          lineHeight={1.1}
+          fontSize={{ base: "3xl", sm: "4xl", md: "5xl", lg: "6xl", xl: "7xl" }}
+          lineHeight={{ base: 1.2, md: 1.1 }}
           color="white"
           textShadow="2px 2px 8px rgba(0,0,0,0.8)"
           fontWeight="bold"
-          maxW="800px"
+          maxW={{ base: "90%", md: "700px", lg: "800px" }}
+          px={{ base: 2, md: 0 }}
         >
           {hero.title}
         </Text>
         <Text
-          fontSize={{ base: "lg", md: "xl", lg: "2xl" }}
+          fontSize={{ base: "md", sm: "lg", md: "xl", lg: "2xl" }}
           color="whiteAlpha.900"
-          maxW="600px"
+          maxW={{ base: "85%", md: "500px", lg: "600px" }}
           textShadow="1px 1px 4px rgba(0,0,0,0.8)"
           fontWeight="medium"
+          px={{ base: 2, md: 0 }}
         >
           {hero.description}
         </Text>
-      <Grid justifyContent="center">
-            <ButtonGroup 
-              spacing={{ base: 4, md: 8 }}
-              flexDirection={{ base: "row", sm: "row" }}
-              
-              alignItems="center"
-             
+        <Grid justifyContent="center" width="100%" pt={{ base: 2, md: 3 }}>
+          <ButtonGroup 
+            spacing={{ base: 3, sm: 4, md: 6 }}
+            flexDirection={{ base: "column", sm: "row" }}
+            alignItems="center"
+            width={{ base: "100%", sm: "auto" }}
+            px={{ base: 4, sm: 0 }}
+          >
+            <Button
+              as={Link}
+              href="/events"
+              bg='var(--clr-primary-1)'
+              color='black'
+              transform="translateY(0)"
+              boxShadow="0 4px 15px rgba(0,0,0,0.3)"
+              _hover={{
+                textDecoration: "none",
+                bg: "var(--clr-primary-1)",
+                color: "black",
+                transform: "translateY(-2px)",
+                boxShadow: "0 6px 20px rgba(0,0,0,0.4)"
+              }}
+              _active={{
+                transform: "translateY(0)",
+              }}
+              rounded="full"
+              size={{ base: "md", md: "lg" }}
+              px={{ base: 6, md: 8 }}
+              py={{ base: 5, md: 6 }}
+              fontSize={{ base: "sm", md: "md" }}
+              fontWeight="semibold"
+              variant="solid"
+              transition="all 0.2s ease"
+              width={{ base: "100%", sm: "auto" }}
+              minW={{ base: "full", sm: "180px", md: "200px" }}
             >
-              <Button
-                as={Link}
-                href="/events"
-                bg='var(--clr-primary-1)'
-                color='black'
-                transform="translateY(-2px)"
-                boxShadow="0 8px 25px rgba(0,0,0,0.3)"
-                _hover={{
-                  textDecoration: "none",
-                  bg: "var(--clr-primary-1)",
-                  color: "black",
-                  transform: "translateY(-2px)",
-                  boxShadow: "0 8px 25px rgba(0,0,0,0.3)"
-                }}
-                rounded="full"
-                size={{ base: "md", md: "md" }}
-                variant="outline"
-                backdropFilter="blur(8px)"
-                transition="all 0.3s ease"
-                width={{ base: "full", sm: "auto" }}
-                minW={{ base: "200px", sm: "auto" }}
-              >
               More Information
-               <FiChevronRight style={{ marginLeft: '8px' }} />
-              </Button>
-              <Button
-                as={Link}
-                href="/bookings"
-                bg='var(--clr-primary-1)'
-                color='black'
-                transform="translateY(-2px)"
-                boxShadow="0 8px 25px rgba(0,0,0,0.3)"
-                _hover={{
-                  textDecoration: "none",
-                  bg: "var(--clr-primary-1)",
-                  color: "black",
-                  transform: "translateY(-2px)",
-                  boxShadow: "0 8px 25px rgba(0,0,0,0.3)"
-                }}
-                rounded="full"
-                size={{ base: "md", md: "md" }}
-                variant="outline"
-                backdropFilter="blur(8px)"
-                transition="all 0.3s ease"
-                width={{ base: "full", sm: "auto" }}
-                minW={{ base: "200px", sm: "auto" }}
-              >
-               Reserve Now
-               <FiChevronRight style={{ marginLeft: '8px' }} />
-              </Button>
-            </ButtonGroup>
-          </Grid>
-          </VStack>
+              <FiChevronRight style={{ marginLeft: '6px' }} />
+            </Button>
+            <Button
+              as={Link}
+              href="/bookings"
+              bg='var(--clr-primary-1)'
+              color='black'
+              transform="translateY(0)"
+              boxShadow="0 4px 15px rgba(0,0,0,0.3)"
+              _hover={{
+                textDecoration: "none",
+                bg: "var(--clr-primary-1)",
+                color: "black",
+                transform: "translateY(-2px)",
+                boxShadow: "0 6px 20px rgba(0,0,0,0.4)"
+              }}
+              _active={{
+                transform: "translateY(0)",
+              }}
+              rounded="full"
+              size={{ base: "md", md: "lg" }}
+              px={{ base: 6, md: 8 }}
+              py={{ base: 5, md: 6 }}
+              fontSize={{ base: "sm", md: "md" }}
+              fontWeight="semibold"
+              variant="solid"
+              transition="all 0.2s ease"
+              width={{ base: "100%", sm: "auto" }}
+              minW={{ base: "full", sm: "180px", md: "200px" }}
+            >
+              Reserve Now
+              <FiChevronRight style={{ marginLeft: '6px' }} />
+            </Button>
+          </ButtonGroup>
+        </Grid>
+      </VStack>
     </motion.div>
   );
 });
 
 HeroContent.displayName = 'HeroContent';
 
-// Memoized indicator dots
+// Optimized indicator dots
 const CarouselIndicators = React.memo(({ total, current, onDotClick }) => (
   <HStack
     position="absolute"
-    bottom="20px"
+    bottom={{ base: "15px", md: "20px" }}
     left="50%"
     transform="translateX(-50%)"
     zIndex={4}
-    spacing={3}
+    spacing={{ base: 2, md: 3 }}
   >
     {Array.from({ length: total }).map((_, index) => (
       <Box
         key={`indicator-${index}`}
         as="button"
-        w={current === index ? "32px" : "12px"}
-        h="12px"
+        w={current === index ? { base: "24px", md: "32px" } : { base: "10px", md: "12px" }}
+        h={{ base: "10px", md: "12px" }}
         borderRadius="full"
         bg={current === index ? "white" : "whiteAlpha.500"}
         transition="all 0.3s ease"
@@ -249,6 +264,9 @@ const CarouselIndicators = React.memo(({ total, current, onDotClick }) => (
         _hover={{
           bg: current === index ? "white" : "whiteAlpha.700",
           transform: "scale(1.1)"
+        }}
+        _active={{
+          transform: "scale(0.95)"
         }}
         aria-label={`Go to slide ${index + 1}`}
       />
@@ -264,11 +282,12 @@ const BookingHero = () => {
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
   const intervalRef = useRef(null);
+  const shouldReduceMotion = useReducedMotion();
 
-  // Memoize current hero to prevent unnecessary re-renders
+  // Memoize current hero
   const currentHero = useMemo(() => heroData[currentIndex], [currentIndex]);
 
-  // Navigation functions with useCallback for performance
+  // Navigation functions
   const goToNext = useCallback(() => {
     setCurrentIndex((prev) => (prev + 1) % heroData.length);
   }, []);
@@ -279,11 +298,13 @@ const BookingHero = () => {
 
   const goToSlide = useCallback((index) => {
     setCurrentIndex(index);
+    setIsAutoPlaying(true);
   }, []);
 
-  // Touch handlers for mobile swipe
+  // Optimized touch handlers with debouncing
   const handleTouchStart = useCallback((e) => {
     setTouchStart(e.targetTouches[0].clientX);
+    setTouchEnd(0);
   }, []);
 
   const handleTouchMove = useCallback((e) => {
@@ -294,25 +315,33 @@ const BookingHero = () => {
     if (!touchStart || !touchEnd) return;
     
     const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > 50;
-    const isRightSwipe = distance < -50;
-
-    if (isLeftSwipe) goToNext();
-    if (isRightSwipe) goToPrev();
+    const minSwipeDistance = 50;
+    
+    if (Math.abs(distance) > minSwipeDistance) {
+      if (distance > 0) {
+        goToNext();
+      } else {
+        goToPrev();
+      }
+    }
+    
+    setTouchStart(0);
+    setTouchEnd(0);
   }, [touchStart, touchEnd, goToNext, goToPrev]);
 
-  // Auto-play functionality
+  // Auto-play with cleanup
   useEffect(() => {
     if (isAutoPlaying) {
       intervalRef.current = setInterval(goToNext, 5000);
-    } else {
-      clearInterval(intervalRef.current);
     }
-
-    return () => clearInterval(intervalRef.current);
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
   }, [isAutoPlaying, goToNext]);
 
-  // Pause auto-play on hover/focus
+  // Hover handlers
   const handleMouseEnter = useCallback(() => {
     setIsAutoPlaying(false);
   }, []);
@@ -324,19 +353,37 @@ const BookingHero = () => {
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (e.key === 'ArrowLeft') goToPrev();
-      if (e.key === 'ArrowRight') goToNext();
-      if (e.key === 'Escape') setIsAutoPlaying(!isAutoPlaying);
+      if (e.key === 'ArrowLeft') {
+        goToPrev();
+        setIsAutoPlaying(false);
+      }
+      if (e.key === 'ArrowRight') {
+        goToNext();
+        setIsAutoPlaying(false);
+      }
+      if (e.key === ' ') {
+        e.preventDefault();
+        setIsAutoPlaying(prev => !prev);
+      }
     };
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [goToNext, goToPrev, isAutoPlaying]);
+  }, [goToNext, goToPrev]);
+
+  // Preload next image for performance
+  useEffect(() => {
+    const nextIndex = (currentIndex + 1) % heroData.length;
+    const img = new window.Image();
+    img.src = heroData[nextIndex].bgImage;
+  }, [currentIndex]);
 
   return (
     <Box
       position="relative"
-      height={{base: '600px', md: "80vh", lg: "80vh" }}
+      height={{ base: '500px', sm: '600px', md: "70vh", lg: "80vh" }}
+      minHeight={{ base: '500px', md: '600px' }}
+      maxHeight={{ base: '800px', md: '900px' }}
       width="100%"
       overflow="hidden"
       onMouseEnter={handleMouseEnter}
@@ -347,46 +394,86 @@ const BookingHero = () => {
       role="region"
       aria-label="Hero carousel"
       aria-live="polite"
+      sx={{
+        WebkitTapHighlightColor: 'transparent',
+      }}
     >
-      {/* Background Images */}
-      <Box position="relative" height="80%" width="100%">
+      {/* Background Images Container */}
+      <Box 
+        position="absolute" 
+        top={0}
+        left={0}
+        right={0}
+        bottom={0}
+        width="100%" 
+        height="100%"
+      >
         <AnimatePresence mode="wait">
           <HeroSlide
             hero={currentHero}
-            isActive={true}
+            shouldReduceMotion={shouldReduceMotion}
           />
         </AnimatePresence>
       </Box>
 
-      {/* Gradient Overlay */}
-      <Box
-        position="absolute"
-        height='80%'
-        inset={0}
-        background="linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.8) 100%)"
-        zIndex={2}
-        pointerEvents="none"
-      />
+      {/* Gradient Overlay - Synced with slides */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={`gradient-${currentHero.id}`}
+          initial={{ opacity: 0 }}
+          animate={{ 
+            opacity: 1,
+            transition: { 
+              duration: shouldReduceMotion ? 0.3 : 0.7, 
+              ease: [0.25, 0.46, 0.45, 0.94]
+            }
+          }}
+          exit={{ 
+            opacity: 0,
+            transition: { 
+              duration: shouldReduceMotion ? 0.3 : 0.5, 
+              ease: [0.25, 0.46, 0.45, 0.94]
+            }
+          }}
+          style={{
+            position: "absolute",
+            inset: 0,
+            background: "linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.75) 100%)",
+            zIndex: 2,
+            pointerEvents: "none",
+            willChange: 'opacity'
+          }}
+        />
+      </AnimatePresence>
 
       {/* Content */}
       <VStack
         position="absolute"
-        top={0} // Changed from undefined to 0
+        top={0}
+        left={0}
+        right={0}
+        bottom={0}
         height="100%"
         width="100%"
         justifyContent="center"
         alignItems="center"
-        spacing={6}
-        px={{ base: 4, md: 8 }}
+        spacing={{ base: 4, md: 6 }}
+        px={{ base: 3, sm: 4, md: 6, lg: 8 }}
+        py={{ base: 4, md: 6 }}
         textAlign="center"
-        zIndex={3} // Added explicit z-index higher than gradient
+        zIndex={3}
       >
         <AnimatePresence mode="wait">
-          <HeroContent hero={currentHero} />
+          <HeroContent hero={currentHero} shouldReduceMotion={shouldReduceMotion} />
         </AnimatePresence>
       </VStack>
 
-    
+      {/* Carousel Indicators */}
+      <CarouselIndicators 
+        total={heroData.length} 
+        current={currentIndex} 
+        onDotClick={goToSlide}
+      />
     </Box>
   );
 };
