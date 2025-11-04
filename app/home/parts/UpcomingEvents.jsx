@@ -52,9 +52,9 @@ export const UpcomingEvents = () => (
                     fallback={<Skeleton />}
                     rounded={{ base: '10', sm: '0' }}
                     roundedLeft={{ sm: '10' }}
-                    h={{ base: '200px', sm: '300px', md: '350px', lg: '450px' }}
+                    h={{ base: '200px', sm: '300px', md: '350px', lg: '550px' }}
                     w={{ base: '100%', sm: '50%' }}
-                   
+                   objectFit='cover'
                     _hover={{ 
                        
                         boxShadow: 'xl' 
@@ -66,9 +66,9 @@ export const UpcomingEvents = () => (
                     alt="African Simba"
                     fallback={<Skeleton />}
                     roundedRight="10"
-                    h={{ sm: '300px', md: '350px', lg: '450px' }}
+                    h={{ sm: '300px', md: '350px', lg: '550px' }}
                     w={{ sm: '50%' }}
-                   
+                    objectFit='cover'
                     _hover={{ 
                        
                         boxShadow: 'xl' 
