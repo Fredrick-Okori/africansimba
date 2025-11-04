@@ -4,6 +4,8 @@ import { ChakraProvider } from '@chakra-ui/react'
 
 
 import {Merriweather} from 'next/font/google'
+import { Overpass } from 'next/font/google'
+
 
 import './globals.css'
 
@@ -30,6 +32,13 @@ export const metadata = {
 };
 
 
+const overpass = Overpass({
+    subsets: ['latin'],
+  weight: ['400', '700'],
+  display: 'swap',
+  variable: '--font-nomotrust',
+})
+
 const marriweather = Merriweather({
     subsets: ['cyrillic', 'vietnamese', 'cyrillic-ext', 'latin', 'latin-ext'],
   weight: ['300', '400', '700', '900'],
@@ -53,7 +62,7 @@ export default function RootLayout({ children }) {
       <body>
         <ChakraProvider>
           <NavBar />
-          <main className={marriweather.className}>
+          <main className={overpass.className}>
             {children}
           </main>     
          

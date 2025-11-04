@@ -4,7 +4,8 @@ import { Box } from '@chakra-ui/react';
 import NavBar from '../components/NavBar';
 import HeroSection from './parts/Hero';
 import EventSchedule from './parts/EventsSchedule';
-import UpcomingEvents from './parts/UpcomingEvents';
+
+import { UpcomingEvents } from './parts/UpcomingEvents';
 
 import ProductCarousel from './parts/Programs';
 import BackgroundCarousel from './parts/BackgroundCarousel';
@@ -34,7 +35,7 @@ const Home = () => {
                     {/* <HeroSection /> */}
                     <VideoBanner />
                     <EventSchedule />
-                    {/* <UpcomingEvents /> */}
+                   <UpcomingEvents/>
                
                     <ProductCarousel />
                     <PartnerSection />   
