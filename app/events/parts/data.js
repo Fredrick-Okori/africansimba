@@ -1,11 +1,5 @@
 export const events = [
-    {
-        id: 0,
-        name: "La Cueva Mondays",
-        image: "/haul/queva.webp",
-        host: "La Cueva, Bukoto-Ntinda Rd",
-
-    },
+ 
     
     {
         id: 1,

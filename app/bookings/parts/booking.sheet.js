@@ -10,16 +10,16 @@ import { FiChevronRight } from 'react-icons/fi';
 const ticket = [
     {
         id: 1,
-        title: 'Premium bottle Race',
+        title: 'Ordinary Table',
         description: 'Reserve a table.',
-        price: ' ',
+        price: 'UGX: 250K + ',
         image: '/images/eventposter.jpg'
     },
   
     {
         id: 3,
-        title: 'The Baller Package',
-        description: 'VIP seat 500k  + Premium Bottle race - Ordinary 250K+',
+        title: 'VIP Table',
+        description: 'UGX: 500K +',
         price: 'UGX: 500K',
         image: '/images/eventposter.jpg'
     },
