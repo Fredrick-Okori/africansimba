@@ -17,16 +17,7 @@ import Link from 'next/link';
 export default function EventsHero() {
  // Weekly programs data - UPDATED with bookingLink
 const weeklyPrograms = [
-    {
-        day: "19",
-        dayName: "MONDAY",
-        event: "CUEVA MONDAYS",
-        venue: "La Cueva Lounge",
-        location: "Bukoto-Ntinda Rd",
-        genre: "HipHop, RnB, Afrobeats",
-        description: "The Ultimate Week Starter Party",
-        bookingLink: "https://kayetickets.com/event/queva-mondays" // ADDED booking link
-    },
+
     {
         day: "20",
         dayName: "WEDNESDAY",
