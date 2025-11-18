@@ -104,17 +104,7 @@ const teamMembers = [
         specialties: ['Guest Relations', 'Hospitality', 'Customer Service'],
         social: { instagram: '@sheilah', twitter: '@sheilah' }
     },
-   
-    {
-        id: 'hannah-tewodross',
-        name: 'Hannah Tewodross',
-        position: 'Co-Host',    
-        imageUrl: '/teams/hanah.webp',
-        bio: 'Professional hostess providing exceptional guest welcome and hospitality services.',
-        experience: '2+ years',
-        specialties: ['Guest Relations', 'Hospitality', 'Customer Service'],
-        social: { instagram: '@hannah_tew', twitter: '@hannah' }
-    },
+
     {
         id: 'tracy-belaire',
         name: 'Tracy Belaire',
