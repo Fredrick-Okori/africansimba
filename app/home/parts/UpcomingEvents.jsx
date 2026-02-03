@@ -29,7 +29,7 @@ export const UpcomingEvents = () => (
             color="var(--clr-primary-1)"
             px={{ base: 2, md: 0 }}
         >
-            Upcoming Event
+            Upcoming Event: 
         </Text>
         
         <Stack 
@@ -47,7 +47,7 @@ export const UpcomingEvents = () => (
                 w="100%"
             >
                 <Image
-                    src="/haul/340805-Ibiza-Island.webp"
+                    src="/events/945757f.avif"
                     alt="Lovely Image"
                     fallback={<Skeleton />}
                     rounded={{ base: '10', sm: '0' }}
@@ -62,7 +62,7 @@ export const UpcomingEvents = () => (
                 />
                 <Image
                     display={{ base: 'none', sm: 'block' }}
-                    src="/haul/ibiza.webp"
+                    src="/events/823535s.avif"
                     alt="African Simba"
                     fallback={<Skeleton />}
                     roundedRight="10"
@@ -98,10 +98,11 @@ export const UpcomingEvents = () => (
                             fontSize={{ base: 'xl', sm: '2xl', md: '3xl' }} 
                             fontWeight="bold" 
                             color="var(--clr-primary-1)" 
-                            mb={{ base: 2, md: 3 }}
+                           
                         >
-                            Ibiza Experience 2025
+                            THE MAFIAS BRUNCH 
                         </Text>
+                   
                         
                         <Text 
                             fontSize={{ base: 'sm', md: 'md' }}
@@ -120,13 +121,15 @@ export const UpcomingEvents = () => (
                             fontWeight="normal" 
                             color='var(--clr-primary-1)'
                         >
-                            <Text as="span" fontWeight="semibold">Date:</Text> 8th November 2025
+                            <Text as="span" fontWeight="semibold">Date:</Text>15TH FEBRUARY 2026
                         </Text>
                     </Stack>
                     
                     <Box w={{ base: '100%', md: 'auto' }}>
                         <Button 
                             as={Link}
+                            href="https://kayetickets.com/"
+                            target="_blank"
                             size={{ base: 'md', md: 'lg' }}
                             w={{ base: '100%', sm: 'auto' }}
                             _hover={{
@@ -134,15 +137,15 @@ export const UpcomingEvents = () => (
                                                     bg: "var(--clr-primary-1)",
                                                     color: "black",
                                                 }}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
+                                                
+                                             referrerPolicy='no-referrer'
                                                 rounded="full"
                                                 variant="outline"
                                                 
                                                 padding={2}
                                                 color="var(--clr-primary-1)"
                         >
-                            Book Now
+                            BUY TICKETS NOW
                             <FiChevronRight style={{ marginLeft: '8px' }} />
                         </Button>
                     </Box>

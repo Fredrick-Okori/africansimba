@@ -29,15 +29,6 @@ const weeklyPrograms = [
         bookingLink: "https://kayetickets.com/event/wahala-wednesdays" // ADDED booking link
     },
     {
-        day: "21", 
-        dayName: "THURSDAY",
-        event: "BLOWOUT THURSDAYS",
-        venue: "Catwalk Lounge",
-        location: "Kololo",
-        description: "Crazy but Premium vibes",
-        bookingLink: "https://kayetickets.com/event/blowout-thursday" // ADDED booking link
-    },
-    {
         day: "22",
         dayName: "FRIDAY",
         event: "SWIFT FRIDAYS",
