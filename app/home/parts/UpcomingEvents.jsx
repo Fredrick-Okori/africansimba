@@ -1,9 +1,6 @@
 import {
     Box,
     Flex,
-    Heading,
-    HStack,
-    Icon,
     Image,
     Link,
     Skeleton,
@@ -12,7 +9,7 @@ import {
     Button,
     VStack,
 } from '@chakra-ui/react'
-import { FiChevronRight, FiExternalLink } from 'react-icons/fi'
+import { FiChevronRight } from 'react-icons/fi'
 
 export const UpcomingEvents = () => (
     <Box 

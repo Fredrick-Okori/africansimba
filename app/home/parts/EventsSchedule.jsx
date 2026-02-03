@@ -5,7 +5,7 @@ import { Box, Container, Stack, Text, HStack, Flex, Button, useBreakpointValue }
 import Counter from './Counter'
 
 import Link from 'next/link';
-import { FiChevronRight, FiExternalLink } from'react-icons/fi';
+import { FiChevronRight } from'react-icons/fi';
 
 
 

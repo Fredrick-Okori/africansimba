@@ -1,7 +1,6 @@
 
 import React, { Suspense } from 'react';
 import { Box } from '@chakra-ui/react';
-import NavBar from '../components/NavBar';
 import HeroSection from './parts/Hero';
 import EventSchedule from './parts/EventsSchedule';
 
@@ -11,8 +10,6 @@ import ProductCarousel from './parts/Programs';
 import BackgroundCarousel from './parts/BackgroundCarousel';
 import FloatingVideoSection from '../components/YouTubeLive';
 import VideoBanner from './parts/VideoBanner';
-
-import Link from 'next/link';
 
 import PartnerSection from '../components/sponsors';
 import Footer from '../components/Footer';

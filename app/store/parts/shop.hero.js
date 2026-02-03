@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Button, Grid, Link, Text, Image, Box, ButtonGroup } from '@chakra-ui/react';
+import { Container, Text, Image, Box } from '@chakra-ui/react';
 
 export default function StoreHeroSection() {
     return (

@@ -8,10 +8,9 @@ import {
     VStack, 
     HStack, 
     ButtonGroup,
-    Button,
-    useColorModeValue
+    Button
 } from '@chakra-ui/react';
-import { FiPhone, FiGlobe, FiArrowRight, FiMapPin, FiInfo, FiChevronRight } from 'react-icons/fi';
+import { FiArrowRight, FiMapPin, FiChevronRight } from 'react-icons/fi';
 import Link from 'next/link';
 
 export default function EventsHero() {

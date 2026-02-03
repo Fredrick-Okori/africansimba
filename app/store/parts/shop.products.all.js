@@ -2,7 +2,6 @@
 import React from 'react';
 import { Box, Container, Text, Image, Button, VStack, Flex, HStack, Grid, useBreakpointValue } from '@chakra-ui/react';
 import { Link } from 'next/link';
-import { FiExternalLink } from 'react-icons/fi';
 
 const ROUTE_POST_ID = 'store/[id]';
 

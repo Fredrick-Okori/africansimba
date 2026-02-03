@@ -1,5 +1,5 @@
 
-import { Text, Box } from "@chakra-ui/react"
+import { Box } from "@chakra-ui/react"
 import BackgroundCarousel from "../home/parts/BackgroundCarousel"
 import BookingHero from "./parts/booking.hero"
 import CreateBooking from "./parts/booking.sheet"

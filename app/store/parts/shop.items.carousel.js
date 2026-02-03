@@ -3,8 +3,7 @@ import React from 'react';
 import { Box, Container, Text, Image, Button, VStack, Flex, useBreakpointValue } from '@chakra-ui/react';
 import Carousel from 'react-multi-carousel';
 import "react-multi-carousel/lib/styles.css";
-import Link from 'next/link'; // Use Next.js Link
-import { FiExternalLink } from 'react-icons/fi';
+import Link from 'next/link';
 
 
 const ROUTE_POST_ID = 'store/[id]';

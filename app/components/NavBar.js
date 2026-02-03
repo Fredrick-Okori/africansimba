@@ -28,7 +28,7 @@ import Image from 'next/image';
 import { Suspense } from 'react';
 
 
-import { FiArrowRight, FiMenu, FiActivity, FiMessageCircle, FiUsers, FiShoppingCart, FiHome, FiImage, FiChevronRight } from 'react-icons/fi'
+import { FiMenu, FiActivity, FiMessageCircle, FiUsers, FiShoppingCart, FiHome, FiImage, FiChevronRight } from 'react-icons/fi'
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation';

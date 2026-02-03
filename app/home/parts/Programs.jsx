@@ -3,7 +3,7 @@ import React from 'react';
 import { Box, Container, Text, Image, Button, VStack, Flex, HStack, useBreakpointValue } from '@chakra-ui/react';
 import Carousel from 'react-multi-carousel';
 import "react-multi-carousel/lib/styles.css";
-import { FiExternalLink, FiChevronRight } from 'react-icons/fi';
+import { FiChevronRight } from 'react-icons/fi';
 import Link from 'next/link';
 
 const products = [

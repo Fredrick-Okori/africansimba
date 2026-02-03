@@ -1,7 +1,5 @@
 'use client'
-import { Box, Flex, Divider, AbsoluteCenter, Text, Link, Image, Container, VStack, SimpleGrid } from '@chakra-ui/react';
-import { FiFacebook, FiInstagram, FiTwitter, FiYoutube } from 'react-icons/fi';
-import { useSearchParams, useRouter } from 'next/navigation'; // Changed import statement
+import { Box, Flex, Text, Link, Container } from '@chakra-ui/react';
 
 
 

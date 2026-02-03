@@ -1,9 +1,6 @@
 'use client'
-import { Box, Flex, Divider, AbsoluteCenter, Text, Link, Image, Container, VStack, SimpleGrid } from '@chakra-ui/react';
-import { FiFacebook, FiInstagram, FiTwitter, FiYoutube } from 'react-icons/fi';
-import { useSearchParams, useRouter } from 'next/navigation'; // Changed import statement
-
-import { Suspense, lazy } from 'react';
+import { Box, Flex, Text, Link, Container } from '@chakra-ui/react';
+import { Suspense } from 'react';
 
 const DarkFooter = () => {
     const currentYear = new Date().getFullYear();
