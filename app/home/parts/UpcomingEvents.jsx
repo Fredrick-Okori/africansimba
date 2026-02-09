@@ -97,7 +97,7 @@ export const UpcomingEvents = () => (
                             color="var(--clr-primary-1)" 
                            
                         >
-                            THE MAFIAS BRUNCH 
+                            THE ECLIPSE BRUNCH 
                         </Text>
                    
                         
@@ -107,9 +107,9 @@ export const UpcomingEvents = () => (
                             fontWeight="normal" 
                             color='var(--clr-primary-1)'
                         >
-                            <Text as="span" fontWeight="semibold">Featured Artists:</Text><br/>
-                            Lil Stunner, Dj Denzel, Yankee the DJ, DJ Slick Stuart, 
-                            Dj Wizzy 256 & Selecta Ryan, Galva DJ, Selecta Jeff
+                            <Text as="span" fontWeight="semibold">More details:</Text><br/>
+                           Entry per person comes with Entry and cocktail snacks, Table of 4 comes with Don Julio bottle + platter,
+                           and Table of 8 comes with Don Julio 1942 + platter
                         </Text>
                         
                         <Text 
@@ -142,7 +142,53 @@ export const UpcomingEvents = () => (
                                                 padding={2}
                                                 color="var(--clr-primary-1)"
                         >
-                            BUY TICKETS NOW
+                            ENTRY LEVEL: UGX(100,000)
+                            <FiChevronRight style={{ marginLeft: '8px' }} />
+                        </Button>
+                         <Button 
+                            as={Link}
+                            href="https://kayetickets.com/"
+                            target="_blank"
+                            size={{ base: 'md', md: 'lg' }}
+                            w={{ base: '100%', sm: 'auto' }}
+                            mt={4}
+                            _hover={{
+                                                    textDecoration: "none",
+                                                    bg: "var(--clr-primary-1)",
+                                                    color: "black",
+                                                }}
+                                                
+                                             referrerPolicy='no-referrer'
+                                                rounded="full"
+                                                variant="outline"
+                                                
+                                                padding={2}
+                                                color="var(--clr-primary-1)"
+                        >
+                            TABLE OF 4: UGX(1,200,000)
+                            <FiChevronRight style={{ marginLeft: '8px' }} />
+                        </Button>
+                           <Button 
+                            as={Link}
+                            href="https://kayetickets.com/"
+                            target="_blank"
+                            size={{ base: 'md', md: 'lg' }}
+                            w={{ base: '100%', sm: 'auto' }}
+                            mt={4}
+                            _hover={{
+                                                    textDecoration: "none",
+                                                    bg: "var(--clr-primary-1)",
+                                                    color: "black",
+                                                }}
+                                                
+                                             referrerPolicy='no-referrer'
+                                                rounded="full"
+                                                variant="outline"
+                                                
+                                                padding={2}
+                                                color="var(--clr-primary-1)"
+                        >
+                            TABLE OF 8: UGX(2,400,000)
                             <FiChevronRight style={{ marginLeft: '8px' }} />
                         </Button>
                     </Box>
