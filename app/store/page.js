@@ -3,7 +3,7 @@ import React, { Suspense } from 'react'
 
 import { Box } from '@chakra-ui/react'
 
-import ShopHeroSection from './parts/shop.hero'
+import StoreHeroSection from './parts/shop.hero'
 import ShopItems from './parts/shop.items.carousel'
 import ProductCategoryNav from './parts/products.category'
 import FullStore from './parts/shop.products.all'
