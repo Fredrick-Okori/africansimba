@@ -118,7 +118,7 @@ export const UpcomingEvents = () => (
                             fontWeight="normal" 
                             color='var(--clr-primary-1)'
                         >
-                            <Text as="span" fontWeight="semibold">Date:</Text>15TH FEBRUARY 2026
+                            <Text as="span" fontWeight="semibold">Date:</Text> COMING SOON
                         </Text>
                     </Stack>
                     
@@ -142,53 +142,7 @@ export const UpcomingEvents = () => (
                                                 padding={2}
                                                 color="var(--clr-primary-1)"
                         >
-                            ENTRY LEVEL: UGX(100,000)
-                            <FiChevronRight style={{ marginLeft: '8px' }} />
-                        </Button>
-                         <Button 
-                            as={Link}
-                            href="https://kayetickets.com/"
-                            target="_blank"
-                            size={{ base: 'md', md: 'lg' }}
-                            w={{ base: '100%', sm: 'auto' }}
-                            mt={4}
-                            _hover={{
-                                                    textDecoration: "none",
-                                                    bg: "var(--clr-primary-1)",
-                                                    color: "black",
-                                                }}
-                                                
-                                             referrerPolicy='no-referrer'
-                                                rounded="full"
-                                                variant="outline"
-                                                
-                                                padding={2}
-                                                color="var(--clr-primary-1)"
-                        >
-                            TABLE OF 4: UGX(1,200,000)
-                            <FiChevronRight style={{ marginLeft: '8px' }} />
-                        </Button>
-                           <Button 
-                            as={Link}
-                            href="https://kayetickets.com/"
-                            target="_blank"
-                            size={{ base: 'md', md: 'lg' }}
-                            w={{ base: '100%', sm: 'auto' }}
-                            mt={4}
-                            _hover={{
-                                                    textDecoration: "none",
-                                                    bg: "var(--clr-primary-1)",
-                                                    color: "black",
-                                                }}
-                                                
-                                             referrerPolicy='no-referrer'
-                                                rounded="full"
-                                                variant="outline"
-                                                
-                                                padding={2}
-                                                color="var(--clr-primary-1)"
-                        >
-                            TABLE OF 8: UGX(2,400,000)
+                            GET TICKETS
                             <FiChevronRight style={{ marginLeft: '8px' }} />
                         </Button>
                     </Box>

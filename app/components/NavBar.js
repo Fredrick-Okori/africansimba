@@ -65,25 +65,25 @@ const NavBar = () => {
 
                         <Flex display={{ base: 'none', md: 'flex' }} alignItems={'center'}>
                             <Stack direction={'row'} spacing={7}>
-                                <Link href="/home" onClose={onClose} fontSize='12px' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/home' ? '#df42b1' : 'white'} onClick={() => setSelectedMenu('/home')}>
+                                <Link href="/home" onClose={onClose} fontSize='12px' _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/home' ? '#df42b1' : 'white'} onClick={() => setSelectedMenu('/home')} textTransform="uppercase">
                                     Home
                                 </Link>
-                                <Link href='/events' onClose={onClose} _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/stream' ? '#df42b1' : 'white'} onClick={() => setSelectedMenu('/stream')}>
+                                <Link href='/events' onClose={onClose} _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/stream' ? '#df42b1' : 'white'} onClick={() => setSelectedMenu('/stream')} textTransform="uppercase">
                                     Events
                                 </Link>
                             
-                                <Link href='/bookings' onClose={onClose} _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/bookings' ? '#df42b1' : 'white'} onClick={() => setSelectedMenu('/bookings')}>
+                                <Link href='/bookings' onClose={onClose} _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/bookings' ? '#df42b1' : 'white'} onClick={() => setSelectedMenu('/bookings')} textTransform="uppercase">
                                     Tickets
                                 </Link>
-                                <Link href='/about' onClose={onClose} _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/about' ? '#df42b1' : 'white'} onClick={() => setSelectedMenu('/about')}>
+                                <Link href='/about' onClose={onClose} _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/about' ? '#df42b1' : 'white'} onClick={() => setSelectedMenu('/about')} textTransform="uppercase">
                                     About
                                 </Link>
-                                <Link href='/contact-us' onClose={onClose} _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/contact' ? '#df42b1' : 'white'} onClick={() => setSelectedMenu('/contact')}>
+                                <Link href='/contact-us' onClose={onClose} _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/contact' ? '#df42b1' : 'white'} onClick={() => setSelectedMenu('/contact')} textTransform="uppercase">
                                     Contact
                                 </Link>
-                                <Link href='/gallery' onClose={onClose} _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/store' ? '#df42b1' : 'white'} onClick={() => setSelectedMenu('/store')}>
+                                <Link href='/gallery' onClose={onClose} _hover={{ textDecoration: 'none', color: '#df42b1' }} color={selectedMenu === '/store' ? '#df42b1' : 'white'} onClick={() => setSelectedMenu('/store')} textTransform="uppercase">
                                     Gallery
-                                </Link> 
+                                </Link>
 
                               
  <Button 
@@ -182,39 +182,39 @@ const MobileNav = ({ onClose }) => {
                 <Link href="/home" _hover={{ color: "purple.200" }} w="100%" onClick={handleLinkClick}>
                     <Flex align="center">
                         <Icon as={FiHome} boxSize={5} mr={3} />
-                        <Text>Home</Text>
+                        <Text textTransform="uppercase">Home</Text>
                     </Flex>
                 </Link>
 
                 <Link href="/events" _hover={{ color: "purple.200" }} w="100%" onClick={handleLinkClick}>
                     <Flex align="center">
                         <Icon as={FiActivity} boxSize={5} mr={3} />
-                        <Text>Events</Text>
+                        <Text textTransform="uppercase">Events</Text>
                     </Flex>
                 </Link>
                 <Link href="/bookings" _hover={{ color: "purple.200" }} w="100%" onClick={handleLinkClick}>
                     <Flex align="center">
                         <Icon as={FiChevronRight} boxSize={5} mr={3} />
-                        <Text>Tickets</Text>
+                        <Text textTransform="uppercase">Tickets</Text>
                     </Flex>
                 </Link>
                 <Link href="/about" _hover={{ color: "purple.200" }} w="100%" onClick={handleLinkClick}>
                     <Flex align="center">
                         <Icon as={FiUsers} boxSize={5} mr={3} />
-                        <Text>About Us</Text>
+                        <Text textTransform="uppercase">About Us</Text>
                     </Flex>
                 </Link>
                 <Link href="/contact-us" _hover={{ color: "purple.200" }} w="100%" onClick={handleLinkClick}>
                     <Flex align="center">
                         <Icon as={FiMessageCircle} boxSize={5} mr={3} />
-                        <Text>Contact Us</Text>
+                        <Text textTransform="uppercase">Contact Us</Text>
                     </Flex>
                 </Link>
 
                 <Link href="/gallery" _hover={{ color: "purple.200" }} w="100%" onClick={handleLinkClick}>
                     <Flex align="center">
                         <Icon as={FiImage} boxSize={5} mr={3} />
-                        <Text>Gallery</Text>
+                        <Text textTransform="uppercase">Gallery</Text>
                     </Flex>
                 </Link>
 
@@ -222,7 +222,7 @@ const MobileNav = ({ onClose }) => {
                     <Link href="/cart" _hover={{ color: "purple.200" }} w="100%" onClick={handleLinkClick}>
                         <Flex align="center">
                             <Icon as={FiShoppingCart} boxSize={5} mr={3} />
-                            <Text>Cart</Text>
+                            <Text textTransform="uppercase">Cart</Text>
                         </Flex>
                     </Link>
                 )}

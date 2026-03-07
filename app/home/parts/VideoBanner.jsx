@@ -1,4 +1,6 @@
-import React from "react";
+"use client"
+
+import React, { useState, useEffect } from "react";
 import {
   Container,
   Button,
@@ -7,56 +9,129 @@ import {
   Text,
   Box,
   ButtonGroup,
+  IconButton,
 } from "@chakra-ui/react";
 import Image from "next/image";
-import { FiChevronRight } from "react-icons/fi";
+import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
+
+const carouselImages = [
+  "/new/1c51433f-f816-4ff9-9eac-9e49dbd7f66c 3.jpg",
+  "/new/25b0f125-9619-462d-87b3-98bfbe2531b2 3.jpg",
+  "/new/99ed9580-8364-4c1d-8fbb-567d0150345a 3.jpg",
+  "/new/362a6b0c-d42b-4fa6-98d0-0bfcdaa392f7 3.jpg",
+  "/new/382b35f3-f6ee-4992-af96-4d4416399d2f 3.jpg",
+  "/new/d970093c-225e-4df0-84b8-f6aabe748c89 3.jpg",
+];
 
 export default function VideoBanner() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Auto-advance carousel every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === carouselImages.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const goToPrevious = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? carouselImages.length - 1 : prevIndex - 1
+    );
+  };
+
+  const goToNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === carouselImages.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
   return (
     <Container
       maxW="container.2xl"
       position="relative"
       mb={5}
-      p={-10}
+      p={0}
     >
       {/* Hero Image Section */}
-      <Box  position="relative" height={{ base: "400px", md: "600px" }}>
-        {/* Background Image */}
-        <Image
-          src="/haul/red_bg.webp"
-          alt="night club"
-          layout="fill"
-          objectFit="cover"
-           opacity={0.8}
-          priority // Optimized for loading
-          style={{
-            mixBlendMode: "overlay", // Options: multiply, screen, overlay, etc.
-            filter: "brightness(90%)",
-            
-          }}
-        />
+      <Box position="relative" height={{ base: "400px", md: "600px" }}>
+        {/* Carousel Images */}
+        {carouselImages.map((src, index) => (
+          <Box
+            key={index}
+            position="absolute"
+            top="0"
+            left="0"
+            width="100%"
+            height="100%"
+            opacity={index === currentIndex ? 1 : 0}
+            transition="opacity 1s ease-in-out"
+            zIndex={0}
+          >
+            <Image
+              src={src}
+              alt={`Carousel image ${index + 1}`}
+              layout="fill"
+              objectFit="cover"
+              priority={index === 0}
+              style={{
+                mixBlendMode: "overlay",
+                filter: "brightness(90%)",
+              }}
+            />
+          </Box>
+        ))}
 
-        {/* Enhanced Multi-Stop Gradient Overlay */}
+
+
+        {/* Carousel Indicators */}
+        <Box
+          position="absolute"
+          bottom={4}
+          left="50%"
+          transform="translateX(-50%)"
+          zIndex={10}
+          display="flex"
+          gap={2}
+        >
+          {carouselImages.map((_, index) => (
+            <Box
+              key={index}
+              width={index === currentIndex ? "24px" : "8px"}
+              height="8px"
+              borderRadius="full"
+              bg={index === currentIndex ? "var(--clr-primary-3)" : "whiteAlpha.600"}
+              cursor="pointer"
+              onClick={() => setCurrentIndex(index)}
+              transition="all 0.3s ease"
+              _hover={{ bg: "var(--clr-primary-3)" }}
+            />
+          ))}
+        </Box>
+
+        {/* Enhanced Multi-Stop Gradient Overlay - Dark Fade */}
         <Box
           position="absolute"
           bottom="0"
           left="0"
           width="100%"
           height="100%"
-         
-          bgGradient="linear(to-t, rgba(183, 2, 2, 0.2) 0%, rgba(183, 2, 2, 0.2) 30%, rgba(5, 0, 0, 0.3) 60%, transparent 100%)"
+          bgGradient="linear(to-t, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0.3) 70%, rgba(0, 0, 0, 0.1) 100%)"
           zIndex="1"
           borderRadius="20px"
         />
 
-        {/* Optional: Additional Vignette Effect */}
+        {/* Optional: Additional Vignette Effect - Dark */}
         <Box
           position="absolute"
           top="0"
           left="0"
           width="100%"
           height="100%"
-          background="radial-gradient(ellipse at center, transparent 40%, rgba(183, 2, 2, 0.2) 100%)"
+          background="radial-gradient(ellipse at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%)"
           zIndex="1"
           borderRadius="20px"
         />
@@ -163,3 +238,4 @@ export default function VideoBanner() {
     </Container>
   );
 }
+

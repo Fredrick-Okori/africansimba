@@ -54,7 +54,7 @@ const teamMembers = [
         specialties: ['Logistics Management', 'Vendor Relations', 'Quality Control'],
         social: { instagram: '@bivince', twitter: '@bivince' }
     },
-    {
+{
         id: 'delphin-jack',
         name: 'Delphin Jack',
         position: 'Floor Management',  
@@ -65,16 +65,6 @@ const teamMembers = [
         social: { instagram: '@delphin_jack', twitter: '@delphin' }
     },
     {
-        id: 'freeman',
-        name: 'Freeman',
-        position: 'Photographer',  
-        imageUrl: '/team/freeman.jpeg',
-        bio: 'Professional photographer capturing memorable moments and creating stunning visual content.',
-        experience: '3+ years',
-        specialties: ['Event Photography', 'Portrait Photography', 'Visual Documentation'],
-        social: { instagram: '@freeman_photos', twitter: '@freeman' }
-    },
-   {
         id: 'isaac-kanye',
         name: 'Isaac Kanye',
         position: 'Official Videographer',  

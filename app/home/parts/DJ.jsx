@@ -38,7 +38,7 @@ export default function DJS() {
                                 rounded="lg"
                             />
                               <Image
-    src="/haul/simba.webp"
+    src="/new/118c78ad-413a-4f89-bc17-d0e45a225f37 3.jpg"
     alt="Boy B in Uganda"
     quality={60}
     layout="fill" 
@@ -66,7 +66,7 @@ export default function DJS() {
                             />
                             <Image
                                 rounded="lg"
-                                src='/haul/petrie_hero.webp'
+                                src='/new/259dae0b-1683-4004-926c-3b7e6decfb23 3.jpg'
                                 alt='Dj Alisha'
                                 layout="fill" 
                                 objectFit="cover" 
@@ -94,7 +94,7 @@ export default function DJS() {
                             />
                             <Image
                                 rounded="lg"
-                                src='/haul/skales.webp'
+                                src='/new/a26aed34-ae96-4527-a976-3b86364d095e 3.jpg'
                                 alt='Best DJs'
                                 layout="fill" 
                                 objectFit="cover" 
