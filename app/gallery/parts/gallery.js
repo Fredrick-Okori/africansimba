@@ -1,10 +1,10 @@
 'use client'
 import React, { useState, useEffect, useCallback, useMemo, lazy, Suspense } from 'react';
+import NextImage from 'next/image';
 import {
   Box,
   Grid,
   GridItem,
-  Image,
   Text,
   Heading,
   Container,
@@ -67,21 +67,15 @@ const GalleryItem = React.memo(({
       >
         {/* Image Container */}
         <Box position="relative" aspectRatio={1}>
-          <Image
+          <NextImage
             src={project.url}
             alt={project.alt}
-            objectFit="cover"
-            w="full"
-            h="full"
-            transition="all 0.5s ease" // Faster transition
-            _groupHover={{
-              transform: "scale(1.1)",
-              filter: "brightness(1.1)",
-            }}
-            loading={index < 10 ? "eager" : "lazy"} // Load first 10 images eagerly
-            fetchPriority={index < 5 ? "high" : "low"} // High priority for first 5 images
-            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 20vw"
-            decoding="async"
+            fill
+            style={{ objectFit: "cover", transition: "all 0.5s ease" }}
+            loading={index < 10 ? "eager" : "lazy"}
+            priority={index < 5}
+            sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 20vw"
+            quality={75}
           />
           
           {/* Overlay */}
@@ -393,16 +387,15 @@ const Gallery = () => {
                 maxW="full"
                 maxH="full"
               >
-                <Image
-                  src={currentProject?.url}
-                  alt={currentProject?.alt}
-                  maxW="full"
-                  maxH="90vh"
-                  objectFit="contain"
-                  loading="eager"
-                  fetchPriority="high"
+                <NextImage
+                  src={currentProject?.url || ''}
+                  alt={currentProject?.alt || ''}
+                  width={1200}
+                  height={1200}
+                  style={{ maxWidth: "100%", maxHeight: "90vh", objectFit: "contain", width: "auto", height: "auto" }}
+                  priority
                   sizes="90vw"
-                  decoding="async"
+                  quality={85}
                 />
               </Box>
 

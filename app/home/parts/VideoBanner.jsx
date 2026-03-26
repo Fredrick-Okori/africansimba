@@ -15,12 +15,12 @@ import Image from "next/image";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 
 const carouselImages = [
-  "/new/1c51433f-f816-4ff9-9eac-9e49dbd7f66c 3.jpg",
-  "/new/25b0f125-9619-462d-87b3-98bfbe2531b2 3.jpg",
-  "/new/99ed9580-8364-4c1d-8fbb-567d0150345a 3.jpg",
-  "/new/362a6b0c-d42b-4fa6-98d0-0bfcdaa392f7 3.jpg",
-  "/new/382b35f3-f6ee-4992-af96-4d4416399d2f 3.jpg",
-  "/new/d970093c-225e-4df0-84b8-f6aabe748c89 3.jpg",
+  "/new/1c51433f-f816-4ff9-9eac-9e49dbd7f66c 3.webp",
+  "/new/25b0f125-9619-462d-87b3-98bfbe2531b2 3.webp",
+  "/new/99ed9580-8364-4c1d-8fbb-567d0150345a 3.webp",
+  "/new/362a6b0c-d42b-4fa6-98d0-0bfcdaa392f7 3.webp",
+  "/new/382b35f3-f6ee-4992-af96-4d4416399d2f 3.webp",
+  "/new/d970093c-225e-4df0-84b8-f6aabe748c89 3.webp",
 ];
 
 export default function VideoBanner() {

@@ -26,24 +26,24 @@ import { FiArrowRight } from 'react-icons/fi';
 
 const carouselItems = [
     {
-        image: '/new/1c51433f-f816-4ff9-9eac-9e49dbd7f66c 3.jpg',
+        image: '/new/1c51433f-f816-4ff9-9eac-9e49dbd7f66c 3.webp',
         heading: 'Flawless Events Hosting',
         text: 'A flawless events with lasting impressions',
     },
     {
-        image: '/new/25b0f125-9619-462d-87b3-98bfbe2531b2 3.jpg',
+        image: '/new/25b0f125-9619-462d-87b3-98bfbe2531b2 3.webp',
         heading: 'African Simba Events',
         text: 'Creating unforgettable experience',
     },
 
   
     {
-        image: '/new/99ed9580-8364-4c1d-8fbb-567d0150345a 3.jpg',
+        image: '/new/99ed9580-8364-4c1d-8fbb-567d0150345a 3.webp',
         heading: 'Experimental Marketing',
         text: 'Captivating and building brands',
     },
     {
-        image: '/new/362a6b0c-d42b-4fa6-98d0-0bfcdaa392f7 3.jpg',
+        image: '/new/362a6b0c-d42b-4fa6-98d0-0bfcdaa392f7 3.webp',
         heading: 'Influencer Partnerships',
         text: 'Influencial personalities to amplify your brand',
     },

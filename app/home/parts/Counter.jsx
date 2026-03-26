@@ -39,7 +39,7 @@ export default function Count() {
                             
                             />
                             <Image
-                                src='/new/d8886efb-563c-4100-8474-65ee0ef9e693 3.jpg'
+                                src='/new/d8886efb-563c-4100-8474-65ee0ef9e693 3.webp'
                                 alt='Muleba Festival'
                                 quality={60}
                                 layout="fill" 
@@ -100,7 +100,7 @@ export default function Count() {
                             />
                             <Image
                                 rounded="lg"
-                                 src='/new/a637ab6e-0eb0-4e12-82aa-dbb86190db2c 3.jpg'
+                                 src='/new/a637ab6e-0eb0-4e12-82aa-dbb86190db2c 3.webp'
                                 alt='Paradigm Fridays'
                                 layout="fill" 
                                 objectFit="cover" 

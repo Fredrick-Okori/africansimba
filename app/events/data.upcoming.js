@@ -10,7 +10,7 @@ export const events = [
     {
         id: 3,
         name: "Sleek Sunday",
-        image: "/nights/chameleone.jpg",
+        image: "/nights/chameleone.webp",
         host: "Live at Luna",
         
     },
