@@ -1,50 +1,41 @@
 'use client'
-import React, { useState, useEffect, useCallback, useMemo, lazy, Suspense } from 'react';
+import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import NextImage from 'next/image';
 import {
   Box,
   Grid,
   GridItem,
   Text,
-  Heading,
   Container,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalBody,
-  ModalCloseButton,
-  useDisclosure,
   IconButton,
   HStack,
   VStack,
   Badge,
   Fade,
   ScaleFade,
-  useColorModeValue,
   Spinner,
   Center,
   Flex,
 } from '@chakra-ui/react';
 
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
-// Import projects data
+import { FaChevronLeft, FaChevronRight, FaTimes } from 'react-icons/fa';
+
 import { projects } from '../data';
 
-// Memoized Gallery Item Component for better performance
-const GalleryItem = React.memo(({ 
-  project, 
-  index, 
-  isLoading, 
-  hoveredIndex, 
-  onMouseEnter, 
-  onMouseLeave, 
+// Memoized Gallery Item Component
+const GalleryItem = React.memo(({
+  project,
+  index,
+  isLoading,
+  hoveredIndex,
+  onMouseEnter,
+  onMouseLeave,
   onClick,
-  cardBg 
 }) => (
   <ScaleFade
     in={!isLoading}
-    transition={{ duration: 0.6, delay: Math.min(index * 0.05, 2) }} // Cap delay for better UX
+    transition={{ duration: 0.6, delay: Math.min(index * 0.05, 2) }}
   >
     <GridItem>
       <Box
@@ -56,16 +47,15 @@ const GalleryItem = React.memo(({
         overflow="hidden"
         borderRadius="2xl"
         bg="rgba(255, 255, 255, 0.1)"
-                backdropFilter="blur(20px) saturate(180%)"
+        backdropFilter="blur(20px) saturate(180%)"
         shadow="xl"
         _hover={{
           transform: "scale(1.05) rotate(1deg)",
           shadow: "2xl",
         }}
-        transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)" // Faster transition
+        transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
         role="group"
       >
-        {/* Image Container */}
         <Box position="relative" aspectRatio={1}>
           <NextImage
             src={project.url}
@@ -77,14 +67,14 @@ const GalleryItem = React.memo(({
             sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 20vw"
             quality={75}
           />
-          
+
           {/* Overlay */}
           <Box
             position="absolute"
             inset={0}
             bgGradient="linear(to-t, blackAlpha.800, transparent, transparent)"
             opacity={hoveredIndex === index ? 1 : 0}
-            transition="opacity 0.3s ease" // Faster transition
+            transition="opacity 0.3s ease"
           />
 
           {/* Project Info Overlay */}
@@ -95,7 +85,7 @@ const GalleryItem = React.memo(({
             right={4}
             opacity={hoveredIndex === index ? 1 : 0}
             transform={hoveredIndex === index ? "translateY(0)" : "translateY(10px)"}
-            transition="all 0.3s ease" // Faster transition
+            transition="all 0.3s ease"
           >
             <VStack align="start" spacing={2}>
               <Badge
@@ -111,7 +101,7 @@ const GalleryItem = React.memo(({
                 {project.alt}
               </Text>
               <Text fontSize="sm" color="gray.300">
-                Click to view details
+                Click to view
               </Text>
             </VStack>
           </Box>
@@ -123,7 +113,7 @@ const GalleryItem = React.memo(({
             borderRadius="2xl"
             bgGradient="linear(to-r, blue.400, purple.400, pink.400)"
             opacity={hoveredIndex === index ? 0.2 : 0}
-            transition="opacity 0.3s ease" // Faster transition
+            transition="opacity 0.3s ease"
             pointerEvents="none"
             mixBlendMode="overlay"
           />
@@ -136,59 +126,45 @@ const GalleryItem = React.memo(({
 GalleryItem.displayName = 'GalleryItem';
 
 const Gallery = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [hoveredIndex, setHoveredIndex] = useState(null);
-  const [visibleItems, setVisibleItems] = useState(20); // Virtual scrolling for large datasets
+  const [visibleItems, setVisibleItems] = useState(20);
+  const thumbnailRef = useRef(null);
 
-  // Memoized color values
-  const bgGradient = useColorModeValue(
-    'linear(to-br, black.50, blue.50, purple.50)',
-    'linear(to-br, black.900, purple.900, gray.900)'
-  );
-  
-  const cardBg = useColorModeValue('white', 'gray.800');
-  const textColor = useColorModeValue('gray.800', 'white');
-  const subtextColor = useColorModeValue('gray.600', 'gray.300');
+  const isOpen = selectedImageIndex !== null;
 
-  // Optimized loading with reduced timer
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 300); // Reduced from 800ms
+    const timer = setTimeout(() => setIsLoading(false), 300);
     return () => clearTimeout(timer);
   }, []);
 
-  // Virtualized loading - load more items as needed
+  // Virtualized loading
   useEffect(() => {
-    const loadMoreItems = () => {
-      if (visibleItems < projects.length) {
+    const handleScroll = () => {
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000) {
         setVisibleItems(prev => Math.min(prev + 20, projects.length));
       }
     };
-
-    const handleScroll = () => {
-      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000) {
-        loadMoreItems();
-      }
-    };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [visibleItems, projects.length]);
+  }, []);
 
-  // Memoized callbacks for better performance
   const openModalWithImage = useCallback((index) => {
     setSelectedImageIndex(index);
-    onOpen();
-  }, [onOpen]);
+  }, []);
+
+  const closeModal = useCallback(() => {
+    setSelectedImageIndex(null);
+  }, []);
 
   const showNextImage = useCallback(() => {
-    setSelectedImageIndex((prevIndex) => (prevIndex + 1) % projects.length);
-  }, [projects.length]);
+    setSelectedImageIndex((prev) => (prev + 1) % projects.length);
+  }, []);
 
   const showPrevImage = useCallback(() => {
-    setSelectedImageIndex((prevIndex) => (prevIndex - 1 + projects.length) % projects.length);
-  }, [projects.length]);
+    setSelectedImageIndex((prev) => (prev - 1 + projects.length) % projects.length);
+  }, []);
 
   const handleMouseEnter = useCallback((index) => {
     setHoveredIndex(index);
@@ -198,11 +174,11 @@ const Gallery = () => {
     setHoveredIndex(null);
   }, []);
 
-  // Optimized keyboard navigation with cleanup
+  // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (!isOpen) return;
-      
+
       switch (event.key) {
         case 'ArrowRight':
           event.preventDefault();
@@ -214,35 +190,39 @@ const Gallery = () => {
           break;
         case 'Escape':
           event.preventDefault();
-          onClose();
+          closeModal();
           break;
       }
     };
 
     if (isOpen) {
       document.addEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = 'hidden'; // Prevent body scroll when modal is open
+      document.body.style.overflow = 'hidden';
     }
 
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
       document.body.style.overflow = 'unset';
     };
-  }, [isOpen, onClose, showNextImage, showPrevImage]);
+  }, [isOpen, closeModal, showNextImage, showPrevImage]);
 
-  // Memoized visible projects for better performance
-  const visibleProjects = useMemo(() => 
-    projects.slice(0, visibleItems), 
+  // Scroll active thumbnail into view
+  useEffect(() => {
+    if (isOpen && thumbnailRef.current) {
+      const activeThumb = thumbnailRef.current.querySelector(`[data-index="${selectedImageIndex}"]`);
+      if (activeThumb) {
+        activeThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+    }
+  }, [selectedImageIndex, isOpen]);
+
+  const visibleProjects = useMemo(() =>
+    projects.slice(0, visibleItems),
     [visibleItems]
   );
 
-  // Memoized current project data
-  const currentProject = useMemo(() => 
-    projects[selectedImageIndex], 
-    [selectedImageIndex]
-  );
+  const currentProject = isOpen ? projects[selectedImageIndex] : null;
 
-  // Optimized loading state
   if (isLoading) {
     return (
       <Box minH="100vh">
@@ -259,7 +239,7 @@ const Gallery = () => {
   return (
     <Box minH="100vh">
       <Container maxW="" py={16} mt={16}>
-        {/* Optimized Header Section */}
+        {/* Header Section */}
         <Fade in={!isLoading} transition={{ duration: 0.5 }}>
           <VStack spacing={8} textAlign="center" mb={16}>
             <Box mb={8} textAlign={{ base: "center", lg: "left" }}>
@@ -268,11 +248,11 @@ const Gallery = () => {
                 fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}
                 fontWeight="900"
                 letterSpacing="-0.02em"
-                as="h1" // Better SEO
+                as="h1"
               >
                 Be part of the Game Changers
               </Text>
-              
+
               <Text
                 fontSize="xl"
                 color='white'
@@ -280,7 +260,7 @@ const Gallery = () => {
                 mx="auto"
                 align='center'
                 lineHeight="relaxed"
-                as="p" // Better SEO
+                as="p"
               >
                 A weekly nightlife you cannot afford to miss out
               </Text>
@@ -288,7 +268,7 @@ const Gallery = () => {
           </VStack>
         </Fade>
 
-        {/* Optimized Gallery Grid */}
+        {/* Gallery Grid */}
         <Grid
           templateColumns={{
             base: "repeat(1, 1fr)",
@@ -303,7 +283,7 @@ const Gallery = () => {
         >
           {visibleProjects.map((project, index) => (
             <GalleryItem
-              key={`${project.id}-${index}`} // More stable key
+              key={`${project.id}-${index}`}
               project={project}
               index={index}
               isLoading={isLoading}
@@ -311,7 +291,6 @@ const Gallery = () => {
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={handleMouseLeave}
               onClick={() => openModalWithImage(index)}
-              cardBg={cardBg}
             />
           ))}
         </Grid>
@@ -325,150 +304,186 @@ const Gallery = () => {
         )}
       </Container>
 
-      {/* Optimized Modal */}
-      <Modal
-        isOpen={isOpen}
-        onClose={onClose}
-        size="6xl"
-        isCentered
-        motionPreset="slideInBottom"
-        closeOnOverlayClick={true}
-        closeOnEsc={true}
-      >
-        <ModalOverlay
-          bg="blackAlpha.900"
-          backdropFilter="blur(4px)"
-        />
-        <ModalContent
-          bg="transparent"
-          shadow="none"
-          maxW="90vw"
-          maxH="90vh"
+      {/* Lightbox Modal */}
+      {isOpen && (
+        <Box
+          position="fixed"
+          inset={0}
+          zIndex={9999}
+          bg="rgba(0, 0, 0, 0.95)"
+          display="flex"
+          flexDirection="column"
         >
-          <ModalCloseButton
-            size="lg"
-            color="white"
-            bg="whiteAlpha.200"
-            backdropFilter="blur(10px)"
-            borderRadius="full"
-            _hover={{
-              bg: "whiteAlpha.300",
-              transform: "scale(1.1)",
-            }}
-            transition="all 0.2s ease" // Faster transition
-            zIndex={3}
-          />
-          
-          <ModalBody p={0} position="relative">
-            <Flex align="center" justify="center" h="full">
-              {/* Image Counter */}
-              <Badge
-                position="absolute"
-                top={4}
-                left="50%"
-                transform="translateX(-50%)"
-                bg="whiteAlpha.200"
-                backdropFilter="blur(10px)"
-                borderRadius="full"
-                px={4}
-                py={2}
-                color="white"
-                fontSize="sm"
-                zIndex={2}
-              >
-                {selectedImageIndex + 1} / {projects.length}
-              </Badge>
+          {/* Top Bar */}
+          <Flex
+            justify="space-between"
+            align="center"
+            px={4}
+            py={3}
+            flexShrink={0}
+          >
+            <Badge
+              bg="whiteAlpha.200"
+              backdropFilter="blur(10px)"
+              borderRadius="full"
+              px={4}
+              py={2}
+              color="white"
+              fontSize="sm"
+            >
+              {selectedImageIndex + 1} / {projects.length}
+            </Badge>
 
-              {/* Optimized Main Image */}
-              <Box
-                borderRadius="2xl"
-                overflow="hidden"
-                shadow="2xl"
-                maxW="full"
-                maxH="full"
-              >
-                <NextImage
-                  src={currentProject?.url || ''}
-                  alt={currentProject?.alt || ''}
-                  width={1200}
-                  height={1200}
-                  style={{ maxWidth: "100%", maxHeight: "90vh", objectFit: "contain", width: "auto", height: "auto" }}
-                  priority
-                  sizes="90vw"
-                  quality={85}
-                />
-              </Box>
-
-              {/* Navigation Buttons */}
+            <HStack spacing={2}>
+              <Text color="gray.400" fontSize="sm" display={{ base: 'none', md: 'block' }}>
+                Use arrow keys to navigate
+              </Text>
               <IconButton
-                aria-label="Previous image"
-                icon={<FaChevronLeft />}
-                position="absolute"
-                left={6}
-                top="50%"
-                transform="translateY(-50%)"
-                size="lg"
+                aria-label="Close gallery"
+                icon={<FaTimes />}
+                size="md"
                 borderRadius="full"
                 bg="whiteAlpha.200"
-                backdropFilter="blur(10px)"
                 color="white"
-                _hover={{
-                  bg: "whiteAlpha.300",
-                  transform: "translateY(-50%) scale(1.1)",
-                }}
-                transition="all 0.2s ease"
-                onClick={showPrevImage}
-                isDisabled={projects.length <= 1}
+                _hover={{ bg: "whiteAlpha.400" }}
+                onClick={closeModal}
               />
+            </HStack>
+          </Flex>
 
-              <IconButton
-                aria-label="Next image"
-                icon={<FaChevronRight />}
-                position="absolute"
-                right={6}
-                top="50%"
-                transform="translateY(-50%)"
-                size="lg"
-                borderRadius="full"
-                bg="whiteAlpha.200"
-                backdropFilter="blur(10px)"
-                color="white"
-                _hover={{
-                  bg: "whiteAlpha.300",
-                  transform: "translateY(-50%) scale(1.1)",
+          {/* Main Image Area */}
+          <Flex
+            flex="1"
+            align="center"
+            justify="center"
+            position="relative"
+            minH={0}
+            px={{ base: 2, md: 16 }}
+            onClick={(e) => { if (e.target === e.currentTarget) closeModal(); }}
+          >
+            {/* Prev Button */}
+            <IconButton
+              aria-label="Previous image"
+              icon={<FaChevronLeft />}
+              position="absolute"
+              left={{ base: 2, md: 4 }}
+              top="50%"
+              transform="translateY(-50%)"
+              size="lg"
+              borderRadius="full"
+              bg="whiteAlpha.200"
+              backdropFilter="blur(10px)"
+              color="white"
+              zIndex={2}
+              _hover={{
+                bg: "whiteAlpha.400",
+                transform: "translateY(-50%) scale(1.1)",
+              }}
+              transition="all 0.2s ease"
+              onClick={showPrevImage}
+            />
+
+            {/* Main Image */}
+            <Box
+              borderRadius="xl"
+              overflow="hidden"
+              maxH="calc(100vh - 220px)"
+              maxW="90vw"
+              position="relative"
+            >
+              <NextImage
+                src={currentProject?.url || ''}
+                alt={currentProject?.alt || ''}
+                width={1200}
+                height={1200}
+                style={{
+                  maxWidth: "100%",
+                  maxHeight: "calc(100vh - 220px)",
+                  objectFit: "contain",
+                  width: "auto",
+                  height: "auto",
                 }}
-                transition="all 0.2s ease"
-                onClick={showNextImage}
-                isDisabled={projects.length <= 1}
+                priority
+                sizes="90vw"
+                quality={85}
               />
+            </Box>
 
-              {/* Project Info at Bottom */}
-              <HStack
-                position="absolute"
-                bottom={6}
-                left="50%"
-                transform="translateX(-50%)"
-                bg="whiteAlpha.200"
-                backdropFilter="blur(10px)"
-                borderRadius="full"
-                px={6}
-                py={3}
-                spacing={3}
-                md='hidden'
-                maxW="90vw"
-                overflow="hidden"
-              >
-                <Badge colorScheme="whiteAlpha" borderRadius="full">
-                  {currentProject?.category}
-                </Badge>
-                <Text size="md" color="white" noOfLines={1}>
-                  {currentProject?.alt}
-                </Text>
-              </HStack>
-            </Flex>
-          </ModalBody>
-        </ModalContent>
-      </Modal>
+            {/* Next Button */}
+            <IconButton
+              aria-label="Next image"
+              icon={<FaChevronRight />}
+              position="absolute"
+              right={{ base: 2, md: 4 }}
+              top="50%"
+              transform="translateY(-50%)"
+              size="lg"
+              borderRadius="full"
+              bg="whiteAlpha.200"
+              backdropFilter="blur(10px)"
+              color="white"
+              zIndex={2}
+              _hover={{
+                bg: "whiteAlpha.400",
+                transform: "translateY(-50%) scale(1.1)",
+              }}
+              transition="all 0.2s ease"
+              onClick={showNextImage}
+            />
+          </Flex>
+
+          {/* Thumbnail Strip */}
+          <Box
+            flexShrink={0}
+            py={3}
+            px={2}
+            bg="rgba(0, 0, 0, 0.8)"
+          >
+            <HStack
+              ref={thumbnailRef}
+              spacing={2}
+              overflowX="auto"
+              justify="center"
+              sx={{
+                '&::-webkit-scrollbar': { height: '4px' },
+                '&::-webkit-scrollbar-track': { bg: 'transparent' },
+                '&::-webkit-scrollbar-thumb': { bg: 'whiteAlpha.300', borderRadius: 'full' },
+                scrollbarWidth: 'thin',
+                scrollbarColor: 'rgba(255,255,255,0.3) transparent',
+              }}
+            >
+              {projects.map((project, index) => (
+                <Box
+                  key={project.id}
+                  data-index={index}
+                  flexShrink={0}
+                  w={{ base: '50px', md: '70px' }}
+                  h={{ base: '50px', md: '70px' }}
+                  borderRadius="md"
+                  overflow="hidden"
+                  cursor="pointer"
+                  position="relative"
+                  border="2px solid"
+                  borderColor={index === selectedImageIndex ? "var(--clr-primary-1)" : "transparent"}
+                  opacity={index === selectedImageIndex ? 1 : 0.5}
+                  _hover={{ opacity: 1 }}
+                  transition="all 0.2s ease"
+                  onClick={() => setSelectedImageIndex(index)}
+                >
+                  <NextImage
+                    src={project.url}
+                    alt={project.alt}
+                    fill
+                    style={{ objectFit: "cover" }}
+                    sizes="70px"
+                    quality={30}
+                  />
+                </Box>
+              ))}
+            </HStack>
+          </Box>
+        </Box>
+      )}
     </Box>
   );
 };
