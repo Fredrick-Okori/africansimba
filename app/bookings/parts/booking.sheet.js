@@ -92,6 +92,7 @@ const TicketCard = React.memo(({ ticket, index }) => {
   const isPopular = ticket.popular;
 
   return (
+    
     <MotionBox
       custom={index}
       initial="hidden"
@@ -225,7 +226,7 @@ const TicketCard = React.memo(({ ticket, index }) => {
         {/* CTA Button */}
         <Button
           as={Link}
-          href="https://wa.me/+256778105878"
+          href="https://wa.me/+256754033164"
           target="_blank"
           rel="noopener noreferrer"
           w="100%"
@@ -261,7 +262,12 @@ TicketCard.displayName = "TicketCard";
 
 export default function BookingCard() {
   return (
-    <Container maxW="container.xl" py={{ base: 12, md: 20 }} px={{ base: 4, md: 8 }}>
+    <Container maxW="container.xl" py={{ base: 6, md: 10 }} px={{ base: 4, md: 8 }}>
+      {/* Connecting divider */}
+      <Flex justify="center" mb={{ base: 8, md: 12 }}>
+        <Box w="60px" h="3px" bgGradient="linear(to-r, transparent, var(--clr-primary-3), transparent)" borderRadius="full" />
+      </Flex>
+
       {/* Section header */}
       <MotionBox
         initial={{ opacity: 0, y: 20 }}
@@ -288,18 +294,20 @@ export default function BookingCard() {
           fontWeight="bold"
           mb={4}
         >
-          Choose your{' '}
-          <Text as="span" color="var(--clr-primary-3)">experience</Text>
+          Secure your{' '}
+          <Text as="span" color="var(--clr-primary-3)">spot</Text>
         </Heading>
         <Text
           fontSize={{ base: "sm", md: "md" }}
           color="rgba(255,255,255,0.5)"
-          maxW="500px"
+          maxW="550px"
           mx="auto"
         >
-          Reserve your spot and enjoy a premium event experience tailored to your style.
+          Pick a tier that suits your vibe. From general entry to the ultimate baller experience.
         </Text>
       </MotionBox>
+
+     
 
       {/* Ticket cards */}
       <SimpleGrid columns={{ base: 1, sm: 2, lg: 4 }} spacing={{ base: 5, md: 6 }} maxW="container.xl" mx="auto">

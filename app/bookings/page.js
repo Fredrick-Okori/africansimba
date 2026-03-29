@@ -6,6 +6,7 @@ import CreateBooking from "./parts/booking.sheet"
 
 import { Suspense } from "react"
 import Footer from "../components/Footer"
+import UpcomingEvents from "../home/parts/UpcomingEvents"
 
 
 export const metadata = {
@@ -21,7 +22,10 @@ export default function BookingService() {
             <BackgroundCarousel />
             <Box position="relative" zIndex="1">
                 <BookingHero />
-                <CreateBooking />               
+                <Box pb={0}>
+                    <UpcomingEvents/>
+                </Box>
+                <CreateBooking />
                 <Footer/>
                 </Box>
             </Suspense>
