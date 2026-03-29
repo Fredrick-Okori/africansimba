@@ -1,153 +1,210 @@
+"use client";
+import React from "react";
 import {
     Box,
     Flex,
-    Image,
-    Link,
-    Skeleton,
     Text,
     Stack,
     Button,
     VStack,
-} from '@chakra-ui/react'
-import { FiChevronRight } from 'react-icons/fi'
+    HStack,
+    Container,
+    Heading,
+    Icon,
+    Skeleton,
+} from "@chakra-ui/react";
+import { Image as ChakraImage } from "@chakra-ui/react";
+import Link from "next/link";
+import { FiChevronRight, FiCalendar, FiMapPin } from "react-icons/fi";
+import { motion } from "framer-motion";
+
+const MotionBox = motion(Box);
 
 export const UpcomingEvents = () => (
-    <Box
-        maxW="7xl"
-        mx="auto"
-
-        py={{ base: '8', md: '10', lg: '12' }}
-    >
-        <Text
-            fontSize={{ base: '2xl', sm: '3xl', md: '4xl' }}
-            fontWeight="bold"
-            textAlign={{ base: 'center', md: 'left' }}
-            mb={{ base: 6, md: 10 }}
-            color="var(--clr-primary-1)"
-            px={{ base: 2, md: 0 }}
+    <Container maxW="container.xl" py={{ base: 10, md: 16 }}>
+        {/* Section Header */}
+        <MotionBox
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            mb={{ base: 8, md: 12 }}
         >
-            Upcoming Event:
-        </Text>
-
-        {/* Ibiza Experience */}
-        <Stack
-            direction={{ base: 'column', lg: 'row' }}
-            spacing={{ base: '6', md: '8', lg: '20' }}
-            align={{ base: 'center', lg: 'stretch' }}
-            mt={{ base: '10', md: '14', lg: '16' }}
-        >
-                   {/* Images Section */}
-            <Flex
-                flex="1"
-                overflow="hidden"
-                direction={{ base: 'column', sm: 'row' }}
-                gap={{ base: 4, sm: 0 }}
-                maxW={{ base: '100%', lg: 'none' }}
-                w="100%"
+            <Text
+                fontSize="xs"
+                fontWeight="bold"
+                textTransform="uppercase"
+                letterSpacing="0.3em"
+                color="var(--clr-primary-3)"
+                mb={3}
             >
-                <Image
-                    src="/events/945757f.avif"
-                    alt="Lovely Image"
-                    fallback={<Skeleton />}
-                    rounded={{ base: '10', sm: '0' }}
-                    roundedLeft={{ sm: '10' }}
-                    h={{ base: '200px', sm: '300px', md: '350px', lg: '550px' }}
-                    w={{ base: '100%', sm: '50%' }}
-                   objectFit='cover'
-                    _hover={{
+                Coming Up
+            </Text>
+            <Heading
+                as="h2"
+                fontSize={{ base: "2xl", md: "4xl" }}
+                color="var(--clr-primary-1)"
+                fontWeight="bold"
+            >
+                Upcoming{" "}
+                <Text as="span" color="var(--clr-primary-3)">
+                    Event
+                </Text>
+            </Heading>
+        </MotionBox>
 
-                        boxShadow: 'xl'
-                    }}
-                />
-                <Image
-                    display={{ base: 'none', sm: 'block' }}
-                    src="/events/823535s.avif"
-                    alt="African Simba"
-                    fallback={<Skeleton />}
-                    roundedRight="10"
-                    h={{ sm: '300px', md: '350px', lg: '550px' }}
-                    w={{ sm: '50%' }}
-                    objectFit='cover'
-                    _hover={{
-
-                        boxShadow: 'xl'
-                    }}
-                />
-            </Flex>
-
-            {/* Content Section */}
+        {/* Event Card */}
+        <MotionBox
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+        >
             <Box
-                w={{ base: '100%', lg: 'sm' }}
-                maxW={{ base: '500px', lg: 'sm' }}
-                rounded="10"
-                px={{ base: '6', md: '8', lg: '0' }}
-                py={{ base: '6', md: '8', lg: '12' }}
-                bg={{ base: 'var(--clr-primary-3)', lg: 'transparent' }}
+                bg="rgba(255,255,255,0.03)"
+                border="1px solid rgba(255,255,255,0.08)"
+                borderRadius="3xl"
+                overflow="hidden"
+                position="relative"
             >
-                <VStack
-                    spacing={{ base: '6', md: '8', lg: '10' }}
-                    align={{ base: 'center', md: 'flex-start', lg: 'flex-start' }}
+                {/* Accent line */}
+                <Box
+                    position="absolute"
+                    top={0}
+                    left={0}
+                    right={0}
+                    h="3px"
+                    bgGradient="linear(to-r, transparent, var(--clr-primary-3), transparent)"
+                    zIndex={1}
+                />
+
+                <Stack
+                    direction={{ base: "column", lg: "row" }}
+                    spacing={0}
                 >
-                    <Stack
-                        spacing={{ base: '3', lg: '4' }}
-                        textAlign={{ base: 'center', md: 'left', lg: 'left' }}
-                        w="100%"
+                    {/* Images */}
+                    <Flex
+                        flex="1"
+                        overflow="hidden"
+                        direction={{ base: "column", sm: "row" }}
+                        gap={0}
                     >
-                        <Text
-                            fontSize={{ base: 'xl', sm: '2xl', md: '3xl' }}
-                            fontWeight="bold"
-                            color="var(--clr-primary-1)"
+                        <Box position="relative" flex={1} h={{ base: "250px", sm: "300px", lg: "500px" }}>
+                            <ChakraImage
+                                src="/team/future_mc.avif"
+                                alt="The Ibiza Experience"
+                                fallback={<Skeleton h="100%" />}
+                                w="100%"
+                                h="100%"
+                                objectFit="cover"
+                            />
+                            <Box
+                                position="absolute"
+                                inset={0}
+                                bg="linear-gradient(90deg, transparent 70%, rgba(0,0,0,0.3) 100%)"
+                            />
+                        </Box>
+                        <Box
+                            position="relative"
+                            flex={1}
+                            h={{ base: "250px", sm: "300px", lg: "500px" }}
+                            display={{ base: "none", sm: "block" }}
                         >
-                            THE IBIZA EXPERIENCE
-                        </Text>
+                            <ChakraImage
+                                src="/events/the_future_is_now.avif"
+                                alt="African Simba"
+                                fallback={<Skeleton h="100%" />}
+                                w="100%"
+                                h="100%"
+                                objectFit="cover"
+                            />
+                        </Box>
+                    </Flex>
 
-                        <Text
-                            fontSize={{ base: 'sm', md: 'md' }}
-                            as='p'
-                            fontWeight="normal"
-                            color='var(--clr-primary-1)'
-                        >
-                            <Text as="span" fontWeight="semibold">More details:</Text><br/>
-                            An exclusive island-themed experience bringing the vibrant energy of Ibiza to life.
-                            Enjoy world-class DJs, tropical cocktails, and an unforgettable atmosphere under the stars.
-                        </Text>
+                    {/* Content */}
+                    <Box
+                        w={{ base: "100%", lg: "400px" }}
+                        flexShrink={0}
+                        p={{ base: 8, md: 10 }}
+                        display="flex"
+                        alignItems="center"
+                    >
+                        <VStack spacing={6} align="start" w="100%">
+                            {/* Event badge */}
+                            <HStack
+                                bg="rgba(239,178,9,0.12)"
+                                border="1px solid rgba(239,178,9,0.25)"
+                                borderRadius="full"
+                                px={3}
+                                py={1}
+                                spacing={1.5}
+                            >
+                                <Icon as={FiCalendar} color="var(--clr-primary-3)" boxSize={3} />
+                                <Text
+                                    fontSize="2xs"
+                                    fontWeight="bold"
+                                    color="var(--clr-primary-3)"
+                                    textTransform="uppercase"
+                                    letterSpacing="0.1em"
+                                >
+                                    Thurs, 30th April 2026
+                                </Text>
+                            </HStack>
 
-                        <Text
-                            fontSize={{ base: 'sm', md: 'md' }}
-                            as='p'
-                            fontWeight="normal"
-                            color='var(--clr-primary-1)'
-                        >
-                            <Text as="span" fontWeight="semibold">Date:</Text> Saturday, 28th March 2026
-                        </Text>
-                    </Stack>
+                            <Box>
+                                <Heading
+                                    as="h3"
+                                    fontSize={{ base: "2xl", md: "3xl" }}
+                                    color="var(--clr-primary-3)"
+                                    fontWeight="bold"
+                                    lineHeight={1.1}
+                                    mb={4}
+                                >
+                                    THE FUTURE IS NOW
+                                </Heading>
+                                <Text
+                                    fontSize={{ base: "sm", md: "md" }}
+                                    color="rgba(255,255,255,0.6)"
+                                    lineHeight="1.8"
+                                >
+                                    They said next up.. but he's already here. The Future is here Now. 
+                                    The Future is now. The Future is now. The Future is now. The Future is now.
+                                    And he is here to Stay!
+                                </Text>
+                            </Box>
 
-                    <Box w={{ base: '100%', md: 'auto' }}>
-                        <Button
-                            as={Link}
-                            href="https://wa.me/256754033164"
-                            target="_blank"
-                            size={{ base: 'md', md: 'lg' }}
-                            w={{ base: '100%', sm: 'auto' }}
-                            _hover={{
-                                textDecoration: "none",
-                                bg: "var(--clr-primary-1)",
-                                color: "black",
-                            }}
-                            referrerPolicy='no-referrer'
-                            rounded="full"
-                            variant="outline"
-                            padding={2}
-                            color="var(--clr-primary-1)"
-                        >
-                            BOOK NOW
-                            <FiChevronRight style={{ marginLeft: '8px' }} />
-                        </Button>
+                            <Button
+                                as={Link}
+                                href="https://wa.me/256754033164"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                bg="var(--clr-primary-3)"
+                                color="black"
+                                rounded="2xl"
+                                size="lg"
+                                px={8}
+                                py={7}
+                                fontWeight="bold"
+                                fontSize="sm"
+                                w={{ base: "100%", md: "auto" }}
+                                transition="all 0.3s ease"
+                                _hover={{
+                                    textDecoration: "none",
+                                    bg: "var(--clr-primary-5)",
+                                    transform: "translateY(-2px)",
+                                    boxShadow: "0 10px 30px -5px rgba(239,178,9,0.3)",
+                                }}
+                                _active={{ transform: "translateY(0)" }}
+                            >
+                                BOOK NOW
+                                <FiChevronRight style={{ marginLeft: "8px" }} />
+                            </Button>
+                        </VStack>
                     </Box>
-                </VStack>
+                </Stack>
             </Box>
-        </Stack>
-    </Box>
-)
+        </MotionBox>
+    </Container>
+);
 
 export default UpcomingEvents;

@@ -1,18 +1,20 @@
-"use client"
+"use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import {
   Container,
   Button,
-  Grid,
-  Link,
   Text,
   Box,
-  ButtonGroup,
-  IconButton,
+  VStack,
+  HStack,
 } from "@chakra-ui/react";
 import Image from "next/image";
-import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
+import Link from "next/link";
+import { FiChevronRight } from "react-icons/fi";
+import { motion, AnimatePresence } from "framer-motion";
+
+const MotionBox = motion(Box);
 
 const carouselImages = [
   "/new/1c51433f-f816-4ff9-9eac-9e49dbd7f66c 3.webp",
@@ -25,217 +27,253 @@ const carouselImages = [
 
 export default function VideoBanner() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const intervalRef = useRef(null);
 
-  // Auto-advance carousel every 5 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === carouselImages.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 5000);
-
-    return () => clearInterval(interval);
+  const goToNext = useCallback(() => {
+    setCurrentIndex((prev) =>
+      prev === carouselImages.length - 1 ? 0 : prev + 1
+    );
   }, []);
 
-  const goToPrevious = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? carouselImages.length - 1 : prevIndex - 1
-    );
-  };
+  useEffect(() => {
+    intervalRef.current = setInterval(goToNext, 5000);
+    return () => clearInterval(intervalRef.current);
+  }, [goToNext]);
 
-  const goToNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === carouselImages.length - 1 ? 0 : prevIndex + 1
-    );
-  };
+  useEffect(() => {
+    const nextIndex = (currentIndex + 1) % carouselImages.length;
+    const img = new window.Image();
+    img.src = carouselImages[nextIndex];
+  }, [currentIndex]);
 
   return (
-    <Container
-      maxW="container.2xl"
-      position="relative"
-      mb={5}
-      p={0}
-    >
-      {/* Hero Image Section */}
-      <Box position="relative" height={{ base: "400px", md: "600px" }}>
-        {/* Carousel Images */}
-        {carouselImages.map((src, index) => (
-          <Box
-            key={index}
-            position="absolute"
-            top="0"
-            left="0"
-            width="100%"
-            height="100%"
-            opacity={index === currentIndex ? 1 : 0}
-            transition="opacity 1s ease-in-out"
-            zIndex={0}
-          >
-            <Image
-              src={src}
-              alt={`Carousel image ${index + 1}`}
-              layout="fill"
-              objectFit="cover"
-              priority={index === 0}
-              style={{
-                mixBlendMode: "overlay",
-                filter: "brightness(90%)",
-              }}
-            />
-          </Box>
-        ))}
-
-
-
-        {/* Carousel Indicators */}
+    <Box position="relative" h={{ base: "85vh", md: "90vh" }} maxH="950px" overflow="hidden">
+      {/* Carousel Images */}
+      {carouselImages.map((src, index) => (
         <Box
+          key={index}
           position="absolute"
-          bottom={4}
-          left="50%"
-          transform="translateX(-50%)"
-          zIndex={10}
-          display="flex"
-          gap={2}
+          inset={0}
+          opacity={index === currentIndex ? 1 : 0}
+          transition="opacity 1s ease-in-out"
+          zIndex={0}
         >
-          {carouselImages.map((_, index) => (
-            <Box
-              key={index}
-              width={index === currentIndex ? "24px" : "8px"}
-              height="8px"
-              borderRadius="full"
-              bg={index === currentIndex ? "var(--clr-primary-3)" : "whiteAlpha.600"}
-              cursor="pointer"
-              onClick={() => setCurrentIndex(index)}
-              transition="all 0.3s ease"
-              _hover={{ bg: "var(--clr-primary-3)" }}
-            />
-          ))}
+          <Image
+            src={src}
+            alt={`Event highlight ${index + 1}`}
+            fill
+            sizes="100vw"
+            style={{ objectFit: "cover" }}
+            quality={85}
+            priority={index === 0}
+            loading={index === 0 ? "eager" : "lazy"}
+          />
         </Box>
+      ))}
 
-        {/* Enhanced Multi-Stop Gradient Overlay - Dark Fade */}
-        <Box
-          position="absolute"
-          bottom="0"
-          left="0"
-          width="100%"
-          height="100%"
-          bgGradient="linear(to-t, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0.3) 70%, rgba(0, 0, 0, 0.1) 100%)"
-          zIndex="1"
-          borderRadius="20px"
-        />
+      {/* Gradient overlays */}
+      <Box
+        position="absolute"
+        inset={0}
+        bg="linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.95) 100%)"
+        zIndex={1}
+      />
 
-        {/* Optional: Additional Vignette Effect - Dark */}
-        <Box
-          position="absolute"
-          top="0"
-          left="0"
-          width="100%"
-          height="100%"
-          background="radial-gradient(ellipse at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%)"
-          zIndex="1"
-          borderRadius="20px"
-        />
+      {/* Gold accent glow */}
+      <Box
+        position="absolute"
+        top="35%"
+        left="50%"
+        transform="translate(-50%, -50%)"
+        w={{ base: "350px", md: "600px" }}
+        h={{ base: "350px", md: "600px" }}
+        bg="radial-gradient(circle, rgba(239,178,9,0.1) 0%, transparent 70%)"
+        zIndex={1}
+        pointerEvents="none"
+      />
 
-        {/* Text Overlay */}
-        <Box
-          position="absolute"
-          bottom="10"
-          left="0"
-          width="100%"
-          p={4}
-          zIndex="2"
-          color="var(--clr-primary-1)"
-          textAlign="center"
-        >
-          <Text
-            fontWeight="bold"
-            fontSize={{ base: "3xl", lg: "8xl" }}
-            color="var(--clr-primary-1)"
-            textAlign="center"
-            textShadow="2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)"
-            
+      {/* Content */}
+      <Container
+        maxW="container.xl"
+        position="relative"
+        zIndex={2}
+        h="100%"
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+      >
+        <VStack spacing={{ base: 5, md: 7 }} textAlign="center">
+          <MotionBox
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            African Simba Events
-          </Text>
-          <Text
-            fontWeight="bold"
-            fontSize={{ base: "xl", lg: "4xl" }}
-            color="var(--clr-primary-1)"
-            textShadow="1px 1px 4px rgba(0,0,0,0.8)"
+            <Text
+              fontSize={{ base: "xs", md: "sm" }}
+              fontWeight="bold"
+              textTransform="uppercase"
+              letterSpacing="0.3em"
+              color="var(--clr-primary-3)"
+              mb={3}
+            >
+              The Game Changers
+            </Text>
+          </MotionBox>
+
+          <MotionBox
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Celebrate life with the Game Changers
-          </Text>
-          <Text 
-            color="var(--clr-primary-1)" 
-            mb={4}
-            textShadow="1px 1px 2px rgba(0,0,0,0.8)"
-            opacity="0.95"
-            maxW="600px"
-            mx="auto"
+            <Text
+              fontWeight="900"
+              fontSize={{ base: "4xl", sm: "5xl", md: "7xl", lg: "8xl" }}
+              color="var(--clr-primary-1)"
+              lineHeight={0.95}
+              letterSpacing="-0.02em"
+            >
+              African Simba
+            </Text>
+            <Text
+              fontWeight="900"
+              fontSize={{ base: "4xl", sm: "5xl", md: "7xl", lg: "8xl" }}
+              bgGradient="linear(to-r, var(--clr-primary-3), var(--clr-primary-5))"
+              bgClip="text"
+              lineHeight={0.95}
+              letterSpacing="-0.02em"
+            >
+              Events
+            </Text>
+          </MotionBox>
+
+          <MotionBox
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
           >
-            Experience Immersive party that happens every week
-          </Text>
-          <Grid justifyContent="center">
-            <ButtonGroup 
-              spacing={{ base: 4, md: 8 }}
+            <Text
+              fontSize={{ base: "md", md: "xl" }}
+              color="rgba(255,255,255,0.6)"
+              maxW="500px"
+              fontWeight="light"
+            >
+              Experience immersive events that happen every week. Celebrate life with us.
+            </Text>
+          </MotionBox>
+
+          <MotionBox
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+          >
+            <HStack
+              spacing={4}
               flexDirection={{ base: "column", sm: "row" }}
-              alignItems="center"
+              w={{ base: "100%", sm: "auto" }}
             >
               <Button
                 as={Link}
                 href="/events"
-                bg='var(--clr-primary-1)'
-                color='black'
-                transform="translateY(-2px)"
-                boxShadow="0 8px 25px rgba(0,0,0,0.3)"
+                bg="var(--clr-primary-3)"
+                color="black"
+                rounded="2xl"
+                size="lg"
+                px={8}
+                py={7}
+                fontWeight="bold"
+                fontSize="sm"
+                transition="all 0.3s ease"
+                w={{ base: "100%", sm: "auto" }}
                 _hover={{
                   textDecoration: "none",
-                  bg: "var(--clr-primary-1)",
-                  color: "black",
+                  bg: "var(--clr-primary-5)",
                   transform: "translateY(-2px)",
-                  boxShadow: "0 8px 25px rgba(0,0,0,0.3)"
+                  boxShadow: "0 10px 30px -5px rgba(239,178,9,0.3)",
                 }}
-                rounded="full"
-                size={{ base: "sm", md: "md" }}
-                variant="outline"
-                backdropFilter="blur(8px)"
-                transition="all 0.3s ease"
-                width={{ base: "full", sm: "auto" }}
-                minW={{ base: "200px", sm: "auto" }}
+                _active={{ transform: "translateY(0)" }}
               >
-              More Information
-               <FiChevronRight style={{ marginLeft: '8px' }} />
+                Explore Events
+                <FiChevronRight style={{ marginLeft: "8px" }} />
               </Button>
               <Button
                 as={Link}
                 href="/bookings"
-                bg='var(--clr-primary-1)'
-                color='black'
-                transform="translateY(-2px)"
-                boxShadow="0 8px 25px rgba(0,0,0,0.3)"
+                rounded="2xl"
+                size="lg"
+                px={8}
+                py={7}
+                fontWeight="bold"
+                fontSize="sm"
+                bg="rgba(255,255,255,0.08)"
+                color="var(--clr-primary-1)"
+                border="1px solid rgba(255,255,255,0.1)"
+                transition="all 0.3s ease"
+                w={{ base: "100%", sm: "auto" }}
                 _hover={{
                   textDecoration: "none",
-                  bg: "var(--clr-primary-1)",
-                  color: "black",
+                  bg: "rgba(255,255,255,0.12)",
                   transform: "translateY(-2px)",
-                  boxShadow: "0 8px 25px rgba(0,0,0,0.3)"
+                  boxShadow: "0 10px 30px -5px rgba(0,0,0,0.2)",
                 }}
-                rounded="full"
-                size={{ base: "sm", md: "md" }}
-                variant="outline"
-                backdropFilter="blur(8px)"
-                transition="all 0.3s ease"
-                width={{ base: "full", sm: "auto" }}
-                minW={{ base: "200px", sm: "auto" }}
+                _active={{ transform: "translateY(0)" }}
               >
-               Reserve Now
-               <FiChevronRight style={{ marginLeft: '8px' }} />
+                Reserve Now
+                <FiChevronRight style={{ marginLeft: "8px" }} />
               </Button>
-            </ButtonGroup>
-          </Grid>
+            </HStack>
+          </MotionBox>
+        </VStack>
+      </Container>
+
+      {/* Carousel indicators */}
+      <HStack
+        position="absolute"
+        bottom={{ base: "20px", md: "30px" }}
+        left="50%"
+        transform="translateX(-50%)"
+        zIndex={3}
+        spacing={2}
+      >
+        {carouselImages.map((_, index) => (
+          <Box
+            key={index}
+            w={index === currentIndex ? "28px" : "8px"}
+            h="8px"
+            borderRadius="full"
+            bg={index === currentIndex ? "var(--clr-primary-3)" : "rgba(255,255,255,0.3)"}
+            cursor="pointer"
+            onClick={() => setCurrentIndex(index)}
+            transition="all 0.4s ease"
+            _hover={{
+              bg: index === currentIndex ? "var(--clr-primary-3)" : "rgba(255,255,255,0.5)",
+            }}
+          />
+        ))}
+      </HStack>
+
+      {/* Scroll indicator */}
+      <MotionBox
+        position="absolute"
+        bottom="60px"
+        left="50%"
+        transform="translateX(-50%)"
+        zIndex={3}
+        animate={{ y: [0, 8, 0] }}
+        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <Box
+          w="24px"
+          h="40px"
+          borderRadius="full"
+          border="2px solid rgba(255,255,255,0.2)"
+          display="flex"
+          alignItems="flex-start"
+          justifyContent="center"
+          pt="8px"
+        >
+          <Box w="3px" h="8px" borderRadius="full" bg="rgba(255,255,255,0.4)" />
         </Box>
-      </Box>
-    </Container>
+      </MotionBox>
+    </Box>
   );
 }
-

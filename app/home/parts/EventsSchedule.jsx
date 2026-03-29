@@ -1,72 +1,102 @@
-"use client"
-import React, { useEffect, useState } from 'react'
+"use client";
+import React from "react";
+import { Box, Container, Text, Button, Heading, Flex } from "@chakra-ui/react";
+import Link from "next/link";
+import { FiChevronRight } from "react-icons/fi";
+import { motion } from "framer-motion";
+import DJS from "./DJ";
+import Counter from "./Counter";
 
-import { Box, Container, Stack, Text, HStack, Flex, Button, useBreakpointValue } from '@chakra-ui/react'
-import Counter from './Counter'
-
-import Link from 'next/link';
-import { FiChevronRight } from'react-icons/fi';
-
-
-
-//importing animation
-import Aos from 'aos';
-import 'aos/dist/aos.css';
-import { FaChevronRight } from 'react-icons/fa';
-import DJS from './DJ';
+const MotionBox = motion(Box);
 
 export default function EventSchedule() {
-    useEffect(() => {
-        Aos.init();
-        Aos.refresh();
-    }, []);
-
-    const imageHeight = useBreakpointValue({ base: "250px", md: "400px" });
-    const fontSize = useBreakpointValue({ base: "xl", md: "2xl" });
-    const subFontSize = useBreakpointValue({ base: "sm", md: "lg" });
-
-    const [showLogo, setShowLogo] = useState(false);
-
     return (
-        <>
-            <Box>
-                <Container maxW="container.xl" data-aos='zoom-in-up' data-aos-duration='1000'>
-                <Box maxW="container.xl" mx="auto"  py={{ base: '0', lg: '12' }}>
-           
-               
-                    <Stack spacing={{ base: '8', lg: '10' }} >
-                        <Stack spacing={{ base: '2', lg: '4' }}>
-                            
-                           
-                                <Text
-                                        fontWeight="bold"
-                                        fontSize={{ base: "xl", lg: "4xl" }}
-                                        color="var(--clr-primary-1)"
-                                        textShadow="1px 1px 4px rgba(0,0,0,0.8)"
-                                      >
-                                        We are the Game Changers
-                                      </Text>
-                                       <Text
-                                        fontWeight="bold"
-                                        fontSize={{ base: "sm", lg: "md" }}
-                                        color="var(--clr-primary-1)"
-                                        textShadow="1px 1px 4px rgba(0,0,0,0.8)"
-                                      >
-                                       An emotional and authentic experience with the Game <br/> Changers including the high-energy DJs
-                                      </Text>
-                        </Stack>
-                        <HStack spacing="3" color='var(--clr-primary-1)'>
-                            <Button as={Link} href='/events' _hover={{ textDecoration: 'none', bg: 'var(--clr-primary-1)', color: 'black' }} textDecoration='none' rightIcon={<FiChevronRight style={{marginLeft: '8px'}} />} rounded="full" colorScheme="var(--clr-primary-1)Alpha" variant="outline">
-                                View Events
-                            </Button>
-                        </HStack>
-                    </Stack>
-                </Box>
-               
-                </Container>
-                    <DJS />
-                    <Counter />
-        </Box>      
-        </>
-    )
+        <Box>
+            <Container maxW="container.xl" py={{ base: 10, md: 16 }}>
+                <Flex
+                    direction={{ base: "column", md: "row" }}
+                    justify="space-between"
+                    align={{ base: "start", md: "end" }}
+                    gap={6}
+                    mb={{ base: 6, md: 0 }}
+                >
+                    <MotionBox
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        <Text
+                            fontSize="xs"
+                            fontWeight="bold"
+                            textTransform="uppercase"
+                            letterSpacing="0.3em"
+                            color="var(--clr-primary-3)"
+                            mb={3}
+                        >
+                            Who We Are
+                        </Text>
+                        <Heading
+                            as="h2"
+                            fontSize={{ base: "2xl", md: "4xl" }}
+                            color="var(--clr-primary-1)"
+                            fontWeight="bold"
+                            lineHeight={1.2}
+                            mb={3}
+                        >
+                            We are the{" "}
+                            <Text as="span" color="var(--clr-primary-3)">
+                                Game Changers
+                            </Text>
+                        </Heading>
+                        <Text
+                            fontSize={{ base: "sm", md: "md" }}
+                            color="rgba(255,255,255,0.5)"
+                            maxW="500px"
+                            lineHeight="1.7"
+                        >
+                            An emotional and authentic experience with the Game
+                            Changers including the high-energy DJs
+                        </Text>
+                    </MotionBox>
+
+                    <MotionBox
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.15 }}
+                        flexShrink={0}
+                    >
+                        <Button
+                            as={Link}
+                            href="/events"
+                            rounded="2xl"
+                            size="lg"
+                            px={8}
+                            py={7}
+                            fontWeight="bold"
+                            fontSize="sm"
+                            bg="rgba(255,255,255,0.08)"
+                            color="var(--clr-primary-1)"
+                            border="1px solid rgba(255,255,255,0.1)"
+                            transition="all 0.3s ease"
+                            _hover={{
+                                textDecoration: "none",
+                                bg: "rgba(255,255,255,0.12)",
+                                transform: "translateY(-2px)",
+                                borderColor: "rgba(239,178,9,0.3)",
+                            }}
+                            _active={{ transform: "translateY(0)" }}
+                        >
+                            View Events
+                            <FiChevronRight style={{ marginLeft: "8px" }} />
+                        </Button>
+                    </MotionBox>
+                </Flex>
+            </Container>
+
+            <DJS />
+            <Counter />
+        </Box>
+    );
 }

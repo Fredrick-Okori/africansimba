@@ -1,158 +1,180 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 import { Box, Text, VStack, SimpleGrid, Heading, Container } from "@chakra-ui/react";
-import Aos from "aos";
-import "aos/dist/aos.css";
 import Image from "next/image";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { motion } from "framer-motion";
+
+const MotionBox = motion(Box);
 
 const partners = [
-  { src: "/logos/Magnum.webp", name: "Magnum" },
-  { src: "/logos/CLM-LOGO.webp", name: "CLM Logo" },
-  { src: "/logos/simba_saloon.webp", name: "African Simba Saloon" },
+    { src: "/logos/Magnum.webp", name: "Magnum" },
+    { src: "/logos/CLM-LOGO.webp", name: "CLM Logo" },
+    { src: "/logos/simba_saloon.webp", name: "African Simba Saloon" },
 ];
 
 const peopleWorkedWith = [
-  { src: "/logos/pa.webp", name: "Partner A" },
-  { src: "/logos/catwalk.webp", name: "Catwalk" },
-  { src: "/logos/jomboree.webp", name: "Jomboree" },
-  { src: "/logos/muleba_logo.webp", name: "Muleba Festival" },
-  { src: "/logos/thrones.webp", name: "Thrones" },
+    { src: "/logos/pa.webp", name: "Partner A" },
+    { src: "/logos/catwalk.webp", name: "Catwalk" },
+    { src: "/logos/jomboree.webp", name: "Jomboree" },
+    { src: "/logos/muleba_logo.webp", name: "Muleba Festival" },
+    { src: "/logos/thrones.webp", name: "Thrones" },
 ];
 
-const PartnerSection = () => {
-  useEffect(() => {
-    Aos.init();
-    Aos.refresh();
-  }, []);
-
-  const responsive = {
+const responsive = {
     desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 5,
-      slidesToSlide: 3,
+        breakpoint: { max: 3000, min: 1024 },
+        items: 5,
+        slidesToSlide: 3,
     },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 3,
-      slidesToSlide: 2,
+        breakpoint: { max: 1024, min: 464 },
+        items: 3,
+        slidesToSlide: 2,
     },
     mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 2,
-      slidesToSlide: 1,
+        breakpoint: { max: 464, min: 0 },
+        items: 2,
+        slidesToSlide: 1,
     },
-  };
+};
 
-  return (
-    <Box  py={{ base: 8, md: 16 }}>
-
-
-      <Container maxW="container.xl" data-aos="fade-up" data-aos-duration="500">
-        <VStack spacing={6} textAlign="center">
-          <Heading color="var(--clr-primary-1)" size="lg">Key Partners</Heading>
-          <Text color="var(--clr-primary-1)" fontSize={{ base: "sm", md: "md" }}>
-            We are proud to have a strong network of partners who support our mission.
-          </Text>
-        </VStack>
-        <Box>
-          <SimpleGrid columns={{ base: 3, md: 3 }} spacing={5}>
-
-         
-        {partners.map((partner, index) => (
-              <Box
-                key={index}
-                padding={{base: 2, md: 4}}
-                textAlign="center"
-                transition="transform 0.3s ease, box-shadow 0.3s ease"
-                _hover={{
-                  transform: "scale(1.1)",
-                  boxShadow: "2xl",
-                }}
-              >
-                <Box
-                 w={{ base: "100px", md: "180px"}}
-                 height={{ base: "100px", md: "180px"}}
-                  mx="auto"
-                  display="flex"
-                  alignItems="center"
-                  justifyContent="center"
-                 
-                >
-                  <Image
-                    src={partner.src}
-                    width={index < 3 ? 180 : 100}
-                    height={index < 3 ? 180 : 100}
-                    quality={60}
-                    priority
-                    objectFit="contain"
-                    alt={`${partner.name} Logo`}
-                  />
-                </Box>
-              </Box>
-            ))}
-             </SimpleGrid>
+const LogoCard = ({ partner, size = 180 }) => (
+    <Box
+        p={{ base: 3, md: 5 }}
+        textAlign="center"
+        transition="all 0.3s ease"
+        _hover={{ transform: "scale(1.05)" }}
+    >
+        <Box
+            w={{ base: "100px", md: `${size}px` }}
+            h={{ base: "100px", md: `${size}px` }}
+            mx="auto"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            bg="rgba(255,255,255,0.03)"
+            borderRadius="2xl"
+            border="1px solid rgba(255,255,255,0.06)"
+            p={4}
+            transition="all 0.3s ease"
+            _hover={{
+                borderColor: "rgba(239,178,9,0.2)",
+                bg: "rgba(255,255,255,0.05)",
+            }}
+        >
+            <Image
+                src={partner.src}
+                width={size}
+                height={size}
+                quality={60}
+                priority
+                style={{ objectFit: "contain" }}
+                alt={`${partner.name} Logo`}
+            />
         </Box>
-        <Box mt={10}>
-        {/* Partners Section */}
-        <VStack spacing={6} textAlign="center">
-          <Heading color="var(--clr-primary-1)" size="lg">
-          People we work with
-          </Heading>
-          <Text color="var(--clr-primary-1)" fontSize={{ base: "sm", md: "md" }}>
-            We proudly collaborate with industry-leading organizations.
-          </Text>
-        </VStack>
-
-        <Box mt={10}>
-          <Carousel
-            responsive={responsive}
-            infinite
-            autoPlay
-            autoPlaySpeed={2000}
-            keyBoardControl
-            transitionDuration={500}
-            removeArrowOnDeviceType={["tablet", "mobile"]}
-          >
-            {peopleWorkedWith.map((person, index) => (
-              <Box
-                key={index}
-                p={4}
-                textAlign="center"
-                transition="transform 0.3s ease, box-shadow 0.3s ease"
-                _hover={{
-                  transform: "scale(1.1)",
-                  boxShadow: "2xl",
-                }}
-              >
-                <Box
-                  w="180px"
-                  h="180px"
-                  mx="auto"
-                  display="flex"
-                  alignItems="center"
-                  justifyContent="center"
-                 
-                >
-                  <Image
-                    src={person.src}
-                    width={index < 3 ? 240 : 100}
-                    height={index < 3 ? 240 : 100}
-                    objectFit="contain"
-                    quality={60}
-                    priority
-                    alt={`${person.name} Logo`}
-                  />
-                </Box>
-              </Box>
-            ))}
-          </Carousel>
-          </Box>
-        </Box>
-      </Container>
     </Box>
-  );
+);
+
+const PartnerSection = () => {
+    return (
+        <Box py={{ base: 10, md: 16 }}>
+            <Container maxW="container.xl">
+                {/* Key Partners */}
+                <MotionBox
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    textAlign="center"
+                    mb={10}
+                >
+                    <Text
+                        fontSize="xs"
+                        fontWeight="bold"
+                        textTransform="uppercase"
+                        letterSpacing="0.3em"
+                        color="var(--clr-primary-3)"
+                        mb={3}
+                    >
+                        Partners
+                    </Text>
+                    <Heading
+                        as="h2"
+                        fontSize={{ base: "2xl", md: "3xl" }}
+                        color="var(--clr-primary-1)"
+                        fontWeight="bold"
+                        mb={3}
+                    >
+                        Key{" "}
+                        <Text as="span" color="var(--clr-primary-3)">
+                            Partners
+                        </Text>
+                    </Heading>
+                    <Text
+                        color="rgba(255,255,255,0.5)"
+                        fontSize={{ base: "sm", md: "md" }}
+                        maxW="500px"
+                        mx="auto"
+                    >
+                        We are proud to have a strong network of partners who support our mission.
+                    </Text>
+                </MotionBox>
+
+                <SimpleGrid columns={{ base: 3, md: 3 }} spacing={5} mb={16}>
+                    {partners.map((partner, index) => (
+                        <LogoCard key={index} partner={partner} />
+                    ))}
+                </SimpleGrid>
+
+                {/* People We Work With */}
+                <MotionBox
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    textAlign="center"
+                    mb={10}
+                >
+                    <Heading
+                        as="h2"
+                        fontSize={{ base: "2xl", md: "3xl" }}
+                        color="var(--clr-primary-1)"
+                        fontWeight="bold"
+                        mb={3}
+                    >
+                        People we{" "}
+                        <Text as="span" color="var(--clr-primary-3)">
+                            work with
+                        </Text>
+                    </Heading>
+                    <Text
+                        color="rgba(255,255,255,0.5)"
+                        fontSize={{ base: "sm", md: "md" }}
+                        maxW="500px"
+                        mx="auto"
+                    >
+                        We proudly collaborate with industry-leading organizations.
+                    </Text>
+                </MotionBox>
+
+                <Carousel
+                    responsive={responsive}
+                    infinite
+                    autoPlay
+                    autoPlaySpeed={2000}
+                    keyBoardControl
+                    transitionDuration={500}
+                    removeArrowOnDeviceType={["tablet", "mobile"]}
+                >
+                    {peopleWorkedWith.map((person, index) => (
+                        <LogoCard key={index} partner={person} />
+                    ))}
+                </Carousel>
+            </Container>
+        </Box>
+    );
 };
 
 export default PartnerSection;

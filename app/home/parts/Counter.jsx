@@ -1,121 +1,84 @@
-"use client"
-import React, { useEffect } from 'react'
+"use client";
+import React from "react";
+import { Box, Container, SimpleGrid } from "@chakra-ui/react";
+import Image from "next/image";
+import { motion } from "framer-motion";
 
-import { Box, Container, Grid, Text,  useBreakpointValue } from '@chakra-ui/react'
+const MotionBox = motion(Box);
 
-import Image from 'next/image';
+const counterImages = [
+    {
+        src: "/new/d8886efb-563c-4100-8474-65ee0ef9e693 3.webp",
+        alt: "Muleba Festival",
+    },
+    {
+        src: "/haul/moses.webp",
+        alt: "African Simba Events Anniversary",
+    },
+    {
+        src: "/new/a637ab6e-0eb0-4e12-82aa-dbb86190db2c 3.webp",
+        alt: "Paradigm Fridays",
+    },
+];
 
-//importing animation
-import Aos from 'aos';
-import 'aos/dist/aos.css';
+const fadeInUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (i) => ({
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.6, delay: i * 0.12 },
+    }),
+};
 
 export default function Count() {
-    useEffect(() => {
-        Aos.init();
-        Aos.refresh();
-    }, []);
-
-    const imageHeight = useBreakpointValue({ base: "250px", md: "400px" });
-    const fontSize = useBreakpointValue({ base: "xl", md: "2xl" });
-    const subFontSize = useBreakpointValue({ base: "sm", md: "sm" });
-
     return (
-        <>
-            <Box>
-                <Container maxW="container.xl" >
-                    <Grid templateColumns={['repeat(1, 1fr)', null, '0.5fr 1fr 0.5fr']} py={{ base: 10, lg: 30 }} gap={6}>
-                        <Box position="relative" height={imageHeight} _hover={{ transform: 'scale(1.02)' }} transition="all 0.3s">
+        <Container maxW="container.xl" py={{ base: 4, md: 8 }}>
+            <SimpleGrid columns={{ base: 1, md: 3 }} spacing={5}>
+                {counterImages.map((img, index) => (
+                    <MotionBox
+                        key={index}
+                        custom={index}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, margin: "-30px" }}
+                        variants={fadeInUp}
+                    >
+                        <Box
+                            position="relative"
+                            h={{ base: "280px", md: index === 1 ? "450px" : "380px" }}
+                            borderRadius="2xl"
+                            overflow="hidden"
+                            border="1px solid rgba(255,255,255,0.06)"
+                            transition="all 0.4s ease"
+                            role="group"
+                            _hover={{
+                                transform: "translateY(-4px)",
+                                boxShadow: "0 20px 40px -12px rgba(0,0,0,0.3)",
+                                borderColor: "rgba(239,178,9,0.2)",
+                            }}
+                        >
+                            <Image
+                                src={img.src}
+                                alt={img.alt}
+                                fill
+                                sizes="(max-width: 768px) 100vw, 33vw"
+                                style={{ objectFit: "cover" }}
+                                quality={75}
+                                priority={index === 0}
+                            />
                             <Box
                                 position="absolute"
-                                top="0"
-                                left="0"
-                                right="0"
-                                bottom="0"
-                                bgGradient="linear(to-t, rgba(0,0,0,0.3), rgba(0,0,0,0.1))"
-                              rounded='lg'
-                                transition="all 0.3s"
-                                _hover={{ transform: 'scale(1.05)', bgGradient: 'none' }}
-                                zIndex="1"
-                            
+                                inset={0}
+                                bg="linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.4) 100%)"
+                                transition="all 0.4s ease"
+                                _groupHover={{
+                                    bg: "linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.5) 100%)",
+                                }}
                             />
-                            <Image
-                                src='/new/d8886efb-563c-4100-8474-65ee0ef9e693 3.webp'
-                                alt='Muleba Festival'
-                                quality={60}
-                                layout="fill" 
-                                objectFit="cover" 
-                                priority 
-                               style={{borderRadius: '10px'}}
-                                sizes="(max-width: 768px) 100vw, 
-                                       (max-width: 1200px) 50vw, 
-                                       33vw" 
-
-                            />
-                           
-                         
                         </Box>
-                        <Box position="relative"                                       bgGradient="linear(to-t, rgba(0,0,0,0.3), rgba(0,0,0,0.1))" rounded="lg" height={imageHeight} _hover={{ transform: 'scale(1.02)' }} transition="all 0.3s">
-                            <Box
-                                position="absolute"
-                                top="0"
-                                left="0"
-                                right="0"
-                                bottom="0"
-                                      bgGradient="linear(to-t, rgba(0,0,0,0.3), rgba(0,0,0,0.1))"
-                                rounded='lg'
-                                transition="all 0.3s"
-                                _hover={{ transform: 'scale(1.05)', bgGradient: 'none' }}
-                                zIndex="1"
-                            />
-                            <Image
-                                rounded="lg"
-                                src='/haul/moses.webp'
-                                alt='African simba events anniversary'
-                                layout="fill" 
-                                objectFit="cover" 
-                                priority 
-                                style={{borderRadius: '10px'}}
-                                quality={60}
-                                sizes="(max-width: 768px) 100vw, 
-                                       (max-width: 1200px) 50vw, 
-                                       33vw" 
-                              
-                               
-                            />
-                          
-    
-                        </Box>
-                        <Box position="relative" rounded='lg' height={imageHeight} >
-                            <Box
-                                position="absolute"
-                                top="0"
-                                left="0"
-                                right="0"
-                                bottom="0"
-                                bgGradient="linear(to-t, rgba(0,0,0,0.3), rgba(0,0,0,0.1))"
-                                rounded="lg"
-                                transition="all 0.3s"
-                                _hover={{ transform: 'scale(1.05)', bgGradient: 'none' }}
-                                zIndex="1"
-                            />
-                            <Image
-                                rounded="lg"
-                                 src='/new/a637ab6e-0eb0-4e12-82aa-dbb86190db2c 3.webp'
-                                alt='Paradigm Fridays'
-                                layout="fill" 
-                                objectFit="cover" 
-                                quality={60}
-                                priority 
-                                style={{borderRadius: '10px'}}
-                                sizes="(max-width: 768px) 100vw, 
-                                       (max-width: 1200px) 50vw, 
-                                       33vw" 
-                            />
-                  
-                        </Box>
-                    </Grid>
-                </Container>
-            </Box>
-        </>
-    )
+                    </MotionBox>
+                ))}
+            </SimpleGrid>
+        </Container>
+    );
 }
