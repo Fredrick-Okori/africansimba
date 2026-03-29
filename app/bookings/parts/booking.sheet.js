@@ -21,32 +21,61 @@ const MotionBox = motion(Box);
 const tickets = [
   {
     id: 1,
-    title: "Ordinary Table",
-    price: "250K",
+    title: "Ordinary",
+    price: "30K",
     currency: "UGX",
-    suffix: "+",
-    description: "Perfect for a great night out with friends. Enjoy the full event experience with reserved seating.",
+    suffix: "",
+    description: "General entry to enjoy the full event experience and vibe with the Game Changers.",
     features: [
-      "Reserved table seating",
       "Full event access",
-      "Standard service",
+      "General entry",
     ],
     popular: false,
   },
   {
     id: 2,
-    title: "VIP Table",
-    price: "500K",
+    title: "Table of 4",
+    price: "600K",
     currency: "UGX",
-    suffix: "+",
-    description: "Elevate your experience with premium placement, priority service, and exclusive perks.",
+    suffix: "",
+    description: "Don Julio Reposado with reserved seating for 4. Premium vibes, premium service.",
     features: [
-      "Premium table placement",
+      "Don Julio Reposado",
+      "Reserved table for 4",
       "Priority service",
-      "VIP event access",
-      "Exclusive perks",
+    ],
+    popular: false,
+  },
+  {
+    id: 3,
+    title: "Table of 6",
+    price: "1.5M",
+    currency: "UGX",
+    suffix: "",
+    description: "Hennessy or Don Julio Reposado plus Belaire. The baller experience for your crew.",
+    features: [
+      "Hennessy / Don Julio Reposado",
+      "Belaire included",
+      "Reserved table for 6",
+      "VIP service",
     ],
     popular: true,
+  },
+  {
+    id: 4,
+    title: "Table of 8",
+    price: "2.5M",
+    currency: "UGX",
+    suffix: "",
+    description: "Don Julio 1942 plus Belaire. The ultimate premium experience for the big ballers.",
+    features: [
+      "Don Julio 1942",
+      "Belaire included",
+      "Reserved table for 8",
+      "VIP service",
+      "Premium placement",
+    ],
+    popular: false,
   },
 ];
 
@@ -232,7 +261,7 @@ TicketCard.displayName = "TicketCard";
 
 export default function BookingCard() {
   return (
-    <Container maxW="container.lg" py={{ base: 12, md: 20 }} px={{ base: 4, md: 8 }}>
+    <Container maxW="container.xl" py={{ base: 12, md: 20 }} px={{ base: 4, md: 8 }}>
       {/* Section header */}
       <MotionBox
         initial={{ opacity: 0, y: 20 }}
@@ -273,7 +302,7 @@ export default function BookingCard() {
       </MotionBox>
 
       {/* Ticket cards */}
-      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 6, md: 8 }} maxW="800px" mx="auto">
+      <SimpleGrid columns={{ base: 1, sm: 2, lg: 4 }} spacing={{ base: 5, md: 6 }} maxW="container.xl" mx="auto">
         {tickets.map((ticket, index) => (
           <TicketCard key={ticket.id} ticket={ticket} index={index} />
         ))}
