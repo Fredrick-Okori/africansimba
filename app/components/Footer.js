@@ -14,7 +14,7 @@ const Footer = () => {
                
                     <Flex direction={{ base: 'column', lg: 'row' }} justifyContent="space-evenly" mt={{base: '20', lg: 'auto'}} align="center" w="full" gap={5}>
                         <Box textAlign={{ base: 'center', lg: 'left' }}>
-                            <Text>Copyright &copy; {currentYear} African Simba Events. All rights reserved.</Text>
+                            <Text>@copyright {currentYear} AF-Simba Establishments Ltd. All rights reserved.</Text>
                         </Box>
                          <Box color='transparent' textAlign={{ base: 'center', lg: 'right' }}>
                             <Text>
