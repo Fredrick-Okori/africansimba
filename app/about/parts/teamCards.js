@@ -26,14 +26,14 @@ const MotionBox = motion(Box);
 
 const teamMembers = [
     {
-        id: 'tyra-osbert',
-        name: 'Tyra Osbert',
-        position: 'Creative Director',
-        imageUrl: '/teams/tyra.webp',
-        bio: 'Expert in media production and content management, bringing creative vision to life through visual storytelling.',
+        id: 'bivince-mugisho',
+        name: 'Bivince Mugisho',
+        position: 'Management',
+        imageUrl: '/teams/mugisho.webp',
+        bio: 'Experienced manager specializing in logistics and ensuring seamless event operations.',
         experience: '3+ years',
-        specialties: ['Video Production', 'Content Strategy', 'Post-Production'],
-        social: { instagram: '@tyra_osbert', twitter: '@tyra' }
+        specialties: ['Logistics Management', 'Vendor Relations', 'Quality Control'],
+        social: { instagram: '@bivince', twitter: '@bivince' }
     },
     {
         id: 'raoul-mak',
@@ -46,14 +46,14 @@ const teamMembers = [
         social: { instagram: '@raoul_mak', twitter: '@raoul' }
     },
     {
-        id: 'bivince-mugisho',
-        name: 'Bivince Mugisho',
-        position: 'Management',
-        imageUrl: '/teams/mugisho.webp',
-        bio: 'Experienced manager specializing in logistics and ensuring seamless event operations.',
+        id: 'tyra-osbert',
+        name: 'Tyra Osbert',
+        position: 'Creative Director',
+        imageUrl: '/teams/tyra.webp',
+        bio: 'Expert in media production and content management, bringing creative vision to life through visual storytelling.',
         experience: '3+ years',
-        specialties: ['Logistics Management', 'Vendor Relations', 'Quality Control'],
-        social: { instagram: '@bivince', twitter: '@bivince' }
+        specialties: ['Video Production', 'Content Strategy', 'Post-Production'],
+        social: { instagram: '@tyra_osbert', twitter: '@tyra' }
     },
     {
         id: 'delphin-jack',
