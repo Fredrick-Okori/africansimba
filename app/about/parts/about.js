@@ -127,7 +127,7 @@ const CEOSection = React.memo(() => (
           position="relative"
         >
           <Image
-            src="/haul/ceo_2.avif"
+            src="/teams/ceo-simba.avif"
             alt="African Simba - CEO and Founder of African Simba Events"
             fill
             sizes="(max-width: 1024px) 100vw, 400px"

@@ -96,16 +96,6 @@ const teamMembers = [
         social: { instagram: '@sheilah', twitter: '@sheilah' }
     },
     {
-        id: 'tracy-belaire',
-        name: 'Tracy Belaire',
-        position: 'Hostess',
-        imageUrl: '/teams/trace.webp',
-        bio: 'Experienced hostess with a focus on creating memorable first impressions for all guests.',
-        experience: '2+ years',
-        specialties: ['Guest Experience', 'Protocol Management', 'Event Assistance'],
-        social: { instagram: '@tracy_belaire', twitter: '@tracy' }
-    },
-    {
         id: 'dj-ashley',
         name: 'Dj Ashley',
         position: 'Official Deejay',
@@ -546,7 +536,7 @@ const TeamSection = () => {
                     </Text>
                 </MotionBox>
 
-                <SimpleGrid columns={{ base: 2, md: 3, lg: 4, xl: 5 }} spacing={{ base: 3, md: 6 }}>
+                <SimpleGrid columns={{ base: 2, md: 4 }} spacing={{ base: 3, md: 6 }}>
                     {teamCards}
                 </SimpleGrid>
             </Container>
