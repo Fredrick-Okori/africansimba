@@ -46,16 +46,6 @@ const teamMembers = [
         social: { instagram: '@raoul_mak', twitter: '@raoul' }
     },
     {
-        id: 'tyra-osbert',
-        name: 'Tyra Osbert',
-        position: 'Creative Director',
-        imageUrl: '/teams/tyra.webp',
-        bio: 'Expert in media production and content management, bringing creative vision to life through visual storytelling.',
-        experience: '3+ years',
-        specialties: ['Video Production', 'Content Strategy', 'Post-Production'],
-        social: { instagram: '@tyra_osbert', twitter: '@tyra' }
-    },
-    {
         id: 'delphin-jack',
         name: 'Delphin Jack',
         position: 'Floor Management',
